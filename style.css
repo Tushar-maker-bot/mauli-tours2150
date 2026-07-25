@@ -304,4 +304,157 @@ nav a{
         padding: 30px 20px;
     }
 
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+    background: #f8f8f8;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-heading h2 {
+    font-size: 38px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.contact-heading p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+
+
+/* CONTACT CARDS */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 18px;
+
+    padding: 22px;
+
+    background: #ffffff;
+    border-radius: 15px;
+
+    text-decoration: none;
+    color: #333;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9f7ef;
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.contact-card h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.contact-card p {
+    font-size: 14px;
+    color: #0A8F4B;
+
+    margin: 0;
+
+    word-break: break-word;
+}
+
+
+/* WHATSAPP BUTTON */
+
+.contact-whatsapp-btn {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 14px 30px;
+
+    background: #0A8F4B;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.contact-whatsapp-btn:hover {
+    background: #08753d;
+    transform: translateY(-2px);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-container {
+        width: 100%;
+    }
+
+    .contact-heading h2 {
+        font-size: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 18px;
+    }
+
 }
