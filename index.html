@@ -94,50 +94,84 @@
 </section>
 
   
-<!-- ================= TRAVEL SEARCH BOX ================= -->
+<!-- ================= TRAVEL SEARCH ================= -->
 
-<section class="travel-search">
+<section class="travel-search-section">
 
-    <div class="search-box">
+    <div class="travel-search-box">
 
         <!-- Starting From -->
-        <div class="search-field">
-            <span class="search-icon">📍</span>
-            <div>
-                <small>STARTING FROM</small>
-                <strong>Pune</strong>
+        <div class="travel-field">
+            <span class="field-icon">📍</span>
+            <div class="field-content">
+                <label>STARTING FROM</label>
+                <select id="startingFrom">
+                    <option value="">Select Starting Location</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Solapur">Solapur</option>
+                    <option value="Pandharpur">Pandharpur</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Satara">Satara</option>
+                </select>
             </div>
         </div>
+
 
         <!-- Travelling To -->
-        <div class="search-field">
-            <span class="search-icon">📍</span>
-            <div>
-                <small>TRAVELLING TO</small>
-                <strong>Choose Destination</strong>
+        <div class="travel-field">
+            <span class="field-icon">📍</span>
+            <div class="field-content">
+                <label>TRAVELLING TO</label>
+                <select id="travellingTo">
+                    <option value="">Choose Destination</option>
+                    <option value="Mahabaleshwar">Mahabaleshwar</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Lonavala">Lonavala</option>
+                    <option value="Konkan">Konkan</option>
+                    <option value="Ratnagiri">Ratnagiri</option>
+                    <option value="Ganpatipule">Ganpatipule</option>
+                    <option value="Alibaug">Alibaug</option>
+                    <option value="Nashik">Nashik</option>
+                    <option value="Shirdi">Shirdi</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Manali">Manali</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                </select>
             </div>
         </div>
 
-        <!-- Starting Date -->
-        <div class="search-field">
-            <span class="search-icon">📅</span>
-            <div>
-                <small>STARTING DATE</small>
-                <strong>Select Travel Date</strong>
+
+        <!-- Travel Date -->
+        <div class="travel-field">
+            <span class="field-icon">📅</span>
+            <div class="field-content">
+                <label>STARTING DATE</label>
+                <input type="date" id="travelDate">
             </div>
         </div>
 
-        <!-- Room & Guests -->
-        <div class="search-field">
-            <span class="search-icon">👤</span>
-            <div>
-                <small>ROOM & GUESTS</small>
-                <strong>1 Adult, 1 Room</strong>
+
+        <!-- Travellers -->
+        <div class="travel-field">
+            <span class="field-icon">👥</span>
+            <div class="field-content">
+                <label>ROOM & GUESTS</label>
+                <select id="travellers">
+                    <option value="1 Adult, 1 Room">1 Adult, 1 Room</option>
+                    <option value="2 Adults, 1 Room">2 Adults, 1 Room</option>
+                    <option value="2 Adults, 2 Rooms">2 Adults, 2 Rooms</option>
+                    <option value="3 Adults, 1 Room">3 Adults, 1 Room</option>
+                    <option value="4 Adults, 1 Room">4 Adults, 1 Room</option>
+                    <option value="Family">Family</option>
+                    <option value="Group">Group</option>
+                </select>
             </div>
         </div>
+
 
         <!-- Search Button -->
-        <button class="search-button">
+        <button class="travel-search-btn" onclick="searchTour()">
             SEARCH
         </button>
 
