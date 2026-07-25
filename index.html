@@ -566,7 +566,41 @@
     </div>
 
 </footer>
+<script>
 
+function searchTour() {
+
+    const from = document.getElementById("startingFrom").value;
+    const to = document.getElementById("travellingTo").value;
+    const date = document.getElementById("travelDate").value;
+    const travellers = document.getElementById("travellers").value;
+
+    if (from === "") {
+        alert("Please select your starting location.");
+        return;
+    }
+
+    if (to === "") {
+        alert("Please select your destination.");
+        return;
+    }
+
+    if (date === "") {
+        alert("Please select your travel date.");
+        return;
+    }
+
+    alert(
+        "Searching your trip...\n\n" +
+        "Starting From: " + from + "\n" +
+        "Travelling To: " + to + "\n" +
+        "Travel Date: " + date + "\n" +
+        "Travellers: " + travellers
+    );
+
+}
+
+</script>
 
 </body>
 </html>
