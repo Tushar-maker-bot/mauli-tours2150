@@ -307,15 +307,20 @@ nav a{
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
-    background: #f8f8f8;
+    width: 100%;
     padding: 80px 20px;
-    text-align: center;
+    background: #f8f8f8;
 }
 
 .contact-container {
     width: 90%;
     max-width: 1100px;
-    margin: auto;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .contact-heading h2 {
@@ -325,15 +330,15 @@ nav a{
 }
 
 .contact-heading p {
-    color: #666;
     font-size: 16px;
-    margin-bottom: 45px;
+    color: #666;
 }
 
 
 /* CONTACT CARDS */
 
 .contact-grid {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -342,32 +347,30 @@ nav a{
 .contact-card {
     display: flex;
     align-items: center;
-    text-align: left;
     gap: 18px;
 
     padding: 22px;
 
-    background: #ffffff;
+    background: #fff;
     border-radius: 15px;
 
     text-decoration: none;
     color: #333;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 
     transition: 0.3s;
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .contact-icon {
     width: 55px;
     height: 55px;
 
-    flex-shrink: 0;
+    min-width: 55px;
 
     display: flex;
     align-items: center;
@@ -380,17 +383,15 @@ nav a{
 }
 
 .contact-card h3 {
+    margin: 0 0 5px;
     font-size: 17px;
-    margin-bottom: 5px;
     color: #222;
 }
 
 .contact-card p {
+    margin: 0;
     font-size: 14px;
     color: #0A8F4B;
-
-    margin: 0;
-
     word-break: break-word;
 }
 
@@ -398,31 +399,28 @@ nav a{
 /* WHATSAPP BUTTON */
 
 .contact-whatsapp-btn {
-    display: inline-block;
+    display: block;
+    width: fit-content;
 
-    margin-top: 40px;
+    margin: 40px auto 0;
 
     padding: 14px 30px;
 
     background: #0A8F4B;
-    color: #ffffff;
-
-    text-decoration: none;
+    color: #fff;
 
     border-radius: 30px;
 
+    text-decoration: none;
     font-weight: 600;
-
-    transition: 0.3s;
 }
 
 .contact-whatsapp-btn:hover {
     background: #08753d;
-    transform: translateY(-2px);
 }
 
 
-/* TABLET */
+/* MOBILE */
 
 @media (max-width: 900px) {
 
@@ -432,8 +430,6 @@ nav a{
 
 }
 
-
-/* MOBILE */
 
 @media (max-width: 600px) {
 
@@ -445,16 +441,12 @@ nav a{
         width: 100%;
     }
 
-    .contact-heading h2 {
-        font-size: 30px;
-    }
-
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-card {
-        padding: 18px;
+    .contact-heading h2 {
+        font-size: 30px;
     }
 
 }
