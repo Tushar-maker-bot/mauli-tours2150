@@ -1,67 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mauli Tours & Travels</title>
+    <title>Mauli Tours & Travels | Explore • Experience • Enjoy</title>
+
+    <meta name="description" content="Mauli Tours & Travels - Comfortable, Safe & Memorable Tours. Explore beautiful destinations with us.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<!-- ================= HEADER ================= -->
 
-    <div class="container">
+<header class="header">
 
+    <div class="container header-container">
+
+        <!-- LOGO -->
         <div class="logo">
-            <img src="LOGO.png" alt="Mauli Tours & Travels Logo">
+            <a href="index.html">
+                <img src="LOGO.png" alt="Mauli Tours & Travels Logo">
+            </a>
         </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="packages.html">Packages</a>
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+        <!-- NAVIGATION -->
+        <nav class="navbar">
+
+            <a href="index.html" class="active">
+                Home
+            </a>
+
+            <a href="packages.html">
+                Packages
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
         </nav>
 
-        <a href="https://wa.me/918010163076" class="book-btn" target="_blank">
-            Book Now
+        <!-- BOOK NOW -->
+        <a href="https://wa.me/918010163076" class="header-book-btn">
+            📞 Book Now
         </a>
 
     </div>
 
 </header>
 
-<section class="hero" id="home">
 
-    <div class="overlay"></div>
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
-        <h1>Explore • Experience • Enjoy</h1>
-
-        <h2>Your Journey, Our Responsibility.</h2>
-
-        <p>
-            Comfortable, Safe & Memorable Tours & Travels.
+        <p class="hero-small-title">
+            Pune to
         </p>
 
-        <div class="buttons">
+        <h1>
+            MAHABALESHWAR
+        </h1>
 
-            <a href="https://wa.me/918010163076" class="btn" target="_blank">
-                Book Now
-            </a>
+        <div class="hero-line">
+            <span></span>
+            <p>Escape to the Queen of Hills</p>
+            <span></span>
+        </div>
 
-            <a href="https://wa.me/918010163076?text=Hello%20Mauli%20Tours,%20I%20want%20to%20book%20a%20custom%20tour." class="btn-outline" target="_blank">
-                Request a Custom Tour
-            </a>
+    </div>
+
+
+    <!-- ================= SEARCH BOX ================= -->
+
+    <div class="search-box">
+
+        <div class="search-row">
+
+            <div class="search-field">
+
+                <span class="search-icon">📍</span>
+
+                <div>
+                    <small>STARTING FROM</small>
+                    <strong>Pune</strong>
+                </div>
+
+            </div>
+
+
+            <div class="search-field">
+
+                <span class="search-icon">📍</span>
+
+                <div>
+                    <small>TRAVELLING TO</small>
+                    <strong>Choose Destination</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="search-row">
+
+            <div class="search-field">
+
+                <span class="search-icon">📅</span>
+
+                <div>
+                    <small>STARTING DATE</small>
+                    <strong>Add Travel Date</strong>
+                </div>
+
+            </div>
+
+
+            <div class="search-field">
+
+                <span class="search-icon">👤</span>
+
+                <div>
+                    <small>ROOM & GUESTS</small>
+                    <strong>1 Adult, 1 Room</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="filter-title">
+            CHOOSE FILTERS (OPTIONAL)
+        </p>
+
+
+        <div class="filters">
+
+            <button>
+                All Filters ⚙
+            </button>
+
+            <button>
+                Duration⌄
+            </button>
+
+            <button>
+                Flights⌄
+            </button>
+
+            <button>
+                Budget (per person)⌄
+            </button>
+
+        </div>
+
+
+        <button class="search-button">
+            SEARCH
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BREAK FREE TRAVEL SALE ================= -->
+
+<section class="travel-sale section-container">
+
+    <h2>
+        Break Free Travel Sale!
+    </h2>
+
+    <p>
+        Up to 20% OFF*. Use Code:
+        <strong>BREAKFREE</strong>
+    </p>
+
+
+    <div class="circle-destinations">
+
+        <a href="packages.html" class="circle-destination">
+            <img src="images/thailand.jpg" alt="Thailand">
+            <h3>Thailand</h3>
+        </a>
+
+
+        <a href="packages.html" class="circle-destination">
+            <img src="images/goa.jpg" alt="Goa">
+            <h3>Goa</h3>
+        </a>
+
+
+        <a href="packages.html" class="circle-destination">
+            <img src="images/kerala.jpg" alt="Kerala">
+            <h3>Kerala</h3>
+        </a>
+
+
+        <a href="packages.html" class="circle-destination">
+            <img src="images/coorg.jpg" alt="Coorg and Ooty">
+            <h3>Coorg & Ooty</h3>
+        </a>
+
+
+        <a href="packages.html" class="circle-destination">
+            <img src="images/singapore.jpg" alt="Singapore">
+            <h3>Singapore</h3>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LAST MINUTE ESCAPE ================= -->
+
+<section class="last-minute section-container">
+
+    <h2>
+        Last-Minute Escape Sale!
+    </h2>
+
+    <p>
+        Book your spontaneous getaway.
+        Use code:
+        <strong>LASTMINUTE</strong>
+    </p>
+
+
+    <div class="package-slider">
+
+
+        <!-- DARJEELING -->
+
+        <div class="mini-package">
+
+            <img src="images/darjeeling.jpg" alt="Darjeeling">
+
+            <div class="mini-package-content">
+
+                <h3>Darjeeling</h3>
+
+                <p>3 Days / 2 Nights</p>
+
+                <strong>₹7,999</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALLEPPEY -->
+
+        <div class="mini-package">
+
+            <img src="images/alleppey.jpg" alt="Alleppey">
+
+            <div class="mini-package-content">
+
+                <h3>Alleppey</h3>
+
+                <p>2 Days / 1 Night</p>
+
+                <strong>₹6,499</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANALI -->
+
+        <div class="mini-package">
+
+            <img src="images/manali.jpg" alt="Manali">
+
+            <div class="mini-package-content">
+
+                <h3>Manali</h3>
+
+                <p>3 Days / 2 Nights</p>
+
+                <strong>₹8,999</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAINITAL -->
+
+        <div class="mini-package">
+
+            <img src="images/nainital.jpg" alt="Nainital">
+
+            <div class="mini-package-content">
+
+                <h3>Nainital</h3>
+
+                <p>2 Days / 1 Night</p>
+
+                <strong>₹5,999</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHIRDI -->
+
+        <div class="mini-package">
+
+            <img src="images/shirdi.jpg" alt="Shirdi">
+
+            <div class="mini-package-content">
+
+                <h3>Shirdi</h3>
+
+                <p>1 Day Trip</p>
+
+                <strong>₹2,499</strong>
+
+            </div>
 
         </div>
 
@@ -69,51 +354,227 @@
 
 </section>
 
-<!-- TOUR PACKAGES -->
-<section id="packages" class="packages">
 
-    <h2>Popular Tour Packages</h2>
+<!-- ================= WHY CHOOSE US ================= -->
 
-    <div class="package-container">
+<section class="why-us" id="services">
 
-       
+    <div class="section-container">
+
+        <div class="why-grid">
+
+
+            <div class="why-item">
+
+                <span>🚗</span>
+
+                <div>
+                    <h3>Best Price Guaranteed</h3>
+                    <p>Great value for your journey</p>
+                </div>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <span>🛡️</span>
+
+                <div>
+                    <h3>Safe & Secure Travel</h3>
+                    <p>Comfortable and reliable service</p>
+                </div>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <span>🎧</span>
+
+                <div>
+                    <h3>24x7 Customer Support</h3>
+                    <p>We are always here to help</p>
+                </div>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <span>📅</span>
+
+                <div>
+                    <h3>Easy Booking Process</h3>
+                    <p>Book your trip easily</p>
+                </div>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <span>🏆</span>
+
+                <div>
+                    <h3>100% Customer Satisfaction</h3>
+                    <p>Your happiness matters to us</p>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 </section>
-    
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="section-container">
+
+        <h2>
+            About Mauli Tours & Travels
+        </h2>
+
+        <p>
+            Explore • Experience • Enjoy
+        </p>
+
+        <p>
+            At Mauli Tours & Travels, we believe every journey should be
+            comfortable, safe and memorable. We provide reliable taxi
+            services, outstation trips, family tours and customized tour
+            packages.
+        </p>
+
+    </div>
+
 </section>
 
-<section id="services" class="section">
-    <h2>Our Services</h2>
-    <p>Taxi Service • Airport Pickup • Outstation Trips • Family Tours</p>
+
+<!-- ================= GALLERY SECTION ================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="section-container">
+
+        <h2>
+            Explore Our Destinations
+        </h2>
+
+        <p>
+            Beautiful places. Beautiful memories.
+        </p>
+
+        <div class="gallery-grid">
+
+            <img src="images/mahabaleshwar.jpg" alt="Mahabaleshwar">
+            <img src="images/goa.jpg" alt="Goa">
+            <img src="images/kerala.jpg" alt="Kerala">
+            <img src="images/coorg.jpg" alt="Coorg">
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <p>Photos Coming Soon...</p>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-container">
+
+        <div class="contact-left">
+
+            <div class="phone-circle">
+                📞
+            </div>
+
+            <div>
+
+                <h3>
+                    Have Questions?
+                </h3>
+
+                <p>
+                    Call & WhatsApp
+                </p>
+
+                <a href="tel:+918010163076">
+                    8010163076
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-middle">
+
+            <h3>
+                ⭐ ⭐ ⭐ ⭐ ⭐
+            </h3>
+
+            <p>
+                Trusted by
+            </p>
+
+            <strong>
+                1000+ Travelers
+            </strong>
+
+        </div>
+
+
+        <div class="contact-right">
+
+            <p>✓ Customized Packages</p>
+            <p>✓ Group Discounts</p>
+            <p>✓ Hassle-free Booking</p>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
 
-    <p><strong>Phone:</strong> +91 8010163076</p>
-
-    <p><strong>WhatsApp:</strong>
-        <a href="https://wa.me/918010163076" target="_blank">
-            Chat Now
-        </a>
-    </p>
-
-</section>
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>
-        © 2026 Mauli Tours & Travels. All Rights Reserved.
-    </p>
+    <div class="section-container">
+
+        <h2>
+            Mauli Tours & Travels
+        </h2>
+
+        <p>
+            Explore • Experience • Enjoy
+        </p>
+
+        <p>
+            Comfortable, Safe & Memorable Tours.
+        </p>
+
+        <a href="https://wa.me/918010163076" class="footer-whatsapp">
+            💬 Chat on WhatsApp
+        </a>
+
+        <p class="copyright">
+            © 2026 Mauli Tours & Travels. All Rights Reserved.
+        </p>
+
+    </div>
 
 </footer>
+
 
 </body>
 </html>
