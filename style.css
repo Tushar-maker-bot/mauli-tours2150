@@ -304,6 +304,7 @@ nav a{
         padding: 30px 20px;
     }
 
+
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
@@ -348,17 +349,12 @@ nav a{
     display: flex;
     align-items: center;
     gap: 18px;
-
     padding: 22px;
-
     background: #fff;
     border-radius: 15px;
-
     text-decoration: none;
     color: #333;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
     transition: 0.3s;
 }
 
@@ -369,16 +365,12 @@ nav a{
 .contact-icon {
     width: 55px;
     height: 55px;
-
     min-width: 55px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #e9f7ef;
     border-radius: 50%;
-
     font-size: 25px;
 }
 
@@ -401,16 +393,11 @@ nav a{
 .contact-whatsapp-btn {
     display: block;
     width: fit-content;
-
     margin: 40px auto 0;
-
     padding: 14px 30px;
-
     background: #0A8F4B;
     color: #fff;
-
     border-radius: 30px;
-
     text-decoration: none;
     font-weight: 600;
 }
@@ -420,7 +407,7 @@ nav a{
 }
 
 
-/* MOBILE */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -430,6 +417,8 @@ nav a{
 
 }
 
+
+/* MOBILE */
 
 @media (max-width: 600px) {
 
