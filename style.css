@@ -309,52 +309,59 @@ nav a{
 
 .contact-section {
     width: 100%;
-    padding: 80px 20px;
+    padding: 100px 20px;
     background: #f8f8f8;
 }
 
 .contact-container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-heading {
+    width: 100%;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .contact-heading h2 {
-    font-size: 38px;
+    font-size: 40px;
+    margin-bottom: 15px;
     color: #222;
-    margin-bottom: 10px;
 }
 
 .contact-heading p {
-    font-size: 16px;
+    font-size: 17px;
     color: #666;
 }
-
-
-/* CONTACT CARDS */
 
 .contact-grid {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .contact-card {
+    width: 100%;
+    min-height: 100px;
+
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 22px;
+    gap: 20px;
+
+    padding: 25px;
+
     background: #fff;
     border-radius: 15px;
+
     text-decoration: none;
     color: #333;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
     transition: 0.3s;
 }
 
@@ -366,17 +373,20 @@ nav a{
     width: 55px;
     height: 55px;
     min-width: 55px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: #e9f7ef;
     border-radius: 50%;
-    font-size: 25px;
+
+    font-size: 24px;
 }
 
 .contact-card h3 {
     margin: 0 0 5px;
-    font-size: 17px;
+    font-size: 18px;
     color: #222;
 }
 
@@ -387,17 +397,19 @@ nav a{
     word-break: break-word;
 }
 
-
-/* WHATSAPP BUTTON */
-
 .contact-whatsapp-btn {
     display: block;
     width: fit-content;
-    margin: 40px auto 0;
-    padding: 14px 30px;
+
+    margin: 45px auto 0;
+
+    padding: 15px 35px;
+
     background: #0A8F4B;
     color: #fff;
+
     border-radius: 30px;
+
     text-decoration: none;
     font-weight: 600;
 }
@@ -423,19 +435,19 @@ nav a{
 @media (max-width: 600px) {
 
     .contact-section {
-        padding: 60px 15px;
-    }
-
-    .contact-container {
-        width: 100%;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
+        padding: 70px 15px;
     }
 
     .contact-heading h2 {
         font-size: 30px;
+    }
+
+    .contact-heading p {
+        font-size: 15px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 
 }
