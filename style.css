@@ -541,3 +541,145 @@ nav a{
         font-size:30px;
     }
 }
+/* ================= PACKAGE PAGE ================= */
+
+.package-hero{
+    position:relative;
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    margin-top:90px;
+}
+
+.package-hero img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.package-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+}
+
+.package-hero-content{
+    position:relative;
+    color:#fff;
+    text-align:center;
+    z-index:2;
+}
+
+.package-hero-content h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.package-hero-content p{
+    font-size:22px;
+}
+
+
+/* PACKAGE DETAILS */
+
+.package-details{
+    padding:60px 20px;
+    background:#f8f8f8;
+}
+
+.details-box{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.details-box h2{
+    color:#0A8F4B;
+    margin-bottom:20px;
+}
+
+.details-box p{
+    margin:15px 0;
+    font-size:17px;
+}
+
+.details-box ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.details-box li{
+    margin:12px 0;
+    font-size:17px;
+}
+
+.details-box .btn{
+    display:inline-block;
+    margin-top:25px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.package-hero{
+    height:55vh;
+}
+
+.package-hero-content h1{
+    font-size:34px;
+}
+
+.package-hero-content p{
+    font-size:18px;
+}
+
+.details-box{
+    padding:25px;
+}
+
+}
+/* ITINERARY */
+
+.itinerary{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:30px;
+}
+
+.day-card{
+    background:#f8f8f8;
+    padding:25px;
+    border-radius:15px;
+    border-left:5px solid #0A8F4B;
+}
+
+.day-card h3{
+    color:#0A8F4B;
+    margin-bottom:15px;
+}
+
+.day-card ul{
+    padding-left:20px;
+}
+
+.day-card li{
+    margin:10px 0;
+}
+
+@media(max-width:768px){
+
+.itinerary{
+    grid-template-columns:1fr;
+}
+
+}
