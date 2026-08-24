@@ -718,3 +718,132 @@ nav a{
     transform:translateY(-3px);
     box-shadow:0 8px 18px rgba(0,0,0,0.15);
 }
+/* ================= ALL PACKAGES PAGE ================= */
+
+.packages-page-hero {
+    position: relative;
+    height: 55vh;
+    min-height: 400px;
+
+    background: url("hero.png.jpg") center center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin-top: 90px;
+}
+
+.packages-page-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.packages-page-content {
+    position: relative;
+    z-index: 2;
+
+    color: #fff;
+
+    padding: 20px;
+}
+
+.packages-page-content h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.packages-page-content p {
+    font-size: 20px;
+}
+
+
+/* ================= ALL PACKAGES ================= */
+
+.all-packages-section {
+    padding: 90px 8%;
+    background: #fff;
+}
+
+.all-packages-section .packages-grid {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================= CUSTOM TOUR ================= */
+
+.custom-tour-section {
+    padding: 80px 20px;
+
+    background: #f8f8f8;
+
+    text-align: center;
+}
+
+.custom-tour-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.custom-tour-content h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.custom-tour-content p {
+    font-size: 17px;
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #222;
+    color: #fff;
+
+    text-align: center;
+
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .packages-page-hero {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .packages-page-content h1 {
+        font-size: 34px;
+    }
+
+    .packages-page-content p {
+        font-size: 16px;
+    }
+
+    .all-packages-section {
+        padding: 60px 5%;
+    }
+
+    .custom-tour-content h2 {
+        font-size: 28px;
+    }
+
+}
