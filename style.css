@@ -681,5 +681,28 @@ nav a{
 .itinerary{
     grid-template-columns:1fr;
 }
+/* VIEW MORE PACKAGES */
 
+.view-more-packages {
+    text-align: center;
+    margin-top: 45px;
+    padding-bottom: 20px;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #0A8F4B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.view-more-btn:hover {
+    background: #08753d;
+    transform: translateY(-3px);
+}
 }
