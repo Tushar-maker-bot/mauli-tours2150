@@ -1316,3 +1316,113 @@ footer p {
     }
 
 }
+/* =====================================================
+   PREMIUM MOBILE HEADER
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+        background: #ffffff;
+    }
+
+    header .container {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 8px 12px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 0;
+    }
+
+    /* LOGO */
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        height: 48px;
+        width: auto;
+        display: block;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        width: auto;
+        margin: 0;
+
+        gap: 5px;
+    }
+
+    nav a {
+        margin: 0;
+        padding: 5px 4px;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        white-space: nowrap;
+    }
+
+    /* BOOK NOW */
+
+    .book-btn {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 500px) {
+
+    header .container {
+        padding: 8px 10px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    nav {
+        gap: 2px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 4px 3px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .logo img {
+        height: 42px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+}
