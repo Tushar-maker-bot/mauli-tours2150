@@ -685,38 +685,41 @@ nav a{
     }
 /* ================= VIEW MORE PACKAGES ================= */
 
-.view-more-container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:45px;
-    margin-bottom:20px;
+.view-more-container {
+    width: 100%;
+    
+    /* IMPORTANT: span across all package columns */
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
-.view-more-btn{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
+.view-more-btn {
+    display: inline-block;
 
-    background:#0A8F4B;
-    color:#fff;
+    background: #0A8F4B;
+    color: #ffffff;
 
-    text-decoration:none;
+    text-decoration: none;
 
-    padding:14px 32px;
-    border-radius:30px;
+    padding: 14px 32px;
+    border-radius: 30px;
 
-    font-size:16px;
-    font-weight:600;
+    font-size: 16px;
+    font-weight: 600;
 
-    transition:all 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.view-more-btn:hover{
-    background:#08753d;
-    transform:translateY(-3px);
-    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+.view-more-btn:hover {
+    background: #08753d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 /* ================= ALL PACKAGES PAGE ================= */
 
