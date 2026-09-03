@@ -69,6 +69,90 @@
 
 </section>
 
+<!-- ================= TOUR SEARCH ================= -->
+
+<section class="tour-search" id="tour-search">
+
+    <div class="search-container">
+
+        <div class="search-heading">
+
+            <span>✈️ EXPLORE MAHARASHTRA</span>
+
+            <h2>Search Your Destination</h2>
+
+            <p>
+                Find your perfect tour package by searching for a destination.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH BOX -->
+
+        <div class="destination-search">
+
+            <input
+                type="text"
+                id="destinationSearch"
+                placeholder="🔍 Search Mahabaleshwar, Goa, Pandharpur..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                onclick="searchDestination()">
+
+                Search
+
+            </button>
+
+        </div>
+
+
+        <!-- POPULAR DESTINATIONS -->
+
+        <div class="popular-searches">
+
+            <span>Popular:</span>
+
+            <button onclick="quickSearch('Mahabaleshwar')">
+                Mahabaleshwar
+            </button>
+
+            <button onclick="quickSearch('Lonavala')">
+                Lonavala
+            </button>
+
+            <button onclick="quickSearch('Goa')">
+                Goa
+            </button>
+
+            <button onclick="quickSearch('Raigad')">
+                Raigad
+            </button>
+
+            <button onclick="quickSearch('Pandharpur')">
+                Pandharpur
+            </button>
+
+            <button onclick="quickSearch('Lonar')">
+                Lonar
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH RESULT -->
+
+        <div
+            id="searchResult"
+            class="search-result">
+        </div>
+
+    </div>
+
+</section>
 <section id="packages" class="packages-section">
 
     <div class="packages-heading">
