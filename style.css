@@ -2259,3 +2259,374 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+/* =========================================================
+   FINAL MOBILE PACKAGE + SEARCH + CONTACT FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ================= PACKAGES ================= */
+
+    .packages-section {
+        width: 100%;
+        padding: 50px 10px;
+        overflow: hidden;
+    }
+
+    .packages-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        align-items: start;
+    }
+
+    .package-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+
+        box-shadow: 0 5px 18px rgba(0,0,0,.08);
+    }
+
+    /* PACKAGE IMAGE */
+
+    .package-card img {
+        display: block;
+        width: 100%;
+        height: 145px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* PACKAGE CONTENT */
+
+    .package-content {
+        width: 100%;
+        padding: 13px;
+        overflow: hidden;
+    }
+
+    /* DURATION */
+
+    .package-duration {
+        display: inline-block;
+        max-width: 100%;
+
+        padding: 5px 8px;
+        margin-bottom: 8px;
+
+        font-size: 10px;
+        line-height: 1.2;
+
+        white-space: nowrap;
+    }
+
+    /* PACKAGE NAME */
+
+    .package-content h3 {
+        width: 100%;
+
+        margin: 0 0 7px;
+
+        font-size: 17px;
+        line-height: 1.25;
+
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    /* DESCRIPTION */
+
+    .package-content p {
+        width: 100%;
+
+        margin: 0 0 12px;
+
+        font-size: 11px;
+        line-height: 1.45;
+
+        color: #666;
+
+        overflow-wrap: break-word;
+    }
+
+    /* VIEW DETAILS BUTTON */
+
+    .package-content a {
+        display: block;
+        width: 100%;
+
+        padding: 10px 5px;
+
+        text-align: center;
+
+        font-size: 12px;
+        line-height: 1.2;
+
+        border-radius: 25px;
+    }
+
+
+    /* ================= SEARCH RESULTS ================= */
+
+    .search-result {
+        width: 100%;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+
+    .search-result .packages-grid {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .search-result .package-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .search-result .package-card img {
+        width: 100%;
+        height: 145px;
+        display: block;
+        object-fit: cover;
+    }
+
+    .search-result .package-content {
+        width: 100%;
+        padding: 13px;
+    }
+
+    .search-result .package-content h3 {
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    .search-result .package-content p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .search-result .package-content a {
+        width: 100%;
+        font-size: 12px;
+        padding: 10px 5px;
+        text-align: center;
+    }
+
+
+    /* ================= SEARCH BOX ================= */
+
+    .tour-search {
+        width: 100%;
+        padding: 55px 10px;
+        overflow: hidden;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .search-heading {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .search-heading h2 {
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .search-heading p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .destination-search {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        padding: 6px;
+
+        overflow: hidden;
+    }
+
+    .destination-search input {
+        min-width: 0;
+        width: 100%;
+
+        height: 48px;
+
+        padding: 0 12px;
+
+        font-size: 14px;
+    }
+
+    .destination-search button {
+        flex-shrink: 0;
+
+        padding: 0 18px;
+
+        font-size: 13px;
+    }
+
+    .popular-searches {
+        width: 100%;
+        padding: 0 5px;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 7px;
+    }
+
+    .popular-searches button {
+        padding: 7px 11px;
+        font-size: 11px;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+        width: 100%;
+        padding: 55px 12px;
+
+        overflow: hidden;
+    }
+
+    .contact-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .contact-heading {
+        width: 100%;
+    }
+
+    .contact-heading h2 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .contact-heading p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contact-grid {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .contact-card {
+        width: 100%;
+        min-width: 0;
+
+        padding: 17px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 12px;
+
+        overflow: hidden;
+    }
+
+    .contact-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+
+        font-size: 21px;
+    }
+
+    .contact-card h3 {
+        font-size: 16px;
+    }
+
+    .contact-card p {
+        font-size: 12px;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .contact-whatsapp-btn {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 13px 15px;
+
+        font-size: 14px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .packages-grid,
+    .search-result .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .package-card img,
+    .search-result .package-card img {
+        height: 130px;
+    }
+
+    .package-content,
+    .search-result .package-content {
+        padding: 11px;
+    }
+
+    .package-content h3,
+    .search-result .package-content h3 {
+        font-size: 16px;
+    }
+
+    .package-content p,
+    .search-result .package-content p {
+        font-size: 10.5px;
+        line-height: 1.4;
+    }
+
+    .package-content a,
+    .search-result .package-content a {
+        font-size: 11px;
+        padding: 9px 4px;
+    }
+
+    .package-duration {
+        font-size: 9px;
+        padding: 4px 7px;
+    }
+}
+
