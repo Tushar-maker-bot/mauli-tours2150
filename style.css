@@ -1,0 +1,1666 @@
+/* =========================================================
+   MAULI TOURS & TRAVELS
+   COMPLETE RESPONSIVE WEBSITE CSS
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header,
+.header {
+    width: 100%;
+    height: 100px;
+    background: #1c1c1c;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 40px;
+
+    position: relative;
+    z-index: 9999;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 70px;
+
+    margin-left: 50px;
+
+    min-width: 0;
+}
+
+nav a {
+    color: #fff;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #f5a000;
+}
+
+
+/* =========================================================
+   HEADER BOOK BUTTON
+========================================================= */
+
+.book-btn,
+nav .book-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff8a00;
+    color: #fff;
+
+    padding: 15px 28px;
+
+    border-radius: 35px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    margin-left: 15px;
+
+    flex-shrink: 0;
+
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover,
+nav .book-btn:hover {
+    background: #e87500;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: calc(100vh - 100px);
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
+
+.overlay,
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.52);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: #fff;
+
+    padding: 30px 0;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+    margin: 0 0 20px;
+
+    color: #fff;
+
+    font-size: clamp(45px, 5vw, 78px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   HERO SUBHEADING
+========================================================= */
+
+.hero h2 {
+    margin: 0 0 22px;
+
+    color: #fff;
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero p {
+    margin: 0 auto 35px;
+
+    max-width: 850px;
+
+    color: #fff;
+
+    font-size: clamp(18px, 2vw, 25px);
+
+    line-height: 1.5;
+
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 54px;
+
+    padding: 14px 30px;
+
+    border-radius: 35px;
+
+    background: #ff8a00;
+
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    border: 2px solid transparent;
+
+    transition: all 0.3s ease;
+
+    text-align: center;
+}
+
+.btn:hover {
+    background: #e87500;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   OUTLINE BUTTON
+========================================================= */
+
+.btn-outline {
+    background: transparent;
+
+    color: #fff;
+
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+
+    color: #222;
+
+    margin-bottom: 12px;
+
+    font-weight: 800;
+}
+
+.section-title p {
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-section {
+    background: #fff;
+}
+
+.services-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.service-card {
+    background: #fff;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px solid #eee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+.service-card img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: contain;
+
+    margin: 0 auto 18px;
+}
+
+.service-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+
+    color: #222;
+}
+
+.service-card p {
+    font-size: 15px;
+
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   POPULAR PACKAGES
+========================================================= */
+
+.popular-section {
+    background: #f7f7f7;
+}
+
+.popular-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.popular-card {
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.popular-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.popular-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.popular-card-content {
+    padding: 22px;
+}
+
+.popular-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+.popular-card p {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   PACKAGES SECTION
+========================================================= */
+
+.packages-section {
+    background: #fff;
+}
+
+.packages-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   PACKAGE CARD
+   KEEPING CARD SIZE
+========================================================= */
+
+.package-card {
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #eee;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+
+    transition: all 0.3s ease;
+
+    min-width: 0;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+.package-card img {
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+}
+
+.package-card-content {
+    padding: 22px;
+}
+
+.package-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+
+    color: #222;
+}
+
+.package-card p {
+    color: #666;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.package-duration {
+    color: #555;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   PACKAGE BUTTONS
+========================================================= */
+
+.package-card .btn {
+    font-size: 15px;
+
+    min-height: 46px;
+
+    padding: 11px 20px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   VIEW MORE PACKAGES
+========================================================= */
+
+.view-more-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 45px;
+}
+
+.view-more-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #198754;
+
+    color: #fff;
+
+    padding: 14px 32px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background: #146c43;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CUSTOM TOUR / SEARCH
+========================================================= */
+
+.search-section {
+    background: #f7f7f7;
+}
+
+.search-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    background: #fff;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+}
+
+.search-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: #fff;
+
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff8a00;
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+.search-form .full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+    background: #fff;
+}
+
+.gallery-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.gallery-item {
+    width: 100%;
+
+    height: 260px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    background: #f7f7f7;
+}
+
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    min-width: 0;
+}
+
+.contact-info,
+.contact-form {
+    min-width: 0;
+}
+
+.contact-card {
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    min-width: 0;
+}
+
+.contact-card h3 {
+    font-size: 26px;
+
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+.contact-card a {
+    color: #198754;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+.contact-form {
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h3 {
+    font-size: 26px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   CONTACT FORM BUTTON
+========================================================= */
+
+.contact-form .btn {
+    width: 100%;
+
+    border: none;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    background: #1c1c1c;
+
+    color: #fff;
+
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.footer-column h3 {
+    font-size: 22px;
+
+    margin-bottom: 18px;
+}
+
+.footer-column p {
+    color: #ccc;
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ccc;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ff8a00;
+}
+
+.footer-bottom {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+========================================================= */
+
+.whatsapp-btn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #25d366;
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    z-index: 9998;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    header,
+    .header {
+        padding: 0 25px;
+    }
+
+    nav {
+        gap: 35px;
+
+        margin-left: 30px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .book-btn,
+    nav .book-btn {
+        padding: 13px 20px;
+
+        font-size: 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    header,
+    .header {
+        width: 100%;
+
+        height: 82px;
+
+        padding: 0 10px;
+
+        display: flex !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        position: relative;
+
+        z-index: 9999;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+    ----------------------------------------------------- */
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        width: 66px;
+        height: 66px;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------------------- */
+
+    nav {
+        flex: 1;
+
+        display: flex !important;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 3px;
+
+        margin-left: 8px;
+
+        min-width: 0;
+    }
+
+    nav a {
+        color: #fff;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        padding: 5px 1px;
+
+        white-space: nowrap;
+    }
+
+
+    /* Hide desktop header Book Now */
+    nav .book-btn {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        width: 100%;
+
+        height: 560px;
+
+        min-height: 560px;
+
+        background-size: cover;
+
+        background-position: center center;
+
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 92%;
+
+        max-width: 500px;
+
+        padding: 15px 0;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO TITLE
+    ----------------------------------------------------- */
+
+    .hero h1 {
+        font-size: 43px;
+
+        line-height: 1.12;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO SUBTITLE
+    ----------------------------------------------------- */
+
+    .hero h2 {
+        font-size: 28px;
+
+        line-height: 1.25;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO DESCRIPTION
+    ----------------------------------------------------- */
+
+    .hero p {
+        font-size: 18px;
+
+        line-height: 1.5;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO BUTTONS
+    ----------------------------------------------------- */
+
+    .buttons {
+        flex-direction: column;
+
+        gap: 18px;
+
+        width: 100%;
+    }
+
+    .buttons .btn {
+        width: 78%;
+
+        max-width: 430px;
+
+        min-height: 55px;
+
+        font-size: 17px;
+
+        padding: 14px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+    ----------------------------------------------------- */
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .section-title p {
+        font-size: 16px;
+
+        padding: 0 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    .services-grid {
+        width: 92%;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 22px 14px;
+
+        border-radius: 15px;
+    }
+
+    .service-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+    }
+
+
+    /* -----------------------------------------------------
+       POPULAR PACKAGES
+    ----------------------------------------------------- */
+
+    .popular-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .popular-card img {
+        height: 210px;
+    }
+
+
+    /* -----------------------------------------------------
+       PACKAGES
+       CARD SIZE PRESERVED
+    ----------------------------------------------------- */
+
+    .packages-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .package-card img {
+        height: 240px;
+    }
+
+    .package-card-content {
+        padding: 20px;
+    }
+
+    .package-card h3 {
+        font-size: 22px;
+    }
+
+
+    /* -----------------------------------------------------
+       VIEW MORE
+    ----------------------------------------------------- */
+
+    .view-more-container {
+        margin-top: 35px;
+    }
+
+    .view-more-btn {
+        padding: 13px 28px;
+
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       SEARCH / CUSTOM TOUR
+    ----------------------------------------------------- */
+
+    .search-container {
+        width: 92%;
+
+        padding: 22px;
+
+        border-radius: 16px;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+    .search-form .full-width {
+        grid-column: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       GALLERY
+    ----------------------------------------------------- */
+
+    .gallery-grid {
+        width: 92%;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .gallery-item {
+        height: 180px;
+
+        border-radius: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-container {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .contact-card,
+    .contact-form {
+        padding: 22px;
+
+        border-radius: 15px;
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .contact-card h3,
+    .contact-form h3 {
+        font-size: 23px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-container {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        text-align: center;
+    }
+
+    .footer-bottom {
+        width: 92%;
+
+        margin-top: 25px;
+    }
+
+
+    /* -----------------------------------------------------
+       WHATSAPP
+    ----------------------------------------------------- */
+
+    .whatsapp-btn {
+        width: 52px;
+        height: 52px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    header,
+    .header {
+        height: 78px;
+
+        padding: 0 8px;
+    }
+
+    .logo img {
+        width: 62px;
+        height: 62px;
+    }
+
+    nav {
+        margin-left: 6px;
+
+        gap: 2px;
+    }
+
+    nav a {
+        font-size: 12px;
+
+        padding: 4px 1px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        height: 540px;
+
+        min-height: 540px;
+    }
+
+    .hero-content {
+        width: 94%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        line-height: 1.1;
+
+        margin-bottom: 18px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+
+        line-height: 1.25;
+
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        font-size: 16px;
+
+        line-height: 1.45;
+
+        margin-bottom: 24px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    .buttons .btn {
+        width: 82%;
+
+        min-height: 52px;
+
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       SERVICES
+    ----------------------------------------------------- */
+
+    .services-grid {
+        width: 94%;
+
+        gap: 12px;
+    }
+
+    .service-card {
+        padding: 20px 10px;
+    }
+
+    .service-card h3 {
+        font-size: 17px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       PACKAGE
+    ----------------------------------------------------- */
+
+    .packages-grid {
+        width: 94%;
+    }
+
+    .package-card img {
+        height: 240px;
+    }
+
+
+    /* -----------------------------------------------------
+       GALLERY
+    ----------------------------------------------------- */
+
+    .gallery-grid {
+        width: 94%;
+
+        gap: 8px;
+    }
+
+    .gallery-item {
+        height: 150px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-container {
+        width: 94%;
+    }
+
+    .contact-card,
+    .contact-form {
+        padding: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION TITLE
+    ----------------------------------------------------- */
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    header,
+    .header {
+        padding: 0 5px;
+    }
+
+    .logo img {
+        width: 58px;
+        height: 58px;
+    }
+
+    nav {
+        margin-left: 4px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .buttons .btn {
+        width: 88%;
+    }
+}
