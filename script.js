@@ -256,67 +256,99 @@ function searchDestination() {
     const input = document.getElementById("destinationSearch");
     const result = document.getElementById("searchResult");
 
+    if (!input || !result) {
+        console.error("Search elements not found.");
+        return;
+    }
+
     const searchText = input.value.trim().toLowerCase();
 
+    // Empty search
     if (searchText === "") {
         result.innerHTML = "";
         return;
     }
 
-    const matches = tourPackages.filter(tour =>
-        tour.name.toLowerCase().includes(searchText) ||
-        tour.destination.toLowerCase().includes(searchText)
-    );
+    // Search using TITLE and DESTINATION
+    const matches = tourPackages.filter(function(tour) {
 
+        return (
+            tour.title.toLowerCase().includes(searchText) ||
+            tour.destination.toLowerCase().includes(searchText)
+        );
+
+    });
+
+
+    // No package found
     if (matches.length === 0) {
+
         result.innerHTML = `
             <div class="no-result">
                 <h3>😔 No Tour Package Found</h3>
                 <p>Please try another destination.</p>
             </div>
         `;
+
         return;
     }
 
+
+    // Show search results
     result.innerHTML = `
+
         <div class="search-result-heading">
+
             <h2>🔎 Search Results</h2>
-            <p>${matches.length} tour package${matches.length > 1 ? "s" : ""} found</p>
+
+            <p>
+                ${matches.length}
+                tour package${matches.length > 1 ? "s" : ""} found
+            </p>
+
         </div>
 
+
         <div class="packages-grid">
-            ${matches.map(tour => `
-                <div class="package-card">
 
-                    <img src="${tour.image}" alt="${tour.name}">
+            ${matches.map(function(tour) {
 
-                    <div class="package-content">
+                return `
 
-                        <span class="package-duration">
-                            🗓️ ${tour.duration}
-                        </span>
+                    <div class="package-card">
 
-                        <h3>${tour.name}</h3>
+                        <img 
+                            src="${tour.image}" 
+                            alt="${tour.title}"
+                        >
 
-                        <p>${tour.description}</p>
+                        <div class="package-content">
 
-                        <a href="${tour.link}" class="btn">
-                            View Details
-                        </a>
+                            <span class="package-duration">
+                                🗓️ ${tour.duration}
+                            </span>
+
+                            <h3>${tour.title}</h3>
+
+                            <p>${tour.description}</p>
+
+                            <a href="${tour.link}" class="btn">
+                                View Details
+                            </a>
+
+                        </div>
 
                     </div>
 
-                </div>
-            `).join("")}
+                `;
+
+            }).join("")}
+
         </div>
     `;
-}
 
-    html += `</div>`;
 
-    result.innerHTML = html;
-
-    // Scroll slightly to results
+    // Scroll to search results
     result.scrollIntoView({
         behavior: "smooth",
         block: "start"
@@ -329,6 +361,11 @@ function searchDestination() {
 function quickSearch(destination) {
 
     const input = document.getElementById("destinationSearch");
+
+    if (!input) {
+        console.error("Search input not found.");
+        return;
+    }
 
     input.value = destination;
 
@@ -344,9 +381,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (input) {
 
-        input.addEventListener("keypress", function (event) {
+        input.addEventListener("keydown", function (event) {
 
             if (event.key === "Enter") {
+
+                event.preventDefault();
 
                 searchDestination();
 
