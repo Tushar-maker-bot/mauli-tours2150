@@ -14,28 +14,28 @@ const tourPackages = [
 
     {
         name: "Lonavala",
-        image: "lonavala.jpg",
+        image: "lonavala.jpg.jpeg",
         description: "Hill Station, Waterfalls, Lakes & Scenic Views",
         link: "lonavala.html"
     },
 
     {
         name: "Raigad Fort",
-        image: "raigad.jpg",
+        image: "raigad.jpg.jpeg",
         description: "Historic Fort, Shivaji Maharaj & Sahyadri Views",
         link: "raigad.html"
     },
 
     {
         name: "Shirdi",
-        image: "shirdi.jpg",
+        image: "shirdi.jpg.jpeg",
         description: "Sai Baba Darshan & Spiritual Journey",
         link: "shirdi.html"
     },
 
     {
         name: "Matheran",
-        image: "matheran.jpg",
+        image: "matheran.jpg.jpeg",
         description: "Beautiful Hill Station & Peaceful Nature",
         link: "matheran.html"
     },
@@ -112,35 +112,35 @@ const tourPackages = [
 
     {
         name: "Murud Janjira",
-        image: "murud-janjira.jpg",
+        image: "murudjanjira.jpg",
         description: "Janjira Fort, Beach & Coastal Experience",
         link: "murud-janjira.html"
     },
 
     {
-        name: "Harihareshwar",
-        image: "harihareshwar.jpg",
+        name: "Harihareshwar Diveagar",
+        image: "harihareshwardiveagar.jpg",
         description: "Temple, Beach & Konkan Coastal Experience",
         link: "harihareshwar.html"
     },
 
     {
         name: "Diveagar",
-        image: "diveagar.jpg",
+        image: "harihareshwardiveagar.jpg",
         description: "Beautiful Beach & Peaceful Konkan Experience",
         link: "diveagar.html"
     },
 
     {
-        name: "Pratapgad",
-        image: "pratapgad.jpg",
+        name: "Pratapgad Wai",
+        image: "pratapgad-wai.jpg",
         description: "Historic Fort & Sahyadri Mountain Views",
         link: "pratapgad.html"
     },
 
     {
         name: "Amboli Ghat",
-        image: "amboli.jpg",
+        image: "ambolighat.jpg",
         description: "Waterfalls, Forests & Beautiful Western Ghats",
         link: "amboli.html"
     },
@@ -175,7 +175,7 @@ const tourPackages = [
 
     {
         name: "Malshej Ghat",
-        image: "malshej.jpg",
+        image: "malshejghat.jpg",
         description: "Waterfalls, Mountains & Monsoon Experience",
         link: "malshej.html"
     },
