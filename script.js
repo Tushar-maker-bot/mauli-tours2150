@@ -83,6 +83,15 @@ const tourPackages = [
         description: "Complete Ashtavinayak Ganpati Temple Spiritual Journey",
         link: "ashtavinayakbig.html"
     },
+    
+    {
+    destination: "Maharashtra Jyotirlinga",
+    image: "jyotirlinga.jpg",
+    duration: "6 Days / 5 Nights",
+    title: "Maharashtra Jyotirlinga Yatra",
+    description: "Visit Maharashtra's four sacred Jyotirlingas in a peaceful spiritual journey",
+    link: "jyotirlingabig.html"
+},
 
     // All Packages
     {
