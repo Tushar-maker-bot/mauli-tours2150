@@ -56,6 +56,16 @@ const tourPackages = [
         description: "Beaches, Fun & Adventure",
         link: "goa.html"
     },
+    
+ {
+        destination: "Goa",
+        image: "goa.jpg.jpeg",
+        duration: "5 Days / 4 Nights",
+        title: "Goa",
+        description: "Enjoy beaches, forts, sightseeing, shopping
+                    and unforgettable moments in Goa.",
+        link: "goabig.html"
+    },
 
     // All Packages
     {
@@ -115,12 +125,20 @@ const tourPackages = [
     {
         destination: "Konkan",
         image: "konkan.jpg",
+        duration: "8 Days / 7 Nights",
+        title: "Konkan",
+        description: "Explore beautiful beaches, forts, temples,
+                    waterfalls and the natural beauty of Konkan.",
+        link: "konkanbig.html"
+    },
+{
+        destination: "Konkan",
+        image: "konkan.jpg",
         duration: "4 Days / 3 Nights",
         title: "Konkan",
         description: "Beaches, Nature & Coastal Adventure",
         link: "konkan.html"
     },
-
     {
         destination: "Nashik Trimbakeshwar",
         image: "nashiktrimbakeshwar.jpg",
@@ -227,6 +245,16 @@ const tourPackages = [
         title: "Sinhagad",
         description: "Fort, History & Scenic Mountain Views",
         link: "sinhagad.html"
+    },
+
+ {
+        destination: "Ashtavinayak Yatra",
+        image: "ashtavinayak.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Ashtavinayak Yatra",
+        description: "Visit all eight sacred Ganpati temples
+                    with a comfortable and well-planned journey.",
+        link: "ashtavinayakbig.html"
     },
 
     {
