@@ -56,7 +56,33 @@ const tourPackages = [
         description: "Beaches, Fun & Adventure",
         link: "goa.html"
     },
-    
+        // Big Packages
+    {
+        destination: "Goa Holiday Tour",
+        image: "goa.jpg.jpeg",
+        duration: "5 Days / 4 Nights",
+        title: "Goa Holiday Tour",
+        description: "Beaches, Sightseeing, Adventure & Relaxing Holiday",
+        link: "goabig.html"
+    },
+
+    {
+        destination: "Konkan Coastal Tour",
+        image: "konkan.jpg",
+        duration: "8 Days / 7 Nights",
+        title: "Konkan Coastal Tour",
+        description: "Beaches, Forts, Temples, Nature & Coastal Adventure",
+        link: "konkanbig.html"
+    },
+
+    {
+        destination: "Ashtavinayak",
+        image: "ashtavinayak.jpg",
+        duration: "8 Days / 7 Nights",
+        title: "Ashtavinayak Yatra",
+        description: "Complete Ashtavinayak Ganpati Temple Spiritual Journey",
+        link: "ashtavinayakbig.html"
+    },
 
     // All Packages
     {
