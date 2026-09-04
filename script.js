@@ -1,271 +1,320 @@
-/* =====================================================
-   TOUR DESTINATION SEARCH
-   Search results appear separately above Popular Packages
-   ===================================================== */
+// ================= TOUR PACKAGE SEARCH =================
 
 const tourPackages = [
 
+    // Popular Packages
     {
-        name: "Mahabaleshwar",
+        destination: "Mahabaleshwar",
         image: "mahabaleshwar.jpg",
-        description: "Queen of Hills, Waterfalls & Beautiful Hill Station",
+        duration: "2 Days / 1 Night",
+        title: "Mahabaleshwar",
+        description: "Escape to the Queen of Hills",
         link: "mahabaleshwar.html"
     },
 
     {
-        name: "Lonavala",
+        destination: "Lonavala",
         image: "lonavala.jpg.jpeg",
-        description: "Hill Station, Waterfalls, Lakes & Scenic Views",
+        duration: "2 Days / 1 Night",
+        title: "Lonavala",
+        description: "Hills, Waterfalls & Nature",
         link: "lonavala.html"
     },
 
     {
-        name: "Raigad Fort",
+        destination: "Raigad",
         image: "raigad.jpg.jpeg",
-        description: "Historic Fort, Shivaji Maharaj & Sahyadri Views",
+        duration: "1 Day",
+        title: "Raigad Fort",
+        description: "The Pride of Swarajya",
         link: "raigad.html"
     },
 
     {
-        name: "Shirdi",
+        destination: "Shirdi",
         image: "shirdi.jpg.jpeg",
-        description: "Sai Baba Darshan & Spiritual Journey",
+        duration: "2 Days / 1 Night",
+        title: "Shirdi",
+        description: "Divine Blessings of Sai Baba",
         link: "shirdi.html"
     },
 
     {
-        name: "Matheran",
+        destination: "Matheran",
         image: "matheran.jpg.jpeg",
-        description: "Beautiful Hill Station & Peaceful Nature",
+        duration: "2 Days / 1 Night",
+        title: "Matheran",
+        description: "Explore Hills",
         link: "matheran.html"
     },
 
     {
-        name: "Goa",
+        destination: "Goa",
         image: "goa.jpg.jpeg",
-        description: "Beaches, Forts, Water Sports & Nightlife",
+        duration: "3 Days / 2 Nights",
+        title: "Goa",
+        description: "Beaches, Fun & Adventure",
         link: "goa.html"
     },
 
+    // All Packages
     {
-        name: "Alibaug",
-        image: "alibaug.jpg",
-        description: "Beaches, Forts & Relaxing Coastal Experience",
-        link: "alibaug.html"
-    },
-
-    {
-        name: "Ganpatipule",
-        image: "ganpatipule.jpg",
-        description: "Beach, Temple & Beautiful Konkan Experience",
-        link: "ganpatipule.html"
-    },
-
-    {
-        name: "Tadoba",
-        image: "tadoba.jpg",
-        description: "Wildlife Safari & Tiger Reserve Adventure",
-        link: "tadoba.html"
-    },
-
-    {
-        name: "Panhala",
-        image: "panhala.jpg",
-        description: "Historic Fort & Scenic Mountain Views",
-        link: "panhala.html"
-    },
-
-    {
-        name: "Konkan",
-        image: "konkan.jpg",
-        description: "Beaches, Temples, Nature & Coastal Journey",
-        link: "konkan.html"
-    },
-
-    {
-        name: "Bhandardara",
-        image: "bhandardara.jpg",
-        description: "Lakes, Mountains, Waterfalls & Nature",
-        link: "bhandardara.html"
-    },
-
-    {
-        name: "Kaas Plateau",
-        image: "kaas.jpg",
-        description: "Valley of Flowers & Beautiful Natural Landscapes",
-        link: "kaas.html"
-    },
-
-    {
-        name: "Nashik",
-        image: "nashik.jpg",
-        description: "Temples, Vineyards & Trimbakeshwar",
-        link: "nashik.html"
-    },
-
-    {
-        name: "Panchgani",
-        image: "panchgani.jpg",
-        description: "Hill Station, Table Land & Scenic Views",
-        link: "panchgani.html"
-    },
-
-    {
-        name: "Murud Janjira",
-        image: "murudjanjira.jpg",
-        description: "Janjira Fort, Beach & Coastal Experience",
-        link: "murud-janjira.html"
-    },
-
-    {
-        name: "Harihareshwar Diveagar",
-        image: "harihareshwardiveagar.jpg",
-        description: "Temple, Beach & Konkan Coastal Experience",
-        link: "harihareshwar.html"
-    },
-
-    {
-        name: "Diveagar",
-        image: "harihareshwardiveagar.jpg",
-        description: "Beautiful Beach & Peaceful Konkan Experience",
-        link: "diveagar.html"
-    },
-
-    {
-        name: "Pratapgad Wai",
-        image: "pratapgad-wai.jpg",
-        description: "Historic Fort & Sahyadri Mountain Views",
-        link: "pratapgad.html"
-    },
-
-    {
-        name: "Amboli Ghat",
-        image: "ambolighat.jpg",
-        description: "Waterfalls, Forests & Beautiful Western Ghats",
-        link: "amboli.html"
-    },
-
-    {
-        name: "Chikhaldara",
-        image: "chikhaldara.jpg",
-        description: "Hill Station, Waterfalls & Melghat Views",
-        link: "chikhaldara.html"
-    },
-
-    {
-        name: "Dapoli",
-        image: "dapoli.jpg",
-        description: "Beautiful Beaches & Konkan Nature",
-        link: "dapoli.html"
-    },
-
-    {
-        name: "Kolhapur",
+        destination: "Kolhapur",
         image: "kolhapur.jpg",
-        description: "Mahalaxmi Temple, Forts & Cultural Experience",
+        duration: "2 Days / 1 Night",
+        title: "Kolhapur",
+        description: "Temples, Forts, Culture & Heritage",
         link: "kolhapur.html"
     },
 
     {
-        name: "Igatpuri",
+        destination: "Alibaug",
+        image: "alibaug.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Alibaug",
+        description: "Beaches, Forts & Relaxation",
+        link: "alibaug.html"
+    },
+
+    {
+        destination: "Ganpatipule",
+        image: "ganpatipule.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Ganpatipule",
+        description: "Beach, Temple & Coastal Beauty",
+        link: "ganpatipule.html"
+    },
+
+    {
+        destination: "Tadoba",
+        image: "tadoba.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Tadoba",
+        description: "Wildlife, Jungle Safari & Adventure",
+        link: "tadoba.html"
+    },
+
+    {
+        destination: "Igatpuri",
         image: "igatpuri.jpg",
-        description: "Mountains, Waterfalls & Scenic Nature",
+        duration: "2 Days / 1 Night",
+        title: "Igatpuri",
+        description: "Mountains, Waterfalls & Peaceful Nature",
         link: "igatpuri.html"
     },
 
     {
-        name: "Malshej Ghat",
-        image: "malshejghat.jpg",
-        description: "Waterfalls, Mountains & Monsoon Experience",
-        link: "malshej.html"
+        destination: "Panhala",
+        image: "panhala.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Panhala",
+        description: "Fort, History & Scenic Mountains",
+        link: "panhala.html"
     },
 
     {
-        name: "Sinhagad",
+        destination: "Konkan",
+        image: "konkan.jpg",
+        duration: "4 Days / 3 Nights",
+        title: "Konkan",
+        description: "Beaches, Nature & Coastal Adventure",
+        link: "konkan.html"
+    },
+
+    {
+        destination: "Nashik Trimbakeshwar",
+        image: "nashiktrimbakeshwar.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Nashik–Trimbakeshwar",
+        description: "Temples, Spirituality & Sacred Places",
+        link: "nashiktrimbakeshwar.html"
+    },
+
+    {
+        destination: "Bhandardara",
+        image: "bhandardara.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Bhandardara",
+        description: "Mountains, Lakes & Nature",
+        link: "bhandardara.html"
+    },
+
+    {
+        destination: "Kaas Plateau",
+        image: "kass.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Kaas Plateau",
+        description: "Valley of Flowers & Natural Beauty",
+        link: "kaas.html"
+    },
+
+    {
+        destination: "Panchgani",
+        image: "panchgani.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Panchgani",
+        description: "Hills, Valleys & Scenic Nature",
+        link: "panchgani.html"
+    },
+
+    {
+        destination: "Murud Janjira",
+        image: "murudjanjira.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Murud–Janjira",
+        description: "Sea, Forts & Coastal Adventure",
+        link: "murudjanjira.html"
+    },
+
+    {
+        destination: "Harihareshwar Diveagar",
+        image: "harihareshwardiveagar.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Harihareshwar–Diveagar",
+        description: "Beaches, Temples & Coastal Escape",
+        link: "harihareshwar-diveagar.html"
+    },
+
+    {
+        destination: "Pratapgad Wai",
+        image: "pratapgad-wai.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Pratapgad–Wai",
+        description: "Forts, Temples, History & Scenic Nature",
+        link: "pratapgad-wai.html"
+    },
+
+    {
+        destination: "Amboli Ghat",
+        image: "ambolighat.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Amboli Ghat",
+        description: "Waterfalls, Hills & Scenic Nature",
+        link: "amboli-ghat.html"
+    },
+
+    {
+        destination: "Chikhaldara",
+        image: "chikhaldara.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Chikhaldara",
+        description: "Hills, Lakes, Waterfalls & Wildlife",
+        link: "chikhaldara.html"
+    },
+
+    {
+        destination: "Dapoli",
+        image: "dapoli.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Dapoli",
+        description: "Beaches, Temples & Coastal Nature",
+        link: "dapoli.html"
+    },
+
+    {
+        destination: "Malshej Ghat",
+        image: "malshejghat.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Malshej Ghat",
+        description: "Mountains, Waterfalls & Scenic Valleys",
+        link: "malshej-ghat.html"
+    },
+
+    {
+        destination: "Sinhagad",
         image: "sinhagad.jpg",
-        description: "Historic Fort & Beautiful Sahyadri Views",
+        duration: "2 Days / 1 Night",
+        title: "Sinhagad",
+        description: "Fort, History & Scenic Mountain Views",
         link: "sinhagad.html"
     },
 
     {
-        name: "Pandharpur",
-        image: "pandharpur.jpg",
-        description: "Vitthal Darshan & Spiritual Journey",
-        link: "pandharpur.html"
+        destination: "Shrivardhan Harihareshwar",
+        image: "shrivardhanharihareshwar.jpg",
+        duration: "2 Days / 1 Night",
+        title: "Shrivardhan–Harihareshwar",
+        description: "Beaches, Temples & Peaceful Coastal Escape",
+        link: "shrivardhan-harihareshwar.html"
     },
 
-
+    {
+        destination: "Pandharpur",
+        image: "pandharpur.jpg",
+        duration: "1 Day",
+        title: "Pandharpur",
+        description: "Vitthal Darshan, Temples & Spiritual Journey",
+        link: "pandharpur.html"
+    }
 ];
 
 
-/* ================= SEARCH FUNCTION ================= */
+// ================= SEARCH FUNCTION =================
 
 function searchDestination() {
 
     const input = document.getElementById("destinationSearch");
     const result = document.getElementById("searchResult");
 
-    if (!input || !result) {
-        return;
-    }
+    const searchValue = input.value.trim().toLowerCase();
 
-    const searchText = input.value.trim().toLowerCase();
-
-    /* Empty search */
-    if (searchText === "") {
+    // Empty search
+    if (searchValue === "") {
         result.innerHTML = "";
         return;
     }
 
-    /* Find matching destinations */
-    const matches = tourPackages.filter(function(tour) {
+    // Find matching destinations
+    const matches = tourPackages.filter(function (tour) {
 
-        return tour.name.toLowerCase().includes(searchText);
+        return tour.destination
+            .toLowerCase()
+            .includes(searchValue);
 
     });
 
-
-    /* No result */
+    // No result
     if (matches.length === 0) {
 
         result.innerHTML = `
             <div class="no-search-result">
-                ❌ No tour package found for
-                <strong>"${input.value}"</strong>.
+                <h3>😔 No Tour Package Found</h3>
+                <p>We couldn't find a package for "${input.value}".</p>
+                <p>Try searching another destination.</p>
             </div>
         `;
 
         return;
     }
 
-
-    /* Create result cards */
-
+    // Create same package-card design
     let html = `
-        <div class="search-result-title">
-            🔎 Search Results
+        <div class="search-result-heading">
+            <h3>🔎 Search Results</h3>
+            <p>${matches.length} tour package found</p>
         </div>
+
+        <div class="search-result-grid">
     `;
 
-
-    matches.forEach(function(tour) {
+    matches.forEach(function (tour) {
 
         html += `
-            <div class="search-result-card">
+            <div class="package-card">
 
-                <img
-                    src="${tour.image}"
-                    alt="${tour.name} Tour">
+                <img src="${tour.image}" alt="${tour.title} Tour">
 
-                <div class="search-result-content">
+                <div class="package-content">
 
-                    <h3>${tour.name}</h3>
+                    <span class="package-duration">
+                        🗓️ ${tour.duration}
+                    </span>
+
+                    <h3>${tour.title}</h3>
 
                     <p>${tour.description}</p>
 
-                    <a
-                        href="${tour.link}"
-                        class="btn">
+                    <a href="${tour.link}" class="btn">
                         View Details
                     </a>
 
@@ -276,28 +325,23 @@ function searchDestination() {
 
     });
 
+    html += `</div>`;
 
     result.innerHTML = html;
 
-
-    /* Scroll slightly to search results */
-
+    // Scroll slightly to results
     result.scrollIntoView({
         behavior: "smooth",
-        block: "nearest"
+        block: "start"
     });
 }
 
 
-/* ================= QUICK SEARCH ================= */
+// ================= QUICK SEARCH =================
 
 function quickSearch(destination) {
 
     const input = document.getElementById("destinationSearch");
-
-    if (!input) {
-        return;
-    }
 
     input.value = destination;
 
@@ -305,15 +349,15 @@ function quickSearch(destination) {
 }
 
 
-/* ================= ENTER KEY SEARCH ================= */
+// ================= ENTER KEY SEARCH =================
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const input = document.getElementById("destinationSearch");
 
     if (input) {
 
-        input.addEventListener("keypress", function(event) {
+        input.addEventListener("keypress", function (event) {
 
             if (event.key === "Enter") {
 
