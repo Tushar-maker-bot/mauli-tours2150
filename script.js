@@ -256,74 +256,61 @@ function searchDestination() {
     const input = document.getElementById("destinationSearch");
     const result = document.getElementById("searchResult");
 
-    const searchValue = input.value.trim().toLowerCase();
+    const searchText = input.value.trim().toLowerCase();
 
-    // Empty search
-    if (searchValue === "") {
+    if (searchText === "") {
         result.innerHTML = "";
         return;
     }
 
-    // Find matching destinations
-    const matches = tourPackages.filter(function (tour) {
+    const matches = tourPackages.filter(tour =>
+        tour.name.toLowerCase().includes(searchText) ||
+        tour.destination.toLowerCase().includes(searchText)
+    );
 
-        return tour.destination
-            .toLowerCase()
-            .includes(searchValue);
-
-    });
-
-    // No result
     if (matches.length === 0) {
-
         result.innerHTML = `
-            <div class="no-search-result">
+            <div class="no-result">
                 <h3>😔 No Tour Package Found</h3>
-                <p>We couldn't find a package for "${input.value}".</p>
-                <p>Try searching another destination.</p>
+                <p>Please try another destination.</p>
             </div>
         `;
-
         return;
     }
 
-    // Create same package-card design
-    let html = `
+    result.innerHTML = `
         <div class="search-result-heading">
-            <h3>🔎 Search Results</h3>
-            <p>${matches.length} tour package found</p>
+            <h2>🔎 Search Results</h2>
+            <p>${matches.length} tour package${matches.length > 1 ? "s" : ""} found</p>
         </div>
 
-        <div class="search-result-grid">
-    `;
+        <div class="packages-grid">
+            ${matches.map(tour => `
+                <div class="package-card">
 
-    matches.forEach(function (tour) {
+                    <img src="${tour.image}" alt="${tour.name}">
 
-        html += `
-            <div class="package-card">
+                    <div class="package-content">
 
-                <img src="${tour.image}" alt="${tour.title} Tour">
+                        <span class="package-duration">
+                            🗓️ ${tour.duration}
+                        </span>
 
-                <div class="package-content">
+                        <h3>${tour.name}</h3>
 
-                    <span class="package-duration">
-                        🗓️ ${tour.duration}
-                    </span>
+                        <p>${tour.description}</p>
 
-                    <h3>${tour.title}</h3>
+                        <a href="${tour.link}" class="btn">
+                            View Details
+                        </a>
 
-                    <p>${tour.description}</p>
-
-                    <a href="${tour.link}" class="btn">
-                        View Details
-                    </a>
+                    </div>
 
                 </div>
-
-            </div>
-        `;
-
-    });
+            `).join("")}
+        </div>
+    `;
+}
 
     html += `</div>`;
 
