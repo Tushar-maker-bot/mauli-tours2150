@@ -83,24 +83,38 @@ header {
   display: block;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-left: 12px;
+  justify-content: flex-end;
+  gap: clamp(35px, 4vw, 75px);
+  margin-left: 40px;
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   white-space: nowrap;
-  padding: 6px 2px;
+  transition: 0.3s ease;
 }
 
+nav a:hover {
+  color: #f5b400;
+}
 
+/* Header Book Now button */
+nav .btn {
+  margin-left: 15px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
 /* =========================
    MOBILE HEADER
 ========================= */
