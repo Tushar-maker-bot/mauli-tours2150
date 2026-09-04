@@ -1976,3 +1976,286 @@ footer p {
     }
 
 }
+/* =====================================================
+   MOBILE SEARCH WIDTH FIX
+   ===================================================== */
+
+.tour-search,
+.search-container,
+.search-result,
+.search-result .packages-grid {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Search grid - same card size/style */
+.search-result .packages-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Prevent cards from pushing the page outside */
+.search-result .package-card {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Search box */
+.destination-search {
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+}
+
+.destination-search input {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ================= MOBILE SEARCH ================= */
+
+@media (max-width: 768px) {
+
+    .tour-search {
+        width: 100%;
+        padding: 55px 15px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .search-heading {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-heading h2 {
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .search-heading p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* SEARCH INPUT + BUTTON */
+
+    .destination-search {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        padding: 6px;
+    }
+
+    .destination-search input {
+        min-width: 0;
+        width: 100%;
+        height: 50px;
+        padding: 0 14px;
+        font-size: 15px;
+    }
+
+    .destination-search button {
+        flex-shrink: 0;
+        padding: 0 20px;
+        font-size: 14px;
+    }
+
+    /* POPULAR BUTTONS */
+
+    .popular-searches {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .popular-searches button {
+        flex-shrink: 0;
+    }
+
+    /* SEARCH RESULTS */
+
+    .search-result {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .search-result .packages-grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        box-sizing: border-box;
+    }
+
+    .search-result .package-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* KEEP EXACT SAME MOBILE CARD IMAGE SIZE */
+
+    .search-result .package-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .search-result .package-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+/* ================= SMALL PHONE ================= */
+
+@media (max-width: 400px) {
+
+    .destination-search button {
+        padding: 0 15px;
+    }
+
+    .destination-search input {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+
+    .search-result .package-card img {
+        height: 180px;
+    }
+
+}
+/* =====================================================
+   CONTACT MOBILE WIDTH FIX
+   ===================================================== */
+
+.contact-section,
+.contact-container,
+.contact-grid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.contact-card > div:last-child {
+    min-width: 0;
+    flex: 1;
+}
+
+.contact-card p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* ================= MOBILE CONTACT ================= */
+
+@media (max-width: 768px) {
+
+    .contact-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 60px 15px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .contact-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .contact-heading {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-heading h2 {
+        font-size: 30px;
+        line-height: 1.25;
+    }
+
+    .contact-heading p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .contact-grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        box-sizing: border-box;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .contact-card > div:last-child {
+        min-width: 0;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .contact-card h3 {
+        font-size: 17px;
+    }
+
+    .contact-card p {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .contact-whatsapp-btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+/* =====================================================
+   PREVENT MOBILE HORIZONTAL SCROLL
+   ===================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
