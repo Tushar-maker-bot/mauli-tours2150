@@ -296,7 +296,7 @@ section{scroll-margin-top:90px}
     width:min(1180px,100%);margin:auto;
     display:grid;grid-template-columns:repeat(3,1fr);gap:22px
 }
-.big-package-card{position:relative;min-height:300px;overflow:hidden;border-radius:24px;background:#111}
+.big-package-card{position:relative;min-height:350px;overflow:hidden;border-radius:24px;background:#111}
 .big-package-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.6s}
 .big-package-card:hover img{transform:scale(1.06)}
 .big-package-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,13,8,.88) 0%,rgba(4,13,8,.22) 60%,rgba(4,13,8,.06) 100%)}
