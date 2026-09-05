@@ -271,7 +271,7 @@ const tourPackages = [
     duration: "3 Days / 2 Nights",
     title: "Tarkarli–Malvan Tour",
     description: "Explore beautiful beaches, Sindhudurg Fort, coastal villages and exciting water activities",
-    link: "tarkarlimalvanbig.html"
+    link: "tarkarlimalvan.html"
 },
 
     {
