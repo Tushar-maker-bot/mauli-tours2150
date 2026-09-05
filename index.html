@@ -1,514 +1,449 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mauli Tours & Travels</title>
+    <title>Mauli Tours & Travels | Tours & Travel from Pune</title>
+    <meta name="description" content="Explore Maharashtra and beyond with Mauli Tours & Travels. Comfortable, safe and memorable tours, taxi services and custom travel packages from Pune.">
+    <meta name="keywords" content="Maharashtra tour packages, Pune tours, Mahabaleshwar tour, Lonavala tour, Goa tour, Ashtavinayak Yatra, Konkan tour, Mauli Tours and Travels">
+
+    <meta property="og:title" content="Mauli Tours & Travels">
+    <meta property="og:description" content="Explore • Experience • Enjoy with Mauli Tours & Travels.">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-
-    <div class="container">
-
-        <div class="logo">
+<header class="site-header" id="siteHeader">
+    <div class="header-container">
+        <a href="index.html" class="logo" aria-label="Mauli Tours & Travels Home">
             <img src="LOGO.png" alt="Mauli Tours & Travels Logo">
-        </div>
+        </a>
 
-        <nav>
+        <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
             <a href="#home">Home</a>
             <a href="#packages">Packages</a>
             <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
         </nav>
 
-<a href="https://wa.me/919226718177" class="book-btn" target="_blank">
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip."
+           class="header-book" target="_blank" rel="noopener">
             Book Now
         </a>
-
     </div>
-
 </header>
 
-<section class="hero" id="home">
+<main>
 
-    <div class="overlay"></div>
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
 
     <div class="hero-content">
+        <span class="hero-kicker">✈ EXPLORE • EXPERIENCE • ENJOY</span>
 
-        <h1>Explore • Experience • Enjoy</h1>
+        <h1>Travel More.<br><span>Worry Less.</span></h1>
 
-        <h2>Your Journey, Our Responsibility.</h2>
+        <p>Your Journey, Our Responsibility.</p>
+        <div class="hero-subtext">Comfortable, Safe & Memorable Tours & Travels.</div>
 
-        <p>
-            Comfortable, Safe & Memorable Tours & Travels.
-        </p>
-
-        <div class="buttons">
-<a href="https://wa.me/919226718177" class="book-btn" target="_blank">
-                Book Now
+        <div class="hero-buttons">
+            <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip."
+               class="btn btn-primary" target="_blank" rel="noopener">
+                Book Your Trip <span>→</span>
             </a>
 
-           <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20want%20to%20book%20a%20custom%20tour." class="btn-outline" target="_blank">
-                Request a Custom Tour
+            <a href="#tour-search" class="btn btn-glass">
+                Explore Packages
             </a>
-
         </div>
 
+        <div class="hero-trust-row">
+            <div><strong>Comfort</strong><span>Planned journeys</span></div>
+            <div><strong>Convenience</strong><span>Easy booking</span></div>
+            <div><strong>Care</strong><span>Travel support</span></div>
+        </div>
     </div>
 
+    <a href="#tour-search" class="hero-scroll" aria-label="Scroll to explore">
+        <span></span>
+        <small>Scroll to explore</small>
+    </a>
 </section>
 
-<!-- ================= SEARCH DESTINATION SECTION ================= -->
-<section class="destination-search-section">
-
-    <div class="destination-search-box">
-
-        <!-- Heading -->
-        <div class="destination-heading">
-            <span class="explore-label">✈️ &nbsp; EXPLORE MAHARASHTRA</span>
-
-            <h2>Search Your Destination</h2>
-
-            <p>
-                Find your perfect tour package by searching for a destination.
-            </p>
+<section class="search-section" id="tour-search">
+    <div class="search-shell">
+        <div class="section-heading compact">
+            <span class="eyebrow">✦ EXPLORE MAHARASHTRA</span>
+            <h2>Find Your Perfect Destination</h2>
+            <p>Search a destination and open its tour package instantly.</p>
         </div>
 
-        <!-- Search Bar -->
-        <div class="destination-search-bar">
-
-            <div class="search-input-wrapper">
-                <span class="search-icon">🔍</span>
-
-                <input
-                    type="text"
-                    id="destinationSearch"
-                    placeholder="Search Mahabaleshwar, Goa, Pandharpur..."
-                    autocomplete="off"
-                >
+        <form class="search-bar" id="destinationForm">
+            <div class="search-input-wrap">
+                <span class="search-icon">⌕</span>
+                <input id="destinationSearch" type="text"
+                       placeholder="Search Mahabaleshwar, Goa, Pandharpur..."
+                       autocomplete="off" aria-label="Search destination">
             </div>
+            <button type="submit">Search</button>
+        </form>
 
-            <button type="button" onclick="searchDestination()">
-                Search
-            </button>
-
+        <div class="popular-row">
+            <span class="popular-label">Popular:</span>
+            <button class="popular-chip" type="button" data-destination="Mahabaleshwar">Mahabaleshwar</button>
+            <button class="popular-chip" type="button" data-destination="Lonavala">Lonavala</button>
+            <button class="popular-chip" type="button" data-destination="Goa">Goa</button>
+            <button class="popular-chip" type="button" data-destination="Raigad">Raigad</button>
+            <button class="popular-chip" type="button" data-destination="Konkan">Konkan</button>
+            <button class="popular-chip" type="button" data-destination="Ashtavinayak">Ashtavinayak</button>
         </div>
 
-        <!-- Popular Destinations -->
-        <div class="popular-destinations">
-
-            <span class="popular-title">Popular:</span>
-
-            <button onclick="selectDestination('Mahabaleshwar')">
-                Mahabaleshwar
-            </button>
-
-            <button onclick="selectDestination('Ashtavinayak')">
-                Ashtavinayak
-            </button>
-
-            <button onclick="selectDestination('Goa')">
-                Goa
-            </button>
-
-            <button onclick="selectDestination('Raigad')">
-                Raigad
-            </button>
-
-            <button onclick="selectDestination('Konkan')">
-                Konkan
-            </button>
-
-        </div>
-
+        <div id="searchMessage" class="search-message" aria-live="polite"></div>
     </div>
-
 </section>
 
-        <!-- SEARCH RESULT -->
-
-        <div
-            id="searchResult"
-            class="search-result">
-        </div>
-
-    </div>
-
-</section>
 <section id="packages" class="packages-section">
-
-    <div class="packages-heading">
+    <div class="section-heading">
+        <span class="eyebrow">✦ CURATED FOR YOU</span>
         <h2>Popular Tour Packages</h2>
-        <p>Choose your next unforgettable journey with Mauli Tours & Travels.</p>
+        <p>Beautiful destinations, thoughtfully planned for comfortable travel.</p>
     </div>
 
     <div class="packages-grid">
-
-        <div class="package-card" data-destination="Mahabaleshwar">
-            <img src="mahabaleshwar.jpg" alt="Mahabaleshwar">
+        <article class="package-card" data-destination="Mahabaleshwar">
+            <div class="package-image">
+                <img src="mahabaleshwar.jpg" alt="Mahabaleshwar hills">
+                <span class="package-tag">Popular</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                    🗓️ 2 Days / 1 Nights
-                </span>
+                <span class="package-duration">◷ 2 Days / 1 Night</span>
                 <h3>Mahabaleshwar</h3>
-                <p>Escape to the Queen of Hills</p>
-                <a href="mahabaleshwar.html" class="btn">View Details</a>
+                <p>Escape to the Queen of Hills.</p>
+                <a href="mahabaleshwar.html" class="card-link">View Details <span>→</span></a>
             </div>
-        </div>
+        </article>
 
-       <div class="package-card" data-destination="Lonavala">
-            <img src="lonavala.jpg.jpeg" alt="Lonavala">
+        <article class="package-card" data-destination="Lonavala">
+            <div class="package-image">
+                <img src="lonavala.jpg.jpeg" alt="Lonavala hills and nature">
+                <span class="package-tag">Best Seller</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                    🗓️ 2 Days / 1 Nights
-                </span>
+                <span class="package-duration">◷ 2 Days / 1 Night</span>
                 <h3>Lonavala</h3>
-                <p>Hills, Waterfalls & Nature</p>
-                 <a href="lonavala.html" class="btn">View Details</a>
-                
+                <p>Hills, waterfalls & nature.</p>
+                <a href="lonavala.html" class="card-link">View Details <span>→</span></a>
             </div>
-        </div>
+        </article>
 
-      <div class="package-card" data-destination="Raigad Fort">
-            <img src="raigad.jpg.jpeg" alt="Raigad">
+        <article class="package-card" data-destination="Raigad Fort">
+            <div class="package-image">
+                <img src="raigad.jpg.jpeg" alt="Raigad Fort">
+                <span class="package-tag">Heritage</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                    🗓️ 1 Day
-                </span>
+                <span class="package-duration">◷ 1 Day</span>
                 <h3>Raigad Fort</h3>
-                <p>The Pride of Swarajya</p>
-                <a href="raigad.html">View Details</a>
+                <p>The Pride of Swarajya.</p>
+                <a href="raigad.html" class="card-link">View Details <span>→</span></a>
             </div>
-        </div>
+        </article>
 
-      <div class="package-card" data-destination="Shirdi">
-            <img src="shirdi.jpg.jpeg" alt="Shirdi">
+        <article class="package-card" data-destination="Shirdi">
+            <div class="package-image">
+                <img src="shirdi.jpg.jpeg" alt="Shirdi">
+                <span class="package-tag">Pilgrimage</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                    🗓️ 2 Days / 1 Nights
-                </span>
+                <span class="package-duration">◷ 2 Days / 1 Night</span>
                 <h3>Shirdi</h3>
-                <p>Divine Blessings of Sai Baba</p>
-                <a href="shirdi.html">View Details</a>
+                <p>Divine blessings of Sai Baba.</p>
+                <a href="shirdi.html" class="card-link">View Details <span>→</span></a>
             </div>
-        </div>
+        </article>
 
-        <div class="package-card" data-destination="Matheran">
-            <img src="matheran.jpg.jpeg" alt="Matheran">
+        <article class="package-card" data-destination="Matheran">
+            <div class="package-image">
+                <img src="matheran.jpg.jpeg" alt="Matheran hills">
+                <span class="package-tag">Nature</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                    🗓️ 2 Days /1 Nights
-                </span>
+                <span class="package-duration">◷ 2 Days / 1 Night</span>
                 <h3>Matheran</h3>
-                <p>Explore Hills</p>
-                <a href="matheran.html">View Details</a>
+                <p>Relax, explore & enjoy the hills.</p>
+                <a href="matheran.html" class="card-link">View Details <span>→</span></a>
             </div>
-        </div>
+        </article>
 
-    <div class="package-card" data-destination="Goa">
-            <img src="goa.jpg.jpeg" alt="Goa">
+        <article class="package-card" data-destination="Goa">
+            <div class="package-image">
+                <img src="goa.jpg.jpeg" alt="Goa beach">
+                <span class="package-tag">Beach Escape</span>
+            </div>
             <div class="package-content">
-                 <span class="package-duration">
-                 🗓️ 3 Days /2 Nights
-                </span>
+                <span class="package-duration">◷ 3 Days / 2 Nights</span>
                 <h3>Goa</h3>
-                <p>Beaches, Fun & Adventure</p>
-                <a href="goa.html">View Details</a>
+                <p>Beaches, fun & adventure.</p>
+                <a href="goa.html" class="card-link">View Details <span>→</span></a>
             </div>
-             </div>
-           <div class="view-more-container">
-    <a href="packages.html" class="view-more-btn">
-        View More Packages
-    </a>
-</div>
-        
-</section>
-    <!-- ================= BIG TOUR PACKAGES ================= -->
-
-<section id="big-packages" class="big-packages-section">
-
-    <div class="big-packages-heading">
-
-        <h2>✨ Special 5–10 Days Tour Packages</h2>
-
-        <p>
-            Explore amazing destinations with our specially planned
-            multi-day tour packages.
-        </p>
-
+        </article>
     </div>
 
+    <div class="center-cta">
+        <a href="packages.html" class="outline-dark-btn">View All Packages <span>→</span></a>
+    </div>
+</section>
+
+<section class="feature-strip">
+    <div class="feature-item">
+        <div class="feature-icon">01</div>
+        <div><strong>Custom Planning</strong><span>Trips tailored to your schedule</span></div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon">02</div>
+        <div><strong>Easy WhatsApp Booking</strong><span>Quick communication with our team</span></div>
+    </div>
+    <div class="feature-item">
+        <div class="feature-icon">03</div>
+        <div><strong>Comfort First</strong><span>Travel planned around convenience</span></div>
+    </div>
+</section>
+
+<section class="big-packages-section" id="special-tours">
+    <div class="section-heading">
+        <span class="eyebrow">✦ LONGER ESCAPES</span>
+        <h2>Special Multi-Day Tour Packages</h2>
+        <p>For families, groups and travellers who want more time to explore.</p>
+    </div>
 
     <div class="big-packages-grid">
-
-
-        <!-- PACKAGE 1 -->
-
-        <div class="package-card" data-destination="konkan">
-
-            <img src="konkan.jpg" alt="Konkan Tour">
-
-            <div class="big-package-content">
-
-                <span class="package-duration">
-                    🗓️ 8 Days / 7 Nights
-                </span>
-
+        <article class="big-package-card">
+            <img src="konkan.jpg" alt="Konkan coastal tour">
+            <div class="big-card-overlay">
+                <span>8 Days / 7 Nights</span>
                 <h3>Konkan Coastal Tour</h3>
-
-                <p>
-                    Explore beautiful beaches, forts, temples,
-                    waterfalls and the natural beauty of Konkan.
-                </p>
-
-                <a href="konkanbig.html" class="big-package-btn">
-                    View Details
-                </a>
-
+                <p>Beaches, forts, temples, waterfalls & coastal views.</p>
+                <a href="konkanbig.html">Explore Tour →</a>
             </div>
+        </article>
 
-        </div>
-
-
-        <!-- PACKAGE 2 -->
-
-          <div class="package-card" data-destination="Ashtavinayak">
-
-            <img src="ashtavinayak.jpg" alt="Ashtavinayak Tour">
-
-            <div class="big-package-content">
-
-                <span class="package-duration">
-                    🗓️ 8 Days / 7 Nights
-                </span>
-
+        <article class="big-package-card">
+            <img src="ashtavinayak.jpg" alt="Ashtavinayak Yatra">
+            <div class="big-card-overlay">
+                <span>8 Days / 7 Nights</span>
                 <h3>Ashtavinayak Yatra</h3>
-
-                <p>
-                    Visit all eight sacred Ganpati temples
-                    with a comfortable and well-planned journey.
-                </p>
-
-                <a href="ashtavinayakbig.html" class="big-package-btn">
-                    View Details
-                </a>
-
+                <p>A comfortable journey covering the sacred Ganpati temples.</p>
+                <a href="ashtavinayakbig.html">Explore Tour →</a>
             </div>
+        </article>
 
-        </div>
-
-
-       <!-- PACKAGE 3 -->
-
-<div class="package-card" data-destination="Maharashtra Jyotirlinga">
-
-    <img src="jyotirlinga.jpg" alt="Maharashtra Jyotirlinga Yatra">
-
-    <div class="big-package-content">
-
-        <span class="package-duration">
-            🗓️ 6 Days / 5 Nights
-        </span>
-
-        <h3>Maharashtra Jyotirlinga Yatra</h3>
-
-        <p>
-            Seek blessings at Maharashtra's sacred Jyotirlingas
-            with a comfortable and spiritually enriching journey.
-        </p>
-
-        <a href="jyotirlingabig.html" class="big-package-btn">
-            View Details
-        </a>
-
-    </div>
-
-</div>
-
-        <!-- PACKAGE 4 -->
-
-              <div class="package-card" data-destination="Goa">
-            <img src="goa.jpg.jpeg" alt="Goa Tour">
-
-            <div class="big-package-content">
-
-                <span class="package-duration">
-                    🗓️ 5 Days / 4 Nights
-                </span>
-
+        <article class="big-package-card">
+            <img src="goa.jpg.jpeg" alt="Goa holiday tour">
+            <div class="big-card-overlay">
+                <span>5 Days / 4 Nights</span>
                 <h3>Goa Holiday Tour</h3>
-
-                <p>
-                    Enjoy beaches, forts, sightseeing, shopping
-                    and unforgettable moments in Goa.
-                </p>
-
-                <a href="goabig.html" class="big-package-btn">
-                    View Details
-                </a>
-
+                <p>Beaches, sightseeing, shopping & unforgettable moments.</p>
+                <a href="goabig.html">Explore Tour →</a>
             </div>
-
-        </div>
-
-
+        </article>
     </div>
 
-
-    <!-- VIEW ALL BIG PACKAGES -->
-
-    <div class="big-packages-more">
-
-        <a href="big-packages.html" class="big-packages-more-btn">
-            View All 3–4 Days Packages
-        </a>
-
+    <div class="center-cta">
+        <a href="big-packages.html" class="outline-dark-btn">View Special Packages <span>→</span></a>
     </div>
-
 </section>
-<section id="services" class="section services-section">
 
-    <h2>Our Services</h2>
+<section class="explore-section">
+    <div class="explore-copy">
+        <span class="eyebrow">✦ EXPLORE MORE</span>
+        <h2>From Hills to Beaches,<br>Discover Maharashtra Your Way.</h2>
+        <p>Plan a short getaway, a family holiday, a pilgrimage trip or a longer road journey with Mauli Tours & Travels.</p>
+        <a href="packages.html" class="btn btn-primary dark-btn">Explore All Destinations <span>→</span></a>
+    </div>
 
-    <p class="section-subtitle">
-        Travel comfortably, safely and conveniently with Mauli Tours & Travels.
-    </p>
+    <div class="explore-collage">
+        <div class="collage-main"><img src="ganpatipule.jpg" alt="Ganpatipule"></div>
+        <div class="collage-small"><img src="tadoba.jpg" alt="Tadoba"></div>
+        <div class="collage-small"><img src="alibaug.jpg" alt="Alibaug"></div>
+    </div>
+</section>
+
+<section id="services" class="services-section">
+    <div class="section-heading">
+        <span class="eyebrow">✦ TRAVEL SERVICES</span>
+        <h2>Everything You Need for a Better Journey</h2>
+        <p>Travel comfortably, safely and conveniently with Mauli Tours & Travels.</p>
+    </div>
 
     <div class="services-grid">
-
-        <div class="service-card">
-            <div class="service-icon">🚕</div>
-            <h3>Local Trips</h3>
-            <p>Comfortable taxi services for local travel and city trips.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🚗</div>
-            <h3>Outstation Trips</h3>
-            <p>Enjoy safe and comfortable journeys to destinations across Maharashtra and beyond.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">✈️</div>
-            <h3>Airport Pickup & Drop</h3>
-            <p>Reliable airport pickup and drop services for a hassle-free journey.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🏨</div>
-            <h3>Hotel Booking</h3>
-            <p>We help you find comfortable accommodation for your trip.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🙏</div>
-            <h3>Pilgrimage Tours</h3>
-            <p>Plan peaceful and comfortable trips to famous religious destinations.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🏢</div>
-            <h3>Corporate Tours</h3>
-            <p>Reliable travel solutions for corporate and business requirements.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">👨‍👩‍👧‍👦</div>
-            <h3>Family Tours</h3>
-            <p>Create beautiful memories with comfortable family trips.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">👥</div>
-            <h3>Group Tours</h3>
-            <p>Convenient travel arrangements for groups and large families.</p>
-        </div>
-
+        <div class="service-card"><div class="service-number">01</div><div class="service-icon">🚕</div><h3>Local Trips</h3><p>Convenient taxi services for local travel and city journeys.</p></div>
+        <div class="service-card"><div class="service-number">02</div><div class="service-icon">🚗</div><h3>Outstation Trips</h3><p>Comfortable travel for destinations across Maharashtra and beyond.</p></div>
+        <div class="service-card"><div class="service-number">03</div><div class="service-icon">✈️</div><h3>Airport Pickup & Drop</h3><p>Reliable transfers for a smooth start or end to your journey.</p></div>
+        <div class="service-card"><div class="service-number">04</div><div class="service-icon">🏨</div><h3>Hotel Booking</h3><p>Support with comfortable accommodation planning for your trip.</p></div>
+        <div class="service-card"><div class="service-number">05</div><div class="service-icon">🙏</div><h3>Pilgrimage Tours</h3><p>Peaceful, planned journeys to famous religious destinations.</p></div>
+        <div class="service-card"><div class="service-number">06</div><div class="service-icon">🏢</div><h3>Corporate Tours</h3><p>Travel arrangements designed for business and corporate needs.</p></div>
+        <div class="service-card"><div class="service-number">07</div><div class="service-icon">👨‍👩‍👧‍👦</div><h3>Family Tours</h3><p>Comfortable trips designed around family time and memories.</p></div>
+        <div class="service-card"><div class="service-number">08</div><div class="service-icon">👥</div><h3>Group Tours</h3><p>Convenient planning support for groups and larger families.</p></div>
     </div>
-
 </section>
 
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
-    <p>Photos Coming Soon...</p>
+<section id="why-us" class="why-section">
+    <div class="why-content">
+        <span class="eyebrow">✦ WHY MAULI</span>
+        <h2>A Travel Partner Focused on Your Experience</h2>
+        <p>We keep the booking process simple and help you plan practical, comfortable journeys around your destination and travel needs.</p>
+
+        <div class="why-list">
+            <div><span>✓</span><div><strong>Personalised Trip Planning</strong><small>Build your trip around your route, dates and preferences.</small></div></div>
+            <div><span>✓</span><div><strong>Simple Booking</strong><small>Connect quickly through WhatsApp and phone.</small></div></div>
+            <div><span>✓</span><div><strong>Wide Destination Choice</strong><small>Choose from Maharashtra, Goa, pilgrimage and long-route tours.</small></div></div>
+            <div><span>✓</span><div><strong>Travel Assistance</strong><small>Get in touch with our team for trip-related coordination.</small></div></div>
+        </div>
+    </div>
+
+    <div class="why-card">
+        <div class="why-card-top">PLAN • BOOK • TRAVEL</div>
+        <h3>Your next journey<br>starts here.</h3>
+        <p>One conversation is enough to start planning.</p>
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20help%20planning%20my%20trip."
+           target="_blank" rel="noopener">Talk to Us on WhatsApp →</a>
+    </div>
+</section>
+
+<section id="gallery" class="gallery-section">
+    <div class="section-heading">
+        <span class="eyebrow">✦ TRAVEL MOMENTS</span>
+        <h2>Explore Through Our Destinations</h2>
+        <p>A visual preview using the destination images already part of your website.</p>
+    </div>
+
+    <div class="gallery-grid">
+        <a href="mahabaleshwar.html" class="gallery-item gallery-large"><img src="mahabaleshwar.jpg" alt="Mahabaleshwar"><span>Mahabaleshwar</span></a>
+        <a href="goa.html" class="gallery-item"><img src="goa.jpg.jpeg" alt="Goa"><span>Goa</span></a>
+        <a href="lonavala.html" class="gallery-item"><img src="lonavala.jpg.jpeg" alt="Lonavala"><span>Lonavala</span></a>
+        <a href="raigad.html" class="gallery-item"><img src="raigad.jpg.jpeg" alt="Raigad"><span>Raigad</span></a>
+        <a href="shirdi.html" class="gallery-item gallery-wide"><img src="shirdi.jpg.jpeg" alt="Shirdi"><span>Shirdi</span></a>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="section-heading">
+        <span class="eyebrow">✦ QUICK ANSWERS</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Useful information before you book your journey.</p>
+    </div>
+
+    <div class="faq-grid">
+        <details open>
+            <summary>How do I book a tour?</summary>
+            <p>Choose a package and use the WhatsApp booking button, or contact us directly to discuss your travel plan.</p>
+        </details>
+        <details>
+            <summary>Can I request a custom tour?</summary>
+            <p>Yes. You can contact us with your destination, dates, number of travellers and trip preferences.</p>
+        </details>
+        <details>
+            <summary>Do you provide local and outstation travel?</summary>
+            <p>Yes. Mauli Tours & Travels offers local trips, outstation journeys, airport transfers and tour packages.</p>
+        </details>
+        <details>
+            <summary>How can I get the best package details?</summary>
+            <p>Send your destination and travel requirements on WhatsApp so the team can guide you with the applicable package details.</p>
+        </details>
+    </div>
+</section>
+
+<section class="custom-cta">
+    <div>
+        <span class="eyebrow light">✦ READY WHEN YOU ARE</span>
+        <h2>Have a Trip in Mind?</h2>
+        <p>Tell us where you want to go. We’ll help you plan the journey.</p>
+    </div>
+    <div class="cta-actions">
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20plan%20a%20custom%20tour."
+           class="btn btn-light" target="_blank" rel="noopener">Plan My Trip →</a>
+        <a href="tel:+919226718177" class="btn btn-outline-light">Call 9226718177</a>
+    </div>
 </section>
 
 <section id="contact" class="contact-section">
-
-    <div class="contact-container">
-
-        <div class="contact-heading">
-            <h2>Contact Us</h2>
-            <p>Ready to plan your next journey? Get in touch with Mauli Tours & Travels.</p>
-        </div>
-
-        <div class="contact-grid">
-
-            <a href="tel:+919226718177" class="contact-card">
-                <div class="contact-icon">📞</div>
-                <div>
-                    <h3>Phone</h3>
-                    <p>9226718177</p>
-                </div>
-            </a>
-
-            <a href="https://wa.me/919226718177" target="_blank" class="contact-card">
-                <div class="contact-icon">💬</div>
-                <div>
-                    <h3>WhatsApp</h3>
-                    <p>Chat With Us</p>
-                </div>
-            </a>
-
-            <a href="mailto:maulitoursandtravels2150@gmail.com" class="contact-card">
-
-    <div class="contact-icon">📧</div>
-
-    <div>
-        <h3>Email</h3>
-        <p>maulitoursandtravels2150@gmail.com</p>
+    <div class="section-heading">
+        <span class="eyebrow">✦ GET IN TOUCH</span>
+        <h2>Contact Mauli Tours & Travels</h2>
+        <p>Ready to plan your next journey? Reach out to us directly.</p>
     </div>
 
-</a>
-
-            <a href="https://www.instagram.com/mauli_tours_and_travels_2150/" target="_blank" class="contact-card">
-                <div class="contact-icon">📷</div>
-                <div>
-                    <h3>Instagram</h3>
-                    <p>@mauli_tours_and_travels_2150</p>
-                </div>
-            </a>
-
-            <div class="contact-card">
-                <div class="contact-icon">📍</div>
-                <div>
-                    <h3>Location</h3>
-                    <p>Pune, Maharashtra</p>
-                </div>
-            </div>
-
-        </div>
-
-        <a href="https://wa.me/919226718177" target="_blank" class="contact-whatsapp-btn">
-            💬 Chat With Us on WhatsApp
+    <div class="contact-grid">
+        <a href="tel:+919226718177" class="contact-card">
+            <span class="contact-icon">☎</span><div><small>Phone</small><strong>9226718177</strong></div>
         </a>
-
+        <a href="https://wa.me/919226718177" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-icon">💬</span><div><small>WhatsApp</small><strong>Chat With Us</strong></div>
+        </a>
+        <a href="mailto:maulitoursandtravels2150@gmail.com" class="contact-card">
+            <span class="contact-icon">✉</span><div><small>Email</small><strong>maulitoursandtravels2150@gmail.com</strong></div>
+        </a>
+        <a href="https://www.instagram.com/mauli_tours_and_travels_2150/" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-icon">◎</span><div><small>Instagram</small><strong>@mauli_tours_and_travels_2150</strong></div>
+        </a>
     </div>
 
+    <div class="location-card">
+        <span>⌖</span>
+        <div><strong>Pune, Maharashtra</strong><small>Serving travellers with comfortable journeys and curated tour experiences.</small></div>
+    </div>
 </section>
-    </section>
+
+</main>
+
+<a class="floating-whatsapp" href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip."
+   target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
+
+<div class="mobile-book-bar">
+    <a href="tel:+919226718177">Call</a>
+    <a href="https://wa.me/919226718177" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip." target="_blank" rel="noopener">Book Now</a>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="LOGO.png" alt="Mauli Tours & Travels Logo">
+            <p>Explore • Experience • Enjoy</p>
+        </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#packages">Packages</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-contact">
+            <a href="tel:+919226718177">9226718177</a>
+            <a href="mailto:maulitoursandtravels2150@gmail.com">maulitoursandtravels2150@gmail.com</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Mauli Tours & Travels. All Rights Reserved.</span>
+        <span>Pune, Maharashtra</span>
+    </div>
+</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
