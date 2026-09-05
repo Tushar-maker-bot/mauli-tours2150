@@ -688,4 +688,35 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
     }
 
 }
+/* =====================================================
+   MOBILE - 2 PACKAGE CARDS PER ROW
+   ===================================================== */
 
+@media (max-width: 768px) {
+
+    .packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+    }
+
+    .package-card {
+        width: 100% !important;
+    }
+
+    .package-image {
+        height: 160px !important;
+    }
+
+    .package-content {
+        padding: 14px !important;
+    }
+
+    .package-content h3 {
+        font-size: 17px !important;
+    }
+
+    .package-content p {
+        font-size: 12px !important;
+    }
+
+}
