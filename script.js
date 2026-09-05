@@ -1,15 +1,9 @@
-/* =========================================================
+/* =====================================================
    MAULI TOURS & TRAVELS
-   TOUR PACKAGE SEARCH + PREMIUM HOMEPAGE FUNCTIONS
-   ========================================================= */
-
-
-/* ================= TOUR PACKAGE DATABASE ================= */
+   WORKING DESTINATION SEARCH
+   ===================================================== */
 
 const tourPackages = [
-
-    // ================= POPULAR PACKAGES =================
-
     {
         destination: "Mahabaleshwar",
         image: "mahabaleshwar.jpg",
@@ -18,7 +12,6 @@ const tourPackages = [
         description: "Escape to the Queen of Hills",
         link: "mahabaleshwar.html"
     },
-
     {
         destination: "Lonavala",
         image: "lonavala.jpg.jpeg",
@@ -27,7 +20,6 @@ const tourPackages = [
         description: "Hills, Waterfalls & Nature",
         link: "lonavala.html"
     },
-
     {
         destination: "Raigad",
         image: "raigad.jpg.jpeg",
@@ -36,7 +28,6 @@ const tourPackages = [
         description: "The Pride of Swarajya",
         link: "raigad.html"
     },
-
     {
         destination: "Shirdi",
         image: "shirdi.jpg.jpeg",
@@ -45,7 +36,6 @@ const tourPackages = [
         description: "Divine Blessings of Sai Baba",
         link: "shirdi.html"
     },
-
     {
         destination: "Matheran",
         image: "matheran.jpg.jpeg",
@@ -54,7 +44,6 @@ const tourPackages = [
         description: "Explore Hills",
         link: "matheran.html"
     },
-
     {
         destination: "Goa",
         image: "goa.jpg.jpeg",
@@ -63,10 +52,6 @@ const tourPackages = [
         description: "Beaches, Fun & Adventure",
         link: "goa.html"
     },
-
-
-    // ================= BIG PACKAGES =================
-
     {
         destination: "Goa Holiday Tour",
         image: "goa.jpg.jpeg",
@@ -75,7 +60,6 @@ const tourPackages = [
         description: "Beaches, Sightseeing, Adventure & Relaxing Holiday",
         link: "goabig.html"
     },
-
     {
         destination: "Konkan Coastal Tour",
         image: "konkan.jpg",
@@ -84,7 +68,6 @@ const tourPackages = [
         description: "Beaches, Forts, Temples, Nature & Coastal Adventure",
         link: "konkanbig.html"
     },
-
     {
         destination: "Ashtavinayak",
         image: "ashtavinayak.jpg",
@@ -93,19 +76,14 @@ const tourPackages = [
         description: "Complete Ashtavinayak Ganpati Temple Spiritual Journey",
         link: "ashtavinayakbig.html"
     },
-
     {
         destination: "Maharashtra Jyotirlinga",
         image: "jyotirlinga.jpg",
         duration: "6 Days / 5 Nights",
         title: "Maharashtra Jyotirlinga Yatra",
-        description: "Visit Maharashtra's four sacred Jyotirlingas in a peaceful spiritual journey",
+        description: "Visit Maharashtra's four sacred Jyotirlingas",
         link: "jyotirlingabig.html"
     },
-
-
-    // ================= ALL PACKAGES =================
-
     {
         destination: "Kolhapur",
         image: "kolhapur.jpg",
@@ -114,7 +92,6 @@ const tourPackages = [
         description: "Temples, Forts, Culture & Heritage",
         link: "kolhapur.html"
     },
-
     {
         destination: "Alibaug",
         image: "alibaug.jpg",
@@ -123,7 +100,6 @@ const tourPackages = [
         description: "Beaches, Forts & Relaxation",
         link: "alibaug.html"
     },
-
     {
         destination: "Ganpatipule",
         image: "ganpatipule.jpg",
@@ -132,7 +108,6 @@ const tourPackages = [
         description: "Beach, Temple & Coastal Beauty",
         link: "ganpatipule.html"
     },
-
     {
         destination: "Tadoba",
         image: "tadoba.jpg",
@@ -141,7 +116,6 @@ const tourPackages = [
         description: "Wildlife, Jungle Safari & Adventure",
         link: "tadoba.html"
     },
-
     {
         destination: "Igatpuri",
         image: "igatpuri.jpg",
@@ -150,7 +124,6 @@ const tourPackages = [
         description: "Mountains, Waterfalls & Peaceful Nature",
         link: "igatpuri.html"
     },
-
     {
         destination: "Panhala",
         image: "panhala.jpg",
@@ -159,7 +132,6 @@ const tourPackages = [
         description: "Fort, History & Scenic Mountains",
         link: "panhala.html"
     },
-
     {
         destination: "Konkan",
         image: "konkan.jpg",
@@ -168,7 +140,6 @@ const tourPackages = [
         description: "Beaches, Nature & Coastal Adventure",
         link: "konkan.html"
     },
-
     {
         destination: "Nashik Trimbakeshwar",
         image: "nashiktrimbakeshwar.jpg",
@@ -177,7 +148,6 @@ const tourPackages = [
         description: "Temples, Spirituality & Sacred Places",
         link: "nashiktrimbakeshwar.html"
     },
-
     {
         destination: "Bhandardara",
         image: "bhandardara.jpg",
@@ -186,7 +156,6 @@ const tourPackages = [
         description: "Mountains, Lakes & Nature",
         link: "bhandardara.html"
     },
-
     {
         destination: "Kaas Plateau",
         image: "kass.jpg",
@@ -195,7 +164,6 @@ const tourPackages = [
         description: "Valley of Flowers & Natural Beauty",
         link: "kaas.html"
     },
-
     {
         destination: "Panchgani",
         image: "panchgani.jpg",
@@ -204,7 +172,6 @@ const tourPackages = [
         description: "Hills, Valleys & Scenic Nature",
         link: "panchgani.html"
     },
-
     {
         destination: "Murud Janjira",
         image: "murudjanjira.jpg",
@@ -213,7 +180,6 @@ const tourPackages = [
         description: "Sea, Forts & Coastal Adventure",
         link: "murudjanjira.html"
     },
-
     {
         destination: "Harihareshwar Diveagar",
         image: "harihareshwardiveagar.jpg",
@@ -222,7 +188,6 @@ const tourPackages = [
         description: "Beaches, Temples & Coastal Escape",
         link: "harihareshwar-diveagar.html"
     },
-
     {
         destination: "Pratapgad Wai",
         image: "pratapgad-wai.jpg",
@@ -231,7 +196,6 @@ const tourPackages = [
         description: "Forts, Temples, History & Scenic Nature",
         link: "pratapgad-wai.html"
     },
-
     {
         destination: "Amboli Ghat",
         image: "ambolighat.jpg",
@@ -240,7 +204,6 @@ const tourPackages = [
         description: "Waterfalls, Hills & Scenic Nature",
         link: "amboli-ghat.html"
     },
-
     {
         destination: "Chikhaldara",
         image: "chikhaldara.jpg",
@@ -249,7 +212,6 @@ const tourPackages = [
         description: "Hills, Lakes, Waterfalls & Wildlife",
         link: "chikhaldara.html"
     },
-
     {
         destination: "Dapoli",
         image: "dapoli.jpg",
@@ -258,7 +220,6 @@ const tourPackages = [
         description: "Beaches, Temples & Coastal Nature",
         link: "dapoli.html"
     },
-
     {
         destination: "Malshej Ghat",
         image: "malshejghat.jpg",
@@ -267,7 +228,6 @@ const tourPackages = [
         description: "Mountains, Waterfalls & Scenic Valleys",
         link: "malshej-ghat.html"
     },
-
     {
         destination: "Sinhagad",
         image: "sinhagad.jpg",
@@ -276,16 +236,14 @@ const tourPackages = [
         description: "Fort, History & Scenic Mountain Views",
         link: "sinhagad.html"
     },
-
     {
         destination: "Tarkarli–Malvan",
         image: "tarkarli-malvan.jpg",
         duration: "3 Days / 2 Nights",
         title: "Tarkarli–Malvan",
-        description: "Explore beautiful beaches, Sindhudurg Fort, coastal villages and exciting water activities",
+        description: "Beautiful beaches, Sindhudurg Fort & water activities",
         link: "tarkarlimalvan.html"
     },
-
     {
         destination: "Shrivardhan Harihareshwar",
         image: "shrivardhanharihareshwar.jpg",
@@ -294,7 +252,6 @@ const tourPackages = [
         description: "Beaches, Temples & Peaceful Coastal Escape",
         link: "shrivardhan-harihareshwar.html"
     },
-
     {
         destination: "Pandharpur",
         image: "pandharpur.jpg",
@@ -303,136 +260,54 @@ const tourPackages = [
         description: "Vitthal Darshan, Temples & Spiritual Journey",
         link: "pandharpur.html"
     }
-
 ];
 
 
-/* =========================================================
-   SEARCH MESSAGE
-   ========================================================= */
-
-function showSearchMessage(message) {
-
-    const messageBox = document.getElementById("searchMessage");
-
-    if (!messageBox) {
-        return;
-    }
-
-    messageBox.textContent = message;
-
-    clearTimeout(window.searchMessageTimer);
-
-    window.searchMessageTimer = setTimeout(function () {
-        messageBox.textContent = "";
-    }, 4000);
-}
-
-
-/* =========================================================
-   SEARCH FUNCTION
-   ========================================================= */
+/* =====================================================
+   SEARCH
+   ===================================================== */
 
 function searchDestination() {
 
     const input = document.getElementById("destinationSearch");
+    const result = document.getElementById("searchResult");
 
-    const result =
-        document.getElementById("searchResult");
-
-    if (!input) {
-
-        console.error(
-            "Search input not found."
-        );
-
+    if (!input || !result) {
+        console.error("Search bar elements are missing.");
         return;
     }
 
-    const searchText =
-        input.value.trim().toLowerCase();
+    const value = input.value.trim().toLowerCase();
 
-
-    /* EMPTY SEARCH */
-
-    if (searchText === "") {
-
-        if (result) {
-            result.innerHTML = "";
-        }
-
-        showSearchMessage(
-            "Please enter a destination."
-        );
-
-        input.focus();
-
+    if (value === "") {
+        result.innerHTML = "";
         return;
     }
 
+    const matches = tourPackages.filter(function (tour) {
 
-    /* FIND MATCHES */
+        return (
+            tour.destination.toLowerCase().includes(value) ||
+            tour.title.toLowerCase().includes(value)
+        );
 
-    const matches =
-        tourPackages.filter(function (tour) {
+    });
 
-            return (
-
-                tour.title
-                    .toLowerCase()
-                    .includes(searchText)
-
-                ||
-
-                tour.destination
-                    .toLowerCase()
-                    .includes(searchText)
-
-            );
-
-        });
-
-
-    /* NO RESULT */
 
     if (matches.length === 0) {
 
-        if (result) {
+        result.innerHTML = `
+            <div class="no-result">
+                <h3>No Tour Package Found</h3>
+                <p>Please try Mahabaleshwar, Goa, Lonavala, Raigad or another destination.</p>
+            </div>
+        `;
 
-            result.innerHTML = `
+        result.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
-                <div class="no-result">
-
-                    <h3>
-                        No Tour Package Found
-                    </h3>
-
-                    <p>
-                        Please try another destination.
-                    </p>
-
-                </div>
-
-            `;
-
-            result.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-        showSearchMessage(
-            "No tour package found for this destination."
-        );
-
-        return;
-    }
-
-
-    /* SHOW RESULTS */
-
-    if (!result) {
         return;
     }
 
@@ -453,28 +328,22 @@ function searchDestination() {
 
         </div>
 
-
         <div class="packages-grid">
 
             ${matches.map(function (tour) {
 
                 return `
 
-                    <article
-                        class="package-card search-package-card"
-                        data-destination="${tour.destination}"
-                    >
+                    <article class="package-card">
 
                         <div class="package-image">
 
                             <img
                                 src="${tour.image}"
                                 alt="${tour.title}"
-                                onerror="this.style.background='linear-gradient(135deg,#dfe9e2,#f2f5f2)'"
                             >
 
                         </div>
-
 
                         <div class="package-content">
 
@@ -494,8 +363,7 @@ function searchDestination() {
                                 href="${tour.link}"
                                 class="card-link"
                             >
-                                View Details
-                                <span>→</span>
+                                View Details →
                             </a>
 
                         </div>
@@ -511,49 +379,33 @@ function searchDestination() {
     `;
 
 
-    /* SCROLL TO RESULTS */
-
     result.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
-
 }
 
 
-/* =========================================================
+/* =====================================================
    QUICK SEARCH
-   ========================================================= */
+   ===================================================== */
 
 function quickSearch(destination) {
 
     const input =
-        document.getElementById(
-            "destinationSearch"
-        );
+        document.getElementById("destinationSearch");
 
-    if (!input) {
-
-        console.error(
-            "Search input not found."
-        );
-
-        return;
-    }
-
+    if (!input) return;
 
     input.value = destination;
 
-
     searchDestination();
-
 }
 
 
-/* =========================================================
-   SELECT DESTINATION
-   Supports old homepage buttons
-   ========================================================= */
+/* =====================================================
+   OLD BUTTON SUPPORT
+   ===================================================== */
 
 function selectDestination(destination) {
 
@@ -562,371 +414,131 @@ function selectDestination(destination) {
 }
 
 
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
+/* =====================================================
+   PAGE LOAD
+   ===================================================== */
 
-function setupMobileMenu() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const toggle =
-        document.getElementById(
-            "menuToggle"
-        );
-
-    const nav =
-        document.getElementById(
-            "mainNav"
-        );
-
-
-    if (!toggle || !nav) {
-        return;
-    }
-
-
-    toggle.addEventListener(
-        "click",
-        function () {
-
-            const isOpen =
-                nav.classList.toggle(
-                    "open"
-                );
-
-
-            toggle.classList.toggle(
-                "active",
-                isOpen
-            );
-
-
-            toggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
-        }
-    );
-
-
-    /* CLOSE AFTER CLICKING NAV LINK */
-
-    nav.querySelectorAll("a").forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    nav.classList.remove(
-                        "open"
-                    );
-
-                    toggle.classList.remove(
-                        "active"
-                    );
-
-                    toggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    /* CLOSE WHEN CLICKING OUTSIDE */
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            if (
-
-                !nav.contains(
-                    event.target
-                )
-
-                &&
-
-                !toggle.contains(
-                    event.target
-                )
-
-            ) {
-
-                nav.classList.remove(
-                    "open"
-                );
-
-                toggle.classList.remove(
-                    "active"
-                );
-
-                toggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   PREMIUM SEARCH BUTTONS
-   ========================================================= */
-
-function setupPremiumSearch() {
+    /* SEARCH FORM */
 
     const form =
-        document.getElementById(
-            "destinationForm"
-        );
-
-    const input =
-        document.getElementById(
-            "destinationSearch"
-        );
-
-
-    /* FORM SUBMIT */
+        document.getElementById("destinationForm");
 
     if (form) {
 
-        form.addEventListener(
-            "submit",
-            function (event) {
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            searchDestination();
+
+        });
+
+    }
+
+
+    /* ENTER KEY */
+
+    const input =
+        document.getElementById("destinationSearch");
+
+    if (input) {
+
+        input.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
 
                 event.preventDefault();
 
                 searchDestination();
 
             }
-        );
+
+        });
 
     }
 
 
-    /* POPULAR DESTINATION CHIPS */
+    /* POPULAR BUTTONS */
 
-    document
-        .querySelectorAll(
-            ".popular-chip"
-        )
-        .forEach(
-            function (button) {
+    document.querySelectorAll(".popular-chip").forEach(function (button) {
 
-                button.addEventListener(
-                    "click",
-                    function () {
+        button.addEventListener("click", function () {
 
-                        const destination =
-                            button.dataset.destination;
+            const destination =
+                button.getAttribute("data-destination");
 
-                        if (input) {
+            quickSearch(destination);
 
-                            input.value =
-                                destination;
+        });
 
-                        }
-
-                        searchDestination();
-
-                    }
-                );
-
-            }
-        );
+    });
 
 
-    /* ENTER KEY */
+    /* MOBILE MENU */
 
-    if (input) {
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-        input.addEventListener(
-            "keydown",
-            function (event) {
+    const mainNav =
+        document.getElementById("mainNav");
 
-                if (
-                    event.key === "Enter"
-                ) {
 
-                    event.preventDefault();
+    if (menuToggle && mainNav) {
 
-                    searchDestination();
+        menuToggle.addEventListener("click", function () {
 
-                }
+            mainNav.classList.toggle("open");
 
-            }
-        );
+            menuToggle.classList.toggle("active");
+
+        });
+
+
+        mainNav.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainNav.classList.remove("open");
+
+                menuToggle.classList.remove("active");
+
+            });
+
+        });
 
     }
 
-}
 
-
-/* =========================================================
-   HEADER SCROLL EFFECT
-   ========================================================= */
-
-function setupHeaderScroll() {
+    /* HEADER SCROLL */
 
     const header =
-        document.getElementById(
-            "siteHeader"
-        );
+        document.getElementById("siteHeader");
 
+    if (header) {
 
-    if (!header) {
-        return;
-    }
+        window.addEventListener("scroll", function () {
 
+            if (window.scrollY > 20) {
 
-    function updateHeader() {
+                header.classList.add("scrolled");
 
-        if (window.scrollY > 20) {
+            } else {
 
-            header.classList.add(
-                "scrolled"
-            );
-
-        } else {
-
-            header.classList.remove(
-                "scrolled"
-            );
-
-        }
-
-    }
-
-
-    updateHeader();
-
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        {
-            passive: true
-        }
-    );
-
-}
-
-
-/* =========================================================
-   IMAGE FALLBACK
-   ========================================================= */
-
-function setupImageFallbacks() {
-
-    document
-        .querySelectorAll("img")
-        .forEach(
-            function (img) {
-
-                img.addEventListener(
-                    "error",
-                    function () {
-
-                        img.style.background =
-                            "linear-gradient(135deg,#dfe9e2,#f2f5f2)";
-
-                        img.style.objectFit =
-                            "cover";
-
-                    }
-                );
+                header.classList.remove("scrolled");
 
             }
-        );
 
-}
+        });
 
-
-/* =========================================================
-   ANIMATION ON SCROLL
-   ========================================================= */
-
-function setupScrollAnimation() {
-
-    const elements =
-        document.querySelectorAll(
-            ".package-card, .service-card, .feature-item, .why-card, .contact-card"
-        );
-
-
-    if (!elements.length) {
-        return;
     }
 
 
-    const observer =
-        new IntersectionObserver(
-
-            function (entries) {
-
-                entries.forEach(
-                    function (entry) {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-
-            {
-                threshold: 0.08
-            }
-
-        );
-
-
-    elements.forEach(
-        function (element) {
-
-            observer.observe(
-                element
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CURRENT YEAR
-   ========================================================= */
-
-function setupCurrentYear() {
+    /* CURRENT YEAR */
 
     const year =
-        document.getElementById(
-            "currentYear"
-        );
-
+        document.getElementById("currentYear");
 
     if (year) {
 
@@ -935,28 +547,4 @@ function setupCurrentYear() {
 
     }
 
-}
-
-
-/* =========================================================
-   DOM READY
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        setupMobileMenu();
-
-        setupPremiumSearch();
-
-        setupHeaderScroll();
-
-        setupImageFallbacks();
-
-        setupScrollAnimation();
-
-        setupCurrentYear();
-
-    }
-);
+});
