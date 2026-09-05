@@ -265,7 +265,14 @@ const tourPackages = [
         link: "sinhagad.html"
     },
 
-
+{
+    destination: "Tarkarli–Malvan",
+    image: "tarkarli-malvan.jpg",
+    duration: "3 Days / 2 Nights",
+    title: "Tarkarli–Malvan Tour",
+    description: "Explore beautiful beaches, Sindhudurg Fort, coastal villages and exciting water activities",
+    link: "tarkarlimalvanbig.html"
+},
 
     {
         destination: "Shrivardhan Harihareshwar",
