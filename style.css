@@ -619,3 +619,34 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
     animation:highlightPulse .9s ease 1;
 }
 @keyframes highlightPulse{0%,100%{transform:translateY(-3px)}50%{transform:translateY(-6px)}}
+/* =====================================================
+   FULL CLICKABLE PACKAGE CARDS
+   ===================================================== */
+
+.package-card {
+    cursor: pointer;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+}
+
+.package-card::after {
+    transition: opacity .3s ease;
+}
+
+/* Small visual hint that the card is clickable */
+
+.package-card:hover .package-content h3 {
+    color: #0b8f4b;
+    transition: color .25s ease;
+}
+
+.package-card:hover .card-link {
+    color: #066b38;
+}
+
+.package-card:hover .card-link span {
+    margin-left: 6px;
+    transition: margin-left .25s ease;
+}
