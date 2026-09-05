@@ -546,5 +546,35 @@ document.addEventListener("DOMContentLoaded", function () {
             new Date().getFullYear();
 
     }
+/* =====================================================
+   MAKE PACKAGE CARDS FULLY CLICKABLE
+   ===================================================== */
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".package-card").forEach(function (card) {
+
+        const link = card.querySelector("a[href]");
+
+        if (!link) return;
+
+        card.style.cursor = "pointer";
+
+        card.addEventListener("click", function (event) {
+
+            /*
+             * If the user clicks an actual button/link,
+             * allow that link to work normally.
+             */
+            if (event.target.closest("a")) {
+                return;
+            }
+
+            window.location.href = link.href;
+
+        });
+
+    });
+
+});
 });
