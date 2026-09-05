@@ -68,77 +68,72 @@
 
 </section>
 
-<!-- ================= TOUR SEARCH ================= -->
+<!-- ================= SEARCH DESTINATION SECTION ================= -->
+<section class="destination-search-section">
 
-<section class="tour-search" id="tour-search">
+    <div class="destination-search-box">
 
-    <div class="search-container">
-
-        <div class="search-heading">
-
-            <span>✈️ EXPLORE MAHARASHTRA</span>
+        <!-- Heading -->
+        <div class="destination-heading">
+            <span class="explore-label">✈️ &nbsp; EXPLORE MAHARASHTRA</span>
 
             <h2>Search Your Destination</h2>
 
             <p>
                 Find your perfect tour package by searching for a destination.
             </p>
-
         </div>
 
+        <!-- Search Bar -->
+        <div class="destination-search-bar">
 
-        <!-- SEARCH BOX -->
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
 
-        <div class="destination-search">
+                <input
+                    type="text"
+                    id="destinationSearch"
+                    placeholder="Search Mahabaleshwar, Goa, Pandharpur..."
+                    autocomplete="off"
+                >
+            </div>
 
-            <input
-                type="text"
-                id="destinationSearch"
-                placeholder="🔍 Search Mahabaleshwar, Goa, Pandharpur..."
-                autocomplete="off"
-            >
-
-            <button
-                type="button"
-                onclick="searchDestination()">
-
+            <button type="button" onclick="searchDestination()">
                 Search
-
             </button>
 
         </div>
 
+        <!-- Popular Destinations -->
+        <div class="popular-destinations">
 
-        <!-- POPULAR DESTINATIONS -->
+            <span class="popular-title">Popular:</span>
 
-        <div class="popular-searches">
-
-            <span>Popular:</span>
-
-            <button onclick="quickSearch('Mahabaleshwar')">
+            <button onclick="selectDestination('Mahabaleshwar')">
                 Mahabaleshwar
             </button>
 
-            <button onclick="quickSearch('Ashtavinayak')">
+            <button onclick="selectDestination('Ashtavinayak')">
                 Ashtavinayak
             </button>
 
-            <button onclick="quickSearch('Goa')">
+            <button onclick="selectDestination('Goa')">
                 Goa
             </button>
 
-            <button onclick="quickSearch('Raigad')">
+            <button onclick="selectDestination('Raigad')">
                 Raigad
             </button>
 
-            <button onclick="quickSearch('Konkan')">
+            <button onclick="selectDestination('Konkan')">
                 Konkan
             </button>
 
-           
-
         </div>
 
+    </div>
+
+</section>
 
         <!-- SEARCH RESULT -->
 
