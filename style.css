@@ -721,155 +721,346 @@ nav a:hover::after {
 }
 
 
-/* =========================================================
-   12. DESTINATION SEARCH
-   ========================================================= */
+/* =====================================================
+   DESTINATION SEARCH SECTION
+   ===================================================== */
 
-.tour-search {
-    padding: 70px 8%;
-    background: #f7f9fc;
+.destination-search-section {
+    background: #f6f8fb;
+    padding: 70px 20px 80px;
+    width: 100%;
 }
 
-.search-container {
-    width: 100%;
+/* Main Professional Box */
+.destination-search-box {
     max-width: 1200px;
+    margin: 0 auto;
 
-    margin: auto;
+    background: #ffffff;
+
+    padding: 60px 70px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        0 5px 20px rgba(0, 0, 0, 0.04);
 
     text-align: center;
+
+    position: relative;
+    overflow: hidden;
 }
 
-.search-heading {
-    margin-bottom: 30px;
+
+/* Small decorative top line */
+
+.destination-search-box::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100px;
+    height: 5px;
+
+    background: #f58200;
+
+    border-radius: 0 0 10px 10px;
 }
 
-.search-heading span {
-    font-size: 13px;
-    font-weight: 600;
 
-    letter-spacing: 1px;
+/* =====================================================
+   HEADING
+   ===================================================== */
 
-    color: #0A8F4B;
+.destination-heading {
+    margin-bottom: 35px;
 }
 
-.search-heading h2 {
-    margin: 8px 0;
+.explore-label {
+    display: inline-block;
 
-    font-size: 38px;
-    color: #222;
-}
-
-.search-heading p {
-    color: #666;
+    color: #0b8f5b;
 
     font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+.destination-heading h2 {
+    margin: 0;
+
+    font-size: 44px;
+    font-weight: 700;
+
+    color: #222;
+
+    line-height: 1.2;
+}
+
+.destination-heading p {
+    margin: 15px 0 0;
+
+    font-size: 17px;
+
+    color: #666;
+
+    line-height: 1.6;
 }
 
 
-/* SEARCH BOX */
+/* =====================================================
+   SEARCH BAR
+   ===================================================== */
 
-.destination-search {
-    width: 100%;
-    max-width: 750px;
+.destination-search-bar {
+    max-width: 900px;
 
-    margin: auto;
+    margin: 0 auto 30px;
 
     display: flex;
 
-    background: #fff;
+    align-items: center;
 
-    padding: 8px;
+    background: #ffffff;
 
-    border-radius: 14px;
+    border: 1px solid #e5e5e5;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+
+    padding: 7px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
 }
 
-.destination-search input {
+.destination-search-bar:focus-within {
+    border-color: #f58200;
+
+    box-shadow:
+        0 12px 40px rgba(245, 130, 0, 0.15);
+}
+
+
+/* Input */
+
+.search-input-wrapper {
     flex: 1;
 
-    min-width: 0;
+    display: flex;
 
-    height: 52px;
+    align-items: center;
 
-    padding: 0 18px;
+    padding-left: 18px;
+}
+
+.search-icon {
+    font-size: 21px;
+
+    margin-right: 12px;
+}
+
+.search-input-wrapper input {
+    width: 100%;
 
     border: none;
     outline: none;
 
+    font-size: 16px;
+
+    color: #333;
+
     background: transparent;
 
-    font-size: 15px;
+    padding: 18px 10px;
 }
 
-.destination-search button {
-    flex-shrink: 0;
+.search-input-wrapper input::placeholder {
+    color: #999;
+}
 
+
+/* Search Button */
+
+.destination-search-bar button {
     border: none;
 
-    background: #111;
-    color: #fff;
+    background: #111111;
 
-    padding: 0 28px;
+    color: #ffffff;
 
-    border-radius: 9px;
-
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
+
+    padding: 18px 34px;
+
+    border-radius: 13px;
 
     cursor: pointer;
 
     transition: all 0.3s ease;
 }
 
-.destination-search button:hover {
-    background: #0A8F4B;
+.destination-search-bar button:hover {
+    background: #f58200;
 
     transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(245, 130, 0, 0.25);
 }
 
 
-/* POPULAR SEARCHES */
+/* =====================================================
+   POPULAR DESTINATIONS
+   ===================================================== */
 
-.popular-searches {
-    margin-top: 20px;
-
+.popular-destinations {
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     flex-wrap: wrap;
 
-    gap: 8px;
+    gap: 10px;
 }
 
-.popular-searches span {
-    font-size: 14px;
-    font-weight: 600;
+.popular-title {
+    font-weight: 700;
+
+    color: #222;
+
+    margin-right: 5px;
 }
 
-.popular-searches button {
-    border: 1px solid #ddd;
+.popular-destinations button {
+    background: #ffffff;
 
-    background: #fff;
+    border: 1px solid #dedede;
+
     color: #333;
 
-    padding: 7px 14px;
+    padding: 10px 18px;
 
-    border-radius: 20px;
+    border-radius: 50px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     cursor: pointer;
 
     transition: all 0.3s ease;
 }
 
-.popular-searches button:hover {
-    background: #111;
-    color: #fff;
+.popular-destinations button:hover {
+    background: #f58200;
 
-    border-color: #111;
+    border-color: #f58200;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(245, 130, 0, 0.2);
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .destination-search-section {
+        padding: 45px 15px 55px;
+    }
+
+    .destination-search-box {
+        padding: 45px 20px;
+
+        border-radius: 22px;
+    }
+
+    .destination-heading h2 {
+        font-size: 32px;
+    }
+
+    .destination-heading p {
+        font-size: 15px;
+    }
+
+    .explore-label {
+        font-size: 13px;
+    }
+
+    .destination-search-bar {
+        flex-direction: column;
+
+        padding: 8px;
+
+        border-radius: 16px;
+    }
+
+    .search-input-wrapper {
+        width: 100%;
+
+        padding: 0 10px;
+    }
+
+    .search-input-wrapper input {
+        padding: 16px 5px;
+    }
+
+    .destination-search-bar button {
+        width: 100%;
+
+        margin-top: 5px;
+    }
+
+    .popular-destinations {
+        margin-top: 20px;
+    }
+
+    .popular-title {
+        width: 100%;
+
+        margin-bottom: 5px;
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+
+    .destination-heading h2 {
+        font-size: 28px;
+    }
+
+    .destination-search-box {
+        padding: 40px 15px;
+    }
+
+    .popular-destinations button {
+        font-size: 13px;
+
+        padding: 9px 15px;
+    }
+
 }
 
 
