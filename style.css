@@ -847,15 +847,6 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
 }
 
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .packages-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
 
 /* =========================================================
    MOBILE FULL WIDTH FIX
