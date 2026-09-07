@@ -30,8 +30,16 @@ img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{cursor:pointer}
-.container,.header-container{width:min(1180px,92%);margin:auto}
 
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+.header-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
 /* HEADER */
 .site-header{
     position:fixed;
@@ -806,4 +814,44 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
         font-size: 12px !important;
     }
 
+}
+/* =========================================================
+   MOBILE FULL WIDTH FIX
+   ========================================================= */
+
+@media (max-width:768px){
+
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
+    main{
+        width:100%;
+        max-width:100%;
+        margin:0;
+        padding:0;
+    }
+
+    .hero,
+    .search-section,
+    .packages-section,
+    .big-packages-section,
+    .explore-section,
+    .services-section,
+    .why-section,
+    .gallery-section,
+    .faq-section,
+    .custom-cta,
+    .contact-section{
+        width:100%;
+        max-width:100%;
+    }
+
+    .site-header{
+        width:100%;
+        max-width:100%;
+    }
 }
