@@ -515,31 +515,119 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
     .explore-collage{width:min(680px,100%);margin:auto}
 }
 
-/* MOBILE */
+/* MOBILE HEADER FIX */
 @media(max-width:768px){
-    :root{--header-h:72px}
-    .site-header{height:72px}
-    .header-container{min-height:72px;width:92%}
-    .logo img{height:52px}
-    .menu-toggle{
-        margin-left:auto;display:flex;flex-direction:column;gap:5px
+
+    :root{
+        --header-h:72px;
     }
-    .menu-toggle span{width:24px;height:2px;background:#1f2a22;border-radius:3px;transition:.2s}
-    .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .menu-toggle.active span:nth-child(2){opacity:0}
-    .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .site-header{
+        width:100%;
+        height:72px;
+        left:0;
+        right:0;
+    }
+
+    .header-container{
+        width:100%;
+        max-width:none;
+        height:72px;
+        min-height:72px;
+        margin:0;
+        padding:0 16px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:0;
+    }
+
+    .logo{
+        flex:0 1 auto;
+        min-width:0;
+    }
+
+    .logo img{
+        display:block;
+        height:50px;
+        width:auto;
+        max-width:180px;
+    }
+
+    /* Hide Book Now from top header on mobile */
+    .header-book{
+        display:none !important;
+    }
+
+    /* Hamburger */
+    .menu-toggle{
+        display:flex;
+        flex:0 0 44px;
+        width:44px;
+        height:44px;
+        margin:0 0 0 auto;
+        padding:10px;
+        border:0;
+        background:transparent;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .menu-toggle span{
+        display:block;
+        width:24px;
+        height:2px;
+        background:#1f2a22;
+        border-radius:3px;
+        transition:.25s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1){
+        transform:translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2){
+        opacity:0;
+    }
+
+    .menu-toggle.active span:nth-child(3){
+        transform:translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile navigation */
     .main-nav{
-        position:absolute;top:72px;left:0;width:100%;
-        display:none;flex-direction:column;gap:0;
+        position:absolute;
+        top:72px;
+        left:0;
+        right:0;
+        width:100%;
+        margin:0;
+        display:none;
+        flex-direction:column;
+        gap:0;
         background:rgba(255,255,255,.98);
         border-top:1px solid var(--line);
         box-shadow:0 18px 35px rgba(0,0,0,.08);
-        padding:8px 20px 15px
+        padding:8px 20px 15px;
     }
-    .main-nav.open{display:flex}
-    .main-nav a{width:100%;padding:12px 4px;font-size:13px;border-bottom:1px solid #f0f2f0}
-    .main-nav a::after{display:none}
-    .header-book{padding:9px 13px;font-size:11px}
+
+    .main-nav.open{
+        display:flex;
+    }
+
+    .main-nav a{
+        width:100%;
+        padding:12px 4px;
+        font-size:13px;
+        border-bottom:1px solid #f0f2f0;
+    }
+
+    .main-nav a::after{
+        display:none;
+    }
+}
     .hero{padding:125px 20px 95px;min-height:760px;background-position:center}
     .hero h1{font-size:48px;letter-spacing:-1.4px}
     .hero p{font-size:20px}
