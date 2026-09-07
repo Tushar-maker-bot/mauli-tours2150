@@ -667,68 +667,111 @@ footer{background:#101712;color:#fff;padding:55px 20px 18px}
     width:100%;
     min-width:0;
     border-radius:16px;
+    overflow:hidden;
 }
 
 .package-image{
-    height:235px;
+    height:150px;
 }
 
 .package-content{
-    padding:12px;
+    width:100%;
+    padding:15px;
 }
 
 .package-duration{
-    font-size:9px;
-    margin-bottom:5px;
+    display:inline-block;
+    background:#e9f7ef;
+    color:#0A8F4B;
+    padding:5px 8px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+    margin-bottom:8px;
+    white-space:nowrap;
 }
 
 .package-content h3{
-    font-size:16px;
-    line-height:1.15;
-    margin-bottom:5px;
+    font-size:18px;
+    line-height:1.25;
+    margin-bottom:7px;
 }
 
 .package-content p{
-    font-size:10px;
-    line-height:1.4;
-    min-height:38px;
+    font-size:13px;
+    line-height:1.45;
+    margin-bottom:14px;
+    min-height:auto;
 }
 
 .card-link{
-    font-size:10px;
-    padding:7px 9px;
-    margin-top:10px;
-    border-radius:8px;
+    width:100%;
+    justify-content:center;
+    padding:10px 5px;
+    border-radius:30px;
+    font-size:13px;
+    white-space:nowrap;
 }
 
 .big-package-card{
     width:100%;
-    height:300px;
-    min-height:300px;
+    height:auto;
+    min-height:0;
+    background:#fff;
     border-radius:16px;
+    overflow:hidden;
+}
+
+.big-package-card img{
+    position:relative;
+    width:100%;
+    height:150px;
+    object-fit:cover;
 }
 
 .big-card-overlay{
-    left:13px;
-    right:13px;
-    bottom:13px;
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    padding:15px;
+    background:#fff;
+    color:#222;
 }
 
 .big-card-overlay span{
-    font-size:8px;
+    display:inline-block;
+    color:#0A8F4B;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0;
+    text-transform:none;
 }
 
 .big-card-overlay h3{
-    font-size:16px;
+    color:#222;
+    font-size:18px;
+    line-height:1.25;
+    margin:7px 0;
 }
 
 .big-card-overlay p{
-    font-size:9px;
+    color:#666;
+    font-size:13px;
+    line-height:1.45;
+    margin-bottom:14px;
 }
 
 .big-card-overlay a{
-    font-size:9px;
-    padding:7px 9px;
+    display:block;
+    width:100%;
+    padding:10px 5px;
+    text-align:center;
+    border-radius:30px;
+    background:#0A8F4B;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
 }
     .feature-strip{grid-template-columns:1fr;width:92%;padding:10px}
     .feature-item{padding:14px 10px}
