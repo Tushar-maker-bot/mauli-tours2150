@@ -1343,7 +1343,11 @@ section{
     z-index:900;
     animation:pulse 2.2s infinite;
 }
-
+.call-icon{
+    font-size:26px;
+    line-height:1;
+    display:block;
+}
 .mobile-book-bar{
     display:none;
 }
