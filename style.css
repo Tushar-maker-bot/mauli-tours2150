@@ -1473,7 +1473,9 @@ footer{
 .package-hero-content p{
     font-size:22px;
 }
-
+.packages-page-content .hero-buttons{
+    justify-content:center;
+}
 .package-details{
     padding:60px 20px;
     background:#f8f8f8;
