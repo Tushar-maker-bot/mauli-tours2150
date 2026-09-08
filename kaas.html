@@ -8,7 +8,7 @@
 
 <title>Kaas Plateau Tour Package | Mauli Tours & Travels</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,91 +16,234 @@
 
 <body>
 
-<header>
 
-<div class="container">
+<!-- ================= HEADER ================= -->
 
-<div class="logo">
-<img src="LOGO.png" alt="Mauli Tours & Travels Logo">
-</div>
+<header class="site-header" id="siteHeader">
 
-<nav>
+    <div class="header-container">
 
-<a href="index.html">Home</a>
+        <a href="index.html"
+           class="logo"
+           aria-label="Mauli Tours & Travels Home">
 
-<a href="index.html#packages">Packages</a>
+            <img src="LOGO.png"
+                 alt="Mauli Tours & Travels Logo">
 
-<a href="index.html#services">Services</a>
-
-<a href="index.html#contact">Contact</a>
-
-</nav>
+        </a>
 
 
-<a href="https://wa.me/919226718177" class="book-btn" target="_blank">
-Book Now
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
 
-</a>
+            <span></span>
+            <span></span>
+            <span></span>
 
-</div>
+        </button>
+
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="packages.html">Packages</a>
+
+            <a href="index.html#services">Services</a>
+
+            <a href="index.html#why-us">Why Us</a>
+
+            <a href="index.html#gallery">Gallery</a>
+
+            <a href="index.html#contact">Contact</a>
+
+        </nav>
+
+
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip."
+           class="header-book"
+           target="_blank"
+           rel="noopener">
+
+            Book Now
+
+        </a>
+
+    </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================= PREMIUM KAAS PLATEAU HERO ================= -->
 
 <section class="package-hero">
 
-<img src="kassheighlights.jpg" alt="Kaas Plateau">
+    <img src="kassheighlights.jpg"
+         alt="Kaas Plateau Tour">
 
-<div class="package-overlay"></div>
+    <div class="package-overlay"></div>
 
-<div class="package-hero-content">
 
-<h1>Kaas Plateau Tour Package</h1>
+    <div class="package-hero-content">
 
-<p>Explore the Valley of Flowers of Maharashtra</p>
+        <span class="package-hero-kicker">
+            ✦ EXPLORE • EXPERIENCE • ENJOY
+        </span>
 
-</div>
+
+        <h1>
+            Kaas Plateau<br>
+            <span>Tour Package</span>
+        </h1>
+
+
+        <p>
+            Explore the Valley of Flowers of Maharashtra
+        </p>
+
+
+        <div class="package-hero-buttons">
+
+            <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
+               class="btn"
+               target="_blank"
+               rel="noopener">
+
+                Get Best Price
+
+            </a>
+
+
+            <a href="#package-info"
+               class="package-hero-outline">
+
+                View Package
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= PACKAGE INFORMATION ================= -->
 
-<section class="package-details">
+<section class="package-details"
+         id="package-info">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Information</h2>
-
-<p>
-<strong>📍 Starting From:</strong> Your Location
-</p>
-
-<p>
-<strong>🕒 Duration:</strong> 2 Day / 1 Night OR Custom
-</p>
-
-<p>
-<strong>👨‍👩‍👧‍👦 Best For:</strong> Family, Friends, Couples & Nature Lovers
-</p>
-
-<p>
-<strong>💰 Price:</strong> Contact for Best Price
-</p>
+        <h2>
+            Package Information
+        </h2>
 
 
-<a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
-class="btn"
-target="_blank">
+        <div class="package-info-grid">
 
 
-Get Best Price
+            <div class="package-info-item">
 
-</a>
+                <span class="package-info-icon">
+                    📍
+                </span>
 
-</div>
+                <div>
+
+                    <small>
+                        Starting From
+                    </small>
+
+                    <strong>
+                        Your Location
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    🕒
+                </span>
+
+                <div>
+
+                    <small>
+                        Duration
+                    </small>
+
+                    <strong>
+                        2 Days / 1 Night OR Custom
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    👨‍👩‍👧‍👦
+                </span>
+
+                <div>
+
+                    <small>
+                        Best For
+                    </small>
+
+                    <strong>
+                        Family, Friends, Couples & Nature Lovers
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    💰
+                </span>
+
+                <div>
+
+                    <small>
+                        Price
+                    </small>
+
+                    <strong>
+                        Contact for Best Price
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
+           class="btn"
+           target="_blank"
+           rel="noopener">
+
+            Get Best Price
+
+        </a>
+
+    </div>
 
 </section>
 
@@ -109,35 +252,38 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Tour Highlights</h2>
+        <h2>
+            Tour Highlights
+        </h2>
 
-<ul>
 
-<li>✔ Kaas Plateau</li>
+        <ul>
 
-<li>✔ Kaas Lake</li>
+            <li>✔ Kaas Plateau</li>
 
-<li>✔ Seasonal Flower Valley</li>
+            <li>✔ Kaas Lake</li>
 
-<li>✔ Kaas Lake View</li>
+            <li>✔ Seasonal Flower Valley</li>
 
-<li>✔ Thoseghar Waterfalls</li>
+            <li>✔ Kaas Lake View</li>
 
-<li>✔ Sajjangad Fort</li>
+            <li>✔ Thoseghar Waterfalls</li>
 
-<li>✔ Bamnoli Lake</li>
+            <li>✔ Sajjangad Fort</li>
 
-<li>✔ Chalkewadi Windmill Farms</li>
+            <li>✔ Bamnoli Lake</li>
 
-<li>✔ Beautiful Sahyadri Landscapes</li>
+            <li>✔ Chalkewadi Windmill Farms</li>
 
-<li>✔ Nature Photography</li>
+            <li>✔ Beautiful Sahyadri Landscapes</li>
 
-</ul>
+            <li>✔ Nature Photography</li>
 
-</div>
+        </ul>
+
+    </div>
 
 </section>
 
@@ -146,84 +292,143 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>🗓️ Day Wise Itinerary</h2>
-
-<div class="itinerary">
-
-
-<div class="day-card">
-
-<h3>Day 1</h3>
-
-<ul>
-
-<li>Pickup from Your Location</li>
-
-<li>Early Morning Departure</li>
-
-<li>Breakfast Stop</li>
-
-<li>Scenic Drive towards Satara</li>
-
-<li>Visit Kaas Plateau</li>
-
-<li>Explore Seasonal Flower Valley</li>
-
-<li>Kaas Lake</li>
-
-<li>Nature Photography</li>
-
-<li>Lunch Break</li>
-
-<li>Visit Thoseghar Waterfalls</li>
-
-<li>Visit Chalkewadi Windmill Farms</li>
-
-<li>Evening Departure</li>
-
-<li>Return to Your Location</li>
-
-</ul>
-
-</div>
+        <h2>
+            🗓️ Day Wise Itinerary
+        </h2>
 
 
-<div class="day-card">
-
-<h3>Day 2</h3>
-
-<ul>
-
-<li>Morning Breakfast</li>
-
-<li>Visit Sajjangad Fort</li>
-
-<li>Explore Bamnoli Lake</li>
-
-<li>Scenic Sahyadri Views</li>
-
-<li>Leisure & Photography</li>
-
-<li>Lunch Break</li>
-
-<li>Optional Local Sightseeing</li>
-
-<li>Shopping</li>
-
-<li>Evening Departure</li>
-
-<li>Return to Your Location</li>
-
-</ul>
-
-</div>
+        <div class="itinerary">
 
 
-</div>
+            <!-- DAY 1 -->
 
-</div>
+            <div class="day-card">
+
+                <h3>
+                    Day 1
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Pickup from Your Location
+                    </li>
+
+                    <li>
+                        Early Morning Departure
+                    </li>
+
+                    <li>
+                        Breakfast Stop
+                    </li>
+
+                    <li>
+                        Scenic Drive towards Satara
+                    </li>
+
+                    <li>
+                        Visit Kaas Plateau
+                    </li>
+
+                    <li>
+                        Explore Seasonal Flower Valley
+                    </li>
+
+                    <li>
+                        Kaas Lake
+                    </li>
+
+                    <li>
+                        Nature Photography
+                    </li>
+
+                    <li>
+                        Lunch Break
+                    </li>
+
+                    <li>
+                        Visit Thoseghar Waterfalls
+                    </li>
+
+                    <li>
+                        Visit Chalkewadi Windmill Farms
+                    </li>
+
+                    <li>
+                        Evening Departure
+                    </li>
+
+                    <li>
+                        Return to Your Location
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- DAY 2 -->
+
+            <div class="day-card">
+
+                <h3>
+                    Day 2
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Morning Breakfast
+                    </li>
+
+                    <li>
+                        Visit Sajjangad Fort
+                    </li>
+
+                    <li>
+                        Explore Bamnoli Lake
+                    </li>
+
+                    <li>
+                        Scenic Sahyadri Views
+                    </li>
+
+                    <li>
+                        Leisure & Photography
+                    </li>
+
+                    <li>
+                        Lunch Break
+                    </li>
+
+                    <li>
+                        Optional Local Sightseeing
+                    </li>
+
+                    <li>
+                        Shopping
+                    </li>
+
+                    <li>
+                        Evening Departure
+                    </li>
+
+                    <li>
+                        Return to Your Location
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -232,29 +437,32 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Includes</h2>
+        <h2>
+            Package Includes
+        </h2>
 
-<ul>
 
-<li>✔ Pickup & Drop</li>
+        <ul>
 
-<li>✔ Private AC Car</li>
+            <li>✔ Pickup & Drop</li>
 
-<li>✔ Kaas Plateau Sightseeing</li>
+            <li>✔ Private AC Car</li>
 
-<li>✔ Toll & Parking</li>
+            <li>✔ Kaas Plateau Sightseeing</li>
 
-<li>✔ Driver Allowance</li>
+            <li>✔ Toll & Parking</li>
 
-<li>✔ Comfortable Travel</li>
+            <li>✔ Driver Allowance</li>
 
-<li>✔ Hotel Stay – If Included in Package</li>
+            <li>✔ Comfortable Travel</li>
 
-</ul>
+            <li>✔ Hotel Stay – If Included in Package</li>
 
-</div>
+        </ul>
+
+    </div>
 
 </section>
 
@@ -263,57 +471,216 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Excludes</h2>
-
-<ul>
-
-<li>✘ Meals (Unless Specified)</li>
-
-<li>✘ Kaas Plateau Entry / Registration Charges</li>
-
-<li>✘ Waterfall / Attraction Entry Tickets</li>
-
-<li>✘ Boating & Adventure Activities</li>
-
-<li>✘ Accommodation – If Not Included</li>
-
-<li>✘ Personal Expenses</li>
-
-<li>✘ Shopping Expenses</li>
-
-<li>✘ Any Optional Activities</li>
-
-</ul>
+        <h2>
+            Package Excludes
+        </h2>
 
 
-<a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
-class="btn"
-target="_blank">
+        <ul>
+
+            <li>
+                ✘ Meals (Unless Specified)
+            </li>
+
+            <li>
+                ✘ Kaas Plateau Entry / Registration Charges
+            </li>
+
+            <li>
+                ✘ Waterfall / Attraction Entry Tickets
+            </li>
+
+            <li>
+                ✘ Boating & Adventure Activities
+            </li>
+
+            <li>
+                ✘ Accommodation – If Not Included
+            </li>
+
+            <li>
+                ✘ Personal Expenses
+            </li>
+
+            <li>
+                ✘ Shopping Expenses
+            </li>
+
+            <li>
+                ✘ Any Optional Activities
+            </li>
+
+        </ul>
 
 
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
+           class="btn"
+           target="_blank"
+           rel="noopener">
 
-Book on WhatsApp
+            Book on WhatsApp
 
-</a>
+        </a>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= PREMIUM FOOTER ================= -->
 
-<footer>
+<footer class="premium-footer">
 
-<p>
+    <div class="footer-inner">
 
-© 2026 Mauli Tours & Travels. All Rights Reserved.
 
-</p>
+        <div class="footer-brand">
+
+            <img src="LOGO.png"
+                 alt="Mauli Tours & Travels Logo">
+
+            <p>
+                Comfortable, safe and memorable tours & travels
+                from Pune to Maharashtra and beyond.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="packages.html">
+                Tour Packages
+            </a>
+
+            <a href="index.html#services">
+                Services
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>
+                Contact Us
+            </h3>
+
+
+            <a href="tel:+919226718177">
+                📞 9226718177
+            </a>
+
+
+            <a href="https://wa.me/919226718177"
+               target="_blank"
+               rel="noopener">
+
+                💬 WhatsApp
+
+            </a>
+
+
+            <a href="mailto:maulitoursandtravels2150@gmail.com">
+
+                ✉ maulitoursandtravels2150@gmail.com
+
+            </a>
+
+
+            <a href="https://www.instagram.com/mauli_tours_and_travels_2150/"
+               target="_blank"
+               rel="noopener">
+
+                📷 Instagram
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Mauli Tours & Travels. All Rights Reserved.
+        </span>
+
+        <span>
+            Pune, Maharashtra
+        </span>
+
+    </div>
 
 </footer>
+
+
+<!-- ================= FLOATING CALL BUTTON ================= -->
+
+<a class="floating-whatsapp"
+   href="tel:+919226718177"
+   aria-label="Call Mauli Tours & Travels"
+   title="Call Mauli Tours & Travels">
+
+    <span class="call-icon">
+        📞
+    </span>
+
+</a>
+
+
+<!-- ================= MOBILE BOOKING BAR ================= -->
+
+<div class="mobile-book-bar">
+
+
+    <a href="tel:+919226718177">
+
+        📞 Call
+
+    </a>
+
+
+    <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Kaas%20Plateau%20Tour%20Package."
+       target="_blank"
+       rel="noopener">
+
+        💬 WhatsApp
+
+    </a>
+
+
+    <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20the%20Kaas%20Plateau%20Tour%20Package."
+       target="_blank"
+       rel="noopener">
+
+        Book Now
+
+    </a>
+
+
+</div>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
 
 
 </body>
