@@ -1,12 +1,14 @@
 /* =========================================================
    MAULI TOURS & TRAVELS — PREMIUM WEBSITE STYLE
-   Homepage + existing package-page compatibility
+   Clean Unified CSS
+   Homepage + Packages + Package Detail Pages
    ========================================================= */
 
 :root{
     --green:#0b8f4b;
     --green-dark:#066b38;
     --orange:#f57c00;
+    --orange-dark:#de6e00;
     --ink:#162019;
     --muted:#68716b;
     --cream:#f6f8f5;
@@ -16,6 +18,10 @@
     --radius:24px;
     --header-h:86px;
 }
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 *{
     margin:0;
@@ -55,15 +61,15 @@ button{
     cursor:pointer;
 }
 
+section{
+    scroll-margin-top:90px;
+}
+
 /* =========================================================
    CONTAINER
    ========================================================= */
 
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
+.container,
 .header-container{
     width:min(1180px,92%);
     margin:auto;
@@ -78,11 +84,12 @@ button{
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
+    height:var(--header-h);
+    z-index:9999;
     background:rgba(255,255,255,.94);
     backdrop-filter:blur(16px);
     border-bottom:1px solid rgba(22,32,25,.07);
-    transition:.3s;
+    transition:.3s ease;
 }
 
 .site-header.scrolled{
@@ -121,7 +128,7 @@ button{
     font-weight:600;
     color:#263129;
     padding:10px 0;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .main-nav a::after{
@@ -132,7 +139,7 @@ button{
     width:0;
     height:2px;
     background:var(--green);
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .main-nav a:hover{
@@ -154,13 +161,13 @@ button{
     background:var(--orange);
     font-weight:700;
     box-shadow:0 10px 24px rgba(245,124,0,.18);
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .header-book:hover,
 .book-btn:hover{
     transform:translateY(-2px);
-    background:#de6e00;
+    background:var(--orange-dark);
 }
 
 .menu-toggle{
@@ -171,7 +178,7 @@ button{
 }
 
 /* =========================================================
-   HERO
+   HOME HERO
    ========================================================= */
 
 .hero{
@@ -184,6 +191,7 @@ button{
     background:url("hero.png.jpg") center/cover no-repeat;
     isolation:isolate;
 }
+
 .hero::before{
     content:"";
     position:absolute;
@@ -198,6 +206,7 @@ button{
     z-index:-1;
     pointer-events:none;
 }
+
 .hero-overlay{
     position:absolute;
     inset:0;
@@ -268,6 +277,7 @@ button{
     letter-spacing:-2px;
     font-weight:800;
 }
+
 .hero h1 span{
     color:#F6C98D;
 }
@@ -300,7 +310,7 @@ button{
     padding:13px 22px;
     border-radius:999px;
     font-weight:700;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .btn-primary{
@@ -390,10 +400,6 @@ button{
 /* =========================================================
    COMMON SECTION
    ========================================================= */
-
-section{
-    scroll-margin-top:90px;
-}
 
 .section-heading{
     text-align:center;
@@ -488,7 +494,7 @@ section{
     background:var(--green);
     color:#fff;
     font-weight:700;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .search-bar button:hover{
@@ -519,7 +525,7 @@ section{
     border-radius:999px;
     font-size:11px;
     font-weight:700;
-    transition:.2s;
+    transition:.2s ease;
 }
 
 .popular-chip:hover{
@@ -534,6 +540,12 @@ section{
     font-size:13px;
     color:var(--green);
     font-weight:600;
+}
+
+.search-highlight{
+    outline:3px solid rgba(11,143,75,.28);
+    outline-offset:5px;
+    animation:highlightPulse .9s ease 1;
 }
 
 /* =========================================================
@@ -591,7 +603,6 @@ section{
     transform:scale(1.05);
 }
 
-
 .package-content{
     width:100%;
     padding:22px;
@@ -604,7 +615,7 @@ section{
     display:inline-block;
     width:max-content;
     background:#e9f7ef;
-    color:#0A8F4B;
+    color:var(--green);
     padding:6px 12px;
     border-radius:20px;
     font-size:13px;
@@ -630,22 +641,22 @@ section{
     width:100%;
     margin-top:auto;
     padding:12px 15px;
-    background:#0A8F4B;
+    background:var(--green);
     color:#fff;
     border-radius:30px;
     text-align:center;
     font-size:15px;
     font-weight:600;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .card-link:hover{
-    background:#066b38;
+    background:var(--green-dark);
     color:#fff;
 }
 
 .card-link span{
-    transition:.2s;
+    transition:.2s ease;
 }
 
 .card-link:hover span{
@@ -732,7 +743,6 @@ section{
 
 /* =========================================================
    SPECIAL MULTI-DAY TOUR PACKAGES
-   SAME CARD STRUCTURE AS POPULAR PACKAGES
    ========================================================= */
 
 .big-packages-section{
@@ -751,7 +761,6 @@ section{
 .big-package-card{
     width:100%;
     min-width:0;
-    position:relative;
     background:#fff;
     border:1px solid var(--line);
     border-radius:18px;
@@ -768,7 +777,6 @@ section{
 }
 
 .big-package-card img{
-    position:relative;
     width:100%;
     height:240px;
     object-fit:cover;
@@ -780,16 +788,7 @@ section{
     transform:scale(1.05);
 }
 
-.big-package-card::after{
-    display:none;
-}
-
 .big-card-overlay{
-    position:relative;
-    left:auto;
-    right:auto;
-    bottom:auto;
-    z-index:2;
     padding:22px;
     background:#fff;
     color:var(--ink);
@@ -799,13 +798,11 @@ section{
     display:inline-block;
     width:max-content;
     background:#e9f7ef;
-    color:#0A8F4B;
+    color:var(--green);
     padding:6px 12px;
     border-radius:20px;
     font-size:11px;
     font-weight:600;
-    letter-spacing:0;
-    text-transform:none;
     margin-bottom:12px;
 }
 
@@ -828,17 +825,16 @@ section{
     width:100%;
     padding:12px 15px;
     border-radius:30px;
-    background:#0A8F4B;
+    background:var(--green);
     color:#fff;
     text-align:center;
     font-size:15px;
     font-weight:600;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .big-card-overlay a:hover{
-    background:#066b38;
-    color:#fff;
+    background:var(--green-dark);
 }
 
 /* =========================================================
@@ -938,7 +934,7 @@ section{
     box-shadow:0 8px 25px rgba(14,35,22,.05);
     position:relative;
     overflow:hidden;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .service-card::before{
@@ -951,7 +947,7 @@ section{
     background:var(--green);
     transform:scaleX(0);
     transform-origin:left;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .service-card:hover{
@@ -1119,7 +1115,7 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.5s;
+    transition:.5s ease;
 }
 
 .gallery-item::after{
@@ -1280,7 +1276,7 @@ section{
     border:1px solid var(--line);
     border-radius:18px;
     background:#fff;
-    transition:.2s;
+    transition:.2s ease;
 }
 
 .contact-card:hover{
@@ -1337,114 +1333,23 @@ section{
 }
 
 /* =========================================================
-   FLOATING / MOBILE BAR
-   ========================================================= */
-
-.floating-whatsapp{
-    position:fixed;
-    right:21px;
-    bottom:21px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:#22c55e;
-    color:#fff;
-    font-size:26px;
-    box-shadow:0 14px 30px rgba(34,197,94,.28);
-    z-index:900;
-    animation:pulse 2.2s infinite;
-}
-.call-icon{
-    font-size:26px;
-    line-height:1;
-    display:block;
-}
-.mobile-book-bar{
-    display:none;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer{
-    background:#101712;
-    color:#fff;
-    padding:55px 20px 18px;
-}
-
-.footer-inner{
-    width:min(1180px,100%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.2fr 1fr 1fr;
-    gap:40px;
-}
-
-.footer-brand img{
-    height:60px;
-    width:auto;
-    margin-bottom:10px;
-}
-
-.footer-brand p{
-    color:#aeb9b1;
-    font-size:11px;
-}
-
-.footer-links{
-    display:grid;
-    gap:8px;
-    align-content:start;
-}
-
-.footer-links a,
-.footer-contact a{
-    color:#c4cec8;
-    font-size:12px;
-}
-
-.footer-links a:hover,
-.footer-contact a:hover{
-    color:#fff;
-}
-
-.footer-contact{
-    display:grid;
-    gap:8px;
-    align-content:start;
-}
-
-.footer-bottom{
-    width:min(1180px,100%);
-    margin:35px auto 0;
-    padding-top:17px;
-    border-top:1px solid rgba(255,255,255,.1);
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    color:#7f8d84;
-    font-size:10px;
-}
-
-/* =========================================================
-   EXISTING PACKAGE-PAGE COMPATIBILITY
+   PACKAGE DETAIL PAGE
    ========================================================= */
 
 .package-hero{
     position:relative;
+    width:100%;
     height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
     margin-top:var(--header-h);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
 
 .package-hero img{
     position:absolute;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
@@ -1452,90 +1357,315 @@ footer{
 
 .package-overlay{
     position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.45);
+    inset:0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.68),
+            rgba(0,0,0,.38),
+            rgba(0,0,0,.28)
+        );
 }
 
 .package-hero-content{
     position:relative;
+    z-index:2;
+    width:min(900px,92%);
+    padding:20px;
     color:#fff;
     text-align:center;
-    z-index:2;
-    padding:20px;
+}
+
+.package-hero-kicker{
+    display:block;
+    margin-bottom:14px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.5px;
 }
 
 .package-hero-content h1{
-    font-size:52px;
-    margin-bottom:15px;
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:16px;
+    font-weight:800;
+}
+
+.package-hero-content h1 span{
+    color:#F6C98D;
 }
 
 .package-hero-content p{
-    font-size:22px;
+    font-size:20px;
+    line-height:1.5;
+    margin-bottom:25px;
 }
-.packages-page-content .hero-buttons{
+
+.package-hero-buttons{
+    display:flex;
     justify-content:center;
+    align-items:center;
+    gap:14px;
+    margin-top:20px;
 }
+
+.package-hero-buttons .btn{
+    background:var(--green);
+    color:#fff;
+    box-shadow:0 12px 30px rgba(11,143,75,.22);
+}
+
+.package-hero-buttons .btn:hover{
+    background:var(--green-dark);
+    transform:translateY(-3px);
+}
+
+.package-hero-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:50px;
+    padding:13px 24px;
+    border:1px solid rgba(255,255,255,.75);
+    border-radius:999px;
+    color:#fff;
+    font-weight:600;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(7px);
+    transition:.25s ease;
+}
+
+.package-hero-outline:hover{
+    background:#fff;
+    color:var(--ink);
+}
+
+/* =========================================================
+   PACKAGE DETAILS
+   ========================================================= */
+
 .package-details{
-    padding:60px 20px;
-    background:#f8f8f8;
+    padding:80px 20px;
+    background:var(--cream);
 }
 
 .details-box{
-    max-width:1000px;
+    width:100%;
+    max-width:1050px;
     margin:auto;
     background:#fff;
-    padding:40px;
-    border-radius:18px;
+    padding:42px;
+    border-radius:24px;
+    border:1px solid var(--line);
     box-shadow:var(--shadow);
 }
 
 .details-box h2{
-    color:var(--green);
-    margin-bottom:20px;
+    position:relative;
+    font-size:30px;
+    color:var(--ink);
+    margin-bottom:28px;
+    padding-bottom:14px;
+}
+
+.details-box h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:55px;
+    height:3px;
+    background:var(--green);
+    border-radius:10px;
 }
 
 .details-box p{
-    margin:15px 0;
-    font-size:17px;
+    margin:16px 0;
+    font-size:16px;
+    color:var(--muted);
 }
 
+.details-box strong{
+    color:var(--ink);
+}
+
+.details-box .btn{
+    margin-top:20px;
+    background:var(--green);
+    color:#fff;
+    box-shadow:0 10px 24px rgba(11,143,75,.18);
+}
+
+.details-box .btn:hover{
+    background:var(--green-dark);
+    transform:translateY(-2px);
+}
+
+/* =========================================================
+   PACKAGE INFORMATION GRID
+   ========================================================= */
+
+.package-info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+    margin:10px 0 25px;
+}
+
+.package-info-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px;
+    background:var(--cream);
+    border:1px solid #e3ebe5;
+    border-radius:16px;
+}
+
+.package-info-icon{
+    width:44px;
+    height:44px;
+    flex:0 0 44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#e8f5ed;
+    font-size:21px;
+}
+
+.package-info-item small{
+    display:block;
+    margin-bottom:3px;
+    color:#7a847d;
+    font-size:12px;
+    font-weight:600;
+}
+
+.package-info-item strong{
+    display:block;
+    color:var(--ink);
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* =========================================================
+   PACKAGE LISTS
+   Keeps original ✔ / ✘ symbols
+   ========================================================= */
+
 .details-box ul{
+    list-style:none;
+    padding-left:0;
     margin-top:15px;
-    padding-left:20px;
 }
 
 .details-box li{
-    margin:12px 0;
-    font-size:17px;
+    margin:10px 0;
+    padding:12px 16px;
+    background:var(--cream);
+    border:1px solid #e4ebe6;
+    border-radius:12px;
+    font-size:15px;
+    line-height:1.5;
+    color:#344039;
+    transition:.25s ease;
 }
+
+.details-box li:hover{
+    transform:translateX(4px);
+    box-shadow:0 8px 20px rgba(14,35,22,.06);
+    border-color:#c9dfd1;
+}
+
+/* Don't create extra icons.
+   The HTML's own ✔ / ✘ symbols remain visible. */
+
+.details-box li::before{
+    display:none !important;
+    content:none !important;
+}
+
+/* =========================================================
+   DAY-WISE ITINERARY
+   ========================================================= */
 
 .itinerary{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-    margin-top:30px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    margin-top:28px;
 }
 
 .day-card{
-    background:#f8f8f8;
-    padding:25px;
-    border-radius:15px;
-    border-left:5px solid var(--green);
+    background:var(--cream);
+    border:1px solid #e1e9e3;
+    border-left:4px solid var(--green);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 10px 25px rgba(14,35,22,.05);
+    transition:.25s ease;
+}
+
+.day-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 32px rgba(14,35,22,.09);
 }
 
 .day-card h3{
-    color:var(--green);
-    margin-bottom:15px;
+    display:inline-block;
+    margin-bottom:20px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:var(--green);
+    color:#fff;
+    font-size:18px;
+    font-weight:700;
 }
 
 .day-card ul{
-    padding-left:20px;
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 
 .day-card li{
-    margin:10px 0;
+    position:relative;
+    padding:9px 0 9px 22px;
+    margin:0;
+    color:#344039;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    border-bottom:1px solid #e5ebe7;
+    box-shadow:none;
 }
+
+.day-card li:hover{
+    transform:none;
+    box-shadow:none;
+    border-color:#e5ebe7;
+}
+
+.day-card li:last-child{
+    border-bottom:none;
+}
+
+.day-card li::before{
+    display:block !important;
+    content:"" !important;
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--green);
+}
+
+/* =========================================================
+   PACKAGES PAGE
+   ========================================================= */
 
 .packages-page-hero{
     position:relative;
@@ -1560,15 +1690,21 @@ footer{
     z-index:2;
     color:#fff;
     padding:20px;
+    width:min(900px,92%);
 }
 
 .packages-page-content h1{
     font-size:52px;
     margin-bottom:15px;
+    line-height:1.1;
 }
 
 .packages-page-content p{
     font-size:20px;
+}
+
+.packages-page-content .hero-buttons{
+    justify-content:center;
 }
 
 .all-packages-section{
@@ -1578,7 +1714,6 @@ footer{
 
 .all-packages-section .packages-grid{
     max-width:1200px;
-    margin:auto;
 }
 
 .custom-tour-section{
@@ -1604,13 +1739,102 @@ footer{
 }
 
 /* =========================================================
-   SEARCH HIGHLIGHT
+   FLOATING CALL + MOBILE BOOKING BAR
    ========================================================= */
 
-.search-highlight{
-    outline:3px solid rgba(11,143,75,.28);
-    outline-offset:5px;
-    animation:highlightPulse .9s ease 1;
+.floating-whatsapp{
+    position:fixed;
+    right:21px;
+    bottom:21px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#22c55e;
+    color:#fff;
+    font-size:26px;
+    box-shadow:0 14px 30px rgba(34,197,94,.28);
+    z-index:900;
+    animation:pulse 2.2s infinite;
+}
+
+.call-icon{
+    font-size:26px;
+    line-height:1;
+    display:block;
+}
+
+.mobile-book-bar{
+    display:none;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.premium-footer{
+    background:#101712;
+    color:#fff;
+    padding:60px 20px 20px;
+}
+
+.premium-footer .footer-inner{
+    width:min(1180px,100%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1.2fr;
+    gap:50px;
+}
+
+.premium-footer .footer-brand img{
+    height:65px;
+    width:auto;
+    margin-bottom:15px;
+}
+
+.premium-footer .footer-brand p{
+    max-width:330px;
+    color:#aeb9b1;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.premium-footer h3{
+    font-size:16px;
+    margin-bottom:18px;
+}
+
+.premium-footer .footer-links,
+.premium-footer .footer-contact{
+    display:grid;
+    gap:10px;
+    align-content:start;
+}
+
+.premium-footer .footer-links a,
+.premium-footer .footer-contact a{
+    color:#c4cec8;
+    font-size:13px;
+    transition:.25s ease;
+}
+
+.premium-footer .footer-links a:hover,
+.premium-footer .footer-contact a:hover{
+    color:#fff;
+    transform:translateX(3px);
+}
+
+.premium-footer .footer-bottom{
+    width:min(1180px,100%);
+    margin:40px auto 0;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.10);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#7f8d84;
+    font-size:11px;
 }
 
 /* =========================================================
@@ -1633,6 +1857,7 @@ footer{
         opacity:.3;
         transform:translate(-50%,0);
     }
+
     50%{
         opacity:1;
         transform:translate(-50%,8px);
@@ -1643,6 +1868,7 @@ footer{
     0%,100%{
         box-shadow:0 14px 30px rgba(34,197,94,.18);
     }
+
     50%{
         box-shadow:0 14px 35px rgba(34,197,94,.38);
     }
@@ -1652,6 +1878,7 @@ footer{
     0%,100%{
         transform:translateY(-3px);
     }
+
     50%{
         transform:translateY(-6px);
     }
@@ -1743,36 +1970,12 @@ footer{
         padding:0;
     }
 
-    .hero,
-    .search-section,
-    .packages-section,
-    .big-packages-section,
-    .explore-section,
-    .services-section,
-    .why-section,
-    .gallery-section,
-    .faq-section,
-    .custom-cta,
-    .contact-section,
-    .site-header{
-        width:100%;
-        max-width:100%;
-    }
-.hero::before{
-    width:280px;
-    height:280px;
-    right:-45px;
-    top:50%;
-    opacity:.08;
-}
     /* -----------------------------------------------------
        HEADER
        ----------------------------------------------------- */
 
     .site-header{
         height:72px;
-        left:0;
-        right:0;
     }
 
     .header-container{
@@ -1794,13 +1997,13 @@ footer{
     }
 
     .logo img{
-        display:block;
         height:50px;
         width:auto;
         max-width:180px;
     }
 
-    .header-book{
+    .header-book,
+    .book-btn{
         display:none !important;
     }
 
@@ -1809,7 +2012,7 @@ footer{
         flex:0 0 44px;
         width:44px;
         height:44px;
-        margin:0 0 0 auto;
+        margin-left:auto;
         padding:10px;
         border:0;
         background:transparent;
@@ -1872,7 +2075,7 @@ footer{
     }
 
     /* -----------------------------------------------------
-       HERO
+       HOME HERO
        ----------------------------------------------------- */
 
     .hero{
@@ -1881,12 +2084,21 @@ footer{
         background-position:center;
     }
 
-   .hero h1{
-    font-size:42px;
-    line-height:1.08;
-    letter-spacing:-1.2px;
-    margin:22px 0 20px;
-}
+    .hero::before{
+        width:280px;
+        height:280px;
+        right:-45px;
+        top:50%;
+        opacity:.08;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.08;
+        letter-spacing:-1.2px;
+        margin:22px 0 20px;
+    }
+
     .hero p{
         font-size:20px;
     }
@@ -1926,9 +2138,7 @@ footer{
        ----------------------------------------------------- */
 
     .search-section{
-        padding-top:45px;
-        padding-left:15px;
-        padding-right:15px;
+        padding:45px 15px;
     }
 
     .search-shell{
@@ -1975,7 +2185,7 @@ footer{
     }
 
     /* -----------------------------------------------------
-       POPULAR PACKAGE CARDS — SAME SIZE AS REFERENCE
+       POPULAR PACKAGE CARDS
        ----------------------------------------------------- */
 
     .packages-grid{
@@ -2029,7 +2239,7 @@ footer{
     }
 
     /* -----------------------------------------------------
-       SPECIAL PACKAGE CARDS — SAME SIZE AS POPULAR
+       SPECIAL PACKAGE CARDS
        ----------------------------------------------------- */
 
     .big-packages-grid{
@@ -2045,53 +2255,36 @@ footer{
     }
 
     .big-package-card img{
-        position:relative;
         width:100%;
         height:150px;
         object-fit:cover;
     }
 
     .big-card-overlay{
-        position:relative;
-        left:auto;
-        right:auto;
-        bottom:auto;
         padding:15px;
-        background:#fff;
-        color:var(--ink);
     }
 
     .big-card-overlay span{
-        display:inline-block;
         font-size:11px;
         padding:5px 8px;
         margin-bottom:8px;
     }
 
     .big-card-overlay h3{
-        color:var(--ink);
         font-size:18px;
         line-height:1.25;
         margin:0 0 7px;
     }
 
     .big-card-overlay p{
-        color:#666;
         font-size:13px;
         line-height:1.45;
         margin-bottom:14px;
     }
 
     .big-card-overlay a{
-        display:block;
-        width:100%;
         padding:10px 5px;
-        text-align:center;
-        border-radius:30px;
-        background:#0A8F4B;
-        color:#fff;
         font-size:13px;
-        font-weight:600;
     }
 
     /* -----------------------------------------------------
@@ -2207,17 +2400,28 @@ footer{
        FOOTER
        ----------------------------------------------------- */
 
-    .footer-inner{
-        grid-template-columns:1fr;
-        gap:25px;
+    .premium-footer{
+        padding:45px 20px 18px;
     }
 
-    .footer-bottom{
+    .premium-footer .footer-inner{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .premium-footer .footer-brand p{
+        font-size:12px;
+    }
+
+    .premium-footer .footer-bottom{
         flex-direction:column;
+        text-align:center;
+        gap:6px;
+        margin-top:30px;
     }
 
     /* -----------------------------------------------------
-       FLOATING CALL / WHATSAPP
+       FLOATING CALL BUTTON
        ----------------------------------------------------- */
 
     .floating-whatsapp{
@@ -2228,7 +2432,7 @@ footer{
     }
 
     /* -----------------------------------------------------
-       MOBILE BOTTOM BOOKING BAR
+       MOBILE BOOKING BAR
        ----------------------------------------------------- */
 
     .mobile-book-bar{
@@ -2262,28 +2466,128 @@ footer{
     }
 
     /* -----------------------------------------------------
-       PACKAGE DETAIL PAGES
+       PACKAGE DETAIL HERO
        ----------------------------------------------------- */
 
     .package-hero{
-        height:55vh;
+        height:70vh;
+        min-height:480px;
+        margin-top:var(--header-h);
+    }
+
+    .package-hero-content{
+        width:100%;
+        max-width:500px;
+        padding:20px 18px;
+    }
+
+    .package-hero-kicker{
+        margin-bottom:12px;
+        font-size:11px;
+        letter-spacing:1px;
     }
 
     .package-hero-content h1{
-        font-size:34px;
+        font-size:36px;
+        line-height:1.12;
+        margin-bottom:14px;
     }
 
     .package-hero-content p{
-        font-size:18px;
+        font-size:16px;
+        line-height:1.5;
+        margin-bottom:24px;
+    }
+
+    .package-hero-buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .package-hero-buttons .btn,
+    .package-hero-outline{
+        width:100%;
+        max-width:260px;
+        text-align:center;
+    }
+
+    /* -----------------------------------------------------
+       PACKAGE DETAILS
+       ----------------------------------------------------- */
+
+    .package-details{
+        padding:55px 15px;
     }
 
     .details-box{
-        padding:25px;
+        padding:28px 22px;
+        border-radius:20px;
     }
+
+    .details-box h2{
+        font-size:25px;
+        margin-bottom:22px;
+    }
+
+    .details-box p{
+        font-size:14px;
+    }
+
+    .details-box .btn{
+        width:100%;
+        padding:13px 20px;
+    }
+
+    .details-box li{
+        padding:11px 13px;
+        font-size:14px;
+    }
+
+    /* -----------------------------------------------------
+       PACKAGE INFORMATION
+       ----------------------------------------------------- */
+
+    .package-info-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .package-info-item{
+        padding:15px;
+    }
+
+    .package-info-item strong{
+        font-size:13px;
+    }
+
+    /* -----------------------------------------------------
+       PACKAGE ITINERARY
+       ----------------------------------------------------- */
 
     .itinerary{
         grid-template-columns:1fr;
+        gap:18px;
     }
+
+    .day-card{
+        padding:22px 18px;
+    }
+
+    .day-card h3{
+        font-size:17px;
+        padding:7px 16px;
+        margin-bottom:15px;
+    }
+
+    .day-card li{
+        font-size:14px;
+        padding:8px 0 8px 22px;
+    }
+
+    /* -----------------------------------------------------
+       PACKAGES PAGE
+       ----------------------------------------------------- */
 
     .packages-page-hero{
         height:50vh;
@@ -2308,10 +2612,6 @@ footer{
    ========================================================= */
 
 @media(max-width:430px){
-
-    .header-book{
-        display:none;
-    }
 
     .hero h1{
         font-size:42px;
@@ -2340,9 +2640,12 @@ footer{
 
 @media(max-width:400px){
 
+    .logo img{
+        height:46px;
+    }
+
     .packages-grid,
     .big-packages-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
         gap:12px;
     }
 
@@ -2387,546 +2690,6 @@ footer{
         padding:9px 3px;
     }
 
-    .big-card-overlay a{
-        border-radius:25px;
-    }
-}
-/* =========================================================
-   PREMIUM PACKAGE DETAIL PAGE
-   PACKAGE INFORMATION
-   ========================================================= */
-
-.package-details{
-    padding:80px 20px;
-    background:#f6f8f5;
-}
-
-.details-box{
-    max-width:1050px;
-    margin:auto;
-    background:#ffffff;
-    padding:42px;
-    border-radius:24px;
-    box-shadow:0 18px 50px rgba(14,35,22,.10);
-    border:1px solid #e6ebe7;
-}
-
-.details-box h2{
-    position:relative;
-    font-size:30px;
-    color:#162019;
-    margin-bottom:28px;
-    padding-bottom:14px;
-}
-
-.details-box h2::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:55px;
-    height:3px;
-    background:#0b8f4b;
-    border-radius:10px;
-}
-
-.details-box p{
-    margin:16px 0;
-    font-size:16px;
-    color:#68716b;
-}
-
-.details-box strong{
-    color:#162019;
-}
-
-.details-box .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:20px;
-    padding:14px 28px;
-    border-radius:999px;
-    background:#0b8f4b;
-    color:#fff;
-    font-weight:700;
-    box-shadow:0 10px 24px rgba(11,143,75,.18);
-    transition:.25s ease;
-}
-
-.details-box .btn:hover{
-    background:#066b38;
-    transform:translateY(-2px);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .package-details{
-        padding:55px 15px;
-    }
-
-    .details-box{
-        padding:28px 22px;
-        border-radius:20px;
-    }
-
-    .details-box h2{
-        font-size:25px;
-        margin-bottom:22px;
-    }
-
-    .details-box p{
-        font-size:14px;
-    }
-
-    .details-box .btn{
-        width:100%;
-        padding:13px 20px;
-    }
-
-}
-/* =========================================================
-   PREMIUM TOUR HIGHLIGHTS
-   ========================================================= */
-
-.details-box ul{
-    list-style:none;
-    padding-left:0;
-}
-
-.details-box ul li{
-    position:relative;
-    padding:13px 16px 13px 44px;
-    margin:10px 0;
-    background:#f6f8f5;
-    border:1px solid #e6ebe7;
-    border-radius:12px;
-    font-size:15px;
-    color:#344039;
-    transition:.25s ease;
-}
-
-.details-box ul li::before{
-    content:"✓";
-    position:absolute;
-    left:15px;
-    top:50%;
-    transform:translateY(-50%);
-    width:22px;
-    height:22px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#0b8f4b;
-    color:#fff;
-    font-size:12px;
-    font-weight:700;
-}
-
-.details-box ul li:hover{
-    transform:translateX(4px);
-    border-color:#b9d9c6;
-    box-shadow:0 8px 20px rgba(14,35,22,.06);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .details-box ul li{
-        padding:11px 12px 11px 40px;
-        font-size:14px;
-    }
-
-    .details-box ul li::before{
-        left:12px;
-        width:21px;
-        height:21px;
-    }
-
-}
-/* REMOVE GREEN CHECK ICONS FROM ALL PACKAGE PAGES */
-
-.details-box ul li::before{
-    display:none !important;
-    content:none !important;
-}
-
-.details-box ul li{
-    padding-left:0 !important;
-}
-/* =========================================================
-   PREMIUM DAY-WISE ITINERARY
-   ========================================================= */
-
-.itinerary{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
-    margin-top:28px;
-}
-
-.day-card{
-    background:#f6f8f5;
-    border:1px solid #e1e9e3;
-    border-left:4px solid #0b8f4b;
-    border-radius:18px;
-    padding:28px;
-    box-shadow:0 10px 25px rgba(14,35,22,.05);
-    transition:.25s ease;
-}
-
-.day-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 16px 32px rgba(14,35,22,.09);
-}
-
-.day-card h3{
-    display:inline-block;
-    margin-bottom:20px;
-    padding:8px 18px;
-    border-radius:999px;
-    background:#0b8f4b;
-    color:#fff;
-    font-size:18px;
-    font-weight:700;
-}
-
-.day-card ul{
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-
-.day-card li{
-    position:relative;
-    padding:9px 0 9px 25px;
-    margin:0;
-    color:#344039;
-    font-size:15px;
-    line-height:1.5;
-    border-bottom:1px solid #e5ebe7;
-}
-
-.day-card li:last-child{
-    border-bottom:none;
-}
-
-.day-card li::before{
-    content:"";
-    position:absolute;
-    left:2px;
-    top:17px;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#0b8f4b;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .itinerary{
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .day-card{
-        padding:22px 18px;
-        border-radius:16px;
-    }
-
-    .day-card h3{
-        font-size:17px;
-        padding:7px 16px;
-        margin-bottom:15px;
-    }
-
-    .day-card li{
-        font-size:14px;
-        padding:8px 0 8px 22px;
-    }
-
-}
-/* =========================================================
-   PREMIUM PACKAGE INFORMATION GRID
-   ========================================================= */
-
-.package-info-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
-    margin:10px 0 25px;
-}
-
-.package-info-item{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:18px;
-    background:#f6f8f5;
-    border:1px solid #e3ebe5;
-    border-radius:16px;
-}
-
-.package-info-icon{
-    width:44px;
-    height:44px;
-    flex:0 0 44px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:#e8f5ed;
-    font-size:21px;
-}
-
-.package-info-item small{
-    display:block;
-    margin-bottom:3px;
-    color:#7a847d;
-    font-size:12px;
-    font-weight:600;
-}
-
-.package-info-item strong{
-    display:block;
-    color:#162019;
-    font-size:14px;
-    line-height:1.4;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .package-info-grid{
-        grid-template-columns:1fr;
-        gap:12px;
-    }
-
-    .package-info-item{
-        padding:15px;
-    }
-
-    .package-info-item strong{
-        font-size:13px;
-    }
-
-}
-/* =========================================================
-   PREMIUM TOUR HIGHLIGHTS
-   ========================================================= */
-
-.details-box ul{
-    list-style:none;
-    padding-left:0;
-}
-
-.details-box li{
-    margin:10px 0;
-    padding:12px 16px;
-    background:#f6f8f5;
-    border:1px solid #e4ebe6;
-    border-radius:12px;
-    font-size:15px;
-    line-height:1.5;
-    color:#344039;
-    transition:.25s ease;
-}
-
-.details-box li:hover{
-    transform:translateX(4px);
-    box-shadow:0 8px 20px rgba(14,35,22,.06);
-    border-color:#c9dfd1;
-}
-
-/* Keep your original ✔ and ✘ symbols */
-.details-box li::before{
-    display:none !important;
-    content:none !important;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .details-box li{
-        padding:11px 13px;
-        font-size:14px;
-    }
-
-}
-/* =========================================================
-   PREMIUM FOOTER
-   ========================================================= */
-
-.premium-footer{
-    background:#101712;
-    color:#fff;
-    padding:60px 20px 20px;
-}
-
-.premium-footer .footer-inner{
-    width:min(1180px,100%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:1.3fr 1fr 1.2fr;
-    gap:50px;
-}
-
-.premium-footer .footer-brand img{
-    height:65px;
-    width:auto;
-    margin-bottom:15px;
-}
-
-.premium-footer .footer-brand p{
-    max-width:330px;
-    color:#aeb9b1;
-    font-size:13px;
-    line-height:1.7;
-}
-
-.premium-footer h3{
-    font-size:16px;
-    margin-bottom:18px;
-}
-
-.premium-footer .footer-links,
-.premium-footer .footer-contact{
-    display:grid;
-    gap:10px;
-    align-content:start;
-}
-
-.premium-footer .footer-links a,
-.premium-footer .footer-contact a{
-    color:#c4cec8;
-    font-size:13px;
-    transition:.25s ease;
-}
-
-.premium-footer .footer-links a:hover,
-.premium-footer .footer-contact a:hover{
-    color:#fff;
-    transform:translateX(3px);
-}
-
-.premium-footer .footer-bottom{
-    width:min(1180px,100%);
-    margin:40px auto 0;
-    padding-top:18px;
-    border-top:1px solid rgba(255,255,255,.10);
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    color:#7f8d84;
-    font-size:11px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .premium-footer{
-        padding:45px 20px 18px;
-    }
-
-    .premium-footer .footer-inner{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .premium-footer .footer-brand p{
-        font-size:12px;
-    }
-
-    .premium-footer .footer-bottom{
-        flex-direction:column;
-        text-align:center;
-        gap:6px;
-        margin-top:30px;
-    }
-
-}
-/* =========================================================
-   PREMIUM PACKAGE HERO — MOBILE
-   ========================================================= */
-
-@media (max-width: 768px){
-
-    .package-hero{
-        height:70vh;
-        min-height:480px;
-        margin-top:var(--header-h);
-    }
-
-    .package-hero img{
-        object-position:center;
-    }
-
-    .package-hero-content{
-        width:100%;
-        max-width:500px;
-        padding:20px 18px;
-    }
-
-    .package-hero-kicker{
-        display:block;
-        margin-bottom:12px;
-        font-size:11px;
-        font-weight:700;
-        letter-spacing:1px;
-    }
-
-    .package-hero-content h1{
-        font-size:36px;
-        line-height:1.12;
-        margin-bottom:14px;
-    }
-
-    .package-hero-content h1 span{
-        color:#f6c98d;
-    }
-
-    .package-hero-content p{
-        font-size:16px;
-        line-height:1.5;
-        margin-bottom:24px;
-    }
-
-    .package-hero-buttons{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:12px;
-    }
-
-    .package-hero-buttons .btn,
-    .package-hero-outline{
-        width:100%;
-        max-width:260px;
-        text-align:center;
-        padding:13px 20px;
-        border-radius:999px;
-    }
-
-    .package-hero-outline{
-        border:1px solid rgba(255,255,255,.75);
-        color:#fff;
-        font-weight:600;
-        background:rgba(255,255,255,.08);
-        backdrop-filter:blur(5px);
-    }
-}
-
-@media (max-width:400px){
-
     .package-hero{
         min-height:450px;
     }
@@ -2939,4 +2702,7 @@ footer{
         font-size:15px;
     }
 
+    .packages-page-content h1{
+        font-size:29px;
+    }
 }
