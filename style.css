@@ -2652,3 +2652,69 @@ footer{
     }
 
 }
+/* =========================================================
+   PREMIUM PACKAGE INFORMATION GRID
+   ========================================================= */
+
+.package-info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+    margin:10px 0 25px;
+}
+
+.package-info-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:18px;
+    background:#f6f8f5;
+    border:1px solid #e3ebe5;
+    border-radius:16px;
+}
+
+.package-info-icon{
+    width:44px;
+    height:44px;
+    flex:0 0 44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#e8f5ed;
+    font-size:21px;
+}
+
+.package-info-item small{
+    display:block;
+    margin-bottom:3px;
+    color:#7a847d;
+    font-size:12px;
+    font-weight:600;
+}
+
+.package-info-item strong{
+    display:block;
+    color:#162019;
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .package-info-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .package-info-item{
+        padding:15px;
+    }
+
+    .package-info-item strong{
+        font-size:13px;
+    }
+
+}
