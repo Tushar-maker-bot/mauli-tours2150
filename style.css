@@ -2854,3 +2854,89 @@ footer{
     }
 
 }
+/* =========================================================
+   PREMIUM PACKAGE HERO — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px){
+
+    .package-hero{
+        height:70vh;
+        min-height:480px;
+        margin-top:var(--header-h);
+    }
+
+    .package-hero img{
+        object-position:center;
+    }
+
+    .package-hero-content{
+        width:100%;
+        max-width:500px;
+        padding:20px 18px;
+    }
+
+    .package-hero-kicker{
+        display:block;
+        margin-bottom:12px;
+        font-size:11px;
+        font-weight:700;
+        letter-spacing:1px;
+    }
+
+    .package-hero-content h1{
+        font-size:36px;
+        line-height:1.12;
+        margin-bottom:14px;
+    }
+
+    .package-hero-content h1 span{
+        color:#f6c98d;
+    }
+
+    .package-hero-content p{
+        font-size:16px;
+        line-height:1.5;
+        margin-bottom:24px;
+    }
+
+    .package-hero-buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .package-hero-buttons .btn,
+    .package-hero-outline{
+        width:100%;
+        max-width:260px;
+        text-align:center;
+        padding:13px 20px;
+        border-radius:999px;
+    }
+
+    .package-hero-outline{
+        border:1px solid rgba(255,255,255,.75);
+        color:#fff;
+        font-weight:600;
+        background:rgba(255,255,255,.08);
+        backdrop-filter:blur(5px);
+    }
+}
+
+@media (max-width:400px){
+
+    .package-hero{
+        min-height:450px;
+    }
+
+    .package-hero-content h1{
+        font-size:31px;
+    }
+
+    .package-hero-content p{
+        font-size:15px;
+    }
+
+}
