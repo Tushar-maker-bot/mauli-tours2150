@@ -2487,3 +2487,64 @@ footer{
     }
 
 }
+/* =========================================================
+   PREMIUM TOUR HIGHLIGHTS
+   ========================================================= */
+
+.details-box ul{
+    list-style:none;
+    padding-left:0;
+}
+
+.details-box ul li{
+    position:relative;
+    padding:13px 16px 13px 44px;
+    margin:10px 0;
+    background:#f6f8f5;
+    border:1px solid #e6ebe7;
+    border-radius:12px;
+    font-size:15px;
+    color:#344039;
+    transition:.25s ease;
+}
+
+.details-box ul li::before{
+    content:"✓";
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#0b8f4b;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+}
+
+.details-box ul li:hover{
+    transform:translateX(4px);
+    border-color:#b9d9c6;
+    box-shadow:0 8px 20px rgba(14,35,22,.06);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .details-box ul li{
+        padding:11px 12px 11px 40px;
+        font-size:14px;
+    }
+
+    .details-box ul li::before{
+        left:12px;
+        width:21px;
+        height:21px;
+    }
+
+}
