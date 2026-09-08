@@ -2548,3 +2548,12 @@ footer{
     }
 
 }
+/* REMOVE GREEN CHECK FROM EXCLUDES */
+
+.excludes-box ul li::before{
+    content:none;
+}
+
+.excludes-box ul li{
+    padding-left:16px;
+}
