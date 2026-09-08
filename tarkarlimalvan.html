@@ -8,7 +8,7 @@
 
 <title>Tarkarli–Malvan 3 Days Tour Package | Mauli Tours & Travels</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,89 +16,234 @@
 
 <body>
 
-<header>
 
-<div class="container">
+<!-- ================= HEADER ================= -->
 
-<div class="logo">
-<img src="LOGO.png" alt="Mauli Tours & Travels Logo">
-</div>
+<header class="site-header" id="siteHeader">
 
-<nav>
+    <div class="header-container">
 
-<a href="index.html">Home</a>
+        <a href="index.html"
+           class="logo"
+           aria-label="Mauli Tours & Travels Home">
 
-<a href="index.html#packages">Packages</a>
+            <img src="LOGO.png"
+                 alt="Mauli Tours & Travels Logo">
 
-<a href="index.html#services">Services</a>
+        </a>
 
-<a href="index.html#contact">Contact</a>
 
-</nav>
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNav">
 
-<a href="https://wa.me/919226718177" class="book-btn" target="_blank">
+            <span></span>
+            <span></span>
+            <span></span>
 
-Book Now
+        </button>
 
-</a>
 
-</div>
+        <nav class="main-nav" id="mainNav">
+
+            <a href="index.html">Home</a>
+
+            <a href="packages.html">Packages</a>
+
+            <a href="index.html#services">Services</a>
+
+            <a href="index.html#why-us">Why Us</a>
+
+            <a href="index.html#gallery">Gallery</a>
+
+            <a href="index.html#contact">Contact</a>
+
+        </nav>
+
+
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20a%20trip."
+           class="header-book"
+           target="_blank"
+           rel="noopener">
+
+            Book Now
+
+        </a>
+
+    </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================= PREMIUM TARKARLI–MALVAN HERO ================= -->
 
 <section class="package-hero">
 
-<img src="tarkarli-malvanheighlilhts.jpg" alt="Tarkarli–Malvan Tour">
+    <img src="tarkarli-malvanheighlilhts.jpg"
+         alt="Tarkarli Malvan Tour">
 
-<div class="package-overlay"></div>
+    <div class="package-overlay"></div>
 
-<div class="package-hero-content">
 
-<h1>Tarkarli–Malvan Tour</h1>
+    <div class="package-hero-content">
 
-<p>Beautiful Beaches, Sindhudurg Fort & Coastal Adventure</p>
+        <span class="package-hero-kicker">
+            ✦ EXPLORE • EXPERIENCE • ENJOY
+        </span>
 
-</div>
+
+        <h1>
+            Tarkarli–Malvan<br>
+            <span>3 Days Tour Package</span>
+        </h1>
+
+
+        <p>
+            Beautiful Beaches, Sindhudurg Fort & Coastal Adventure
+        </p>
+
+
+        <div class="package-hero-buttons">
+
+            <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
+               class="btn"
+               target="_blank"
+               rel="noopener">
+
+                Get Best Price
+
+            </a>
+
+
+            <a href="#package-info"
+               class="package-hero-outline">
+
+                View Package
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= PACKAGE INFORMATION ================= -->
 
-<section class="package-details">
+<section class="package-details"
+         id="package-info">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Information</h2>
+        <h2>
+            Package Information
+        </h2>
 
-<p>
-<strong>📍 Starting From:</strong> Your Location
-</p>
 
-<p>
-<strong>🕒 Duration:</strong> 3 Days / 2 Nights
-</p>
+        <div class="package-info-grid">
 
-<p>
-<strong>👨‍👩‍👧‍👦 Best For:</strong> Family, Friends, Couples & Groups
-</p>
 
-<p>
-<strong>💰 Price:</strong> Contact for Best Price
-</p>
+            <div class="package-info-item">
 
-<a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
-class="btn"
-target="_blank">
+                <span class="package-info-icon">
+                    📍
+                </span>
 
-Get Best Price
+                <div>
 
-</a>
+                    <small>
+                        Starting From
+                    </small>
 
-</div>
+                    <strong>
+                        Your Location
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    🕒
+                </span>
+
+                <div>
+
+                    <small>
+                        Duration
+                    </small>
+
+                    <strong>
+                        3 Days / 2 Nights
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    👨‍👩‍👧‍👦
+                </span>
+
+                <div>
+
+                    <small>
+                        Best For
+                    </small>
+
+                    <strong>
+                        Family, Friends, Couples & Groups
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="package-info-item">
+
+                <span class="package-info-icon">
+                    💰
+                </span>
+
+                <div>
+
+                    <small>
+                        Price
+                    </small>
+
+                    <strong>
+                        Contact for Best Price
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
+           class="btn"
+           target="_blank"
+           rel="noopener">
+
+            Get Best Price
+
+        </a>
+
+    </div>
 
 </section>
 
@@ -107,33 +252,36 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Tour Highlights</h2>
+        <h2>
+            Tour Highlights
+        </h2>
 
-<ul>
 
-<li>✔ Tarkarli Beach</li>
+        <ul>
 
-<li>✔ Malvan Beach</li>
+            <li>✔ Tarkarli Beach</li>
 
-<li>✔ Sindhudurg Fort</li>
+            <li>✔ Malvan Beach</li>
 
-<li>✔ Devbag Beach</li>
+            <li>✔ Sindhudurg Fort</li>
 
-<li>✔ Tsunami Island</li>
+            <li>✔ Devbag Beach</li>
 
-<li>✔ Water Sports & Adventure Activities</li>
+            <li>✔ Tsunami Island</li>
 
-<li>✔ Malvan Local Market</li>
+            <li>✔ Water Sports & Adventure Activities</li>
 
-<li>✔ Beautiful Konkan Coastal Views</li>
+            <li>✔ Malvan Local Market</li>
 
-<li>✔ Delicious Malvani Cuisine</li>
+            <li>✔ Beautiful Konkan Coastal Views</li>
 
-</ul>
+            <li>✔ Delicious Malvani Cuisine</li>
 
-</div>
+        </ul>
+
+    </div>
 
 </section>
 
@@ -142,121 +290,199 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>🗓️ 3 Days / 2 Nights Itinerary</h2>
-
-<div class="itinerary">
-
-
-<!-- DAY 1 -->
-
-<div class="day-card">
-
-<h3>🌊 Day 1 – Pune → Tarkarli / Malvan</h3>
-
-<ul>
-
-<li>Pickup from Your Location</li>
-
-<li>Early Morning Departure</li>
-
-<li>Breakfast Stop on the Way</li>
-
-<li>Scenic Journey Towards Konkan</li>
-
-<li>Arrival at Tarkarli / Malvan</li>
-
-<li>Hotel Check-in</li>
-
-<li>Lunch Break</li>
-
-<li>Tarkarli Beach Visit</li>
-
-<li>Enjoy Sunset & Beach Time</li>
-
-<li>Free Time for Local Exploration</li>
-
-<li>Dinner & Overnight Stay at Tarkarli / Malvan</li>
-
-</ul>
-
-</div>
+        <h2>
+            🗓️ 3 Days / 2 Nights Itinerary
+        </h2>
 
 
-<!-- DAY 2 -->
-
-<div class="day-card">
-
-<h3>🏰 Day 2 – Sindhudurg Fort & Water Sports</h3>
-
-<ul>
-
-<li>Breakfast at Hotel</li>
-
-<li>Visit Sindhudurg Fort</li>
-
-<li>Boat Ride to Sindhudurg Fort</li>
-
-<li>Explore the Historic Fort</li>
-
-<li>Return to Malvan</li>
-
-<li>Lunch Break</li>
-
-<li>Visit Devbag Beach</li>
-
-<li>Tsunami Island Visit</li>
-
-<li>Enjoy Water Sports Activities</li>
-
-<li>Free Time at Beach</li>
-
-<li>Return to Hotel</li>
-
-<li>Dinner & Overnight Stay</li>
-
-</ul>
-
-</div>
+        <div class="itinerary">
 
 
-<!-- DAY 3 -->
+            <!-- DAY 1 -->
 
-<div class="day-card">
+            <div class="day-card">
 
-<h3>🌅 Day 3 – Malvan Sightseeing → Return Journey</h3>
-
-<ul>
-
-<li>Breakfast at Hotel</li>
-
-<li>Hotel Check-out</li>
-
-<li>Malvan Local Sightseeing</li>
-
-<li>Visit Malvan Local Market</li>
-
-<li>Shopping for Local Products</li>
-
-<li>Enjoy Authentic Malvani Lunch</li>
-
-<li>Last Visit to Tarkarli Beach</li>
-
-<li>Begin Return Journey</li>
-
-<li>Scenic Konkan Road Trip</li>
-
-<li>Evening Arrival at Your Location</li>
-
-</ul>
-
-</div>
+                <h3>
+                    🌊 Day 1 – Pune → Tarkarli / Malvan
+                </h3>
 
 
-</div>
+                <ul>
 
-</div>
+                    <li>
+                        Pickup from Your Location
+                    </li>
+
+                    <li>
+                        Early Morning Departure
+                    </li>
+
+                    <li>
+                        Breakfast Stop on the Way
+                    </li>
+
+                    <li>
+                        Scenic Journey Towards Konkan
+                    </li>
+
+                    <li>
+                        Arrival at Tarkarli / Malvan
+                    </li>
+
+                    <li>
+                        Hotel Check-in
+                    </li>
+
+                    <li>
+                        Lunch Break
+                    </li>
+
+                    <li>
+                        Tarkarli Beach Visit
+                    </li>
+
+                    <li>
+                        Enjoy Sunset & Beach Time
+                    </li>
+
+                    <li>
+                        Free Time for Local Exploration
+                    </li>
+
+                    <li>
+                        Dinner & Overnight Stay at Tarkarli / Malvan
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- DAY 2 -->
+
+            <div class="day-card">
+
+                <h3>
+                    🏰 Day 2 – Sindhudurg Fort & Water Sports
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Breakfast at Hotel
+                    </li>
+
+                    <li>
+                        Visit Sindhudurg Fort
+                    </li>
+
+                    <li>
+                        Boat Ride to Sindhudurg Fort
+                    </li>
+
+                    <li>
+                        Explore the Historic Fort
+                    </li>
+
+                    <li>
+                        Return to Malvan
+                    </li>
+
+                    <li>
+                        Lunch Break
+                    </li>
+
+                    <li>
+                        Visit Devbag Beach
+                    </li>
+
+                    <li>
+                        Tsunami Island Visit
+                    </li>
+
+                    <li>
+                        Enjoy Water Sports Activities
+                    </li>
+
+                    <li>
+                        Free Time at Beach
+                    </li>
+
+                    <li>
+                        Return to Hotel
+                    </li>
+
+                    <li>
+                        Dinner & Overnight Stay
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- DAY 3 -->
+
+            <div class="day-card">
+
+                <h3>
+                    🌅 Day 3 – Malvan Sightseeing → Return Journey
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Breakfast at Hotel
+                    </li>
+
+                    <li>
+                        Hotel Check-out
+                    </li>
+
+                    <li>
+                        Malvan Local Sightseeing
+                    </li>
+
+                    <li>
+                        Visit Malvan Local Market
+                    </li>
+
+                    <li>
+                        Shopping for Local Products
+                    </li>
+
+                    <li>
+                        Enjoy Authentic Malvani Lunch
+                    </li>
+
+                    <li>
+                        Last Visit to Tarkarli Beach
+                    </li>
+
+                    <li>
+                        Begin Return Journey
+                    </li>
+
+                    <li>
+                        Scenic Konkan Road Trip
+                    </li>
+
+                    <li>
+                        Evening Arrival at Your Location
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -265,33 +491,36 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Includes</h2>
+        <h2>
+            Package Includes
+        </h2>
 
-<ul>
 
-<li>✔ Pickup & Drop</li>
+        <ul>
 
-<li>✔ Private AC Car</li>
+            <li>✔ Pickup & Drop</li>
 
-<li>✔ 2 Nights Hotel Accommodation</li>
+            <li>✔ Private AC Car</li>
 
-<li>✔ Tarkarli & Malvan Sightseeing</li>
+            <li>✔ 2 Nights Hotel Accommodation</li>
 
-<li>✔ Sindhudurg Fort Visit</li>
+            <li>✔ Tarkarli & Malvan Sightseeing</li>
 
-<li>✔ Toll & Parking</li>
+            <li>✔ Sindhudurg Fort Visit</li>
 
-<li>✔ Driver Allowance</li>
+            <li>✔ Toll & Parking</li>
 
-<li>✔ Comfortable Travel</li>
+            <li>✔ Driver Allowance</li>
 
-<li>✔ Flexible Pickup Location</li>
+            <li>✔ Comfortable Travel</li>
 
-</ul>
+            <li>✔ Flexible Pickup Location</li>
 
-</div>
+        </ul>
+
+    </div>
 
 </section>
 
@@ -300,55 +529,217 @@ Get Best Price
 
 <section class="package-details">
 
-<div class="details-box">
+    <div class="details-box">
 
-<h2>Package Excludes</h2>
-
-<ul>
-
-<li>✘ Meals (Unless Specified)</li>
-
-<li>✘ Water Sports Charges</li>
-
-<li>✘ Boat Ride Charges</li>
-
-<li>✘ Fort / Attraction Entry Tickets</li>
-
-<li>✘ Personal Expenses</li>
-
-<li>✘ Shopping Expenses</li>
-
-<li>✘ Any Optional Activities</li>
-
-<li>✘ Anything Not Mentioned in Package Includes</li>
-
-</ul>
+        <h2>
+            Package Excludes
+        </h2>
 
 
-<a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20And%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
-class="btn"
-target="_blank">
+        <ul>
 
-Book on WhatsApp
+            <li>
+                ✘ Meals (Unless Specified)
+            </li>
 
-</a>
+            <li>
+                ✘ Water Sports Charges
+            </li>
 
-</div>
+            <li>
+                ✘ Boat Ride Charges
+            </li>
+
+            <li>
+                ✘ Fort / Attraction Entry Tickets
+            </li>
+
+            <li>
+                ✘ Personal Expenses
+            </li>
+
+            <li>
+                ✘ Shopping Expenses
+            </li>
+
+            <li>
+                ✘ Any Optional Activities
+            </li>
+
+            <li>
+                ✘ Anything Not Mentioned in Package Includes
+            </li>
+
+        </ul>
+
+
+        <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
+           class="btn"
+           target="_blank"
+           rel="noopener">
+
+            Book on WhatsApp
+
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= PREMIUM FOOTER ================= -->
 
-<footer>
+<footer class="premium-footer">
 
-<p>
+    <div class="footer-inner">
 
-© 2026 Mauli Tours & Travels. All Rights Reserved.
 
-</p>
+        <div class="footer-brand">
+
+            <img src="LOGO.png"
+                 alt="Mauli Tours & Travels Logo">
+
+            <p>
+                Comfortable, safe and memorable tours & travels
+                from Pune to Maharashtra and beyond.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="packages.html">
+                Tour Packages
+            </a>
+
+            <a href="index.html#services">
+                Services
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>
+                Contact Us
+            </h3>
+
+
+            <a href="tel:+919226718177">
+                📞 9226718177
+            </a>
+
+
+            <a href="https://wa.me/919226718177"
+               target="_blank"
+               rel="noopener">
+
+                💬 WhatsApp
+
+            </a>
+
+
+            <a href="mailto:maulitoursandtravels2150@gmail.com">
+
+                ✉ maulitoursandtravels2150@gmail.com
+
+            </a>
+
+
+            <a href="https://www.instagram.com/mauli_tours_and_travels_2150/"
+               target="_blank"
+               rel="noopener">
+
+                📷 Instagram
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Mauli Tours & Travels. All Rights Reserved.
+        </span>
+
+        <span>
+            Pune, Maharashtra
+        </span>
+
+    </div>
 
 </footer>
+
+
+<!-- ================= FLOATING CALL BUTTON ================= -->
+
+<a class="floating-whatsapp"
+   href="tel:+919226718177"
+   aria-label="Call Mauli Tours & Travels"
+   title="Call Mauli Tours & Travels">
+
+    <span class="call-icon">
+        📞
+    </span>
+
+</a>
+
+
+<!-- ================= MOBILE BOOKING BAR ================= -->
+
+<div class="mobile-book-bar">
+
+
+    <a href="tel:+919226718177">
+
+        📞 Call
+
+    </a>
+
+
+    <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20am%20interested%20in%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
+       target="_blank"
+       rel="noopener">
+
+        💬 WhatsApp
+
+    </a>
+
+
+    <a href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20the%20Tarkarli-Malvan%203%20Days%20Tour%20Package."
+       target="_blank"
+       rel="noopener">
+
+        Book Now
+
+    </a>
+
+
+</div>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
 
 </body>
 
