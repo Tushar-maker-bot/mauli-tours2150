@@ -578,42 +578,6 @@ section{
     transform:scale(1.05);
 }
 
-/* =========================================================
-   PREMIUM PACKAGE BADGES
-   ========================================================= */
-
-.package-tag{
-    position:absolute;
-    top:14px;
-    left:14px;
-    padding:7px 12px;
-    border-radius:999px;
-    color:#fff;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:.2px;
-    box-shadow:0 6px 16px rgba(0,0,0,.15);
-}
-
-/* Popular — Premium Gold */
-.packages-grid .package-card:nth-child(1) .package-tag{
-    background:#C99A2E;
-}
-
-/* Best Seller — Elegant Orange */
-.packages-grid .package-card:nth-child(2) .package-tag{
-    background:#E08A00;
-}
-
-/* Heritage — Bronze */
-.packages-grid .package-card:nth-child(3) .package-tag{
-    background:#8A5A2B;
-}
-
-/* Pilgrim — Royal Purple */
-.packages-grid .package-card:nth-child(4) .package-tag{
-    background:#6B4FA1;
-}
 
 .package-content{
     width:100%;
