@@ -2835,3 +2835,67 @@ footer .footer-bottom{
         text-align:center;
     }
 }
+/* =====================================================
+   FINAL HERO BACKGROUND ENHANCEMENT
+   ===================================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Darker + richer hero image */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 18, 13, 0.72) 0%,
+            rgba(15, 25, 20, 0.48) 48%,
+            rgba(20, 28, 23, 0.58) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.12) 0%,
+            rgba(0, 0, 0, 0.32) 100%
+        );
+}
+
+/* Keep all hero content above the enhancement */
+.hero .hero-content,
+.hero .hero-overlay,
+.hero .hero-glow,
+.hero .hero-glow-one,
+.hero .hero-glow-two {
+    position: relative;
+    z-index: 2;
+}
+
+/* Stronger text readability */
+.hero h1,
+.hero p,
+.hero .hero-kicker {
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero::after {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8, 18, 13, 0.76) 0%,
+                rgba(15, 25, 20, 0.54) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.12) 0%,
+                rgba(0, 0, 0, 0.35) 100%
+            );
+    }
+}
