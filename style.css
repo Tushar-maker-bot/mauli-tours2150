@@ -2548,12 +2548,13 @@ footer{
     }
 
 }
-/* REMOVE GREEN CHECK FROM EXCLUDES */
+/* REMOVE GREEN CHECK ICONS FROM ALL PACKAGE PAGES */
 
-.excludes-box ul li::before{
-    content:none;
+.details-box ul li::before{
+    display:none !important;
+    content:none !important;
 }
 
-.excludes-box ul li{
-    padding-left:16px;
+.details-box ul li{
+    padding-left:0 !important;
 }
