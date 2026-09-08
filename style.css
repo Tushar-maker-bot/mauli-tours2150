@@ -2706,3 +2706,132 @@ section{
         font-size:29px;
     }
 }
+/* =========================================================
+   HOME PAGE FOOTER FIX
+   ========================================================= */
+
+footer{
+    width:100%;
+    background:#101712;
+    color:#fff;
+    padding:60px 20px 20px;
+    text-align:left;
+}
+
+footer .footer-inner{
+    width:min(1180px,100%);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1.2fr;
+    gap:50px;
+    align-items:start;
+}
+
+footer .footer-brand img{
+    height:65px;
+    width:auto;
+    margin-bottom:15px;
+}
+
+footer .footer-brand p{
+    max-width:330px;
+    color:#aeb9b1;
+    font-size:13px;
+    line-height:1.7;
+}
+
+footer .footer-links,
+footer .footer-contact{
+    display:grid;
+    gap:10px;
+    align-content:start;
+}
+
+footer .footer-links a,
+footer .footer-contact a{
+    color:#c4cec8;
+    font-size:13px;
+    transition:.25s ease;
+}
+
+footer .footer-links a:hover,
+footer .footer-contact a:hover{
+    color:#fff;
+    transform:translateX(3px);
+}
+
+footer .footer-bottom{
+    width:min(1180px,100%);
+    margin:40px auto 0;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.10);
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#7f8d84;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   MOBILE FOOTER
+   ========================================================= */
+
+@media(max-width:768px){
+
+    footer{
+        padding:45px 20px 85px;
+        text-align:center;
+    }
+
+    footer .footer-inner{
+        width:100%;
+        grid-template-columns:1fr;
+        gap:30px;
+        justify-items:center;
+    }
+
+    footer .footer-brand,
+    footer .footer-links,
+    footer .footer-contact{
+        width:100%;
+        justify-items:center;
+        text-align:center;
+    }
+
+    footer .footer-brand img{
+        height:55px;
+        margin:0 auto 10px;
+    }
+
+    footer .footer-brand p{
+        max-width:320px;
+        margin:0 auto;
+        font-size:11px;
+        line-height:1.6;
+    }
+
+    footer .footer-links,
+    footer .footer-contact{
+        gap:8px;
+    }
+
+    footer .footer-links a,
+    footer .footer-contact a{
+        font-size:12px;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+    }
+
+    footer .footer-bottom{
+        width:100%;
+        margin-top:30px;
+        padding-top:15px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:6px;
+        font-size:10px;
+        text-align:center;
+    }
+}
