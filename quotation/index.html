@@ -3,148 +3,1409 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mauli Tours & Travels - Quotation</title>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f7f5;color:#18332a}
-.wrap{max-width:720px;margin:auto;padding:16px}.card{background:#fff;border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px #00000010}
-.logo{height:58px;max-width:240px;object-fit:contain;display:block;margin:auto}.title{text-align:center;margin:8px 0 2px;font-size:23px}.sub{text-align:center;color:#5b6f67;font-size:13px}
-h2{font-size:17px;margin:0 0 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-label{font-size:12px;font-weight:700;display:block;margin-bottom:5px;color:#496057}
-input,select,textarea{width:100%;padding:11px;border:1px solid #d5dfda;border-radius:9px;font-size:14px;background:#fff}
-textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
-.btn{width:100%;border:0;border-radius:11px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px}
-.primary{background:#16804d;color:#fff}.secondary{background:#eaf5ef;color:#16804d}
-.note{font-size:12px;color:#64766e;line-height:1.5}.total{font-size:20px;font-weight:800}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7f5;
+  color:#18332a;
+}
+
+.wrap{
+  max-width:720px;
+  margin:auto;
+  padding:16px;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 4px 18px #00000010;
+}
+
+.logo{
+  height:58px;
+  max-width:240px;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin:8px 0 2px;
+  font-size:23px;
+}
+
+.sub{
+  text-align:center;
+  color:#5b6f67;
+  font-size:13px;
+}
+
+h2{
+  font-size:17px;
+  margin:0 0 12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+label{
+  font-size:12px;
+  font-weight:700;
+  display:block;
+  margin-bottom:5px;
+  color:#496057;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:11px;
+  border:1px solid #d5dfda;
+  border-radius:9px;
+  font-size:14px;
+  background:#fff;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:14px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.primary{
+  background:#16804d;
+  color:#fff;
+}
+
+.secondary{
+  background:#eaf5ef;
+  color:#16804d;
+}
+
+.note{
+  font-size:12px;
+  color:#64766e;
+  line-height:1.5;
+}
+
+.total{
+  font-size:20px;
+  font-weight:800;
+}
+
+@media(max-width:560px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
+
+<!-- HEADER -->
 <div class="card">
-<img src="LOGO.png" class="logo" alt="Mauli Tours & Travels">
-<div class="title">TOUR QUOTATION</div>
-<div class="sub">Explore • Experience • Enjoy</div>
+
+<img src="LOGO.png"
+     class="logo"
+     alt="Mauli Tours & Travels">
+
+<div class="title">
+TOUR QUOTATION
 </div>
+
+<div class="sub">
+Explore • Experience • Enjoy
+</div>
+
+</div>
+
 
 <form id="quoteForm">
-<div class="card"><h2>1. Customer Details</h2><div class="grid">
-<div><label>Customer Name *</label><input id="customer" required></div>
-<div><label>Mobile Number *</label><input id="mobile" required></div>
-<div><label>Email</label><input id="email" type="email"></div>
-<div><label>Quotation Valid Until</label><input id="validity" type="date"></div>
-</div></div>
 
-<div class="card"><h2>2. Trip Details</h2><div class="grid">
-<div><label>Destination *</label><input id="destination" required></div>
-<div><label>Pickup Location *</label><input id="pickup" required></div>
-<div><label>Travel Date *</label><input id="travelDate" type="date" required></div>
-<div><label>Return Date</label><input id="returnDate" type="date"></div>
-<div><label>Adults</label><input id="adults" type="number" min="0" value="1"></div>
-<div><label>Children</label><input id="children" type="number" min="0" value="0"></div>
-</div></div>
+<!-- CUSTOMER DETAILS -->
+<div class="card">
 
-<div class="card"><h2>3. Stay, Meals & Vehicle</h2><div class="grid">
-<div><label>Stay</label><select id="stay"><option>Budget</option><option>Standard</option><option>Premium</option><option>Not Required</option></select></div>
-<div><label>Rooms</label><input id="rooms" type="number" min="0" value="1"></div>
-<div><label>Meals</label><select id="meals"><option>No Meals</option><option>Breakfast</option><option>Breakfast + Dinner</option><option>All Meals</option></select></div>
-<div><label>Vehicle</label><input id="vehicle" placeholder="e.g. Sedan / SUV / Tempo"></div>
-<div><label>Travel Insurance</label><select id="insurance"><option>No</option><option>Yes</option></select></div>
-<div><label>Quotation No.</label><input id="quoteNo" readonly></div>
-</div></div>
+<h2>1. Customer Details</h2>
 
-<div class="card"><h2>4. Itinerary</h2>
-<textarea id="itinerary" placeholder="Day 1: Pickup from Pune...&#10;Day 2: Sightseeing...&#10;Day 3: Return to Pune..."></textarea>
+<div class="grid">
+
+<div>
+<label>Customer Name *</label>
+<input id="customer" required>
 </div>
 
-<div class="card"><h2>5. Price</h2><div class="grid">
-<div><label>Total Package Price (₹) *</label><input id="price" type="number" min="0" required></div>
-<div><label>Advance Required (₹)</label><input id="advance" type="number" min="0" value="0"></div>
-<div><label>Balance (₹)</label><input id="balance" type="number" readonly></div>
-</div></div>
+<div>
+<label>Mobile Number *</label>
+<input id="mobile" required>
+</div>
 
-<div class="card"><h2>6. Inclusions & Exclusions</h2><div class="grid">
-<div><label>Inclusions</label><textarea id="inclusions" placeholder="Vehicle&#10;Hotel stay&#10;Breakfast"></textarea></div>
-<div><label>Exclusions</label><textarea id="exclusions" placeholder="Entry tickets&#10;Personal expenses&#10;Extra activities"></textarea></div>
-<div class="full"><label>Special Requirements</label><textarea id="special"></textarea></div>
-</div></div>
+<div>
+<label>Email</label>
+<input id="email" type="email">
+</div>
 
+<div>
+<label>Quotation Valid Until</label>
+<input id="validity" type="date">
+</div>
+
+</div>
+</div>
+
+
+<!-- TRIP DETAILS -->
 <div class="card">
+
+<h2>2. Trip Details</h2>
+
+<div class="grid">
+
+<div>
+<label>Destination *</label>
+<input id="destination" required>
+</div>
+
+<div>
+<label>Pickup Location *</label>
+<input id="pickup" required>
+</div>
+
+<div>
+<label>Travel Date *</label>
+<input id="travelDate" type="date" required>
+</div>
+
+<div>
+<label>Return Date</label>
+<input id="returnDate" type="date">
+</div>
+
+<div>
+<label>Adults</label>
+<input id="adults" type="number" min="0" value="1">
+</div>
+
+<div>
+<label>Children</label>
+<input id="children" type="number" min="0" value="0">
+</div>
+
+</div>
+</div>
+
+
+<!-- STAY MEALS VEHICLE -->
+<div class="card">
+
+<h2>3. Stay, Meals & Vehicle</h2>
+
+<div class="grid">
+
+<div>
+<label>Stay</label>
+<select id="stay">
+<option>Budget</option>
+<option>Standard</option>
+<option>Premium</option>
+<option>Not Required</option>
+</select>
+</div>
+
+<div>
+<label>Rooms</label>
+<input id="rooms" type="number" min="0" value="1">
+</div>
+
+<div>
+<label>Meals</label>
+<select id="meals">
+<option>No Meals</option>
+<option>Breakfast</option>
+<option>Breakfast + Dinner</option>
+<option>All Meals</option>
+</select>
+</div>
+
+<div>
+<label>Vehicle</label>
+<input id="vehicle" placeholder="e.g. Sedan / SUV / Tempo">
+</div>
+
+<div>
+<label>Quotation No.</label>
+<input id="quoteNo" readonly>
+</div>
+
+</div>
+</div>
+
+
+<!-- ITINERARY -->
+<div class="card">
+
+<h2>4. Itinerary</h2>
+
+<textarea
+id="itinerary"
+placeholder="Day 1: Pickup from Pune...
+Day 2: Sightseeing...
+Day 3: Return to Pune..."></textarea>
+
+</div>
+
+
+<!-- PRICE -->
+<div class="card">
+
+<h2>5. Package Cost</h2>
+
+<div class="grid">
+
+<div class="full">
+
+<label>Total Package Price (Rs.) *</label>
+
+<input
+id="price"
+type="number"
+min="0"
+required>
+
+</div>
+
+</div>
+
+<p class="note">
+<strong>Payment:</strong> Full payment is required at the time of booking.
+</p>
+
+</div>
+
+
+<!-- INCLUSIONS / EXCLUSIONS -->
+<div class="card">
+
+<h2>6. Inclusions & Exclusions</h2>
+
+<div class="grid">
+
+<div>
+<label>Inclusions</label>
+
+<textarea
+id="inclusions"
+placeholder="Vehicle
+Hotel stay
+Breakfast"></textarea>
+
+</div>
+
+
+<div>
+<label>Exclusions</label>
+
+<textarea
+id="exclusions"
+placeholder="Entry tickets
+Personal expenses
+Extra activities"></textarea>
+
+</div>
+
+
+<div class="full">
+
+<label>Special Requirements</label>
+
+<textarea id="special"></textarea>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- TERMS -->
+<div class="card">
+
 <h2>Terms & Conditions</h2>
-<p class="note">• Booking is confirmed after receipt of the required advance payment.<br>
-• Package inclusions and exclusions are as stated in this quotation.<br>
-• Changes or cancellations may attract applicable charges.<br>
-• Extra services and personal expenses are payable separately unless included.<br>
-• Travel plans may be adjusted due to traffic, weather, road conditions or unavoidable circumstances.<br>
-• Customer is responsible for providing correct booking information and personal belongings.<br>
-• By confirming the booking/payment, the customer agrees to the package details and applicable Terms & Conditions.</p>
+
+<p class="note">
+
+• Booking will be confirmed only after receipt of the full package payment.<br>
+
+• Package inclusions and exclusions are as stated in the quotation.<br>
+
+• The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.<br>
+
+• Changes or cancellations may attract applicable charges depending on the booking and travel date.<br>
+
+• Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.<br>
+
+• Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.<br>
+
+• Customers are responsible for their personal belongings, valuables, documents and luggage.<br>
+
+• Hotel category, room type and meal plan will be as specified in the confirmed package.<br>
+
+• Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.<br>
+
+• By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.
+
+</p>
+
 </div>
 
+
+<!-- BUTTONS -->
 <div class="card">
-<button class="btn primary" type="submit">Generate Quotation PDF</button>
-<button class="btn secondary" type="button" onclick="saveDraft()">Save Draft on This Phone</button>
-<button class="btn secondary" type="button" onclick="loadDraft()">Load Saved Draft</button>
+
+<button
+class="btn primary"
+type="submit">
+Generate Quotation PDF
+</button>
+
+<button
+class="btn secondary"
+type="button"
+onclick="saveDraft()">
+Save Draft on This Phone
+</button>
+
+<button
+class="btn secondary"
+type="button"
+onclick="loadDraft()">
+Load Saved Draft
+</button>
+
 </div>
+
 </form>
+
 </div>
+
 
 <script>
-const $=id=>document.getElementById(id);
+
+const $ = id => document.getElementById(id);
+
+
+/* =========================
+   QUOTATION NUMBER
+========================= */
+
 function makeQuoteNo(){
- const d=new Date(), y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
- const key='mauliQuoteSeq'; let n=Number(localStorage.getItem(key)||0)+1; localStorage.setItem(key,n);
- return `MTT-${y}${m}${day}-${String(n).padStart(3,'0')}`;
+
+  const d = new Date();
+
+  const y = d.getFullYear();
+
+  const m = String(d.getMonth()+1).padStart(2,'0');
+
+  const day = String(d.getDate()).padStart(2,'0');
+
+  const key = 'mauliQuoteSeq';
+
+  let n = Number(
+    localStorage.getItem(key) || 0
+  ) + 1;
+
+  localStorage.setItem(key,n);
+
+  return `MTT-${y}${m}${day}-${String(n).padStart(3,'0')}`;
 }
-$('quoteNo').value=makeQuoteNo();
-function money(v){return '₹ '+Number(v||0).toLocaleString('en-IN')}
-function val(id){return $(id).value.trim()}
-$('price').addEventListener('input',()=>updateBalance());
-$('advance').addEventListener('input',()=>updateBalance());
-function updateBalance(){ $('balance').value=Math.max(0,Number($('price').value||0)-Number($('advance').value||0)); }
+
+
+$('quoteNo').value = makeQuoteNo();
+
+
+/* =========================
+   BASIC FUNCTIONS
+========================= */
+
+function val(id){
+
+  const element = $(id);
+
+  if(!element){
+    return '';
+  }
+
+  return String(element.value || '').trim();
+}
+
+
+function money(value){
+
+  return 'Rs. ' +
+    Number(value || 0).toLocaleString('en-IN');
+
+}
+
+
+/* =========================
+   SAVE DRAFT
+========================= */
+
 function saveDraft(){
- const data={}; document.querySelectorAll('input,select,textarea').forEach(e=>data[e.id]=e.value);
- localStorage.setItem('mauliQuotationDraft',JSON.stringify(data)); alert('Draft saved on this phone.');
+
+  const data = {};
+
+  document
+    .querySelectorAll('input,select,textarea')
+    .forEach(element => {
+
+      data[element.id] = element.value;
+
+    });
+
+  localStorage.setItem(
+    'mauliQuotationDraft',
+    JSON.stringify(data)
+  );
+
+  alert('Draft saved on this phone.');
+
 }
+
+
+/* =========================
+   LOAD DRAFT
+========================= */
+
 function loadDraft(){
- const data=JSON.parse(localStorage.getItem('mauliQuotationDraft')||'null');
- if(!data){alert('No saved draft found.');return}
- Object.entries(data).forEach(([k,v])=>{if($(k))$(k).value=v}); updateBalance(); alert('Draft loaded.');
+
+  const data = JSON.parse(
+    localStorage.getItem(
+      'mauliQuotationDraft'
+    ) || 'null'
+  );
+
+  if(!data){
+
+    alert('No saved draft found.');
+
+    return;
+  }
+
+
+  Object.entries(data).forEach(
+    ([key,value]) => {
+
+      if($(key)){
+
+        $(key).value = value;
+
+      }
+
+    }
+  );
+
+
+  alert('Draft loaded.');
+
 }
-function wrapText(doc,text,x,y,maxWidth,lineHeight){
- const lines=doc.splitTextToSize(text||'-',maxWidth);
- doc.text(lines,x,y); return y+lines.length*lineHeight;
+
+
+/* =========================
+   PDF FUNCTIONS
+========================= */
+
+function safe(value){
+
+  return String(value || '').trim() || '-';
+
 }
-document.getElementById('quoteForm').addEventListener('submit',e=>{
- e.preventDefault(); updateBalance();
- const {jsPDF}=window.jspdf; const doc=new jsPDF({unit:'mm',format:'a4'});
- const green=[22,128,77], dark=[24,51,42], grey=[95,112,104];
- let y=15;
- doc.setFillColor(...green); doc.rect(0,0,210,7,'F');
- try{doc.addImage('../LOGO.png','PNG',15,12,58,14)}catch(err){}
- doc.setTextColor(...dark); doc.setFontSize(17); doc.text('TOUR QUOTATION',195,18,{align:'right'});
- doc.setFontSize(8); doc.setTextColor(...grey); doc.text('Explore • Experience • Enjoy',195,23,{align:'right'});
- y=32; doc.setDrawColor(210,220,215); doc.line(15,y,195,y); y+=7;
- doc.setFontSize(9); doc.setTextColor(...grey);
- doc.text('Quotation No.: '+val('quoteNo'),15,y); doc.text('Valid Until: '+(val('validity')||'-'),195,y,{align:'right'}); y+=8;
- function heading(t){doc.setFillColor(234,245,239);doc.roundedRect(15,y-5,180,7,2,2,'F');doc.setTextColor(...green);doc.setFontSize(10);doc.text(t,19,y);y+=7}
- function row(a,b){doc.setTextColor(...grey);doc.setFontSize(8);doc.text(a,15,y);doc.setTextColor(...dark);doc.setFontSize(9);doc.text(b||'-',55,y);y+=6}
- heading('CUSTOMER DETAILS'); row('Name',val('customer')); row('Mobile',val('mobile')); if(val('email'))row('Email',val('email'));
- heading('TRIP DETAILS'); row('Destination',val('destination')); row('Pickup',val('pickup')); row('Travel Date',val('travelDate')); row('Return Date',val('returnDate')); row('Passengers',(val('adults')||0)+' Adults, '+(val('children')||0)+' Children');
- heading('STAY • MEALS • VEHICLE'); row('Stay',val('stay')); row('Rooms',val('rooms')); row('Meals',val('meals')); row('Vehicle',val('vehicle')); row('Insurance',val('insurance'));
- heading('ITINERARY'); y=wrapText(doc,val('itinerary'),15,y,180,4.5)+3;
- heading('PACKAGE COST'); row('Total Package',money(val('price'))); row('Advance',money(val('advance'))); row('Balance',money(val('balance')));
- if(y>255){doc.addPage();y=18}
- heading('INCLUSIONS'); y=wrapText(doc,val('inclusions'),15,y,180,4.5)+4;
- heading('EXCLUSIONS'); y=wrapText(doc,val('exclusions'),15,y,180,4.5)+4;
- heading('SPECIAL REQUIREMENTS'); y=wrapText(doc,val('special'),15,y,180,4.5)+4;
- if(y>255){doc.addPage();y=18}
- heading('TERMS & CONDITIONS'); doc.setTextColor(...dark);doc.setFontSize(8);
- y=wrapText(doc,'Booking is confirmed after receipt of the required advance payment. Package inclusions and exclusions are as stated in this quotation. Changes or cancellations may attract applicable charges. Extra services and personal expenses are payable separately unless included. Travel plans may be adjusted due to traffic, weather, road conditions or unavoidable circumstances. Customer is responsible for correct booking information and personal belongings. By confirming the booking/payment, the customer agrees to the package details and applicable Terms & Conditions.',15,y,180,4)+4;
- doc.setTextColor(...green);doc.setFontSize(10);doc.text('Mauli Tours & Travels',15,278);
- doc.setTextColor(...grey);doc.setFontSize(8);doc.text('Pune, Maharashtra  •  9226718177  •  maulitoursandtravels2150@gmail.com',15,284);
- doc.text('www.maulitoursandtravels.co.in',15,289);
- doc.save((val('quoteNo')||'Mauli_Quotation')+'.pdf');
+
+
+function addWrappedText(
+  doc,
+  text,
+  x,
+  y,
+  width,
+  lineHeight = 4.2
+){
+
+  const lines =
+    doc.splitTextToSize(
+      safe(text),
+      width
+    );
+
+  doc.text(
+    lines,
+    x,
+    y
+  );
+
+  return y +
+    lines.length * lineHeight;
+
+}
+
+
+/* =========================
+   PDF GENERATION
+========================= */
+
+document
+.getElementById('quoteForm')
+.addEventListener('submit',function(e){
+
+  e.preventDefault();
+
+
+  const { jsPDF } = window.jspdf;
+
+
+  const doc = new jsPDF({
+    unit:'mm',
+    format:'a4'
+  });
+
+
+  const green = [22,128,77];
+
+  const dark = [24,51,42];
+
+  const grey = [95,112,104];
+
+  const light = [234,245,239];
+
+  const lineColor = [215,225,220];
+
+
+  let y = 15;
+
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  function header(){
+
+    doc.setFillColor(
+      ...green
+    );
+
+    doc.rect(
+      0,
+      0,
+      210,
+      7,
+      'F'
+    );
+
+
+    try{
+
+      doc.addImage(
+        'LOGO.png',
+        'PNG',
+        15,
+        10,
+        48,
+        18
+      );
+
+    }catch(error){}
+
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(17);
+
+    doc.setTextColor(
+      ...dark
+    );
+
+    doc.text(
+      'TOUR QUOTATION',
+      195,
+      18,
+      {
+        align:'right'
+      }
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(8);
+
+    doc.setTextColor(
+      ...grey
+    );
+
+    doc.text(
+      'Explore - Experience - Enjoy',
+      195,
+      23,
+      {
+        align:'right'
+      }
+    );
+
+
+    doc.setDrawColor(
+      ...lineColor
+    );
+
+    doc.line(
+      15,
+      32,
+      195,
+      32
+    );
+
+  }
+
+
+  /* =========================
+     WATERMARK
+  ========================= */
+
+  function watermark(){
+
+    try{
+
+      doc.saveGraphicsState();
+
+      doc.setGState(
+        new doc.GState({
+          opacity:0.07
+        })
+      );
+
+      doc.addImage(
+        'LOGO.png',
+        'PNG',
+        52,
+        105,
+        106,
+        40
+      );
+
+      doc.restoreGraphicsState();
+
+    }catch(error){}
+
+  }
+
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  function footer(){
+
+    doc.setDrawColor(
+      ...lineColor
+    );
+
+    doc.line(
+      15,
+      270,
+      195,
+      270
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+      ...green
+    );
+
+    doc.text(
+      'Mauli Tours & Travels',
+      15,
+      278
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(7.5);
+
+    doc.setTextColor(
+      ...grey
+    );
+
+    doc.text(
+      'Pune, Maharashtra  |  9226718177',
+      15,
+      284
+    );
+
+    doc.text(
+      'maulitoursandtravels2150@gmail.com',
+      15,
+      289
+    );
+
+    doc.text(
+      'www.maulitoursandtravels.co.in',
+      195,
+      289,
+      {
+        align:'right'
+      }
+    );
+
+  }
+
+
+  /* =========================
+     SECTION HEADING
+  ========================= */
+
+  function heading(title){
+
+    if(y > 248){
+
+      footer();
+
+      doc.addPage();
+
+      header();
+
+      watermark();
+
+      y = 41;
+
+    }
+
+
+    doc.setFillColor(
+      ...light
+    );
+
+    doc.roundedRect(
+      15,
+      y-5,
+      180,
+      7,
+      2,
+      2,
+      'F'
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(10);
+
+    doc.setTextColor(
+      ...green
+    );
+
+    doc.text(
+      title,
+      19,
+      y
+    );
+
+    y += 9;
+
+  }
+
+
+  /* =========================
+     ROW
+  ========================= */
+
+  function row(label,value){
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(8);
+
+    doc.setTextColor(
+      ...grey
+    );
+
+    doc.text(
+      label,
+      15,
+      y
+    );
+
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+      ...dark
+    );
+
+
+    const lines =
+      doc.splitTextToSize(
+        safe(value),
+        135
+      );
+
+
+    doc.text(
+      lines,
+      55,
+      y
+    );
+
+
+    y += Math.max(
+      6,
+      lines.length * 4.5
+    );
+
+  }
+
+
+  /* =========================
+     LIST
+  ========================= */
+
+  function listItems(text){
+
+    const items =
+      String(text || '')
+      .split(/\r?\n/)
+      .map(item => item.trim())
+      .filter(item => item);
+
+
+    if(items.length === 0){
+
+      doc.setFont(
+        'helvetica',
+        'normal'
+      );
+
+      doc.setFontSize(8);
+
+      doc.setTextColor(
+        ...dark
+      );
+
+      doc.text(
+        '-',
+        20,
+        y
+      );
+
+      y += 6;
+
+      return;
+
+    }
+
+
+    items.forEach(item => {
+
+      const lines =
+        doc.splitTextToSize(
+          '- ' + item,
+          165
+        );
+
+
+      doc.setFont(
+        'helvetica',
+        'normal'
+      );
+
+      doc.setFontSize(8);
+
+      doc.setTextColor(
+        ...dark
+      );
+
+
+      doc.text(
+        lines,
+        20,
+        y
+      );
+
+
+      y +=
+        lines.length * 4.2 + 2;
+
+    });
+
+
+    y += 2;
+
+  }
+
+
+  /* =========================
+     START PDF
+  ========================= */
+
+  header();
+
+  watermark();
+
+  y = 40;
+
+
+  /* QUOTATION INFO */
+
+  doc.setFont(
+    'helvetica',
+    'normal'
+  );
+
+  doc.setFontSize(8);
+
+  doc.setTextColor(
+    ...grey
+  );
+
+  doc.text(
+    'Quotation No.: ' +
+    safe(val('quoteNo')),
+    15,
+    y
+  );
+
+
+  doc.text(
+    'Valid Until: ' +
+    safe(val('validity')),
+    195,
+    y,
+    {
+      align:'right'
+    }
+  );
+
+
+  y += 9;
+
+
+  /* CUSTOMER */
+
+  heading(
+    'CUSTOMER DETAILS'
+  );
+
+  row(
+    'Name',
+    val('customer')
+  );
+
+  row(
+    'Mobile',
+    val('mobile')
+  );
+
+
+  if(val('email')){
+
+    row(
+      'Email',
+      val('email')
+    );
+
+  }
+
+
+  /* TRIP */
+
+  heading(
+    'TRIP DETAILS'
+  );
+
+  row(
+    'Destination',
+    val('destination')
+  );
+
+  row(
+    'Pickup',
+    val('pickup')
+  );
+
+  row(
+    'Travel Date',
+    val('travelDate')
+  );
+
+  row(
+    'Return Date',
+    val('returnDate')
+  );
+
+  row(
+    'Passengers',
+    (val('adults') || 0) +
+    ' Adults, ' +
+    (val('children') || 0) +
+    ' Children'
+  );
+
+
+  /* STAY */
+
+  heading(
+    'STAY • MEALS • VEHICLE'
+  );
+
+  row(
+    'Stay',
+    val('stay')
+  );
+
+  row(
+    'Rooms',
+    val('rooms')
+  );
+
+  row(
+    'Meals',
+    val('meals')
+  );
+
+  row(
+    'Vehicle',
+    val('vehicle')
+  );
+
+
+  /* ITINERARY */
+
+  heading(
+    'ITINERARY'
+  );
+
+  y =
+    addWrappedText(
+      doc,
+      val('itinerary'),
+      15,
+      y,
+      180,
+      4.2
+    ) + 4;
+
+
+  /* PACKAGE COST */
+
+  heading(
+    'PACKAGE COST'
+  );
+
+
+  doc.setFillColor(
+    ...light
+  );
+
+  doc.roundedRect(
+    15,
+    y-5,
+    180,
+    19,
+    2,
+    2,
+    'F'
+  );
+
+
+  doc.setFont(
+    'helvetica',
+    'bold'
+  );
+
+  doc.setFontSize(9);
+
+  doc.setTextColor(
+    ...grey
+  );
+
+  doc.text(
+    'TOTAL PACKAGE',
+    20,
+    y+2
+  );
+
+
+  doc.setFontSize(15);
+
+  doc.setTextColor(
+    ...green
+  );
+
+  doc.text(
+    money(val('price')),
+    190,
+    y+2,
+    {
+      align:'right'
+    }
+  );
+
+
+  doc.setFont(
+    'helvetica',
+    'normal'
+  );
+
+  doc.setFontSize(8);
+
+  doc.setTextColor(
+    ...dark
+  );
+
+  doc.text(
+    'Payment: Full payment required at booking',
+    20,
+    y+10
+  );
+
+
+  y += 25;
+
+
+  /* PAGE CHECK */
+
+  if(y > 240){
+
+    footer();
+
+    doc.addPage();
+
+    header();
+
+    watermark();
+
+    y = 41;
+
+  }
+
+
+  /* INCLUSIONS */
+
+  heading(
+    'INCLUSIONS'
+  );
+
+  listItems(
+    val('inclusions')
+  );
+
+
+  /* EXCLUSIONS */
+
+  heading(
+    'EXCLUSIONS'
+  );
+
+  listItems(
+    val('exclusions')
+  );
+
+
+  /* SPECIAL REQUIREMENTS */
+
+  heading(
+    'SPECIAL REQUIREMENTS'
+  );
+
+  y =
+    addWrappedText(
+      doc,
+      val('special'),
+      15,
+      y,
+      180,
+      4.2
+    ) + 4;
+
+
+  /* TERMS PAGE */
+
+  if(y > 220){
+
+    footer();
+
+    doc.addPage();
+
+    header();
+
+    watermark();
+
+    y = 41;
+
+  }
+
+
+  heading(
+    'TERMS & CONDITIONS'
+  );
+
+
+  const terms = [
+
+    'Booking will be confirmed only after receipt of the full package payment.',
+
+    'Package inclusions and exclusions are as stated in the quotation.',
+
+    'The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.',
+
+    'Changes or cancellations may attract applicable charges depending on the booking and travel date.',
+
+    'Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.',
+
+    'Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.',
+
+    'Customers are responsible for their personal belongings, valuables, documents and luggage.',
+
+    'Hotel category, room type and meal plan will be as specified in the confirmed package.',
+
+    'Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.',
+
+    'By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.'
+
+  ];
+
+
+  terms.forEach(
+    (term,index) => {
+
+      const lines =
+        doc.splitTextToSize(
+          (index + 1) +
+          '. ' +
+          term,
+          168
+        );
+
+
+      doc.setFont(
+        'helvetica',
+        index === terms.length - 1
+          ? 'bold'
+          : 'normal'
+      );
+
+      doc.setFontSize(8);
+
+      doc.setTextColor(
+        ...dark
+      );
+
+
+      doc.text(
+        lines,
+        20,
+        y
+      );
+
+
+      y +=
+        lines.length * 4.2 + 3;
+
+
+      if(y > 258){
+
+        footer();
+
+        doc.addPage();
+
+        header();
+
+        watermark();
+
+        y = 41;
+
+      }
+
+    }
+  );
+
+
+  /* FOOTER */
+
+  footer();
+
+
+  /* SAVE */
+
+  const fileName =
+    (val('quoteNo') ||
+     'Mauli_Quotation') +
+    '.pdf';
+
+
+  doc.save(fileName);
+
 });
+
 </script>
+
 </body>
 </html>
