@@ -142,6 +142,7 @@ textarea{
 }
 
 @media(max-width:560px){
+
   .grid{
     grid-template-columns:1fr;
   }
@@ -149,6 +150,7 @@ textarea{
   .full{
     grid-column:auto;
   }
+
 }
 </style>
 </head>
@@ -160,14 +162,11 @@ textarea{
   <!-- HEADER -->
   <div class="card">
 
-    <!-- IMPORTANT:
-         If this page is inside /booking-confirmation/
-         and LOGO.png is in your main website root,
-         ../LOGO.png is correct.
-    -->
-    <img src="../LOGO.png"
-         class="logo"
-         alt="Mauli Tours & Travels">
+    <img
+      src="../LOGO.png"
+      class="logo"
+      alt="Mauli Tours & Travels"
+    >
 
     <div class="title">
       BOOKING CONFIRMATION
@@ -186,6 +185,7 @@ textarea{
 
   <form id="bookingForm">
 
+
     <!-- 1. BOOKING DETAILS -->
     <div class="card">
 
@@ -195,17 +195,30 @@ textarea{
 
         <div>
           <label>Booking ID *</label>
-          <input id="bookingId" required>
+
+          <input
+            id="bookingId"
+            required
+          >
         </div>
 
+
         <div>
+
           <label>Booking Date *</label>
-          <input id="bookingDate" type="date" required>
+
+          <input
+            id="bookingDate"
+            type="date"
+            required
+          >
+
         </div>
 
       </div>
 
     </div>
+
 
 
     <!-- 2. CUSTOMER DETAILS -->
@@ -216,23 +229,44 @@ textarea{
       <div class="grid">
 
         <div>
+
           <label>Customer Name *</label>
-          <input id="customer" required>
+
+          <input
+            id="customer"
+            required
+          >
+
         </div>
+
 
         <div>
+
           <label>Mobile Number *</label>
-          <input id="mobile" required>
+
+          <input
+            id="mobile"
+            required
+          >
+
         </div>
 
+
         <div class="full">
+
           <label>Email</label>
-          <input id="email" type="email">
+
+          <input
+            id="email"
+            type="email"
+          >
+
         </div>
 
       </div>
 
     </div>
+
 
 
     <!-- 3. TRIP DETAILS -->
@@ -243,46 +277,86 @@ textarea{
       <div class="grid">
 
         <div>
+
           <label>Destination *</label>
-          <input id="destination" required>
+
+          <input
+            id="destination"
+            required
+          >
+
         </div>
 
+
         <div>
+
           <label>Pickup Location *</label>
-          <input id="pickup" required>
+
+          <input
+            id="pickup"
+            required
+          >
+
         </div>
 
+
         <div>
+
           <label>Travel Date *</label>
-          <input id="travelDate" type="date" required>
+
+          <input
+            id="travelDate"
+            type="date"
+            required
+          >
+
         </div>
 
+
         <div>
+
           <label>Duration *</label>
-          <input id="duration"
-                 placeholder="e.g. 2 Days / 1 Night"
-                 required>
+
+          <input
+            id="duration"
+            placeholder="e.g. 2 Days / 1 Night"
+            required
+          >
+
         </div>
 
+
         <div>
+
           <label>Adults</label>
-          <input id="adults"
-                 type="number"
-                 min="0"
-                 value="1">
+
+          <input
+            id="adults"
+            type="number"
+            min="0"
+            value="1"
+          >
+
         </div>
 
+
         <div>
+
           <label>Children</label>
-          <input id="children"
-                 type="number"
-                 min="0"
-                 value="0">
+
+          <input
+            id="children"
+            type="number"
+            min="0"
+            value="0"
+          >
+
         </div>
 
       </div>
 
     </div>
+
 
 
     <!-- 4. TRAVEL & STAY -->
@@ -293,12 +367,19 @@ textarea{
       <div class="grid">
 
         <div>
+
           <label>Vehicle</label>
-          <input id="vehicle"
-                 placeholder="Sedan / SUV / Tempo Traveller / Bus">
+
+          <input
+            id="vehicle"
+            placeholder="Sedan / SUV / Tempo Traveller / Bus"
+          >
+
         </div>
 
+
         <div>
+
           <label>Stay</label>
 
           <select id="stay">
@@ -312,15 +393,21 @@ textarea{
 
         </div>
 
+
         <div>
+
           <label>Rooms</label>
 
-          <input id="rooms"
-                 placeholder="1 / 2 / 3 / More">
+          <input
+            id="rooms"
+            placeholder="1 / 2 / 3 / More"
+          >
 
         </div>
 
+
         <div>
+
           <label>Meals</label>
 
           <select id="meals">
@@ -339,24 +426,32 @@ textarea{
     </div>
 
 
+
     <!-- 5. ITINERARY -->
     <div class="card">
 
       <h2>5. Itinerary</h2>
 
-      <div class="full">
+      <label>
+        Confirmed Itinerary
+      </label>
 
-        <label>
-          Confirmed Itinerary
-        </label>
+      <textarea
+        id="itinerary"
+        placeholder="Day 1
+Pickup from Pune
+Mapro Garden
+Venna Lake
+Hotel Check-in
 
-        <textarea
-          id="itinerary"
-          placeholder="Day 1&#10;Pickup from Pune&#10;Mapro Garden&#10;Venna Lake&#10;Hotel Check-in&#10;&#10;Day 2&#10;Wilson Point&#10;Arthur Seat&#10;Return to Pune"></textarea>
-
-      </div>
+Day 2
+Wilson Point
+Arthur Seat
+Return to Pune"
+      ></textarea>
 
     </div>
+
 
 
     <!-- 6. PAYMENT -->
@@ -376,11 +471,13 @@ textarea{
             id="price"
             type="number"
             min="0"
-            required>
+            required
+          >
 
         </div>
 
       </div>
+
 
       <div class="status">
 
@@ -391,6 +488,7 @@ textarea{
       </div>
 
     </div>
+
 
 
     <!-- 7. INCLUSIONS & EXCLUSIONS -->
@@ -406,7 +504,12 @@ textarea{
 
           <textarea
             id="inclusions"
-            placeholder="Pickup & Drop&#10;Private AC Car&#10;Hotel Stay&#10;Sightseeing&#10;Toll & Parking"></textarea>
+            placeholder="Pickup & Drop
+Private AC Car
+Hotel Stay
+Sightseeing
+Toll & Parking"
+          ></textarea>
 
         </div>
 
@@ -417,7 +520,10 @@ textarea{
 
           <textarea
             id="exclusions"
-            placeholder="Entry Tickets&#10;Personal Expenses&#10;Extra Activities"></textarea>
+            placeholder="Entry Tickets
+Personal Expenses
+Extra Activities"
+          ></textarea>
 
         </div>
 
@@ -429,13 +535,15 @@ textarea{
           </label>
 
           <textarea
-            id="special"></textarea>
+            id="special"
+          ></textarea>
 
         </div>
 
       </div>
 
     </div>
+
 
 
     <!-- 8. TERMS -->
@@ -482,15 +590,15 @@ textarea{
     </div>
 
 
+
     <!-- BUTTON -->
     <div class="card">
 
       <button
         class="btn primary"
-        type="submit">
-
+        type="submit"
+      >
         Generate Booking Confirmation PDF
-
       </button>
 
     </div>
@@ -500,63 +608,73 @@ textarea{
 </div>
 
 
+
 <script>
 
 const $ = id => document.getElementById(id);
 
 
-/* =========================
+
+/* ==========================================
    AUTOMATIC BOOKING ID
-========================= */
+========================================== */
 
 function makeBookingId(){
 
   const d = new Date();
 
-  const year = d.getFullYear();
+  const year =
+    d.getFullYear();
 
   const month =
-    String(d.getMonth()+1)
-    .padStart(2,'0');
+    String(d.getMonth() + 1)
+    .padStart(2, '0');
 
   const day =
     String(d.getDate())
-    .padStart(2,'0');
+    .padStart(2, '0');
 
   const key =
     'mauliBookingSeq';
 
   let number =
-    Number(localStorage.getItem(key) || 0) + 1;
+    Number(
+      localStorage.getItem(key) || 0
+    ) + 1;
 
   localStorage.setItem(
     key,
     number
   );
 
-  return `MTT-${year}${month}${day}-${String(number).padStart(3,'0')}`;
+  return (
+    `MTT-${year}${month}${day}-${String(number).padStart(3,'0')}`
+  );
 
 }
 
 
-/* =========================
+
+/* ==========================================
    DEFAULT DATE
-========================= */
+========================================== */
 
 const today =
   new Date()
   .toISOString()
   .split('T')[0];
 
-$('bookingDate').value = today;
+$('bookingDate').value =
+  today;
 
 $('bookingId').value =
   makeBookingId();
 
 
-/* =========================
+
+/* ==========================================
    GET VALUE
-========================= */
+========================================== */
 
 function val(id){
 
@@ -565,16 +683,23 @@ function val(id){
 }
 
 
-/* =========================
+
+/* ==========================================
    DATE FORMAT
-========================= */
+========================================== */
 
 function formatDate(date){
 
-  if(!date) return '-';
+  if(!date){
+
+    return '-';
+
+  }
 
   const d =
-    new Date(date + 'T00:00:00');
+    new Date(
+      date + 'T00:00:00'
+    );
 
   return d.toLocaleDateString(
     'en-IN',
@@ -588,22 +713,60 @@ function formatDate(date){
 }
 
 
-/* =========================
+
+/* ==========================================
    MONEY FORMAT
-========================= */
+========================================== */
 
 function money(value){
 
-  return 'Rs. ' +
+  return (
+    'Rs. ' +
     Number(value || 0)
-    .toLocaleString('en-IN');
+    .toLocaleString('en-IN')
+  );
 
 }
 
 
-/* =========================
+
+/* ==========================================
+   CLEAN BULLETS
+========================================== */
+
+function cleanLines(text){
+
+  if(!text){
+
+    return [];
+
+  }
+
+  return text
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .map(line => {
+
+      /*
+       Remove existing bullet characters
+       so PDF always uses clean "-"
+      */
+
+      line =
+        line.replace(/^[-•✓✔✦*]+\s*/, '');
+
+      return '- ' + line;
+
+    });
+
+}
+
+
+
+/* ==========================================
    WRAP TEXT
-========================= */
+========================================== */
 
 function wrapText(
   doc,
@@ -621,10 +784,21 @@ function wrapText(
   }
 
   const paragraphs =
-    text.split('\n');
+    String(text).split('\n');
 
   paragraphs.forEach(
     paragraph => {
+
+      paragraph =
+        paragraph.trim();
+
+      if(!paragraph){
+
+        y += lineHeight;
+
+        return;
+
+      }
 
       const words =
         paragraph.split(/\s+/);
@@ -644,13 +818,17 @@ function wrapText(
             > maxWidth
           ){
 
-            doc.text(
-              line,
-              x,
-              y
-            );
+            if(line){
 
-            y += lineHeight;
+              doc.text(
+                line,
+                x,
+                y
+              );
+
+              y += lineHeight;
+
+            }
 
             line = word;
 
@@ -683,9 +861,45 @@ function wrapText(
 }
 
 
-/* =========================
+
+/* ==========================================
+   WRAP MULTIPLE LINES
+========================================== */
+
+function wrapLines(
+  doc,
+  lines,
+  x,
+  y,
+  maxWidth,
+  lineHeight
+){
+
+  lines.forEach(
+    line => {
+
+      y =
+        wrapText(
+          doc,
+          line,
+          x,
+          y,
+          maxWidth,
+          lineHeight
+        );
+
+    }
+  );
+
+  return y;
+
+}
+
+
+
+/* ==========================================
    SECTION HEADING
-========================= */
+========================================== */
 
 function heading(
   doc,
@@ -701,7 +915,7 @@ function heading(
 
   doc.roundedRect(
     15,
-    y-5,
+    y - 5,
     180,
     8,
     2,
@@ -733,9 +947,10 @@ function heading(
 }
 
 
-/* =========================
+
+/* ==========================================
    ADD ROW
-========================= */
+========================================== */
 
 function row(
   doc,
@@ -787,9 +1002,191 @@ function row(
 }
 
 
-/* =========================
+
+/* ==========================================
+   PAGE BREAK
+========================================== */
+
+function checkPageSpace(
+  doc,
+  y,
+  requiredHeight = 25
+){
+
+  const pageHeight =
+    doc.internal.pageSize.getHeight();
+
+  /*
+    Footer needs approximately 25-30mm.
+  */
+
+  if(
+    y + requiredHeight
+    > pageHeight - 30
+  ){
+
+    doc.addPage();
+
+    /*
+      Top green line on new page
+    */
+
+    doc.setFillColor(
+      234,
+      245,
+      239
+    );
+
+    doc.rect(
+      0,
+      0,
+      210,
+      7,
+      'F'
+    );
+
+    return 20;
+
+  }
+
+  return y;
+
+}
+
+
+
+/* ==========================================
+   WATERMARK
+========================================== */
+
+function addWatermark(doc){
+
+  try{
+
+    if(
+      typeof doc.setGState !== 'function'
+    ){
+
+      return;
+
+    }
+
+    if(
+      typeof doc.GState !== 'function'
+    ){
+
+      return;
+
+    }
+
+    doc.setGState(
+      new doc.GState({
+        opacity:0.045
+      })
+    );
+
+    doc.addImage(
+      '../LOGO.png',
+      'PNG',
+      50,
+      105,
+      110,
+      70
+    );
+
+    doc.setGState(
+      new doc.GState({
+        opacity:1
+      })
+    );
+
+  }catch(error){
+
+    console.log(
+      'Watermark unavailable'
+    );
+
+  }
+
+}
+
+
+
+/* ==========================================
+   ADD FOOTER
+========================================== */
+
+function addFooter(
+  doc,
+  pageWidth,
+  pageHeight
+){
+
+  const footerY =
+    pageHeight - 23;
+
+  doc.setFont(
+    'helvetica',
+    'bold'
+  );
+
+  doc.setFontSize(9);
+
+  doc.setTextColor(
+    22,
+    128,
+    77
+  );
+
+  doc.text(
+    'Mauli Tours & Travels',
+    pageWidth / 2,
+    footerY,
+    {
+      align:'center'
+    }
+  );
+
+
+  doc.setFont(
+    'helvetica',
+    'normal'
+  );
+
+  doc.setFontSize(7.5);
+
+  doc.setTextColor(
+    100,
+    118,
+    110
+  );
+
+  doc.text(
+    'Pune, Maharashtra  •  9226718177  •  maulitoursandtravels2150@gmail.com',
+    pageWidth / 2,
+    footerY + 5,
+    {
+      align:'center'
+    }
+  );
+
+
+  doc.text(
+    'www.maulitoursandtravels.co.in',
+    pageWidth / 2,
+    footerY + 10,
+    {
+      align:'center'
+    }
+  );
+
+}
+
+
+
+/* ==========================================
    GENERATE PDF
-========================= */
+========================================== */
 
 $('bookingForm')
 .addEventListener(
@@ -798,6 +1195,10 @@ $('bookingForm')
 
     e.preventDefault();
 
+
+    /* ==============================
+       jsPDF
+    ============================== */
 
     const {
       jsPDF
@@ -819,45 +1220,18 @@ $('bookingForm')
       doc.internal.pageSize.getHeight();
 
 
-    /* =====================
-       WATERMARK
-    ===================== */
 
-    try{
+    /* ==============================
+       PAGE 1 WATERMARK
+    ============================== */
 
-      doc.setGState(
-        new doc.GState({
-          opacity:0.045
-        })
-      );
-
-      doc.addImage(
-        '../LOGO.png',
-        'PNG',
-        50,
-        105,
-        110,
-        70
-      );
-
-      doc.setGState(
-        new doc.GState({
-          opacity:1
-        })
-      );
-
-    }catch(err){
-
-      console.log(
-        'Watermark unavailable'
-      );
-
-    }
+    addWatermark(doc);
 
 
-    /* =====================
+
+    /* ==============================
        TOP GREEN LINE
-    ===================== */
+    ============================== */
 
     doc.setFillColor(
       234,
@@ -874,9 +1248,10 @@ $('bookingForm')
     );
 
 
-    /* =====================
+
+    /* ==============================
        LOGO
-    ===================== */
+    ============================== */
 
     try{
 
@@ -889,7 +1264,7 @@ $('bookingForm')
         38
       );
 
-    }catch(err){
+    }catch(error){
 
       console.log(
         'Logo unavailable'
@@ -898,9 +1273,10 @@ $('bookingForm')
     }
 
 
-    /* =====================
+
+    /* ==============================
        TITLE
-    ===================== */
+    ============================== */
 
     doc.setTextColor(
       24,
@@ -917,7 +1293,7 @@ $('bookingForm')
 
     doc.text(
       'BOOKING CONFIRMATION',
-      pageWidth/2,
+      pageWidth / 2,
       55,
       {
         align:'center'
@@ -940,7 +1316,7 @@ $('bookingForm')
 
     doc.text(
       'Explore • Experience • Enjoy',
-      pageWidth/2,
+      pageWidth / 2,
       61,
       {
         align:'center'
@@ -948,9 +1324,10 @@ $('bookingForm')
     );
 
 
-    /* =====================
+
+    /* ==============================
        CONFIRMED BOX
-    ===================== */
+    ============================== */
 
     doc.setFillColor(
       234,
@@ -974,6 +1351,7 @@ $('bookingForm')
       'FD'
     );
 
+
     doc.setFont(
       'helvetica',
       'bold'
@@ -987,9 +1365,14 @@ $('bookingForm')
       77
     );
 
+    /*
+      Use ASCII-safe text here.
+      This prevents strange symbols in some PDF viewers.
+    */
+
     doc.text(
-      '✓ BOOKING CONFIRMED',
-      pageWidth/2,
+      'BOOKING CONFIRMED',
+      pageWidth / 2,
       74,
       {
         align:'center'
@@ -997,12 +1380,14 @@ $('bookingForm')
     );
 
 
+
     let y = 87;
 
 
-    /* =====================
+
+    /* ==============================
        BOOKING DETAILS
-    ===================== */
+    ============================== */
 
     y =
       heading(
@@ -1032,9 +1417,10 @@ $('bookingForm')
     y += 2;
 
 
-    /* =====================
+
+    /* ==============================
        CUSTOMER DETAILS
-    ===================== */
+    ============================== */
 
     y =
       heading(
@@ -1059,6 +1445,7 @@ $('bookingForm')
         y
       );
 
+
     if(val('email')){
 
       y =
@@ -1074,9 +1461,10 @@ $('bookingForm')
     y += 2;
 
 
-    /* =====================
+
+    /* ==============================
        TRIP DETAILS
-    ===================== */
+    ============================== */
 
     y =
       heading(
@@ -1130,9 +1518,10 @@ $('bookingForm')
     y += 2;
 
 
-    /* =====================
+
+    /* ==============================
        TRAVEL & STAY
-    ===================== */
+    ============================== */
 
     y =
       heading(
@@ -1176,9 +1565,23 @@ $('bookingForm')
     y += 2;
 
 
-    /* =====================
+
+    /* ==============================
        ITINERARY
-    ===================== */
+    ============================== */
+
+    /*
+      If itinerary is very long,
+      automatically move it to another page.
+    */
+
+    y =
+      checkPageSpace(
+        doc,
+        y,
+        35
+      );
+
 
     y =
       heading(
@@ -1186,6 +1589,7 @@ $('bookingForm')
         'ITINERARY',
         y
       );
+
 
     doc.setTextColor(
       24,
@@ -1200,6 +1604,7 @@ $('bookingForm')
 
     doc.setFontSize(8.5);
 
+
     y =
       wrapText(
         doc,
@@ -1213,9 +1618,18 @@ $('bookingForm')
     y += 3;
 
 
-    /* =====================
+
+    /* ==============================
        PAYMENT
-    ===================== */
+    ============================== */
+
+    y =
+      checkPageSpace(
+        doc,
+        y,
+        40
+      );
+
 
     y =
       heading(
@@ -1239,7 +1653,7 @@ $('bookingForm')
 
     doc.roundedRect(
       15,
-      y-4,
+      y - 4,
       180,
       27,
       3,
@@ -1264,7 +1678,7 @@ $('bookingForm')
     doc.text(
       'TOTAL PACKAGE',
       20,
-      y+4
+      y + 4
     );
 
 
@@ -1277,9 +1691,11 @@ $('bookingForm')
     );
 
     doc.text(
-      money(val('price')),
+      money(
+        val('price')
+      ),
       190,
-      y+4,
+      y + 4,
       {
         align:'right'
       }
@@ -1297,21 +1713,48 @@ $('bookingForm')
     doc.text(
       'PAYMENT STATUS: PAID',
       20,
-      y+12
+      y + 12
     );
 
     doc.text(
       'BOOKING STATUS: CONFIRMED',
       20,
-      y+18
+      y + 18
     );
 
     y += 31;
 
 
-    /* =====================
+
+    /* ==============================
        INCLUSIONS
-    ===================== */
+    ============================== */
+
+    /*
+      IMPORTANT FIX:
+      Check page space BEFORE the section.
+    */
+
+    const inclusionLines =
+      cleanLines(
+        val('inclusions')
+      );
+
+
+    const estimatedInclusionHeight =
+      Math.max(
+        28,
+        inclusionLines.length * 5 + 12
+      );
+
+
+    y =
+      checkPageSpace(
+        doc,
+        y,
+        estimatedInclusionHeight
+      );
+
 
     y =
       heading(
@@ -1320,22 +1763,73 @@ $('bookingForm')
         y
       );
 
-    y =
-      wrapText(
-        doc,
-        val('inclusions'),
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(8.5);
+
+    doc.setTextColor(
+      24,
+      51,
+      42
+    );
+
+
+    if(inclusionLines.length){
+
+      y =
+        wrapLines(
+          doc,
+          inclusionLines,
+          18,
+          y,
+          174,
+          4.5
+        );
+
+    }else{
+
+      doc.text(
+        '- As confirmed in booking',
         18,
-        y,
-        174,
-        4.5
+        y
       );
 
-    y += 3;
+      y += 4.5;
+
+    }
+
+    y += 4;
 
 
-    /* =====================
+
+    /* ==============================
        EXCLUSIONS
-    ===================== */
+    ============================== */
+
+    const exclusionLines =
+      cleanLines(
+        val('exclusions')
+      );
+
+
+    const estimatedExclusionHeight =
+      Math.max(
+        28,
+        exclusionLines.length * 5 + 12
+      );
+
+
+    y =
+      checkPageSpace(
+        doc,
+        y,
+        estimatedExclusionHeight
+      );
+
 
     y =
       heading(
@@ -1344,24 +1838,66 @@ $('bookingForm')
         y
       );
 
-    y =
-      wrapText(
-        doc,
-        val('exclusions'),
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(8.5);
+
+    doc.setTextColor(
+      24,
+      51,
+      42
+    );
+
+
+    if(exclusionLines.length){
+
+      y =
+        wrapLines(
+          doc,
+          exclusionLines,
+          18,
+          y,
+          174,
+          4.5
+        );
+
+    }else{
+
+      doc.text(
+        '- As confirmed in booking',
         18,
-        y,
-        174,
-        4.5
+        y
       );
 
-    y += 3;
+      y += 4.5;
+
+    }
+
+    y += 4;
 
 
-    /* =====================
+
+    /* ==============================
        SPECIAL REQUIREMENTS
-    ===================== */
+    ============================== */
 
     if(val('special')){
+
+      const specialText =
+        val('special');
+
+
+      y =
+        checkPageSpace(
+          doc,
+          y,
+          35
+        );
+
 
       y =
         heading(
@@ -1370,32 +1906,52 @@ $('bookingForm')
           y
         );
 
+
+      doc.setFont(
+        'helvetica',
+        'normal'
+      );
+
+      doc.setFontSize(8.5);
+
+      doc.setTextColor(
+        24,
+        51,
+        42
+      );
+
+
       y =
         wrapText(
           doc,
-          val('special'),
+          specialText,
           18,
           y,
           174,
           4.5
         );
 
-      y += 3;
+      y += 4;
 
     }
 
 
-    /* =====================
+
+    /* ==============================
        TERMS
-    ===================== */
+    ============================== */
 
-    if(y > 230){
+    /*
+      Terms always get enough space.
+      If needed, they move to a new page.
+    */
 
-      doc.addPage();
-
-      y = 20;
-
-    }
+    y =
+      checkPageSpace(
+        doc,
+        y,
+        80
+      );
 
 
     y =
@@ -1444,6 +2000,19 @@ $('bookingForm')
     terms.forEach(
       term => {
 
+        /*
+          Check before every term.
+          This prevents text from being cut.
+        */
+
+        y =
+          checkPageSpace(
+            doc,
+            y,
+            12
+          );
+
+
         y =
           wrapText(
             doc,
@@ -1460,77 +2029,45 @@ $('bookingForm')
     );
 
 
-    /* =====================
+
+    /* ==============================
        FOOTER
-    ===================== */
+    ============================== */
 
-    const footerY =
-      pageHeight - 23;
+    /*
+      Add footer to EVERY page.
+    */
 
-
-    doc.setFont(
-      'helvetica',
-      'bold'
-    );
-
-    doc.setFontSize(9);
-
-    doc.setTextColor(
-      22,
-      128,
-      77
-    );
-
-    doc.text(
-      'Mauli Tours & Travels',
-      pageWidth/2,
-      footerY,
-      {
-        align:'center'
-      }
-    );
+    const totalPages =
+      doc.internal.getNumberOfPages();
 
 
-    doc.setFont(
-      'helvetica',
-      'normal'
-    );
+    for(
+      let page = 1;
+      page <= totalPages;
+      page++
+    ){
 
-    doc.setFontSize(7.5);
+      doc.setPage(page);
 
-    doc.setTextColor(
-      100,
-      118,
-      110
-    );
+      addFooter(
+        doc,
+        pageWidth,
+        pageHeight
+      );
 
-    doc.text(
-      'Pune, Maharashtra  •  9226718177  •  maulitoursandtravels2150@gmail.com',
-      pageWidth/2,
-      footerY+5,
-      {
-        align:'center'
-      }
-    );
+    }
 
 
-    doc.text(
-      'www.maulitoursandtravels.co.in',
-      pageWidth/2,
-      footerY+10,
-      {
-        align:'center'
-      }
-    );
 
-
-    /* =====================
+    /* ==============================
        SAVE PDF
-    ===================== */
+    ============================== */
 
     const filename =
       val('bookingId')
-      || 'Mauli_Booking_Confirmation';
+      ||
+      'Mauli_Booking_Confirmation';
 
 
     doc.save(
