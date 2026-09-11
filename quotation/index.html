@@ -4,1764 +4,2000 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mauli Tours & Travels - Quotation</title>
+<title>Mauli Tours & Travels - Tour Quotation</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
-
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7f5;
-  color:#18332a;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f8f4;
+    color:#222;
 }
 
-.wrap{
-  max-width:720px;
-  margin:auto;
-  padding:16px;
+.container{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
 }
 
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:18px;
-  margin-bottom:14px;
-  box-shadow:0 4px 18px #00000010;
+.form-card{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
-.logo{
-  height:70px;
-  max-width:260px;
-  object-fit:contain;
-  display:block;
-  margin:auto;
+h1{
+    text-align:center;
+    color:#16824b;
+    margin-bottom:8px;
 }
 
-.title{
-  text-align:center;
-  margin:8px 0 2px;
-  font-size:23px;
-  font-weight:800;
-  color:#18332a;
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
 }
 
-.sub{
-  text-align:center;
-  color:#5b6f67;
-  font-size:13px;
-}
-
-h2{
-  font-size:17px;
-  margin:0 0 12px;
-  color:#16804d;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
+.section-title{
+    background:#e9f7ef;
+    color:#16824b;
+    padding:11px 14px;
+    border-left:5px solid #16824b;
+    border-radius:6px;
+    margin-top:25px;
+    margin-bottom:15px;
+    font-weight:bold;
 }
 
 label{
-  font-size:12px;
-  font-weight:700;
-  display:block;
-  margin-bottom:5px;
-  color:#496057;
+    display:block;
+    margin-top:12px;
+    margin-bottom:6px;
+    font-weight:600;
 }
 
 input,
 select,
 textarea{
-  width:100%;
-  padding:11px;
-  border:1px solid #d5dfda;
-  border-radius:9px;
-  font-size:14px;
-  background:#fff;
-  color:#18332a;
+    width:100%;
+    padding:11px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:15px;
 }
 
 textarea{
-  min-height:90px;
-  resize:vertical;
+    min-height:100px;
+    resize:vertical;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 .full{
-  grid-column:1/-1;
+    grid-column:1/-1;
 }
 
-.btn{
-  width:100%;
-  border:0;
-  border-radius:11px;
-  padding:14px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-  margin-top:8px;
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
 }
 
-.primary{
-  background:#16804d;
-  color:#fff;
+button{
+    border:none;
+    padding:13px 18px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.secondary{
-  background:#eaf5ef;
-  color:#16804d;
+.generate{
+    background:#16824b;
+    color:white;
+    flex:1;
+}
+
+.save{
+    background:#e9f7ef;
+    color:#16824b;
+}
+
+.load{
+    background:#f1f1f1;
+    color:#333;
 }
 
 .note{
-  font-size:12px;
-  color:#64766e;
-  line-height:1.5;
+    margin-top:15px;
+    font-size:13px;
+    color:#777;
+    text-align:center;
 }
 
-@media(max-width:560px){
+@media(max-width:650px){
+    .container{
+        margin:10px auto;
+        padding:10px;
+    }
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+    .form-card{
+        padding:17px;
+    }
 
-  .full{
-    grid-column:auto;
-  }
+    .grid{
+        grid-template-columns:1fr;
+    }
 
+    .full{
+        grid-column:auto;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    button{
+        width:100%;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<div class="container">
 
-  <!-- HEADER -->
+<div class="form-card">
 
-  <div class="card">
+<h1>Mauli Tours & Travels</h1>
 
-    <img
-      src="LOGO.png"
-      class="logo"
-      alt="Mauli Tours & Travels Logo"
-    >
+<div class="subtitle">
+Tour Quotation Generator
+</div>
 
-    <div class="title">
-      TOUR QUOTATION
-    </div>
+<form id="quotationForm">
 
-    <div class="sub">
-      Explore • Experience • Enjoy
-    </div>
+<div class="section-title">Quotation Details</div>
 
-  </div>
+<div class="grid">
 
+<div>
+<label>Quotation Number</label>
+<input type="text" id="quotationNo" readonly>
+</div>
 
-  <form id="quoteForm">
+<div>
+<label>Quotation Date</label>
+<input type="date" id="quotationDate">
+</div>
 
-    <!-- CUSTOMER DETAILS -->
+<div>
+<label>Valid Until</label>
+<input type="date" id="validUntil">
+</div>
 
-    <div class="card">
+</div>
 
-      <h2>1. Customer Details</h2>
 
-      <div class="grid">
+<div class="section-title">Customer Details</div>
 
-        <div>
-          <label>Customer Name *</label>
-          <input id="customer" required>
-        </div>
+<div class="grid">
 
-        <div>
-          <label>Mobile Number *</label>
-          <input id="mobile" required>
-        </div>
+<div>
+<label>Customer Name *</label>
+<input type="text" id="customerName" required>
+</div>
 
-        <div>
-          <label>Email</label>
-          <input id="email" type="email">
-        </div>
+<div>
+<label>Mobile Number *</label>
+<input type="tel" id="mobile" required>
+</div>
 
-        <div>
-          <label>Quotation Valid Until</label>
-          <input id="validity" type="date">
-        </div>
+<div>
+<label>Email</label>
+<input type="email" id="email">
+</div>
 
-      </div>
+</div>
 
-    </div>
 
+<div class="section-title">Trip Details</div>
 
-    <!-- TRIP DETAILS -->
+<div class="grid">
 
-    <div class="card">
+<div>
+<label>Destination *</label>
+<input type="text" id="destination" required>
+</div>
 
-      <h2>2. Trip Details</h2>
+<div>
+<label>Pickup Location *</label>
+<input type="text" id="pickup" required>
+</div>
 
-      <div class="grid">
+<div>
+<label>Travel Date *</label>
+<input type="date" id="travelDate" required>
+</div>
 
-        <div>
-          <label>Destination *</label>
-          <input id="destination" required>
-        </div>
+<div>
+<label>Return Date</label>
+<input type="date" id="returnDate">
+</div>
 
-        <div>
-          <label>Pickup Location *</label>
-          <input id="pickup" required>
-        </div>
+<div>
+<label>Adults</label>
+<input type="number" id="adults" min="0" value="2">
+</div>
 
-        <div>
-          <label>Travel Date *</label>
-          <input id="travelDate" type="date" required>
-        </div>
+<div>
+<label>Children</label>
+<input type="number" id="children" min="0" value="0">
+</div>
 
-        <div>
-          <label>Return Date</label>
-          <input id="returnDate" type="date">
-        </div>
+</div>
 
-        <div>
-          <label>Adults</label>
-          <input
-            id="adults"
-            type="number"
-            min="0"
-            value="1"
-          >
-        </div>
 
-        <div>
-          <label>Children</label>
-          <input
-            id="children"
-            type="number"
-            min="0"
-            value="0"
-          >
-        </div>
+<div class="section-title">Stay • Meals • Vehicle</div>
 
-      </div>
+<div class="grid">
 
-    </div>
+<div>
+<label>Stay Category</label>
 
+<select id="stay">
+<option value="">Select</option>
+<option>Budget</option>
+<option>Standard</option>
+<option>Premium</option>
+<option>Luxury</option>
+</select>
 
-    <!-- STAY MEALS VEHICLE -->
+</div>
 
-    <div class="card">
+<div>
+<label>Number of Rooms</label>
+<input type="number" id="rooms" min="0" value="1">
+</div>
 
-      <h2>3. Stay, Meals & Vehicle</h2>
+<div>
+<label>Meals</label>
 
-      <div class="grid">
+<select id="meals">
 
-        <div>
+<option value="">Select</option>
+<option>No Meals</option>
+<option>Breakfast</option>
+<option>Breakfast + Dinner</option>
+<option>All Meals</option>
 
-          <label>Stay</label>
+</select>
 
-          <select id="stay">
+</div>
 
-            <option>Budget</option>
-            <option selected>Standard</option>
-            <option>Premium</option>
-            <option>Not Required</option>
+<div>
+<label>Vehicle</label>
 
-          </select>
+<select id="vehicle">
 
-        </div>
+<option value="">Select</option>
+<option>Private AC Car</option>
+<option>Sedan</option>
+<option>SUV</option>
+<option>Tempo Traveller</option>
+<option>Bus</option>
+<option>Customer Vehicle</option>
 
-        <div>
+</select>
 
-          <label>Rooms</label>
+</div>
 
-          <input
-            id="rooms"
-            type="number"
-            min="0"
-            value="1"
-          >
+</div>
 
-        </div>
 
-        <div>
+<div class="section-title">Itinerary</div>
 
-          <label>Meals</label>
+<div class="grid">
 
-          <select id="meals">
+<div class="full">
 
-            <option>No Meals</option>
-            <option>Breakfast</option>
-            <option>Breakfast + Dinner</option>
-            <option>All Meals</option>
+<label>Day-wise Itinerary</label>
 
-          </select>
+<textarea id="itinerary"
+placeholder="Day 1
+Pickup from Your Location
+Breakfast Stop
+Sightseeing
+Hotel Check-in
 
-        </div>
-
-        <div>
-
-          <label>Vehicle</label>
-
-          <input
-            id="vehicle"
-            placeholder="e.g. Sedan / SUV / Tempo"
-          >
-
-        </div>
-
-        <div>
-
-          <label>Quotation No.</label>
-
-          <input
-            id="quoteNo"
-            readonly
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ITINERARY -->
-
-    <div class="card">
-
-      <h2>4. Itinerary</h2>
-
-      <textarea
-        id="itinerary"
-        placeholder="Day 1: Pickup from Pune...
-Day 2: Sightseeing...
-Day 3: Return to Pune..."
-      ></textarea>
-
-    </div>
-
-
-    <!-- PACKAGE COST -->
-
-    <div class="card">
-
-      <h2>5. Package Cost</h2>
-
-      <div class="grid">
-
-        <div class="full">
-
-          <label>Total Package Price (Rs.) *</label>
-
-          <input
-            id="price"
-            type="number"
-            min="0"
-            required
-          >
-
-        </div>
-
-      </div>
-
-      <p class="note">
-
-        <strong>Payment:</strong>
-        Full payment is required at the time of booking.
-
-      </p>
-
-    </div>
-
-
-    <!-- INCLUSIONS / EXCLUSIONS -->
-
-    <div class="card">
-
-      <h2>6. Inclusions & Exclusions</h2>
-
-      <div class="grid">
-
-        <div>
-
-          <label>Inclusions</label>
-
-          <textarea
-            id="inclusions"
-            placeholder="Vehicle
-Hotel stay
+Day 2
 Breakfast
-Toll & Parking"
-          ></textarea>
+Sightseeing
+Shopping
+Return to Your Location"></textarea>
 
-        </div>
+</div>
 
-        <div>
-
-          <label>Exclusions</label>
-
-          <textarea
-            id="exclusions"
-            placeholder="Entry tickets
-Personal expenses
-Extra activities"
-          ></textarea>
-
-        </div>
-
-        <div class="full">
-
-          <label>Special Requirements</label>
-
-          <textarea id="special"></textarea>
-
-        </div>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <!-- TERMS -->
+<div class="section-title">Package Cost</div>
 
-    <div class="card">
+<div class="grid">
 
-      <h2>Terms & Conditions</h2>
+<div>
 
-      <p class="note">
+<label>Total Package Price (Rs.) *</label>
 
-        Booking will be confirmed only after receipt of the full package payment.
-        <br><br>
+<input
+type="number"
+id="packagePrice"
+placeholder="10000"
+required
+>
 
-        Package inclusions and exclusions are as stated in the quotation.
-        <br><br>
+</div>
 
-        The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.
-        <br><br>
-
-        Changes or cancellations may attract applicable charges depending on the booking and travel date.
-        <br><br>
-
-        Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.
-        <br><br>
-
-        Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.
-        <br><br>
-
-        Customers are responsible for their personal belongings, valuables, documents and luggage.
-        <br><br>
-
-        Hotel category, room type and meal plan will be as specified in the confirmed package.
-        <br><br>
-
-        Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.
-        <br><br>
-
-        By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.
-
-      </p>
-
-    </div>
+</div>
 
 
-    <!-- BUTTONS -->
+<div class="section-title">Inclusions</div>
 
-    <div class="card">
+<textarea id="inclusions"
+placeholder="- Pickup & Drop
+- Private AC Car
+- Sightseeing
+- Toll & Parking
+- Driver Allowance
+- Hotel Stay"></textarea>
 
-      <button
-        class="btn primary"
-        type="submit"
-      >
-        Generate Quotation PDF
-      </button>
 
-      <button
-        class="btn secondary"
-        type="button"
-        onclick="saveDraft()"
-      >
-        Save Draft on This Phone
-      </button>
+<div class="section-title">Exclusions</div>
 
-      <button
-        class="btn secondary"
-        type="button"
-        onclick="loadDraft()"
-      >
-        Load Saved Draft
-      </button>
+<textarea id="exclusions"
+placeholder="- Meals (Unless Specified)
+- Entry Tickets
+- Boating & Adventure Activities
+- Personal Expenses"></textarea>
 
-    </div>
 
-  </form>
+<div class="section-title">Special Requirements</div>
 
+<textarea id="specialRequirements"
+placeholder="Any special request from customer"></textarea>
+
+
+<div class="section-title">Terms & Conditions</div>
+
+<textarea id="terms">1. Booking will be confirmed only after receipt of the full package payment.
+2. Package inclusions and exclusions are as stated in the quotation.
+3. The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.
+4. Changes or cancellations may attract applicable charges depending on the booking and travel date.
+5. Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.
+6. Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.
+7. Customers are responsible for their personal belongings, valuables, documents and luggage.
+8. Hotel category, room type and meal plan will be as specified in the confirmed package.
+9. Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.
+10. By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.</textarea>
+
+
+<div class="buttons">
+
+<button
+type="button"
+class="generate"
+onclick="generatePDF()">
+Generate Quotation PDF
+</button>
+
+<button
+type="button"
+class="save"
+onclick="saveDraft()">
+Save Draft
+</button>
+
+<button
+type="button"
+class="load"
+onclick="loadDraft()">
+Load Saved Draft
+</button>
+
+</div>
+
+<div class="note">
+Quotation PDF is generated directly on your device.
+</div>
+
+</form>
+
+</div>
 </div>
 
 
 <script>
 
-const $ = id => document.getElementById(id);
+const { jsPDF } = window.jspdf;
 
 
-/* =========================
-   QUOTATION NUMBER
-========================= */
+/* -----------------------------
+   DATE FUNCTIONS
+----------------------------- */
 
-function makeQuoteNo(){
+function todayISO(){
 
-  const d = new Date();
+    const d = new Date();
 
-  const y = d.getFullYear();
+    const month = String(d.getMonth()+1).padStart(2,'0');
 
-  const m =
-    String(d.getMonth() + 1)
-    .padStart(2,'0');
+    const day = String(d.getDate()).padStart(2,'0');
 
-  const day =
-    String(d.getDate())
-    .padStart(2,'0');
-
-  const key = 'mauliQuoteSeq';
-
-  let n =
-    Number(
-      localStorage.getItem(key) || 0
-    ) + 1;
-
-  localStorage.setItem(
-    key,
-    n
-  );
-
-  return `MTT-${y}${m}${day}-${String(n).padStart(3,'0')}`;
-
+    return `${d.getFullYear()}-${month}-${day}`;
 }
 
 
-/* =========================
-   SET QUOTATION NUMBER
-========================= */
+function formatDate(value){
 
-$('quoteNo').value = makeQuoteNo();
+    if(!value) return "-";
 
+    const d = new Date(value + "T00:00:00");
 
-/* =========================
-   BASIC VALUE
-========================= */
-
-function val(id){
-
-  const element = $(id);
-
-  if(!element){
-    return '';
-  }
-
-  return String(
-    element.value || ''
-  ).trim();
-
-}
-
-
-/* =========================
-   MONEY
-========================= */
-
-function money(value){
-
-  return 'Rs. ' +
-    Number(value || 0)
-    .toLocaleString('en-IN');
-
-}
-
-
-/* =========================
-   SAVE DRAFT
-========================= */
-
-function saveDraft(){
-
-  const data = {};
-
-  document
-    .querySelectorAll(
-      'input,select,textarea'
-    )
-    .forEach(element => {
-
-      data[element.id] =
-        element.value;
-
+    return d.toLocaleDateString("en-GB",{
+        day:"2-digit",
+        month:"short",
+        year:"numeric"
     });
+}
 
-  localStorage.setItem(
-    'mauliQuotationDraft',
-    JSON.stringify(data)
-  );
 
-  alert(
-    'Draft saved on this phone.'
-  );
+/* -----------------------------
+   QUOTATION NUMBER
+----------------------------- */
+
+function generateQuotationNumber(){
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month = String(today.getMonth()+1).padStart(2,'0');
+
+    const day = String(today.getDate()).padStart(2,'0');
+
+    const key = `mauliQuotationSequence_${year}${month}${day}`;
+
+    let sequence = parseInt(localStorage.getItem(key) || "0",10);
+
+    sequence++;
+
+    localStorage.setItem(key,sequence);
+
+    return `MTT-${year}${month}${day}-${String(sequence).padStart(3,'0')}`;
+}
+
+
+/* -----------------------------
+   DEFAULT VALUES
+----------------------------- */
+
+document.getElementById("quotationDate").value = todayISO();
+
+const valid = new Date();
+
+valid.setDate(valid.getDate()+4);
+
+document.getElementById("validUntil").value =
+valid.toISOString().split("T")[0];
+
+document.getElementById("quotationNo").value =
+generateQuotationNumber();
+
+
+/* -----------------------------
+   TEXT CLEANING
+----------------------------- */
+
+function cleanLines(text){
+
+    if(!text) return [];
+
+    return text
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+        .map(line => {
+
+            line = line.replace(/^[•●▪◦]\s*/,"");
+
+            line = line.replace(/^[-–—]\s*/,"");
+
+            return "- " + line;
+
+        });
 
 }
 
 
-/* =========================
-   LOAD DRAFT
-========================= */
+/* -----------------------------
+   TEXT WRAPPING
+----------------------------- */
 
-function loadDraft(){
+function wrapText(doc,text,maxWidth){
 
-  const data =
-    JSON.parse(
-      localStorage.getItem(
-        'mauliQuotationDraft'
-      ) || 'null'
+    return doc.splitTextToSize(
+        String(text || ""),
+        maxWidth
     );
-
-  if(!data){
-
-    alert(
-      'No saved draft found.'
-    );
-
-    return;
-
-  }
-
-  Object.entries(data)
-    .forEach(
-      ([key,value]) => {
-
-        if($(key)){
-
-          $(key).value = value;
-
-        }
-
-      }
-    );
-
-  alert(
-    'Draft loaded.'
-  );
 
 }
 
 
-/* =========================
-   DATE FORMAT
-========================= */
+/* -----------------------------
+   PAGE SPACE CHECK
+----------------------------- */
 
-function formatDate(date){
+function checkPageSpace(doc,y,requiredHeight){
 
-  if(!date){
-    return '-';
-  }
+    const pageHeight = doc.internal.pageSize.getHeight();
 
-  const d =
-    new Date(
-      date + 'T00:00:00'
-    );
+    const bottomLimit = pageHeight - 25;
 
-  return d.toLocaleDateString(
-    'en-IN',
-    {
-      day:'2-digit',
-      month:'short',
-      year:'numeric'
+    if(y + requiredHeight > bottomLimit){
+
+        addFooter(doc);
+
+        doc.addPage();
+
+        addPageWatermark(doc);
+
+        return 25;
+
     }
-  );
+
+    return y;
 
 }
 
 
-/* =========================
-   ADD WRAPPED TEXT
-========================= */
+/* -----------------------------
+   FOOTER
+----------------------------- */
 
-function addWrappedText(
-  doc,
-  text,
-  x,
-  y,
-  width,
-  lineHeight = 4.2
-){
+function addFooter(doc){
 
-  const clean =
-    String(text || '').trim();
+    const pageWidth =
+        doc.internal.pageSize.getWidth();
 
-  if(!clean){
+    const pageHeight =
+        doc.internal.pageSize.getHeight();
 
-    doc.setFont(
-      'helvetica',
-      'normal'
+    doc.setDrawColor(22,130,75);
+
+    doc.setLineWidth(0.5);
+
+    doc.line(
+        15,
+        pageHeight-17,
+        pageWidth-15,
+        pageHeight-17
     );
+
+    doc.setFont("helvetica","bold");
 
     doc.setFontSize(8);
 
-    doc.setTextColor(
-      24,
-      51,
-      42
+    doc.setTextColor(22,130,75);
+
+    doc.text(
+        "Mauli Tours & Travels",
+        pageWidth/2,
+        pageHeight-11,
+        {align:"center"}
+    );
+
+    doc.setFont("helvetica","normal");
+
+    doc.setTextColor(90,90,90);
+
+    doc.text(
+        "Pune, Maharashtra | 9226718177",
+        pageWidth/2,
+        pageHeight-7,
+        {align:"center"}
     );
 
     doc.text(
-      '-',
-      x,
-      y
+        "maulitoursandtravels2150@gmail.com | www.maulitoursandtravels.co.in",
+        pageWidth/2,
+        pageHeight-3,
+        {align:"center"}
     );
-
-    return y + lineHeight;
-
-  }
-
-  const lines =
-    doc.splitTextToSize(
-      clean,
-      width
-    );
-
-  doc.text(
-    lines,
-    x,
-    y
-  );
-
-  return y +
-    lines.length * lineHeight;
 
 }
 
 
-/* =========================
-   PDF
-========================= */
+/* -----------------------------
+   WATERMARK
+----------------------------- */
 
-document
-.getElementById('quoteForm')
-.addEventListener(
-  'submit',
-  function(e){
+function addPageWatermark(doc){
 
-    e.preventDefault();
+    try{
 
+        const pageWidth =
+            doc.internal.pageSize.getWidth();
 
-    const {
-      jsPDF
-    } = window.jspdf;
+        const pageHeight =
+            doc.internal.pageSize.getHeight();
 
+        const img =
+            document.getElementById("logoImage");
 
-    const doc =
-      new jsPDF({
-        orientation:'p',
-        unit:'mm',
-        format:'a4'
-      });
-
-
-    const pageWidth =
-      doc.internal.pageSize.getWidth();
-
-    const pageHeight =
-      doc.internal.pageSize.getHeight();
-
-
-    const green =
-      [22,128,77];
-
-    const dark =
-      [24,51,42];
-
-    const grey =
-      [95,112,104];
-
-    const light =
-      [234,245,239];
-
-    const lineColor =
-      [215,225,220];
-
-
-    let y = 41;
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    function header(){
-
-      /* TOP GREEN LINE */
-
-      doc.setFillColor(
-        ...green
-      );
-
-      doc.rect(
-        0,
-        0,
-        pageWidth,
-        7,
-        'F'
-      );
-
-
-      /* CENTER LOGO */
-
-      try{
-
-        doc.addImage(
-          'LOGO.png',
-          'PNG',
-          76,
-          10,
-          58,
-          38
-        );
-
-      }catch(error){
-
-        console.log(
-          'Logo unavailable'
-        );
-
-      }
-
-
-      /* TITLE */
-
-      doc.setFont(
-        'helvetica',
-        'bold'
-      );
-
-      doc.setFontSize(20);
-
-      doc.setTextColor(
-        ...dark
-      );
-
-      doc.text(
-        'TOUR QUOTATION',
-        pageWidth / 2,
-        55,
-        {
-          align:'center'
-        }
-      );
-
-
-      /* TAGLINE */
-
-      doc.setFont(
-        'helvetica',
-        'normal'
-      );
-
-      doc.setFontSize(9);
-
-      doc.setTextColor(
-        ...grey
-      );
-
-      doc.text(
-        'Explore • Experience • Enjoy',
-        pageWidth / 2,
-        61,
-        {
-          align:'center'
-        }
-      );
-
-
-      /* LINE */
-
-      doc.setDrawColor(
-        ...lineColor
-      );
-
-      doc.line(
-        15,
-        68,
-        195,
-        68
-      );
-
-    }
-
-
-    /* =========================
-       WATERMARK
-    ========================= */
-
-    function watermark(){
-
-      try{
+        if(!img) return;
 
         doc.saveGraphicsState();
 
-        doc.setGState(
-          new doc.GState({
-            opacity:0.045
-          })
-        );
+        if(doc.GState){
+
+            const gs = new doc.GState({
+                opacity:0.06
+            });
+
+            doc.setGState(gs);
+
+        }
 
         doc.addImage(
-          'LOGO.png',
-          'PNG',
-          50,
-          105,
-          110,
-          70
+            img,
+            "PNG",
+            pageWidth/2 - 35,
+            pageHeight/2 - 35,
+            70,
+            70
         );
 
         doc.restoreGraphicsState();
 
-      }catch(error){
+    }catch(e){
 
-        console.log(
-          'Watermark unavailable'
-        );
-
-      }
+        /* watermark is optional */
 
     }
 
+}
 
-    /* =========================
-       FOOTER
-    ========================= */
 
-    function footer(){
+/* -----------------------------
+   LOGO LOADING
+----------------------------- */
 
-      doc.setDrawColor(
-        ...lineColor
-      );
+function loadLogo(){
 
-      doc.line(
-        15,
-        270,
-        195,
-        270
-      );
+    return new Promise((resolve)=>{
 
+        const img =
+            new Image();
 
-      doc.setFont(
-        'helvetica',
-        'bold'
-      );
+        img.onload = function(){
 
-      doc.setFontSize(9);
+            resolve(img);
 
-      doc.setTextColor(
-        ...green
-      );
+        };
 
-      doc.text(
-        'Mauli Tours & Travels',
-        15,
-        278
-      );
+        img.onerror = function(){
 
+            resolve(null);
 
-      doc.setFont(
-        'helvetica',
-        'normal'
-      );
+        };
 
-      doc.setFontSize(7.5);
+        img.src = "LOGO.png";
 
-      doc.setTextColor(
-        ...grey
-      );
+    });
 
-      doc.text(
-        'Pune, Maharashtra  |  9226718177',
-        15,
-        284
-      );
+}
 
-      doc.text(
-        'maulitoursandtravels2150@gmail.com',
-        15,
-        289
-      );
 
-      doc.text(
-        'www.maulitoursandtravels.co.in',
-        195,
-        289,
-        {
-          align:'right'
-        }
-      );
+/* -----------------------------
+   SECTION HEADING
+----------------------------- */
 
-    }
+function addSectionHeading(doc,title,y){
 
-
-    /* =========================
-       NEW PAGE
-    ========================= */
-
-    function newPage(){
-
-      footer();
-
-      doc.addPage();
-
-      header();
-
-      watermark();
-
-      y = 76;
-
-    }
-
-
-    /* =========================
-       PAGE SPACE CHECK
-    ========================= */
-
-    function checkSpace(
-      requiredSpace = 20
-    ){
-
-      if(
-        y + requiredSpace >
-        258
-      ){
-
-        newPage();
-
-      }
-
-    }
-
-
-    /* =========================
-       SECTION HEADING
-    ========================= */
-
-    function heading(title){
-
-      checkSpace(18);
-
-      doc.setFillColor(
-        ...light
-      );
-
-      doc.roundedRect(
-        15,
-        y - 5,
-        180,
-        8,
-        2,
-        2,
-        'F'
-      );
-
-      doc.setFont(
-        'helvetica',
-        'bold'
-      );
-
-      doc.setFontSize(9);
-
-      doc.setTextColor(
-        ...green
-      );
-
-      doc.text(
-        title,
-        19,
-        y
-      );
-
-      y += 10;
-
-    }
-
-
-    /* =========================
-       ROW
-    ========================= */
-
-    function row(
-      label,
-      value
-    ){
-
-      const clean =
-        String(value || '').trim() || '-';
-
-      const lines =
-        doc.splitTextToSize(
-          clean,
-          135
-        );
-
-      checkSpace(
-        Math.max(
-          7,
-          lines.length * 4.5
-        )
-      );
-
-
-      doc.setFont(
-        'helvetica',
-        'normal'
-      );
-
-      doc.setFontSize(8);
-
-      doc.setTextColor(
-        ...grey
-      );
-
-      doc.text(
-        label,
-        15,
-        y
-      );
-
-
-      doc.setFontSize(9);
-
-      doc.setTextColor(
-        ...dark
-      );
-
-      doc.text(
-        lines,
-        55,
-        y
-      );
-
-
-      y += Math.max(
-        6,
-        lines.length * 4.5
-      );
-
-    }
-
-
-    /* =========================
-       LIST ITEMS
-    ========================= */
-
-    function listItems(text){
-
-      const items =
-        String(text || '')
-        .split(/\r?\n/)
-        .map(
-          item =>
-            item
-              .trim()
-              .replace(
-                /^[•●▪◦*\-]+\s*/,
-                ''
-              )
-        )
-        .filter(
-          item => item.length > 0
-        );
-
-
-      if(
-        items.length === 0
-      ){
-
-        checkSpace(8);
-
-        doc.setFont(
-          'helvetica',
-          'normal'
-        );
-
-        doc.setFontSize(8);
-
-        doc.setTextColor(
-          ...dark
-        );
-
-        doc.text(
-          '-',
-          20,
-          y
-        );
-
-        y += 7;
-
-        return;
-
-      }
-
-
-      items.forEach(
-        item => {
-
-          const lines =
-            doc.splitTextToSize(
-              item,
-              160
-            );
-
-          const needed =
-            lines.length * 4.3 + 3;
-
-
-          checkSpace(
-            needed
-          );
-
-
-          doc.setFont(
-            'helvetica',
-            'normal'
-          );
-
-          doc.setFontSize(8);
-
-          doc.setTextColor(
-            ...dark
-          );
-
-
-          /* BULLET */
-
-          doc.text(
-            '•',
-            18,
-            y
-          );
-
-
-          /* TEXT */
-
-          doc.text(
-            lines,
-            23,
-            y
-          );
-
-
-          y +=
-            lines.length * 4.3 + 2;
-
-        }
-      );
-
-
-      y += 2;
-
-    }
-
-
-    /* =========================
-       START PDF
-    ========================= */
-
-    header();
-
-    watermark();
-
-
-    /* =========================
-       QUOTATION INFORMATION
-    ========================= */
-
-    y = 76;
-
-
-    doc.setFont(
-      'helvetica',
-      'normal'
+    y = checkPageSpace(
+        doc,
+        y,
+        14
     );
 
-    doc.setFontSize(8);
-
-    doc.setTextColor(
-      ...grey
-    );
-
-
-    doc.text(
-      'Quotation No.: ' +
-      (val('quoteNo') || '-'),
-      15,
-      y
-    );
-
-
-    const validity =
-      val('validity');
-
-    doc.text(
-      'Valid Until: ' +
-      (
-        validity
-        ? formatDate(validity)
-        : '-'
-      ),
-      195,
-      y,
-      {
-        align:'right'
-      }
-    );
-
-
-    y += 10;
-
-
-    /* =========================
-       CUSTOMER
-    ========================= */
-
-    heading(
-      'CUSTOMER DETAILS'
-    );
-
-    row(
-      'Name',
-      val('customer')
-    );
-
-    row(
-      'Mobile',
-      val('mobile')
-    );
-
-
-    if(
-      val('email')
-    ){
-
-      row(
-        'Email',
-        val('email')
-      );
-
-    }
-
-
-    y += 2;
-
-
-    /* =========================
-       TRIP
-    ========================= */
-
-    heading(
-      'TRIP DETAILS'
-    );
-
-    row(
-      'Destination',
-      val('destination')
-    );
-
-    row(
-      'Pickup',
-      val('pickup')
-    );
-
-    row(
-      'Travel Date',
-      formatDate(
-        val('travelDate')
-      )
-    );
-
-    if(
-      val('returnDate')
-    ){
-
-      row(
-        'Return Date',
-        formatDate(
-          val('returnDate')
-        )
-      );
-
-    }
-
-
-    row(
-      'Passengers',
-      (val('adults') || 0) +
-      ' Adults, ' +
-      (val('children') || 0) +
-      ' Children'
-    );
-
-
-    y += 2;
-
-
-    /* =========================
-       STAY
-    ========================= */
-
-    heading(
-      'STAY • MEALS • VEHICLE'
-    );
-
-    row(
-      'Stay',
-      val('stay')
-    );
-
-    row(
-      'Rooms',
-      val('rooms')
-    );
-
-    row(
-      'Meals',
-      val('meals')
-    );
-
-    row(
-      'Vehicle',
-      val('vehicle')
-    );
-
-
-    y += 2;
-
-
-    /* =========================
-       ITINERARY
-    ========================= */
-
-    heading(
-      'ITINERARY'
-    );
-
-
-    const itinerary =
-      val('itinerary');
-
-
-    if(itinerary){
-
-      const itineraryLines =
-        doc.splitTextToSize(
-          itinerary,
-          178
-        );
-
-
-      itineraryLines.forEach(
-        line => {
-
-          checkSpace(6);
-
-          doc.setFont(
-            'helvetica',
-            'normal'
-          );
-
-          doc.setFontSize(8);
-
-          doc.setTextColor(
-            ...dark
-          );
-
-          doc.text(
-            line,
-            16,
-            y
-          );
-
-          y += 4.2;
-
-        }
-      );
-
-    }else{
-
-      checkSpace(7);
-
-      doc.setFont(
-        'helvetica',
-        'normal'
-      );
-
-      doc.setFontSize(8);
-
-      doc.setTextColor(
-        ...dark
-      );
-
-      doc.text(
-        '-',
-        16,
-        y
-      );
-
-      y += 5;
-
-    }
-
-
-    y += 4;
-
-
-    /* =========================
-       PACKAGE COST
-    ========================= */
-
-    heading(
-      'PACKAGE COST'
-    );
-
-
-    checkSpace(30);
-
+    const pageWidth =
+        doc.internal.pageSize.getWidth();
 
     doc.setFillColor(
-      ...light
+        233,
+        247,
+        239
     );
 
     doc.roundedRect(
-      15,
-      y - 5,
-      180,
-      23,
-      2,
-      2,
-      'F'
+        15,
+        y,
+        pageWidth-30,
+        9,
+        2,
+        2,
+        "F"
     );
 
+    doc.setFillColor(
+        22,
+        130,
+        75
+    );
+
+    doc.rect(
+        15,
+        y,
+        3,
+        9,
+        "F"
+    );
 
     doc.setFont(
-      'helvetica',
-      'bold'
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(10);
+
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
+
+    doc.text(
+        title,
+        21,
+        y+6
+    );
+
+    return y+14;
+
+}
+
+
+/* -----------------------------
+   LABEL / VALUE
+----------------------------- */
+
+function addLabelValue(
+    doc,
+    label,
+    value,
+    x,
+    y,
+    width
+){
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(8.5);
+
+    doc.setTextColor(
+        80,
+        80,
+        80
+    );
+
+    doc.text(
+        label,
+        x,
+        y
+    );
+
+    doc.setFont(
+        "helvetica",
+        "normal"
+    );
+
+    doc.setTextColor(
+        30,
+        30,
+        30
+    );
+
+    const lines =
+        wrapText(
+            doc,
+            value || "-",
+            width
+        );
+
+    doc.text(
+        lines,
+        x,
+        y+5
+    );
+
+    return y + 5 + lines.length*4.5;
+
+}
+
+
+/* -----------------------------
+   CUSTOMER / TRIP BOX
+----------------------------- */
+
+function addInfoBox(
+    doc,
+    title,
+    fields,
+    y
+){
+
+    const pageWidth =
+        doc.internal.pageSize.getWidth();
+
+    const boxX = 15;
+
+    const boxWidth =
+        pageWidth-30;
+
+    const columns = 2;
+
+    const colWidth =
+        boxWidth/columns;
+
+    let rowY = y+15;
+
+    let maxRowHeight = 0;
+
+    fields.forEach((field,index)=>{
+
+        const col =
+            index % columns;
+
+        if(index>0 && col===0){
+
+            rowY += maxRowHeight + 6;
+
+            maxRowHeight = 0;
+
+        }
+
+        const x =
+            boxX + col*colWidth + 6;
+
+        const h =
+            addLabelValue(
+                doc,
+                field[0],
+                field[1],
+                x,
+                rowY,
+                colWidth-15
+            );
+
+        maxRowHeight =
+            Math.max(
+                maxRowHeight,
+                h-rowY
+            );
+
+    });
+
+    const totalHeight =
+        rowY-y+maxRowHeight+5;
+
+    doc.setDrawColor(
+        210,
+        225,
+        215
+    );
+
+    doc.roundedRect(
+        boxX,
+        y,
+        boxWidth,
+        totalHeight,
+        3,
+        3,
+        "S"
+    );
+
+    doc.setFillColor(
+        22,
+        130,
+        75
+    );
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(10);
+
+    doc.text(
+        title,
+        boxX+6,
+        y+8
+    );
+
+    return y+totalHeight+8;
+
+}
+
+
+/* -----------------------------
+   BULLET SECTION
+----------------------------- */
+
+function addBulletSection(
+    doc,
+    title,
+    text,
+    y
+){
+
+    y =
+        addSectionHeading(
+            doc,
+            title,
+            y
+        );
+
+    const lines =
+        cleanLines(text);
+
+    doc.setFont(
+        "helvetica",
+        "normal"
     );
 
     doc.setFontSize(9);
 
     doc.setTextColor(
-      ...grey
+        35,
+        35,
+        35
     );
 
-    doc.text(
-      'TOTAL PACKAGE',
-      20,
-      y + 3
-    );
+    lines.forEach(line=>{
+
+        const wrapped =
+            wrapText(
+                doc,
+                line,
+                175
+            );
+
+        const needed =
+            wrapped.length*5 + 2;
+
+        y =
+            checkPageSpace(
+                doc,
+                y,
+                needed
+            );
+
+        doc.text(
+            wrapped,
+            20,
+            y
+        );
+
+        y += wrapped.length*5;
+
+    });
+
+    return y+3;
+
+}
 
 
-    doc.setFontSize(15);
+/* -----------------------------
+   NORMAL TEXT SECTION
+----------------------------- */
 
-    doc.setTextColor(
-      ...green
-    );
+function addTextSection(
+    doc,
+    title,
+    text,
+    y
+){
 
-    doc.text(
-      money(
-        val('price')
-      ),
-      190,
-      y + 3,
-      {
-        align:'right'
-      }
-    );
+    y =
+        addSectionHeading(
+            doc,
+            title,
+            y
+        );
 
+    const lines =
+        wrapText(
+            doc,
+            text || "-",
+            175
+        );
 
     doc.setFont(
-      'helvetica',
-      'normal'
+        "helvetica",
+        "normal"
     );
 
-    doc.setFontSize(8);
+    doc.setFontSize(9);
 
     doc.setTextColor(
-      ...dark
+        35,
+        35,
+        35
     );
 
-    doc.text(
-      'Payment: Full payment required at booking',
-      20,
-      y + 12
-    );
+    lines.forEach(line=>{
+
+        y =
+            checkPageSpace(
+                doc,
+                y,
+                6
+            );
+
+        doc.text(
+            line,
+            20,
+            y
+        );
+
+        y += 5;
+
+    });
+
+    return y+3;
+
+}
 
 
-    y += 30;
+/* -----------------------------
+   ITINERARY
+----------------------------- */
+
+function addItinerary(
+    doc,
+    itinerary,
+    y
+){
+
+    y =
+        addSectionHeading(
+            doc,
+            "ITINERARY",
+            y
+        );
+
+    const lines =
+        String(itinerary || "")
+        .split(/\r?\n/)
+        .map(x=>x.trim())
+        .filter(Boolean);
+
+    doc.setFontSize(9);
+
+    lines.forEach(line=>{
+
+        const isDay =
+            /^day\s*\d+/i.test(line);
+
+        if(isDay){
+
+            y =
+                checkPageSpace(
+                    doc,
+                    y,
+                    12
+                );
+
+            doc.setFont(
+                "helvetica",
+                "bold"
+            );
+
+            doc.setTextColor(
+                22,
+                130,
+                75
+            );
+
+            doc.text(
+                line,
+                20,
+                y
+            );
+
+            y+=7;
+
+        }else{
+
+            const clean =
+                line.replace(
+                    /^[•●▪◦-]\s*/,
+                    ""
+                );
+
+            const wrapped =
+                wrapText(
+                    doc,
+                    "- " + clean,
+                    170
+                );
+
+            y =
+                checkPageSpace(
+                    doc,
+                    y,
+                    wrapped.length*5+2
+                );
+
+            doc.setFont(
+                "helvetica",
+                "normal"
+            );
+
+            doc.setTextColor(
+                35,
+                35,
+                35
+            );
+
+            doc.text(
+                wrapped,
+                23,
+                y
+            );
+
+            y +=
+                wrapped.length*5;
+
+        }
+
+    });
+
+    return y+4;
+
+}
 
 
-    /* =========================
-       INCLUSIONS
-    ========================= */
+/* -----------------------------
+   MAIN PDF
+----------------------------- */
 
-    heading(
-      'INCLUSIONS'
-    );
+async function generatePDF(){
 
-    listItems(
-      val('inclusions')
-    );
+    const form =
+        document.getElementById(
+            "quotationForm"
+        );
 
+    if(!form.checkValidity()){
 
-    /* =========================
-       EXCLUSIONS
-    ========================= */
+        form.reportValidity();
 
-    heading(
-      'EXCLUSIONS'
-    );
+        return;
 
-    listItems(
-      val('exclusions')
-    );
+    }
 
+    const logo =
+        await loadLogo();
 
-    /* =========================
-       SPECIAL REQUIREMENTS
-    ========================= */
+    /*
+       Store logo globally
+       for watermark function.
+    */
 
-    if(
-      val('special')
-    ){
+    if(logo){
 
-      heading(
-        'SPECIAL REQUIREMENTS'
-      );
+        logo.id = "logoImage";
 
-      y =
-        addWrappedText(
-          doc,
-          val('special'),
-          15,
-          y,
-          180,
-          4.2
-        ) + 4;
+        document.body.appendChild(logo);
+
+        logo.style.display = "none";
 
     }
 
 
-    /* =========================
-       TERMS
-    ========================= */
+    const doc =
+        new jsPDF({
+            orientation:"portrait",
+            unit:"mm",
+            format:"a4"
+        });
 
-    heading(
-      'TERMS & CONDITIONS'
+
+    const pageWidth =
+        doc.internal.pageSize.getWidth();
+
+    let y = 15;
+
+
+    /* ==========================
+       PAGE 1 HEADER
+    ========================== */
+
+    if(logo){
+
+        doc.addImage(
+            logo,
+            "PNG",
+            pageWidth/2 - 25,
+            y,
+            50,
+            30
+        );
+
+        y += 35;
+
+    }else{
+
+        y += 5;
+
+    }
+
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(19);
+
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
+
+    doc.text(
+        "TOUR QUOTATION",
+        pageWidth/2,
+        y,
+        {align:"center"}
+    );
+
+    y += 7;
+
+
+    doc.setFont(
+        "helvetica",
+        "normal"
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+        90,
+        90,
+        90
+    );
+
+    doc.text(
+        "Explore • Experience • Enjoy",
+        pageWidth/2,
+        y,
+        {align:"center"}
+    );
+
+    y += 8;
+
+
+    /* Green line */
+
+    doc.setDrawColor(
+        22,
+        130,
+        75
+    );
+
+    doc.setLineWidth(0.7);
+
+    doc.line(
+        15,
+        y,
+        pageWidth-15,
+        y
+    );
+
+    y += 8;
+
+
+    /* ==========================
+       QUOTATION DETAILS
+    ========================== */
+
+    y =
+        addInfoBox(
+            doc,
+            "QUOTATION DETAILS",
+            [
+                [
+                    "Quotation No.",
+                    document.getElementById(
+                        "quotationNo"
+                    ).value
+                ],
+                [
+                    "Quotation Date",
+                    formatDate(
+                        document.getElementById(
+                            "quotationDate"
+                        ).value
+                    )
+                ],
+                [
+                    "Valid Until",
+                    formatDate(
+                        document.getElementById(
+                            "validUntil"
+                        ).value
+                    )
+                ]
+            ],
+            y
+        );
+
+
+    /* ==========================
+       CUSTOMER DETAILS
+    ========================== */
+
+    y =
+        addInfoBox(
+            doc,
+            "CUSTOMER DETAILS",
+            [
+                [
+                    "Name",
+                    document.getElementById(
+                        "customerName"
+                    ).value
+                ],
+                [
+                    "Mobile",
+                    document.getElementById(
+                        "mobile"
+                    ).value
+                ],
+                [
+                    "Email",
+                    document.getElementById(
+                        "email"
+                    ).value || "-"
+                ]
+            ],
+            y
+        );
+
+
+    /* ==========================
+       TRIP DETAILS
+    ========================== */
+
+    y =
+        addInfoBox(
+            doc,
+            "TRIP DETAILS",
+            [
+                [
+                    "Destination",
+                    document.getElementById(
+                        "destination"
+                    ).value
+                ],
+                [
+                    "Pickup",
+                    document.getElementById(
+                        "pickup"
+                    ).value
+                ],
+                [
+                    "Travel Date",
+                    formatDate(
+                        document.getElementById(
+                            "travelDate"
+                        ).value
+                    )
+                ],
+                [
+                    "Return Date",
+                    formatDate(
+                        document.getElementById(
+                            "returnDate"
+                        ).value
+                    )
+                ],
+                [
+                    "Adults",
+                    document.getElementById(
+                        "adults"
+                    ).value || "0"
+                ],
+                [
+                    "Children",
+                    document.getElementById(
+                        "children"
+                    ).value || "0"
+                ]
+            ],
+            y
+        );
+
+
+    /* ==========================
+       STAY / MEALS / VEHICLE
+    ========================== */
+
+    y =
+        addInfoBox(
+            doc,
+            "STAY • MEALS • VEHICLE",
+            [
+                [
+                    "Stay",
+                    document.getElementById(
+                        "stay"
+                    ).value || "-"
+                ],
+                [
+                    "Rooms",
+                    document.getElementById(
+                        "rooms"
+                    ).value || "0"
+                ],
+                [
+                    "Meals",
+                    document.getElementById(
+                        "meals"
+                    ).value || "-"
+                ],
+                [
+                    "Vehicle",
+                    document.getElementById(
+                        "vehicle"
+                    ).value || "-"
+                ]
+            ],
+            y
+        );
+
+
+    /* ==========================
+       ITINERARY
+    ========================== */
+
+    y =
+        addItinerary(
+            doc,
+            document.getElementById(
+                "itinerary"
+            ).value,
+            y
+        );
+
+
+    /* ==========================
+       PAGE 1 FOOTER
+    ========================== */
+
+    addFooter(doc);
+
+
+    /* ==========================
+       PAGE 2
+    ========================== */
+
+    doc.addPage();
+
+    addPageWatermark(doc);
+
+    y = 20;
+
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(14);
+
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
+
+    doc.text(
+        "TOUR QUOTATION",
+        pageWidth/2,
+        y,
+        {align:"center"}
+    );
+
+    y += 10;
+
+
+    /* Remaining itinerary automatically continues
+       if page 1 was full. */
+
+    const itineraryText =
+        document.getElementById(
+            "itinerary"
+        ).value;
+
+    /*
+       We intentionally do not repeat the entire
+       itinerary here if it already appeared on page 1.
+       Page 2 starts with package details.
+    */
+
+
+    /* ==========================
+       PACKAGE COST
+    ========================== */
+
+    y =
+        addSectionHeading(
+            doc,
+            "PACKAGE COST",
+            y
+        );
+
+
+    y =
+        checkPageSpace(
+            doc,
+            y,
+            25
+        );
+
+
+    doc.setFillColor(
+        233,
+        247,
+        239
+    );
+
+    doc.roundedRect(
+        15,
+        y,
+        pageWidth-30,
+        22,
+        3,
+        3,
+        "F"
     );
 
 
-    const terms = [
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
 
-      'Booking will be confirmed only after receipt of the full package payment.',
+    doc.setFontSize(13);
 
-      'Package inclusions and exclusions are as stated in the quotation.',
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
 
-      'The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.',
-
-      'Changes or cancellations may attract applicable charges depending on the booking and travel date.',
-
-      'Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.',
-
-      'Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.',
-
-      'Customers are responsible for their personal belongings, valuables, documents and luggage.',
-
-      'Hotel category, room type and meal plan will be as specified in the confirmed package.',
-
-      'Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.',
-
-      'By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.'
-
-    ];
-
-
-    terms.forEach(
-      (term,index) => {
-
-        const lines =
-          doc.splitTextToSize(
-            (index + 1) +
-            '. ' +
-            term,
-            168
-          );
-
-
-        const needed =
-          lines.length * 4.2 + 4;
-
-
-        checkSpace(
-          needed
+    const price =
+        Number(
+            document.getElementById(
+                "packagePrice"
+            ).value || 0
         );
 
 
-        doc.setFont(
-          'helvetica',
-          index === terms.length - 1
-            ? 'bold'
-            : 'normal'
+    doc.text(
+        `TOTAL PACKAGE Rs. ${price.toLocaleString("en-IN")}`,
+        pageWidth/2,
+        y+9,
+        {align:"center"}
+    );
+
+
+    doc.setFont(
+        "helvetica",
+        "normal"
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+        60,
+        60,
+        60
+    );
+
+    doc.text(
+        "Payment: Full payment required at booking",
+        pageWidth/2,
+        y+16,
+        {align:"center"}
+    );
+
+    y += 30;
+
+
+    /* ==========================
+       INCLUSIONS
+    ========================== */
+
+    y =
+        addBulletSection(
+            doc,
+            "INCLUSIONS",
+            document.getElementById(
+                "inclusions"
+            ).value,
+            y
         );
 
-        doc.setFontSize(7.8);
 
-        doc.setTextColor(
-          ...dark
+    /* ==========================
+       EXCLUSIONS
+    ========================== */
+
+    y =
+        addBulletSection(
+            doc,
+            "EXCLUSIONS",
+            document.getElementById(
+                "exclusions"
+            ).value,
+            y
         );
+
+
+    /* ==========================
+       SPECIAL REQUIREMENTS
+    ========================== */
+
+    if(
+        document.getElementById(
+            "specialRequirements"
+        ).value.trim()
+    ){
+
+        y =
+            addTextSection(
+                doc,
+                "SPECIAL REQUIREMENTS",
+                document.getElementById(
+                    "specialRequirements"
+                ).value,
+                y
+            );
+
+    }
+
+
+    addFooter(doc);
+
+
+    /* ==========================
+       PAGE 3
+    ========================== */
+
+    doc.addPage();
+
+    addPageWatermark(doc);
+
+    y = 20;
+
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+    doc.setFontSize(14);
+
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
+
+    doc.text(
+        "TERMS & CONDITIONS",
+        pageWidth/2,
+        y,
+        {align:"center"}
+    );
+
+    y += 12;
+
+
+    const terms =
+        document.getElementById(
+            "terms"
+        ).value
+        .split(/\r?\n/)
+        .map(x=>x.trim())
+        .filter(Boolean);
+
+
+    doc.setFont(
+        "helvetica",
+        "normal"
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+        35,
+        35,
+        35
+    );
+
+
+    terms.forEach(term=>{
+
+        const wrapped =
+            wrapText(
+                doc,
+                term,
+                170
+            );
+
+
+        y =
+            checkPageSpace(
+                doc,
+                y,
+                wrapped.length*5+4
+            );
 
 
         doc.text(
-          lines,
-          20,
-          y
+            wrapped,
+            20,
+            y
         );
 
 
         y +=
-          lines.length * 4.2 + 3;
+            wrapped.length*5+3;
 
-      }
+    });
+
+
+    /* ==========================
+       ACCEPTANCE BOX
+    ========================== */
+
+    y =
+        checkPageSpace(
+            doc,
+            y,
+            35
+        );
+
+
+    doc.setFillColor(
+        233,
+        247,
+        239
+    );
+
+    doc.roundedRect(
+        15,
+        y,
+        pageWidth-30,
+        27,
+        3,
+        3,
+        "F"
     );
 
 
-    /* =========================
-       FINAL FOOTER
-    ========================= */
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
 
-    footer();
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+        22,
+        130,
+        75
+    );
+
+    doc.text(
+        "CUSTOMER ACCEPTANCE",
+        21,
+        y+8
+    );
 
 
-    /* =========================
+    doc.setFont(
+        "helvetica",
+        "normal"
+    );
+
+    doc.setTextColor(
+        45,
+        45,
+        45
+    );
+
+    doc.text(
+        "By making the full payment, the customer confirms",
+        21,
+        y+14
+    );
+
+    doc.text(
+        "acceptance of the quotation and Terms & Conditions.",
+        21,
+        y+19
+    );
+
+
+    y += 35;
+
+
+    addFooter(doc);
+
+
+    /* ==========================
        SAVE PDF
-    ========================= */
+    ========================== */
 
-    const fileName =
-      val('quoteNo') ||
-      'Mauli_Quotation';
+    const quotationNo =
+        document.getElementById(
+            "quotationNo"
+        ).value;
 
 
     doc.save(
-      fileName + '.pdf'
+        `${quotationNo}-Quotation.pdf`
     );
 
-  }
-);
+
+    if(logo){
+
+        logo.remove();
+
+    }
+
+}
+
+
+/* -----------------------------
+   SAVE DRAFT
+----------------------------- */
+
+function saveDraft(){
+
+    const fields = [
+
+        "quotationNo",
+        "quotationDate",
+        "validUntil",
+        "customerName",
+        "mobile",
+        "email",
+        "destination",
+        "pickup",
+        "travelDate",
+        "returnDate",
+        "adults",
+        "children",
+        "stay",
+        "rooms",
+        "meals",
+        "vehicle",
+        "itinerary",
+        "packagePrice",
+        "inclusions",
+        "exclusions",
+        "specialRequirements",
+        "terms"
+
+    ];
+
+    const data = {};
+
+    fields.forEach(id=>{
+
+        data[id] =
+            document.getElementById(
+                id
+            ).value;
+
+    });
+
+
+    localStorage.setItem(
+        "mauliQuotationDraft",
+        JSON.stringify(data)
+    );
+
+
+    alert(
+        "Quotation draft saved on this phone."
+    );
+
+}
+
+
+/* -----------------------------
+   LOAD DRAFT
+----------------------------- */
+
+function loadDraft(){
+
+    const saved =
+        localStorage.getItem(
+            "mauliQuotationDraft"
+        );
+
+
+    if(!saved){
+
+        alert(
+            "No saved quotation draft found."
+        );
+
+        return;
+
+    }
+
+
+    const data =
+        JSON.parse(saved);
+
+
+    Object.keys(data).forEach(id=>{
+
+        const element =
+            document.getElementById(id);
+
+        if(element){
+
+            element.value =
+                data[id];
+
+        }
+
+    });
+
+
+    alert(
+        "Saved quotation draft loaded."
+    );
+
+}
 
 </script>
 
