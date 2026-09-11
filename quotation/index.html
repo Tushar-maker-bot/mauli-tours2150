@@ -371,25 +371,25 @@ Extra activities"></textarea>
 
 <p class="note">
 
-• Booking will be confirmed only after receipt of the full package payment.<br>
+Booking will be confirmed only after receipt of the full package payment.<br><br>
 
-• Package inclusions and exclusions are as stated in the quotation.<br>
+Package inclusions and exclusions are as stated in the quotation.<br><br>
 
-• The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.<br>
+The customer is responsible for providing correct booking information including name, travel dates, number of passengers and pickup location.<br><br>
 
-• Changes or cancellations may attract applicable charges depending on the booking and travel date.<br>
+Changes or cancellations may attract applicable charges depending on the booking and travel date.<br><br>
 
-• Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.<br>
+Extra services, personal expenses, entry fees and activities not specifically mentioned in the package are payable separately.<br><br>
 
-• Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.<br>
+Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.<br><br>
 
-• Customers are responsible for their personal belongings, valuables, documents and luggage.<br>
+Customers are responsible for their personal belongings, valuables, documents and luggage.<br><br>
 
-• Hotel category, room type and meal plan will be as specified in the confirmed package.<br>
+Hotel category, room type and meal plan will be as specified in the confirmed package.<br><br>
 
-• Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.<br>
+Customers are expected to maintain respectful behaviour with drivers, staff, hotels and service personnel.<br><br>
 
-• By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.
+By making the full payment, the customer confirms that they have read and accepted the quotation, package details, payment terms and these Terms & Conditions.
 
 </p>
 
@@ -529,7 +529,6 @@ function loadDraft(){
     return;
   }
 
-
   Object.entries(data).forEach(
     ([key,value]) => {
 
@@ -541,7 +540,6 @@ function loadDraft(){
 
     }
   );
-
 
   alert('Draft loaded.');
 
@@ -596,15 +594,12 @@ document
 
   e.preventDefault();
 
-
   const { jsPDF } = window.jspdf;
-
 
   const doc = new jsPDF({
     unit:'mm',
     format:'a4'
   });
-
 
   const green = [22,128,77];
 
@@ -615,7 +610,6 @@ document
   const light = [234,245,239];
 
   const lineColor = [215,225,220];
-
 
   let y = 15;
 
@@ -932,7 +926,13 @@ document
     const items =
       String(text || '')
       .split(/\r?\n/)
-      .map(item => item.trim())
+      .map(item => {
+
+        return item
+          .trim()
+          .replace(/^[•●▪◦*-]+\s*/, '');
+
+      })
       .filter(item => item);
 
 
@@ -964,9 +964,13 @@ document
 
     items.forEach(item => {
 
+      const cleanItem =
+        '- ' + item;
+
+
       const lines =
         doc.splitTextToSize(
-          '- ' + item,
+          cleanItem,
           165
         );
 
@@ -1232,7 +1236,7 @@ document
 
   /* PAGE CHECK */
 
-  if(y > 240){
+  if(y > 238){
 
     footer();
 
