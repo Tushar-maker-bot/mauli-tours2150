@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mauli Tours & Travels - Booking Confirmation</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7f5;
+  color:#18332a;
+}
+
+.wrap{
+  max-width:720px;
+  margin:auto;
+  padding:16px;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 4px 18px #00000010;
+}
+
+.logo{
+  height:70px;
+  max-width:260px;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin:8px 0 2px;
+  font-size:23px;
+  font-weight:800;
+  color:#18332a;
+}
+
+.sub{
+  text-align:center;
+  color:#5b6f67;
+  font-size:13px;
+}
+
+h2{
+  font-size:17px;
+  margin:0 0 12px;
+  color:#16804d;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+
+label{
+  font-size:12px;
+  font-weight:700;
+  display:block;
+  margin-bottom:5px;
+  color:#496057;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  padding:11px;
+  border:1px solid #d5dfda;
+  border-radius:9px;
+  font-size:14px;
+  background:#fff;
+  color:#18332a;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:14px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.primary{
+  background:#16804d;
+  color:#fff;
+}
+
+.secondary{
+  background:#eaf5ef;
+  color:#16804d;
+}
+
+.note{
+  font-size:12px;
+  color:#64766e;
+  line-height:1.5;
+}
+
+.status{
+  background:#eaf5ef;
+  border:1px solid #16804d;
+  color:#16804d;
+  border-radius:11px;
+  padding:13px;
+  text-align:center;
+  font-weight:800;
+  margin-top:15px;
+}
+
+.total{
+  font-size:20px;
+  font-weight:800;
+  color:#16804d;
+}
+
+@media(max-width:560px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="card">
+
+    <!-- IMPORTANT:
+         If this page is inside /booking-confirmation/
+         and LOGO.png is in your main website root,
+         ../LOGO.png is correct.
+    -->
+    <img src="../LOGO.png"
+         class="logo"
+         alt="Mauli Tours & Travels">
+
+    <div class="title">
+      BOOKING CONFIRMATION
+    </div>
+
+    <div class="sub">
+      Explore • Experience • Enjoy
+    </div>
+
+    <div class="status">
+      ✓ BOOKING CONFIRMED
+    </div>
+
+  </div>
+
+
+  <form id="bookingForm">
+
+    <!-- 1. BOOKING DETAILS -->
+    <div class="card">
+
+      <h2>1. Booking Details</h2>
+
+      <div class="grid">
+
+        <div>
+          <label>Booking ID *</label>
+          <input id="bookingId" required>
+        </div>
+
+        <div>
+          <label>Booking Date *</label>
+          <input id="bookingDate" type="date" required>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 2. CUSTOMER DETAILS -->
+    <div class="card">
+
+      <h2>2. Customer Details</h2>
+
+      <div class="grid">
+
+        <div>
+          <label>Customer Name *</label>
+          <input id="customer" required>
+        </div>
+
+        <div>
+          <label>Mobile Number *</label>
+          <input id="mobile" required>
+        </div>
+
+        <div class="full">
+          <label>Email</label>
+          <input id="email" type="email">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 3. TRIP DETAILS -->
+    <div class="card">
+
+      <h2>3. Trip Details</h2>
+
+      <div class="grid">
+
+        <div>
+          <label>Destination *</label>
+          <input id="destination" required>
+        </div>
+
+        <div>
+          <label>Pickup Location *</label>
+          <input id="pickup" required>
+        </div>
+
+        <div>
+          <label>Travel Date *</label>
+          <input id="travelDate" type="date" required>
+        </div>
+
+        <div>
+          <label>Duration *</label>
+          <input id="duration"
+                 placeholder="e.g. 2 Days / 1 Night"
+                 required>
+        </div>
+
+        <div>
+          <label>Adults</label>
+          <input id="adults"
+                 type="number"
+                 min="0"
+                 value="1">
+        </div>
+
+        <div>
+          <label>Children</label>
+          <input id="children"
+                 type="number"
+                 min="0"
+                 value="0">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 4. TRAVEL & STAY -->
+    <div class="card">
+
+      <h2>4. Travel & Stay</h2>
+
+      <div class="grid">
+
+        <div>
+          <label>Vehicle</label>
+          <input id="vehicle"
+                 placeholder="Sedan / SUV / Tempo Traveller / Bus">
+        </div>
+
+        <div>
+          <label>Stay</label>
+
+          <select id="stay">
+
+            <option>Budget</option>
+            <option selected>Standard</option>
+            <option>Premium</option>
+            <option>Not Required</option>
+
+          </select>
+
+        </div>
+
+        <div>
+          <label>Rooms</label>
+
+          <input id="rooms"
+                 placeholder="1 / 2 / 3 / More">
+
+        </div>
+
+        <div>
+          <label>Meals</label>
+
+          <select id="meals">
+
+            <option>No Meals</option>
+            <option>Breakfast</option>
+            <option>Breakfast + Dinner</option>
+            <option>All Meals</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 5. ITINERARY -->
+    <div class="card">
+
+      <h2>5. Itinerary</h2>
+
+      <div class="full">
+
+        <label>
+          Confirmed Itinerary
+        </label>
+
+        <textarea
+          id="itinerary"
+          placeholder="Day 1&#10;Pickup from Pune&#10;Mapro Garden&#10;Venna Lake&#10;Hotel Check-in&#10;&#10;Day 2&#10;Wilson Point&#10;Arthur Seat&#10;Return to Pune"></textarea>
+
+      </div>
+
+    </div>
+
+
+    <!-- 6. PAYMENT -->
+    <div class="card">
+
+      <h2>6. Payment Details</h2>
+
+      <div class="grid">
+
+        <div class="full">
+
+          <label>
+            Total Package Price (Rs.) *
+          </label>
+
+          <input
+            id="price"
+            type="number"
+            min="0"
+            required>
+
+        </div>
+
+      </div>
+
+      <div class="status">
+
+        ✓ FULL PAYMENT RECEIVED<br>
+        ✓ PAYMENT STATUS: PAID<br>
+        ✓ BOOKING STATUS: CONFIRMED
+
+      </div>
+
+    </div>
+
+
+    <!-- 7. INCLUSIONS & EXCLUSIONS -->
+    <div class="card">
+
+      <h2>7. Inclusions & Exclusions</h2>
+
+      <div class="grid">
+
+        <div>
+
+          <label>Inclusions</label>
+
+          <textarea
+            id="inclusions"
+            placeholder="Pickup & Drop&#10;Private AC Car&#10;Hotel Stay&#10;Sightseeing&#10;Toll & Parking"></textarea>
+
+        </div>
+
+
+        <div>
+
+          <label>Exclusions</label>
+
+          <textarea
+            id="exclusions"
+            placeholder="Entry Tickets&#10;Personal Expenses&#10;Extra Activities"></textarea>
+
+        </div>
+
+
+        <div class="full">
+
+          <label>
+            Special Requirements
+          </label>
+
+          <textarea
+            id="special"></textarea>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 8. TERMS -->
+    <div class="card">
+
+      <h2>
+        Important Terms & Conditions
+      </h2>
+
+      <p class="note">
+
+        1. Booking is confirmed after receipt of the full package payment.
+
+        <br><br>
+
+        2. Package inclusions and exclusions are as stated in the confirmed booking.
+
+        <br><br>
+
+        3. Changes or cancellations may attract applicable charges depending on the booking and travel date.
+
+        <br><br>
+
+        4. Extra services, personal expenses, entry fees and activities not specifically mentioned are payable separately.
+
+        <br><br>
+
+        5. Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.
+
+        <br><br>
+
+        6. Customers are responsible for their personal belongings, valuables, documents and luggage.
+
+        <br><br>
+
+        7. Hotel category, room type and meal plan will be as specified in the confirmed booking.
+
+        <br><br>
+
+        8. By making the full payment, the customer confirms acceptance of the package details, payment terms and these Terms & Conditions.
+
+      </p>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <div class="card">
+
+      <button
+        class="btn primary"
+        type="submit">
+
+        Generate Booking Confirmation PDF
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+
+
+<script>
+
+const $ = id => document.getElementById(id);
+
+
+/* =========================
+   AUTOMATIC BOOKING ID
+========================= */
+
+function makeBookingId(){
+
+  const d = new Date();
+
+  const year = d.getFullYear();
+
+  const month =
+    String(d.getMonth()+1)
+    .padStart(2,'0');
+
+  const day =
+    String(d.getDate())
+    .padStart(2,'0');
+
+  const key =
+    'mauliBookingSeq';
+
+  let number =
+    Number(localStorage.getItem(key) || 0) + 1;
+
+  localStorage.setItem(
+    key,
+    number
+  );
+
+  return `MTT-${year}${month}${day}-${String(number).padStart(3,'0')}`;
+
+}
+
+
+/* =========================
+   DEFAULT DATE
+========================= */
+
+const today =
+  new Date()
+  .toISOString()
+  .split('T')[0];
+
+$('bookingDate').value = today;
+
+$('bookingId').value =
+  makeBookingId();
+
+
+/* =========================
+   GET VALUE
+========================= */
+
+function val(id){
+
+  return $(id).value.trim();
+
+}
+
+
+/* =========================
+   DATE FORMAT
+========================= */
+
+function formatDate(date){
+
+  if(!date) return '-';
+
+  const d =
+    new Date(date + 'T00:00:00');
+
+  return d.toLocaleDateString(
+    'en-IN',
+    {
+      day:'2-digit',
+      month:'short',
+      year:'numeric'
+    }
+  );
+
+}
+
+
+/* =========================
+   MONEY FORMAT
+========================= */
+
+function money(value){
+
+  return 'Rs. ' +
+    Number(value || 0)
+    .toLocaleString('en-IN');
+
+}
+
+
+/* =========================
+   WRAP TEXT
+========================= */
+
+function wrapText(
+  doc,
+  text,
+  x,
+  y,
+  maxWidth,
+  lineHeight
+){
+
+  if(!text){
+
+    return y;
+
+  }
+
+  const paragraphs =
+    text.split('\n');
+
+  paragraphs.forEach(
+    paragraph => {
+
+      const words =
+        paragraph.split(/\s+/);
+
+      let line = '';
+
+      words.forEach(
+        word => {
+
+          const testLine =
+            line
+            ? line + ' ' + word
+            : word;
+
+          if(
+            doc.getTextWidth(testLine)
+            > maxWidth
+          ){
+
+            doc.text(
+              line,
+              x,
+              y
+            );
+
+            y += lineHeight;
+
+            line = word;
+
+          }else{
+
+            line = testLine;
+
+          }
+
+        }
+      );
+
+      if(line){
+
+        doc.text(
+          line,
+          x,
+          y
+        );
+
+        y += lineHeight;
+
+      }
+
+    }
+  );
+
+  return y;
+
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+function heading(
+  doc,
+  text,
+  y
+){
+
+  doc.setFillColor(
+    234,
+    245,
+    239
+  );
+
+  doc.roundedRect(
+    15,
+    y-5,
+    180,
+    8,
+    2,
+    2,
+    'F'
+  );
+
+  doc.setTextColor(
+    22,
+    128,
+    77
+  );
+
+  doc.setFont(
+    'helvetica',
+    'bold'
+  );
+
+  doc.setFontSize(9);
+
+  doc.text(
+    text,
+    18,
+    y
+  );
+
+  return y + 8;
+
+}
+
+
+/* =========================
+   ADD ROW
+========================= */
+
+function row(
+  doc,
+  label,
+  value,
+  y
+){
+
+  doc.setFont(
+    'helvetica',
+    'bold'
+  );
+
+  doc.setFontSize(8);
+
+  doc.setTextColor(
+    100,
+    118,
+    110
+  );
+
+  doc.text(
+    label,
+    18,
+    y
+  );
+
+  doc.setFont(
+    'helvetica',
+    'normal'
+  );
+
+  doc.setFontSize(9);
+
+  doc.setTextColor(
+    24,
+    51,
+    42
+  );
+
+  doc.text(
+    value || '-',
+    58,
+    y
+  );
+
+  return y + 6;
+
+}
+
+
+/* =========================
+   GENERATE PDF
+========================= */
+
+$('bookingForm')
+.addEventListener(
+  'submit',
+  function(e){
+
+    e.preventDefault();
+
+
+    const {
+      jsPDF
+    } = window.jspdf;
+
+
+    const doc =
+      new jsPDF({
+        orientation:'p',
+        unit:'mm',
+        format:'a4'
+      });
+
+
+    const pageWidth =
+      doc.internal.pageSize.getWidth();
+
+    const pageHeight =
+      doc.internal.pageSize.getHeight();
+
+
+    /* =====================
+       WATERMARK
+    ===================== */
+
+    try{
+
+      doc.setGState(
+        new doc.GState({
+          opacity:0.045
+        })
+      );
+
+      doc.addImage(
+        '../LOGO.png',
+        'PNG',
+        50,
+        105,
+        110,
+        70
+      );
+
+      doc.setGState(
+        new doc.GState({
+          opacity:1
+        })
+      );
+
+    }catch(err){
+
+      console.log(
+        'Watermark unavailable'
+      );
+
+    }
+
+
+    /* =====================
+       TOP GREEN LINE
+    ===================== */
+
+    doc.setFillColor(
+      234,
+      245,
+      239
+    );
+
+    doc.rect(
+      0,
+      0,
+      pageWidth,
+      7,
+      'F'
+    );
+
+
+    /* =====================
+       LOGO
+    ===================== */
+
+    try{
+
+      doc.addImage(
+        '../LOGO.png',
+        'PNG',
+        76,
+        10,
+        58,
+        38
+      );
+
+    }catch(err){
+
+      console.log(
+        'Logo unavailable'
+      );
+
+    }
+
+
+    /* =====================
+       TITLE
+    ===================== */
+
+    doc.setTextColor(
+      24,
+      51,
+      42
+    );
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(20);
+
+    doc.text(
+      'BOOKING CONFIRMATION',
+      pageWidth/2,
+      55,
+      {
+        align:'center'
+      }
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+      91,
+      111,
+      103
+    );
+
+    doc.text(
+      'Explore • Experience • Enjoy',
+      pageWidth/2,
+      61,
+      {
+        align:'center'
+      }
+    );
+
+
+    /* =====================
+       CONFIRMED BOX
+    ===================== */
+
+    doc.setFillColor(
+      234,
+      245,
+      239
+    );
+
+    doc.setDrawColor(
+      22,
+      128,
+      77
+    );
+
+    doc.roundedRect(
+      15,
+      67,
+      180,
+      11,
+      3,
+      3,
+      'FD'
+    );
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(10);
+
+    doc.setTextColor(
+      22,
+      128,
+      77
+    );
+
+    doc.text(
+      '✓ BOOKING CONFIRMED',
+      pageWidth/2,
+      74,
+      {
+        align:'center'
+      }
+    );
+
+
+    let y = 87;
+
+
+    /* =====================
+       BOOKING DETAILS
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'BOOKING DETAILS',
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Booking ID',
+        val('bookingId'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Booking Date',
+        formatDate(
+          val('bookingDate')
+        ),
+        y
+      );
+
+    y += 2;
+
+
+    /* =====================
+       CUSTOMER DETAILS
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'CUSTOMER DETAILS',
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Name',
+        val('customer'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Mobile',
+        val('mobile'),
+        y
+      );
+
+    if(val('email')){
+
+      y =
+        row(
+          doc,
+          'Email',
+          val('email'),
+          y
+        );
+
+    }
+
+    y += 2;
+
+
+    /* =====================
+       TRIP DETAILS
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'TRIP DETAILS',
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Destination',
+        val('destination'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Pickup',
+        val('pickup'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Travel Date',
+        formatDate(
+          val('travelDate')
+        ),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Duration',
+        val('duration'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Passengers',
+        `${val('adults') || 0} Adults, ${val('children') || 0} Children`,
+        y
+      );
+
+    y += 2;
+
+
+    /* =====================
+       TRAVEL & STAY
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'TRAVEL • STAY • MEALS',
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Vehicle',
+        val('vehicle'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Stay',
+        val('stay'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Rooms',
+        val('rooms'),
+        y
+      );
+
+    y =
+      row(
+        doc,
+        'Meals',
+        val('meals'),
+        y
+      );
+
+    y += 2;
+
+
+    /* =====================
+       ITINERARY
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'ITINERARY',
+        y
+      );
+
+    doc.setTextColor(
+      24,
+      51,
+      42
+    );
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(8.5);
+
+    y =
+      wrapText(
+        doc,
+        val('itinerary'),
+        18,
+        y,
+        174,
+        4.5
+      );
+
+    y += 3;
+
+
+    /* =====================
+       PAYMENT
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'PAYMENT',
+        y
+      );
+
+
+    doc.setDrawColor(
+      22,
+      128,
+      77
+    );
+
+    doc.setFillColor(
+      255,
+      255,
+      255
+    );
+
+    doc.roundedRect(
+      15,
+      y-4,
+      180,
+      27,
+      3,
+      3,
+      'FD'
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(10);
+
+    doc.setTextColor(
+      24,
+      51,
+      42
+    );
+
+    doc.text(
+      'TOTAL PACKAGE',
+      20,
+      y+4
+    );
+
+
+    doc.setFontSize(13);
+
+    doc.setTextColor(
+      22,
+      128,
+      77
+    );
+
+    doc.text(
+      money(val('price')),
+      190,
+      y+4,
+      {
+        align:'right'
+      }
+    );
+
+
+    doc.setFontSize(8.5);
+
+    doc.setTextColor(
+      22,
+      128,
+      77
+    );
+
+    doc.text(
+      'PAYMENT STATUS: PAID',
+      20,
+      y+12
+    );
+
+    doc.text(
+      'BOOKING STATUS: CONFIRMED',
+      20,
+      y+18
+    );
+
+    y += 31;
+
+
+    /* =====================
+       INCLUSIONS
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'INCLUSIONS',
+        y
+      );
+
+    y =
+      wrapText(
+        doc,
+        val('inclusions'),
+        18,
+        y,
+        174,
+        4.5
+      );
+
+    y += 3;
+
+
+    /* =====================
+       EXCLUSIONS
+    ===================== */
+
+    y =
+      heading(
+        doc,
+        'EXCLUSIONS',
+        y
+      );
+
+    y =
+      wrapText(
+        doc,
+        val('exclusions'),
+        18,
+        y,
+        174,
+        4.5
+      );
+
+    y += 3;
+
+
+    /* =====================
+       SPECIAL REQUIREMENTS
+    ===================== */
+
+    if(val('special')){
+
+      y =
+        heading(
+          doc,
+          'SPECIAL REQUIREMENTS',
+          y
+        );
+
+      y =
+        wrapText(
+          doc,
+          val('special'),
+          18,
+          y,
+          174,
+          4.5
+        );
+
+      y += 3;
+
+    }
+
+
+    /* =====================
+       TERMS
+    ===================== */
+
+    if(y > 230){
+
+      doc.addPage();
+
+      y = 20;
+
+    }
+
+
+    y =
+      heading(
+        doc,
+        'IMPORTANT TERMS & CONDITIONS',
+        y
+      );
+
+
+    const terms = [
+
+      '1. Booking is confirmed after receipt of the full package payment.',
+
+      '2. Package inclusions and exclusions are as stated in the confirmed booking.',
+
+      '3. Changes or cancellations may attract applicable charges depending on the booking and travel date.',
+
+      '4. Extra services, personal expenses, entry fees and activities not specifically mentioned are payable separately.',
+
+      '5. Travel plans may be adjusted due to traffic, weather, road conditions, local restrictions, safety concerns or unavoidable circumstances.',
+
+      '6. Customers are responsible for their personal belongings, valuables, documents and luggage.',
+
+      '7. Hotel category, room type and meal plan will be as specified in the confirmed booking.',
+
+      '8. By making the full payment, the customer confirms acceptance of the package details, payment terms and these Terms & Conditions.'
+
+    ];
+
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(7.8);
+
+    doc.setTextColor(
+      100,
+      118,
+      110
+    );
+
+
+    terms.forEach(
+      term => {
+
+        y =
+          wrapText(
+            doc,
+            term,
+            18,
+            y,
+            174,
+            4
+          );
+
+        y += 1.5;
+
+      }
+    );
+
+
+    /* =====================
+       FOOTER
+    ===================== */
+
+    const footerY =
+      pageHeight - 23;
+
+
+    doc.setFont(
+      'helvetica',
+      'bold'
+    );
+
+    doc.setFontSize(9);
+
+    doc.setTextColor(
+      22,
+      128,
+      77
+    );
+
+    doc.text(
+      'Mauli Tours & Travels',
+      pageWidth/2,
+      footerY,
+      {
+        align:'center'
+      }
+    );
+
+
+    doc.setFont(
+      'helvetica',
+      'normal'
+    );
+
+    doc.setFontSize(7.5);
+
+    doc.setTextColor(
+      100,
+      118,
+      110
+    );
+
+    doc.text(
+      'Pune, Maharashtra  •  9226718177  •  maulitoursandtravels2150@gmail.com',
+      pageWidth/2,
+      footerY+5,
+      {
+        align:'center'
+      }
+    );
+
+
+    doc.text(
+      'www.maulitoursandtravels.co.in',
+      pageWidth/2,
+      footerY+10,
+      {
+        align:'center'
+      }
+    );
+
+
+    /* =====================
+       SAVE PDF
+    ===================== */
+
+    const filename =
+      val('bookingId')
+      || 'Mauli_Booking_Confirmation';
+
+
+    doc.save(
+      filename + '.pdf'
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
