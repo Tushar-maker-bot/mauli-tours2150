@@ -120,7 +120,7 @@ document.getElementById('quoteForm').addEventListener('submit',e=>{
  const green=[22,128,77], dark=[24,51,42], grey=[95,112,104];
  let y=15;
  doc.setFillColor(...green); doc.rect(0,0,210,7,'F');
- try{doc.addImage('mauli_logo_header.png','PNG',15,12,58,14)}catch(err){}
+ try{doc.addImage('../LOGO.png','PNG',15,12,58,14)}catch(err){}
  doc.setTextColor(...dark); doc.setFontSize(17); doc.text('TOUR QUOTATION',195,18,{align:'right'});
  doc.setFontSize(8); doc.setTextColor(...grey); doc.text('Explore • Experience • Enjoy',195,23,{align:'right'});
  y=32; doc.setDrawColor(210,220,215); doc.line(15,y,195,y); y+=7;
