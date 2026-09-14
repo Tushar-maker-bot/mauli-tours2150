@@ -60,6 +60,14 @@ const tourPackages = [
         description: "Beaches, Sightseeing, Adventure & Relaxing Holiday",
         link: "goabig.html"
     },
+   {
+    destination: "Ganagapur",
+    image: "ganagapur.jpg",
+    duration: "1 Day",
+    title: "Ganagapur",
+    description: "Sacred Dattatreya pilgrimage, temples & spiritual heritage",
+    link: "ganagapur.html"
+},
     {
         destination: "Konkan Coastal Tour",
         image: "konkan.jpg",
