@@ -76,6 +76,14 @@ const tourPackages = [
         description: "Complete Ashtavinayak Ganpati Temple Spiritual Journey",
         link: "ashtavinayakbig.html"
     },
+   {
+    destination: "Akkalkot",
+    image: "akkalkot.jpg",
+    duration: "1 Day",
+    title: "Akkalkot",
+    description: "Swami Samarth blessings, temples & spiritual heritage",
+    link: "akkalkot.html"
+},
     {
         destination: "Maharashtra Jyotirlinga",
         image: "jyotirlinga.jpg",
