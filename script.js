@@ -164,6 +164,14 @@ const tourPackages = [
     description: "Birthplace of Chhatrapati Shivaji Maharaj",
     link: "shivneri.html"
 },
+   {
+    destination: "Sindhudurg",
+    image: "sindhudurg.jpg",
+    duration: "1 Day",
+    title: "Sindhudurg",
+    description: "Historic fort, temples & Konkan heritage",
+    link: "sindhudurg.html"
+},
     {
         destination: "Kaas Plateau",
         image: "kass.jpg",
