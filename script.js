@@ -140,6 +140,14 @@ const tourPackages = [
         description: "Beaches, Nature & Coastal Adventure",
         link: "konkan.html"
     },
+   {
+    destination: "Sindhudurg",
+    image: "sindhudurg.jpg",
+    duration: "1 Day",
+    title: "Sindhudurg",
+    description: "Historic fort, temples & Konkan heritage",
+    link: "sindhudurg.html"
+},
     {
         destination: "Nashik Trimbakeshwar",
         image: "nashiktrimbakeshwar.jpg",
