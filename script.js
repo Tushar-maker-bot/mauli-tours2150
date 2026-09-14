@@ -108,6 +108,14 @@ const tourPackages = [
         description: "Beach, Temple & Coastal Beauty",
         link: "ganpatipule.html"
     },
+   {
+    destination: "Tuljapur",
+    image: "tuljapur.jpg",
+    duration: "1 Day",
+    title: "Tuljapur",
+    description: "Divine blessings, sacred temples & spiritual heritage",
+    link: "tuljapur.html"
+},
     {
         destination: "Tadoba",
         image: "tadoba.jpg",
