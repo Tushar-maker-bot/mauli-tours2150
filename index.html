@@ -61,29 +61,6 @@
   ]
 }
 </script>
-
-<style>
-.category-packages-section { padding-bottom: 30px; }
-.package-category-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:28px; }
-.package-category-btn { border:1px solid rgba(20,48,35,.12); background:#fff; border-radius:18px; padding:20px; display:flex; align-items:center; gap:15px; text-align:left; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,.06); transition:.25s ease; color:inherit; }
-.package-category-btn:hover,.package-category-btn[aria-selected="true"] { transform:translateY(-3px); box-shadow:0 16px 34px rgba(0,0,0,.10); border-color:rgba(20,100,65,.35); }
-.category-icon { font-size:30px; flex:0 0 auto; }
-.package-category-btn > span:nth-child(2) { flex:1; display:flex; flex-direction:column; gap:4px; }
-.package-category-btn strong { font-size:17px; line-height:1.3; }
-.package-category-btn small { color:#68736d; font-size:12px; }
-.category-arrow { font-size:22px; opacity:.7; }
-.category-results { margin-top:34px; padding-top:34px; border-top:1px solid rgba(20,48,35,.1); }
-.category-results-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:20px; }
-.category-results-heading h3 { margin:5px 0 0; font-size:30px; }
-.category-close { width:38px; height:38px; border:1px solid rgba(0,0,0,.1); border-radius:50%; background:#fff; font-size:25px; cursor:pointer; line-height:1; }
-.category-cards { margin-top:0; }
-.category-results[hidden] { display:none; }
-@media (max-width:700px) {
-  .package-category-grid { grid-template-columns:1fr; gap:12px; }
-  .package-category-btn { padding:17px; }
-  .category-results-heading h3 { font-size:24px; }
-}
-</style>
 </head>
 
 <body>
@@ -190,52 +167,7 @@
     </div>
 </section>
 
-<section id="packages" class="packages-section category-packages-section">
-    <div class="section-heading">
-        <span class="eyebrow">✦ EXPLORE BY TRIP TYPE</span>
-        <h2>Choose Your Package</h2>
-        <p>Select a category to discover your next journey.</p>
-    </div>
-
-    <div class="package-category-grid" role="tablist" aria-label="Tour package categories">
-        <button class="package-category-btn" type="button" data-category="one-day" aria-selected="false">
-            <span class="category-icon">🌄</span>
-            <span><strong>One Day Packages</strong><small>Perfect for quick getaways</small></span>
-            <span class="category-arrow">→</span>
-        </button>
-        <button class="package-category-btn" type="button" data-category="two-three" aria-selected="false">
-            <span class="category-icon">🏞️</span>
-            <span><strong>2–3 Days Packages</strong><small>Relaxed short holidays</small></span>
-            <span class="category-arrow">→</span>
-        </button>
-        <button class="package-category-btn" type="button" data-category="five-ten" aria-selected="false">
-            <span class="category-icon">✨</span>
-            <span><strong>5–10 Days Packages</strong><small>Longer memorable journeys</small></span>
-            <span class="category-arrow">→</span>
-        </button>
-        <button class="package-category-btn" type="button" data-category="out-state" aria-selected="false">
-            <span class="category-icon">🌍</span>
-            <span><strong>Out of State Packages</strong><small>Explore beyond Maharashtra</small></span>
-            <span class="category-arrow">→</span>
-        </button>
-    </div>
-
-    <div id="categoryResults" class="category-results" aria-live="polite" hidden>
-        <div class="category-results-heading">
-            <div>
-                <span class="eyebrow" id="categoryEyebrow">✦ SELECTED PACKAGES</span>
-                <h3 id="categoryTitle"></h3>
-            </div>
-            <button id="closeCategoryResults" class="category-close" type="button" aria-label="Close package results">×</button>
-        </div>
-        <div id="categoryCards" class="packages-grid category-cards"></div>
-        <div class="center-cta">
-            <a id="categoryViewAll" href="packages.html" class="outline-dark-btn">View All Packages <span>→</span></a>
-        </div>
-    </div>
-</section>
-
-<section id="packages-popular" class="packages-section">
+<section id="packages" class="packages-section">
     <div class="section-heading">
         <span class="eyebrow">✦ CURATED FOR YOU</span>
         <h2>Popular Tour Packages</h2>
@@ -243,7 +175,8 @@
     </div>
 
     <div class="packages-grid">
-        <article class="package-card" data-destination="Mahabaleshwar">
+        <!-- Mahabaleshwar -->
+<article class="package-card" data-destination="Mahabaleshwar">
             <div class="package-image">
                 <img src="mahabaleshwar.jpg" alt="Mahabaleshwar hills">
                 <span class="package-tag">Popular</span>
@@ -304,7 +237,9 @@
                 <span class="package-duration">◷ 2 Days / 1 Night</span>
                 <h3>Matheran</h3>
                 <p>Relax, explore & enjoy the hills.</p>
-                <a href="matheran.html" class="card-link">View Details <span>→</span></a>
+               <a href="matheran.html" class="card-link">
+    View Details <span>→</span>
+</a>
             </div>
         </article>
 
@@ -339,6 +274,75 @@
     <div class="feature-item">
         <div class="feature-icon">03</div>
         <div><strong>Comfort First</strong><span>Travel planned around convenience</span></div>
+    </div>
+</section>
+
+<section class="big-packages-section" id="special-tours">
+    <div class="section-heading">
+        <span class="eyebrow">✦ LONGER ESCAPES</span>
+        <h2>Special Multi-Day Tour Packages</h2>
+        <p>For families, groups and travellers who want more time to explore.</p>
+    </div>
+
+    <div class="big-packages-grid">
+        <article class="big-package-card">
+            <img src="konkan.jpg" alt="Konkan coastal tour">
+            <div class="big-card-overlay">
+                <span>8 Days / 7 Nights</span>
+                <h3>Konkan Coastal Tour</h3>
+                <p>Beaches, forts, temples, waterfalls & coastal views.</p>
+                <a href="konkanbig.html">Explore Tour →</a>
+            </div>
+        </article>
+
+        <article class="big-package-card">
+            <img src="ashtavinayak.jpg" alt="Ashtavinayak Yatra">
+            <div class="big-card-overlay">
+                <span>8 Days / 7 Nights</span>
+                <h3>Ashtavinayak Yatra</h3>
+                <p>A comfortable journey covering the sacred Ganpati temples.</p>
+                <a href="ashtavinayakbig.html">Explore Tour →</a>
+            </div>
+        </article>
+
+        <!-- PACKAGE 3 -->
+
+<article class="big-package-card">
+    
+    <img src="jyotirlinga.jpg" alt="Maharashtra Jyotirlinga Yatra">
+
+    <div class="big-card-overlay">
+
+        <span>6 Days / 5 Nights</span>
+
+        <h3>Maharashtra Jyotirlinga Yatra</h3>
+
+        <p>
+            Seek blessings at Maharashtra's sacred Jyotirlingas
+            with a comfortable and spiritually enriching journey.
+        </p>
+
+        <a href="jyotirlingabig.html">
+            Explore Tour →
+        </a>
+
+    </div>
+
+</article>
+
+        <article class="big-package-card">
+            <img src="goa.jpg.jpeg" alt="Goa holiday tour">
+            <div class="big-card-overlay">
+                <span>5 Days / 4 Nights</span>
+                <h3>Goa Holiday Tour</h3>
+                <p>Beaches, sightseeing, shopping & unforgettable moments.</p>
+                <a href="goabig.html">Explore Tour →</a>
+            </div>
+        </article>
+    </div>
+
+    <div class="center-cta">
+        <a href="big-packages.html" class="outline-dark-btn">View Special Packages <span>→</span></a>
     </div>
 </section>
 
@@ -519,94 +523,6 @@
         <span>Pune, Maharashtra</span>
     </div>
 </footer>
-
-
-<script>
-(function(){
-  const data = {
-    "one-day": {
-      title:"One Day Packages",
-      viewAll:"one-day-packages.html",
-      cards:[
-        ["Raigad Fort","1 Day","raigad.jpg.jpeg","raigad.html","Heritage","The Pride of Swarajya."],
-        ["Panchgani","1 Day","panchgani.jpg","panchgani.html","Nature","Hills, viewpoints & scenic valleys."],
-        ["Mahabaleshwar","1 Day","mahabaleshwar.jpg","mahabaleshwar.html","Popular","A refreshing hill-station escape."],
-        ["Malshej Ghat","1 Day","malshej.jpg","malshej.html","Nature","Waterfalls, mountains & valley views."],
-        ["Sinhagad","1 Day","sinhagad.jpg","sinhagad.html","Heritage","History, fort views & Sahyadri scenery."],
-        ["Pandharpur","1 Day","pandharpur.jpg","pandharpur.html","Pilgrimage","A peaceful spiritual journey." ]
-      ]
-    },
-    "two-three": {
-      title:"2–3 Days Packages",
-      viewAll:"2-3-days-packages.html",
-      cards:[
-        ["Mahabaleshwar","2 Days / 1 Night","mahabaleshwar.jpg","mahabaleshwar.html","Popular","Escape to the Queen of Hills."],
-        ["Lonavala","2 Days / 1 Night","lonavala.jpg.jpeg","lonavala.html","Best Seller","Hills, waterfalls & nature."],
-        ["Shirdi","2 Days / 1 Night","shirdi.jpg.jpeg","shirdi.html","Pilgrimage","Divine blessings of Sai Baba."],
-        ["Matheran","2 Days / 1 Night","matheran.jpg.jpeg","matheran.html","Nature","Relax, explore & enjoy the hills."],
-        ["Kolhapur","2 Days / 1 Night","kolhapur.jpg","kolhapur.html","Culture","Temples, heritage & local experiences."],
-        ["Alibaug","2 Days / 1 Night","alibaug.jpg","alibaug.html","Beach Escape","Beaches, fort & coastal leisure."]
-      ]
-    },
-    "five-ten": {
-      title:"5–10 Days Packages",
-      viewAll:"special-packages.html",
-      cards:[
-        ["Maharashtra Jyotirlinga Yatra","6 Days / 5 Nights","jyotirlinga.jpg","jyotirlingabig.html","Pilgrimage","A spiritual journey across Maharashtra."],
-        ["Ashtavinayak Yatra","8 Days / 7 Nights","ashtavinayak.jpg","ashtavinayakbig.html","Pilgrimage","A comfortable sacred Ganpati journey."],
-        ["Konkan Coastal Tour","8 Days / 7 Nights","konkan.jpg","konkanbig.html","Coastal","Beaches, forts, temples & coastal views."],
-        ["Goa Holiday Tour","5 Days / 4 Nights","goa.jpg.jpeg","goabig.html","Beach Escape","Beaches, sightseeing & memorable moments."],
-        ["Tirupati","Coming Soon","hero.png.jpg","#","Coming Soon","A future out-of-state pilgrimage journey."],
-        ["Kerala","Coming Soon","hero.png.jpg","#","Coming Soon","A future long-route holiday experience."]
-      ]
-    },
-    "out-state": {
-      title:"Out of State Packages",
-      viewAll:"out-of-state-packages.html",
-      cards:[
-        ["Goa","3 Days / 2 Nights","goa.jpg.jpeg","goa.html","Beach Escape","Beaches, fun & adventure."],
-        ["Goa Holiday Tour","5 Days / 4 Nights","goa.jpg.jpeg","goabig.html","Beach Escape","A longer Goa holiday experience."],
-        ["Tirupati","Coming Soon","hero.png.jpg","#","Coming Soon","Plan your future pilgrimage journey."],
-        ["Kerala","Coming Soon","hero.png.jpg","#","Coming Soon","Backwaters, hills & beautiful landscapes."],
-        ["Tamil Nadu","Coming Soon","hero.png.jpg","#","Coming Soon","Temples, culture & southern India."],
-        ["Rajasthan","Coming Soon","hero.png.jpg","#","Coming Soon","Forts, heritage & royal experiences."]
-      ]
-    }
-  };
-  const results=document.getElementById('categoryResults');
-  const cards=document.getElementById('categoryCards');
-  const title=document.getElementById('categoryTitle');
-  const viewAll=document.getElementById('categoryViewAll');
-  const close=document.getElementById('closeCategoryResults');
-  const buttons=document.querySelectorAll('.package-category-btn');
-  if(!results || !cards) return;
-  function render(key){
-    const group=data[key]; if(!group) return;
-    cards.innerHTML=group.cards.map(c=>{
-      const disabled=c[3]==='#' ? ' aria-disabled="true" onclick="return false;"' : '';
-      return `<article class="package-card">
-        <div class="package-image"><img src="${c[2]}" alt="${c[0]}" onerror="this.onerror=null;this.src='hero.png.jpg';"><span class="package-tag">${c[4]}</span></div>
-        <div class="package-content"><span class="package-duration">◷ ${c[1]}</span><h3>${c[0]}</h3><p>${c[5]}</p>
-        <a href="${c[3]}" class="card-link"${disabled}>${c[3]==='#'?'Coming Soon':'View Details'} <span>→</span></a></div>
-      </article>`;
-    }).join('');
-    title.textContent=group.title;
-    viewAll.href=group.viewAll;
-    viewAll.textContent='View All '+group.title+' →';
-    results.hidden=false;
-    buttons.forEach(b=>b.setAttribute('aria-selected',b.dataset.category===key?'true':'false'));
-    setTimeout(()=>results.scrollIntoView({behavior:'smooth',block:'start'}),40);
-  }
-  buttons.forEach(b=>b.addEventListener('click',()=>{
-    const key=b.dataset.category;
-    if(!results.hidden && b.getAttribute('aria-selected')==='true'){
-      results.hidden=true; b.setAttribute('aria-selected','false'); return;
-    }
-    render(key);
-  }));
-  close.addEventListener('click',()=>{results.hidden=true;buttons.forEach(b=>b.setAttribute('aria-selected','false'));});
-})();
-</script>
 
 <script src="script.js"></script>
 </body>
