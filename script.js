@@ -156,6 +156,14 @@ const tourPackages = [
         description: "Mountains, Lakes & Nature",
         link: "bhandardara.html"
     },
+   {
+    destination: "Shivneri",
+    image: "shivneri.jpg.jpeg",
+    duration: "1 Day",
+    title: "Shivneri Fort",
+    description: "Birthplace of Chhatrapati Shivaji Maharaj",
+    link: "shivneri.html"
+},
     {
         destination: "Kaas Plateau",
         image: "kass.jpg",
