@@ -61,6 +61,64 @@
   ]
 }
 </script>
+
+<style>
+/* Compact package category filter + dynamic results */
+.package-filters{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+    margin:28px 0 20px;
+}
+.package-filter{
+    border:1px solid rgba(20,82,55,.16);
+    background:#fff;
+    color:#173b2b;
+    border-radius:14px;
+    padding:14px 12px;
+    font:600 14px/1.25 "Poppins",sans-serif;
+    cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+}
+.package-filter:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(20,82,55,.10);
+}
+.package-filter.active{
+    background:#174f35;
+    color:#fff;
+    border-color:#174f35;
+    box-shadow:0 8px 20px rgba(23,79,53,.18);
+}
+.package-results{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+    min-height:0;
+}
+.package-results:empty{display:none;}
+.package-results .package-card{height:100%;}
+.filter-empty{
+    grid-column:1/-1;
+    text-align:center;
+    padding:28px 18px;
+    border:1px dashed rgba(20,82,55,.2);
+    border-radius:16px;
+    background:#fff;
+}
+.filter-empty strong{display:block;margin-bottom:6px;}
+.filter-empty a{display:inline-block;margin-top:10px;}
+@media (max-width:900px){
+    .package-filters{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .package-results{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:600px){
+    .package-filters{grid-template-columns:1fr 1fr;gap:9px;margin-top:22px;}
+    .package-filter{padding:12px 8px;font-size:12px;border-radius:12px;}
+    .package-results{grid-template-columns:1fr;gap:16px;}
+}
+</style>
+
 </head>
 
 <body>
@@ -161,8 +219,18 @@
             <button class="popular-chip" type="button" data-destination="Ashtavinayak">Ashtavinayak</button>
         </div>
 
+        <div class="package-filters" aria-label="Package categories">
+            <button class="package-filter active" type="button" data-filter="one-day">🌄 One Day Packages</button>
+            <button class="package-filter" type="button" data-filter="two-three">🏞️ 2–3 Days Packages</button>
+            <button class="package-filter" type="button" data-filter="special">✨ 5–10 Days Packages</button>
+            <button class="package-filter" type="button" data-filter="out-state">🌍 Out of State Packages</button>
+        </div>
+
         <div id="searchMessage" class="search-message" aria-live="polite"></div>
-        <div id="searchResult" class="search-result"></div>
+
+        <div id="packageResults" class="package-results" aria-live="polite">
+            <!-- Results are rendered here by the package filter/search script. -->
+        </div>
 
     </div>
 </section>
@@ -277,74 +345,7 @@
     </div>
 </section>
 
-<section class="big-packages-section" id="special-tours">
-    <div class="section-heading">
-        <span class="eyebrow">✦ LONGER ESCAPES</span>
-        <h2>Special Multi-Day Tour Packages</h2>
-        <p>For families, groups and travellers who want more time to explore.</p>
-    </div>
 
-    <div class="big-packages-grid">
-        <article class="big-package-card">
-            <img src="konkan.jpg" alt="Konkan coastal tour">
-            <div class="big-card-overlay">
-                <span>8 Days / 7 Nights</span>
-                <h3>Konkan Coastal Tour</h3>
-                <p>Beaches, forts, temples, waterfalls & coastal views.</p>
-                <a href="konkanbig.html">Explore Tour →</a>
-            </div>
-        </article>
-
-        <article class="big-package-card">
-            <img src="ashtavinayak.jpg" alt="Ashtavinayak Yatra">
-            <div class="big-card-overlay">
-                <span>8 Days / 7 Nights</span>
-                <h3>Ashtavinayak Yatra</h3>
-                <p>A comfortable journey covering the sacred Ganpati temples.</p>
-                <a href="ashtavinayakbig.html">Explore Tour →</a>
-            </div>
-        </article>
-
-        <!-- PACKAGE 3 -->
-
-<article class="big-package-card">
-    
-    <img src="jyotirlinga.jpg" alt="Maharashtra Jyotirlinga Yatra">
-
-    <div class="big-card-overlay">
-
-        <span>6 Days / 5 Nights</span>
-
-        <h3>Maharashtra Jyotirlinga Yatra</h3>
-
-        <p>
-            Seek blessings at Maharashtra's sacred Jyotirlingas
-            with a comfortable and spiritually enriching journey.
-        </p>
-
-        <a href="jyotirlingabig.html">
-            Explore Tour →
-        </a>
-
-    </div>
-
-</article>
-
-        <article class="big-package-card">
-            <img src="goa.jpg.jpeg" alt="Goa holiday tour">
-            <div class="big-card-overlay">
-                <span>5 Days / 4 Nights</span>
-                <h3>Goa Holiday Tour</h3>
-                <p>Beaches, sightseeing, shopping & unforgettable moments.</p>
-                <a href="goabig.html">Explore Tour →</a>
-            </div>
-        </article>
-    </div>
-
-    <div class="center-cta">
-        <a href="big-packages.html" class="outline-dark-btn">View Special Packages <span>→</span></a>
-    </div>
-</section>
 
 <section class="explore-section">
     <div class="explore-copy">
@@ -523,6 +524,135 @@
         <span>Pune, Maharashtra</span>
     </div>
 </footer>
+
+
+<script>
+(function(){
+    const packageData = [
+        /* One Day Packages */
+        {category:"one-day", destination:"Raigad", title:"Raigad Fort", duration:"1 Day", image:"raigad.jpg.jpeg", alt:"Raigad Fort", tag:"Heritage", description:"The Pride of Swarajya.", url:"raigad.html"},
+        {category:"one-day", destination:"Panchgani", title:"Panchgani", duration:"1 Day", image:"panchgani.jpg", alt:"Panchgani hills", tag:"Nature", description:"Scenic valleys, viewpoints & fresh mountain air.", url:"panchgani.html"},
+        {category:"one-day", destination:"Mahabaleshwar", title:"Mahabaleshwar", duration:"1 Day", image:"mahabaleshwar.jpg", alt:"Mahabaleshwar hills", tag:"Popular", description:"Escape to the Queen of Hills.", url:"mahabaleshwar.html"},
+        {category:"one-day", destination:"Malshej Ghat", title:"Malshej Ghat", duration:"1 Day", image:"malshej.jpg", alt:"Malshej Ghat", tag:"Nature", description:"Mountain views, waterfalls & scenic roads.", url:"malshej.html"},
+        {category:"one-day", destination:"Sinhagad", title:"Sinhagad", duration:"1 Day", image:"sinhagad.jpg", alt:"Sinhagad Fort", tag:"Heritage", description:"History, fort views & Sahyadri scenery.", url:"sinhagad.html"},
+        {category:"one-day", destination:"Pandharpur", title:"Pandharpur", duration:"1 Day", image:"pandharpur.jpg", alt:"Pandharpur temple", tag:"Pilgrimage", description:"A peaceful spiritual journey to Pandharpur.", url:"pandharpur.html"},
+
+        /* 2–3 Days Packages */
+        {category:"two-three", destination:"Mahabaleshwar", title:"Mahabaleshwar", duration:"2 Days / 1 Night", image:"mahabaleshwar.jpg", alt:"Mahabaleshwar hills", tag:"Popular", description:"Escape to the Queen of Hills.", url:"mahabaleshwar.html"},
+        {category:"two-three", destination:"Lonavala", title:"Lonavala", duration:"2 Days / 1 Night", image:"lonavala.jpg.jpeg", alt:"Lonavala hills and nature", tag:"Best Seller", description:"Hills, waterfalls & nature.", url:"lonavala.html"},
+        {category:"two-three", destination:"Shirdi", title:"Shirdi", duration:"2 Days / 1 Night", image:"shirdi.jpg.jpeg", alt:"Shirdi", tag:"Pilgrimage", description:"Divine blessings of Sai Baba.", url:"shirdi.html"},
+        {category:"two-three", destination:"Matheran", title:"Matheran", duration:"2 Days / 1 Night", image:"matheran.jpg.jpeg", alt:"Matheran hills", tag:"Nature", description:"Relax, explore & enjoy the hills.", url:"matheran.html"},
+        {category:"two-three", destination:"Goa", title:"Goa", duration:"3 Days / 2 Nights", image:"goa.jpg.jpeg", alt:"Goa beach", tag:"Beach Escape", description:"Beaches, fun & adventure.", url:"goa.html"},
+        {category:"two-three", destination:"Alibaug", title:"Alibaug", duration:"2 Days / 1 Night", image:"alibaug.jpg", alt:"Alibaug beach", tag:"Beach", description:"Beaches, coastal views & relaxed escapes.", url:"alibaug.html"},
+        {category:"two-three", destination:"Ganpatipule", title:"Ganpatipule", duration:"2 Days / 1 Night", image:"ganpatipule.jpg", alt:"Ganpatipule", tag:"Coastal", description:"Temple, beach & beautiful Konkan scenery.", url:"ganpatipule.html"},
+        {category:"two-three", destination:"Tadoba", title:"Tadoba", duration:"2 Days / 1 Night", image:"tadoba.jpg", alt:"Tadoba", tag:"Wildlife", description:"Wildlife, forest landscapes & adventure.", url:"tadoba.html"},
+        {category:"two-three", destination:"Igatpuri", title:"Igatpuri", duration:"2 Days / 1 Night", image:"igatpuri.jpg", alt:"Igatpuri", tag:"Nature", description:"Mountain scenery and peaceful getaways.", url:"igatpuri.html"},
+        {category:"two-three", destination:"Panhala", title:"Panhala", duration:"2 Days / 1 Night", image:"panhala.jpg", alt:"Panhala", tag:"Heritage", description:"Fort history and beautiful hill views.", url:"panhala.html"},
+        {category:"two-three", destination:"Konkan", title:"Konkan Tour", duration:"2 Days / 1 Night", image:"konkan.jpg", alt:"Konkan coast", tag:"Coastal", description:"Beaches, greenery and peaceful coastal roads.", url:"konkan.html"},
+        {category:"two-three", destination:"Nashik–Trimbakeshwar", title:"Nashik–Trimbakeshwar", duration:"2 Days / 1 Night", image:"nashik.jpg", alt:"Nashik Trimbakeshwar", tag:"Pilgrimage", description:"Temple visits and scenic Nashik surroundings.", url:"nashik.html"},
+        {category:"two-three", destination:"Bhandardara", title:"Bhandardara", duration:"2 Days / 1 Night", image:"bhandardara.jpg", alt:"Bhandardara", tag:"Nature", description:"Lakes, waterfalls and Sahyadri scenery.", url:"bhandardara.html"},
+        {category:"two-three", destination:"Kaas Plateau", title:"Kaas Plateau", duration:"2 Days / 1 Night", image:"kaas.jpg", alt:"Kaas Plateau", tag:"Nature", description:"Seasonal flowers, lake views and nature.", url:"kaas.html"},
+        {category:"two-three", destination:"Murud–Janjira", title:"Murud–Janjira", duration:"2 Days / 1 Night", image:"murud.jpg", alt:"Murud Janjira", tag:"Heritage", description:"Sea fort, beaches and coastal views.", url:"murud-janjira.html"},
+        {category:"two-three", destination:"Harihareshwar–Diveagar", title:"Harihareshwar–Diveagar", duration:"2 Days / 1 Night", image:"harihareshwar.jpg", alt:"Harihareshwar Diveagar", tag:"Coastal", description:"Temples, beaches and peaceful Konkan views.", url:"harihareshwar-diveagar.html"},
+        {category:"two-three", destination:"Amboli Ghat", title:"Amboli Ghat", duration:"2 Days / 1 Night", image:"amboli.jpg", alt:"Amboli Ghat", tag:"Nature", description:"Waterfalls, forests and mountain roads.", url:"amboli.html"},
+        {category:"two-three", destination:"Chikhaldara", title:"Chikhaldara", duration:"2 Days / 1 Night", image:"chikhaldara.jpg", alt:"Chikhaldara", tag:"Nature", description:"Hill views, lakes and forest landscapes.", url:"chikhaldara.html"},
+        {category:"two-three", destination:"Dapoli", title:"Dapoli", duration:"2 Days / 1 Night", image:"dapoli.jpg", alt:"Dapoli beach", tag:"Coastal", description:"Konkan beaches, temples and scenic views.", url:"dapoli.html"},
+        {category:"two-three", destination:"Shrivardhan–Harihareshwar", title:"Shrivardhan–Harihareshwar", duration:"2 Days / 1 Night", image:"shrivardhan.jpg", alt:"Shrivardhan Harihareshwar", tag:"Coastal", description:"Beaches, temples and relaxing coastal scenery.", url:"shrivardhan-harihareshwar.html"},
+        {category:"two-three", destination:"Tarkarli–Malvan", title:"Tarkarli–Malvan", duration:"3 Days / 2 Nights", image:"tarkarli.jpg", alt:"Tarkarli Malvan", tag:"Beach", description:"Beaches, Sindhudurg Fort and coastal adventure.", url:"tarkarli-malvan.html"},
+        {category:"two-three", destination:"Goa", title:"Goa Holiday Tour", duration:"5 Days / 4 Nights", image:"goa.jpg.jpeg", alt:"Goa holiday tour", tag:"Long Escape", description:"A longer Goa escape with beaches and sightseeing.", url:"goabig.html"},
+
+        /* Special 5–10 Days */
+        {category:"special", destination:"Maharashtra Jyotirlinga", title:"Maharashtra Jyotirlinga Yatra", duration:"6 Days / 5 Nights", image:"jyotirlinga.jpg", alt:"Maharashtra Jyotirlinga Yatra", tag:"Spiritual", description:"A comfortable journey across Maharashtra's sacred Jyotirlingas.", url:"jyotirlingabig.html"},
+        {category:"special", destination:"Ashtavinayak", title:"Ashtavinayak Yatra", duration:"8 Days / 7 Nights", image:"ashtavinayak.jpg", alt:"Ashtavinayak Yatra", tag:"Pilgrimage", description:"A comfortable journey covering the sacred Ganpati temples.", url:"ashtavinayakbig.html"},
+        {category:"special", destination:"Konkan", title:"Konkan Coastal Tour", duration:"8 Days / 7 Nights", image:"konkan.jpg", alt:"Konkan coastal tour", tag:"Coastal", description:"Beaches, forts, temples, waterfalls & coastal views.", url:"konkanbig.html"},
+        {category:"special", destination:"Goa", title:"Goa Holiday Tour", duration:"5 Days / 4 Nights", image:"goa.jpg.jpeg", alt:"Goa holiday tour", tag:"Beach Escape", description:"Beaches, sightseeing & unforgettable moments.", url:"goabig.html"},
+
+        /* Out of State Packages currently available on the site */
+        {category:"out-state", destination:"Goa", title:"Goa", duration:"3 Days / 2 Nights", image:"goa.jpg.jpeg", alt:"Goa beach", tag:"Beach Escape", description:"Beaches, fun & adventure.", url:"goa.html"},
+        {category:"out-state", destination:"Goa", title:"Goa Holiday Tour", duration:"5 Days / 4 Nights", image:"goa.jpg.jpeg", alt:"Goa holiday tour", tag:"Long Escape", description:"Beaches, sightseeing & unforgettable moments.", url:"goabig.html"}
+    ];
+
+    const results = document.getElementById("packageResults");
+    const message = document.getElementById("searchMessage");
+    const input = document.getElementById("destinationSearch");
+    const form = document.getElementById("destinationForm");
+    const filters = Array.from(document.querySelectorAll(".package-filter"));
+
+    function card(p){
+        return `
+        <article class="package-card">
+            <div class="package-image">
+                <img src="${p.image}" alt="${p.alt}" loading="lazy">
+                <span class="package-tag">${p.tag}</span>
+            </div>
+            <div class="package-content">
+                <span class="package-duration">◷ ${p.duration}</span>
+                <h3>${p.title}</h3>
+                <p>${p.description}</p>
+                <a href="${p.url}" class="card-link">View Details <span>→</span></a>
+            </div>
+        </article>`;
+    }
+
+    function render(list, heading){
+        if(!list.length){
+            results.innerHTML = `
+                <div class="filter-empty">
+                    <strong>No package found.</strong>
+                    <span>Try another destination or choose a package category.</span>
+                </div>`;
+            message.textContent = heading || "";
+            return;
+        }
+        results.innerHTML = list.map(card).join("");
+        message.textContent = heading || "";
+    }
+
+    function setActive(name){
+        filters.forEach(btn => btn.classList.toggle("active", btn.dataset.filter === name));
+    }
+
+    function filterCategory(category){
+        setActive(category);
+        const list = packageData.filter(p => p.category === category);
+        const label = filters.find(b => b.dataset.filter === category)?.textContent.trim() || "";
+        render(list, label);
+    }
+
+    filters.forEach(btn => {
+        btn.addEventListener("click", function(){
+            input.value = "";
+            filterCategory(this.dataset.filter);
+        });
+    });
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const q = input.value.trim().toLowerCase();
+        if(!q){
+            filterCategory(document.querySelector(".package-filter.active")?.dataset.filter || "one-day");
+            return;
+        }
+
+        filters.forEach(btn => btn.classList.remove("active"));
+        const list = packageData.filter(p =>
+            p.destination.toLowerCase().includes(q) ||
+            p.title.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q)
+        );
+        render(list, `Search results for “${input.value.trim()}”`);
+    });
+
+    document.querySelectorAll(".popular-chip").forEach(chip => {
+        chip.addEventListener("click", function(){
+            input.value = this.dataset.destination || "";
+            form.dispatchEvent(new Event("submit"));
+        });
+    });
+
+    filterCategory("one-day");
+})();
+</script>
 
 <script src="script.js"></script>
 </body>
