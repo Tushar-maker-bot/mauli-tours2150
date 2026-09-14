@@ -2835,3 +2835,287 @@ footer .footer-bottom{
         text-align:center;
     }
 }
+/* =========================================================
+   MAULI TOURS & TRAVELS
+   COMPACT PACKAGE CATEGORY BUTTONS
+   ========================================================= */
+
+.package-category-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px auto 0;
+}
+
+.package-category-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    width: auto;
+    min-width: 145px;
+    height: 42px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(11, 143, 75, 0.18);
+    border-radius: 999px;
+
+    background: #ffffff;
+    color: var(--green-dark);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 16px rgba(14, 35, 22, 0.06);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.package-category-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(11, 143, 75, 0.35);
+    box-shadow: 0 9px 22px rgba(14, 35, 22, 0.10);
+}
+
+.package-category-btn.active,
+.package-category-btn[aria-selected="true"] {
+    background: var(--green);
+    color: #ffffff;
+    border-color: var(--green);
+    box-shadow: 0 8px 22px rgba(11, 143, 75, 0.20);
+}
+
+.package-category-icon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.package-category-content {
+    display: flex;
+    align-items: center;
+}
+
+.package-category-content strong {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.package-category-content span {
+    display: none;
+}
+
+.package-category-arrow {
+    font-size: 12px;
+    margin-left: 2px;
+    transition: transform .25s ease;
+}
+
+.package-category-btn:hover .package-category-arrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   RESULTS
+   Opens only BELOW the buttons
+   ========================================================= */
+
+.package-category-results {
+    display: none;
+
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 24px auto 0;
+    padding: 0;
+
+    animation: categoryResultsShow .35s ease both;
+}
+
+.package-category-results.show {
+    display: block;
+}
+
+@keyframes categoryResultsShow {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   RESULTS HEADER
+   ========================================================= */
+
+.package-results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.package-results-title {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.package-results-subtitle {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   PACKAGE CARDS
+   ========================================================= */
+
+.package-category-results .packages-grid,
+.package-category-results .package-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+
+/* =========================================================
+   VIEW ALL
+   ========================================================= */
+
+.package-view-all-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.package-view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 42px;
+    padding: 0 17px;
+
+    border-radius: 999px;
+    border: 1px solid var(--green);
+
+    background: #ffffff;
+    color: var(--green-dark);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+.package-view-all-btn:hover {
+    background: var(--green);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .package-category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    .package-category-btn {
+        min-width: 140px;
+        height: 40px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .package-category-content strong {
+        font-size: 11px;
+    }
+
+    .package-category-icon {
+        font-size: 14px;
+    }
+
+    .package-category-results {
+        margin-top: 20px;
+    }
+
+    .package-results-header {
+        margin-bottom: 13px;
+    }
+
+    .package-results-title {
+        font-size: 20px;
+    }
+
+    .package-results-subtitle {
+        font-size: 11px;
+    }
+
+    .package-category-results .packages-grid,
+    .package-category-results .package-results-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .package-view-all-btn {
+        width: auto;
+        min-height: 40px;
+        padding: 0 15px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .package-category-grid {
+        gap: 7px;
+    }
+
+    .package-category-btn {
+        min-width: 130px;
+        height: 38px;
+        padding: 0 9px;
+    }
+
+    .package-category-content strong {
+        font-size: 10px;
+    }
+}
