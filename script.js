@@ -100,6 +100,14 @@ const tourPackages = [
         description: "Visit Maharashtra's four sacred Jyotirlingas",
         link: "jyotirlingabig.html"
     },
+   {
+    destination: "Koyna Wildlife",
+    image: "koyna-wildlife.jpg",
+    duration: "2 Days / 1 Night",
+    title: "Koyna Wildlife",
+    description: "Wildlife, forests, backwaters & serene Sahyadri.",
+    link: "koyna-wildlife.html"
+},
     {
         destination: "Kolhapur",
         image: "kolhapur.jpg",
