@@ -205,6 +205,14 @@ const tourPackages = [
     link: "shivneri.html"
 },
    {
+    destination: "Raigad–Pratapgad",
+    image: "raigad-pratapgad.jpg",
+    duration: "2 Days / 1 Night",
+    title: "Raigad–Pratapgad",
+    description: "Explore forts, history & the legacy of Chhatrapati Shivaji Maharaj.",
+    link: "raigad-pratapgad.html"
+},
+   {
     destination: "Sindhudurg",
     image: "sindhudurg.jpg",
     duration: "1 Day",
