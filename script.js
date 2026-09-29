@@ -140,6 +140,14 @@ const tourPackages = [
     description: "Divine blessings, sacred temples & spiritual heritage",
     link: "tuljapur.html"
 },
+   {
+    destination: "Harishchandragad",
+    image: "harishchandragad.jpg",
+    duration: "2 Days / 1 Night",
+    title: "Harishchandragad",
+    description: "Trek, Konkan Kada, ancient temples & Sahyadri landscapes.",
+    link: "harishchandragad.html"
+},
     {
         destination: "Tadoba",
         image: "tadoba.jpg",
