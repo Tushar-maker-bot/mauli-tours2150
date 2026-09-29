@@ -254,7 +254,7 @@ const tourPackages = [
     },
    {
     destination: "Jejuri–Morgaon",
-    image: "jejuri-morgaon.jpg",
+    image: "jejuri-morgaon.jpg.png",
     duration: "1 Day",
     title: "Jejuri–Morgaon",
     description: "Sacred temples, devotion & spiritual heritage",
