@@ -244,6 +244,14 @@ const tourPackages = [
         description: "Forts, Temples, History & Scenic Nature",
         link: "pratapgad-wai.html"
     },
+   {
+    destination: "Jejuri–Morgaon",
+    image: "jejuri-morgaon.jpg",
+    duration: "1 Day",
+    title: "Jejuri–Morgaon",
+    description: "Sacred temples, devotion & spiritual heritage",
+    link: "jejuri-morgaon.html"
+},
     {
         destination: "Amboli Ghat",
         image: "ambolighat.jpg",
