@@ -165,6 +165,14 @@ const tourPackages = [
         link: "konkan.html"
     },
    {
+    destination: "Pandharpur–Tuljapur–Akkalkot–Ganagapur",
+    image: "pandharpur-tuljapur-akkalkot-ganagapur.jpg",
+    duration: "4 Days / 3 Nights",
+    title: "Pandharpur–Tuljapur–Akkalkot–Ganagapur",
+    description: "A sacred journey of faith, devotion & spiritual heritage",
+    link: "pandharpur-tuljapur-akkalkot-ganagapur.html"
+},
+   {
     destination: "Sindhudurg",
     image: "sindhudurg.jpg",
     duration: "1 Day",
