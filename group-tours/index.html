@@ -623,150 +623,138 @@
         }
 
 
-        /* =====================================================
-           MOBILE
-        ====================================================== */
+       /* =====================================================
+   MOBILE
+====================================================== */
 
-        @media (max-width: 900px) {
+@media (max-width: 900px) {
 
-            .group-tour-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+    .tour-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
+    .group-why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-            .group-why-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+    .main-site-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .group-footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
 
-            .main-site-cta-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-
-            .group-footer-inner {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
+}
 
 
-        @media (max-width: 650px) {
+@media (max-width: 760px) {
 
-            .group-tours-hero {
-                min-height: 82vh;
-                background-position: 62% center;
-            }
+    .tour-grid {
+        grid-template-columns: 1fr;
+    }
 
-
-            .group-tours-section {
-                padding: 70px 5%;
-            }
+}
 
 
-            .group-tour-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
+@media (max-width: 650px) {
+
+    .group-tours-hero {
+        min-height: 82vh;
+        background-position: 62% center;
+    }
+
+    .group-tours-section {
+        padding: 70px 5%;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .tour-image {
+        height: 205px;
+    }
+
+    .tour-content {
+        padding: 21px;
+    }
+
+    .tour-meta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .group-trust-row {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .group-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .group-why-section {
+        padding: 70px 5%;
+    }
+
+    .group-why-image,
+    .group-why-image img {
+        min-height: 380px;
+    }
+
+    .main-site-cta {
+        padding: 70px 5%;
+    }
+
+    .main-site-button {
+        width: 100%;
+    }
+
+    .group-footer {
+        padding: 55px 5% 25px;
+    }
+
+    .group-footer-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .group-footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
 
 
-            .group-tour-image {
-                height: 245px;
-            }
+@media (max-width: 450px) {
 
+    .tour-actions {
+        flex-direction: column;
+    }
 
-            .group-tour-content {
-                padding: 23px;
-            }
+    .tour-meta {
+        grid-template-columns: 1fr 1fr;
+    }
 
+    .meta strong {
+        font-size: 11px;
+    }
 
-            .group-tour-meta {
-                grid-template-columns: repeat(3, 1fr);
-            }
+    .group-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
+    .group-hero-buttons a {
+        width: 100%;
+        justify-content: center;
+    }
 
-            .group-trust-row {
-                gap: 20px;
-                margin-top: 30px;
-            }
-
-
-            .group-benefits {
-                grid-template-columns: 1fr;
-            }
-
-
-            .group-why-section {
-                padding: 70px 5%;
-            }
-
-
-            .group-why-image,
-            .group-why-image img {
-                min-height: 380px;
-            }
-
-
-            .main-site-cta {
-                padding: 70px 5%;
-            }
-
-
-            .main-site-button {
-                width: 100%;
-            }
-
-
-            .group-footer {
-                padding: 55px 5% 25px;
-            }
-
-
-            .group-footer-inner {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-
-            .group-footer-bottom {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-        }
-
-
-        @media (max-width: 450px) {
-
-            .group-tour-actions {
-                flex-direction: column;
-            }
-
-
-            .group-tour-meta-item strong {
-                font-size: 11px;
-            }
-
-
-            .group-tour-meta-item span {
-                font-size: 9px;
-            }
-
-
-            .group-hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-
-            .group-hero-buttons a {
-                width: 100%;
-                justify-content: center;
-            }
-
-        }
+}
 
     </style>
 
