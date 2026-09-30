@@ -1,1 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Shivneri Special Group Tour | Mauli Tours & Travels</title>
+<meta name="description" content="Shivneri Special Group Tour from Pune on 11 October 2026. One-day group tour with breakfast, lunch, transportation and tour coordination. ₹1,999 per person.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+/* =========================================================
+   SHIVNERI DETAILS PAGE — PAGE ONLY
+   Main website style.css is not modified.
+========================================================= */
+
+:root{
+    --shiv-green:#138653;
+    --shiv-dark:#183d2d;
+    --shiv-soft:#f5f9f6;
+    --shiv-line:#e3ece6;
+    --shiv-muted:#728078;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Header page-only mobile visibility */
+@media(max-width:768px){
+    .header-book{
+        display:none !important;
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.shiv-hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,rgba(10,31,22,.84) 0%,rgba(10,31,22,.65) 48%,rgba(10,31,22,.28) 100%),
+        url("../shivneri-highlights.jpg") center/cover no-repeat;
+}
+
+.shiv-hero-inner{
+    width:min(1180px,90%);
+    margin:0 auto;
+    padding:110px 0 80px;
+    position:relative;
+    z-index:2;
+}
+
+.shiv-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+    color:#b7df78;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.8px;
+}
+
+.shiv-hero h1{
+    max-width:850px;
+    margin:0;
+    color:#fff;
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.05;
+    font-weight:800;
+}
+
+.shiv-hero-tagline{
+    margin:22px 0 8px;
+    color:#fff;
+    font-size:clamp(20px,3vw,30px);
+    line-height:1.4;
+    font-weight:600;
+}
+
+.shiv-hero-subtext{
+    max-width:700px;
+    margin:0 0 30px;
+    color:rgba(255,255,255,.88);
+    font-size:15px;
+    line-height:1.8;
+}
+
+.shiv-hero-price{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:14px;
+    margin-bottom:28px;
+}
+
+.shiv-price{
+    color:#fff;
+    font-size:25px;
+    font-weight:800;
+}
+
+.shiv-date-badge{
+    padding:8px 13px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    background:rgba(255,255,255,.10);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    backdrop-filter:blur(8px);
+}
+
+.shiv-hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.shiv-hero-buttons a{
+    text-decoration:none;
+}
+
+.shiv-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 22px;
+    border-radius:11px;
+    background:#118653;
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    transition:.25s ease;
+}
+
+.shiv-primary-btn:hover{
+    background:#0d7347;
+    transform:translateY(-1px);
+}
+
+.shiv-secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 22px;
+    border-radius:11px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    transition:.25s ease;
+}
+
+.shiv-secondary-btn:hover{
+    background:rgba(255,255,255,.20);
+}
+
+/* =========================================================
+   QUICK INFO
+========================================================= */
+.shiv-info-wrap{
+    position:relative;
+    z-index:5;
+    margin-top:-48px;
+}
+
+.shiv-info-grid{
+    width:min(1180px,90%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.shiv-info-item{
+    min-height:90px;
+    padding:17px;
+    background:#fff;
+    border:1px solid var(--shiv-line);
+    border-radius:15px;
+    box-shadow:0 12px 35px rgba(24,61,45,.08);
+}
+
+.shiv-info-item small{
+    display:block;
+    margin-bottom:5px;
+    color:#7d8982;
+    font-size:9px;
+    font-weight:700;
+}
+
+.shiv-info-item strong{
+    color:#2b4d3c;
+    font-size:12px;
+    line-height:1.45;
+}
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+.shiv-section{
+    padding:90px 6%;
+}
+
+.shiv-section.alt{
+    background:#f7faf8;
+}
+
+.shiv-container{
+    width:min(1180px,100%);
+    margin:0 auto;
+}
+
+.shiv-heading{
+    max-width:760px;
+    margin:0 auto 45px;
+    text-align:center;
+}
+
+.shiv-eyebrow{
+    display:inline-block;
+    margin-bottom:10px;
+    color:#147d50;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.shiv-heading h2{
+    margin:0 0 12px;
+    color:var(--shiv-dark);
+    font-size:clamp(30px,4vw,44px);
+    line-height:1.15;
+}
+
+.shiv-heading p{
+    margin:0;
+    color:var(--shiv-muted);
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================================================
+   OVERVIEW
+========================================================= */
+.shiv-overview{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:55px;
+    align-items:center;
+}
+
+.shiv-overview-image{
+    overflow:hidden;
+    min-height:470px;
+    border-radius:22px;
+    background:#dfece5;
+    box-shadow:0 18px 45px rgba(24,61,45,.10);
+}
+
+.shiv-overview-image img{
+    width:100%;
+    height:100%;
+    min-height:470px;
+    display:block;
+    object-fit:cover;
+}
+
+.shiv-overview-copy .shiv-eyebrow{
+    margin-bottom:12px;
+}
+
+.shiv-overview-copy h2{
+    margin:0 0 17px;
+    color:var(--shiv-dark);
+    font-size:38px;
+    line-height:1.15;
+}
+
+.shiv-overview-copy p{
+    margin:0 0 16px;
+    color:#68746d;
+    font-size:13px;
+    line-height:1.9;
+}
+
+.shiv-highlights{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px;
+}
+
+.shiv-highlight{
+    padding:15px;
+    border:1px solid var(--shiv-line);
+    border-radius:13px;
+    background:#fff;
+}
+
+.shiv-highlight strong{
+    display:block;
+    color:#2b4d3c;
+    font-size:12px;
+}
+
+.shiv-highlight span{
+    display:block;
+    margin-top:4px;
+    color:#7a857f;
+    font-size:10px;
+    line-height:1.5;
+}
+
+/* =========================================================
+   PLACES
+========================================================= */
+.shiv-places-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.shiv-place{
+    padding:22px;
+    border:1px solid var(--shiv-line);
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(24,61,45,.05);
+}
+
+.shiv-place-number{
+    display:inline-flex;
+    width:31px;
+    height:31px;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+    border-radius:50%;
+    background:#eaf6ef;
+    color:#16794d;
+    font-size:10px;
+    font-weight:800;
+}
+
+.shiv-place h3{
+    margin:0 0 6px;
+    color:#244735;
+    font-size:15px;
+}
+
+.shiv-place p{
+    margin:0;
+    color:#7b857f;
+    font-size:10px;
+    line-height:1.65;
+}
+
+/* =========================================================
+   ITINERARY
+========================================================= */
+.shiv-timeline{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.shiv-timeline:before{
+    content:"";
+    position:absolute;
+    top:10px;
+    bottom:10px;
+    left:122px;
+    width:1px;
+    background:#d8e5dd;
+}
+
+.shiv-timeline-item{
+    position:relative;
+    display:grid;
+    grid-template-columns:105px 1fr;
+    gap:35px;
+    padding-bottom:25px;
+}
+
+.shiv-time{
+    padding-top:3px;
+    color:#147d50;
+    font-size:11px;
+    font-weight:800;
+    text-align:right;
+}
+
+.shiv-timeline-dot{
+    position:absolute;
+    top:4px;
+    left:117px;
+    width:11px;
+    height:11px;
+    border:3px solid #fff;
+    border-radius:50%;
+    background:#138653;
+    box-shadow:0 0 0 1px #cfe1d7;
+}
+
+.shiv-timeline-content{
+    padding:17px 20px;
+    border:1px solid var(--shiv-line);
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 7px 22px rgba(24,61,45,.04);
+}
+
+.shiv-timeline-content h3{
+    margin:0 0 5px;
+    color:#264936;
+    font-size:14px;
+}
+
+.shiv-timeline-content p{
+    margin:0;
+    color:#77827c;
+    font-size:11px;
+    line-height:1.65;
+}
+
+/* =========================================================
+   INCLUDED / EXCLUDED
+========================================================= */
+.shiv-two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.shiv-list-card{
+    padding:30px;
+    border:1px solid var(--shiv-line);
+    border-radius:18px;
+    background:#fff;
+}
+
+.shiv-list-card h3{
+    margin:0 0 20px;
+    color:var(--shiv-dark);
+    font-size:21px;
+}
+
+.shiv-list{
+    display:grid;
+    gap:12px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.shiv-list li{
+    position:relative;
+    padding-left:24px;
+    color:#68746d;
+    font-size:12px;
+    line-height:1.65;
+}
+
+.shiv-list li:before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#138653;
+    font-weight:800;
+}
+
+.shiv-excluded li:before{
+    content:"×";
+    color:#c46b4b;
+}
+
+/* =========================================================
+   PICKUP
+========================================================= */
+.shiv-pickup-note{
+    max-width:700px;
+    margin:-22px auto 35px;
+    text-align:center;
+    color:#728078;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.shiv-pickup-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.shiv-pickup{
+    padding:13px 15px;
+    border:1px solid var(--shiv-line);
+    border-radius:11px;
+    background:#fff;
+    color:#2b4d3c;
+    font-size:11px;
+    font-weight:700;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+.shiv-booking-cta{
+    padding:75px 6%;
+    background:linear-gradient(135deg,#183d2d,#0e6943);
+}
+
+.shiv-booking-inner{
+    width:min(1050px,100%);
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:35px;
+}
+
+.shiv-booking-copy .shiv-eyebrow{
+    color:#b7df78;
+}
+
+.shiv-booking-copy h2{
+    margin:8px 0 10px;
+    color:#fff;
+    font-size:38px;
+    line-height:1.15;
+}
+
+.shiv-booking-copy p{
+    margin:0;
+    max-width:620px;
+    color:rgba(255,255,255,.78);
+    font-size:12px;
+    line-height:1.8;
+}
+
+.shiv-booking-price{
+    flex:0 0 auto;
+    text-align:right;
+}
+
+.shiv-booking-price strong{
+    display:block;
+    color:#fff;
+    font-size:30px;
+}
+
+.shiv-booking-price span{
+    display:block;
+    margin-bottom:15px;
+    color:rgba(255,255,255,.7);
+    font-size:10px;
+}
+
+.shiv-booking-price a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 23px;
+    border-radius:11px;
+    background:#fff;
+    color:#147d50;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:800;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.shiv-footer{
+    padding:55px 6% 25px;
+    background:#102a1f;
+    color:#fff;
+}
+
+.shiv-footer-inner{
+    width:min(1180px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:45px;
+}
+
+.shiv-footer-brand img{
+    width:125px;
+    height:auto;
+    display:block;
+    margin-bottom:15px;
+}
+
+.shiv-footer-brand p{
+    max-width:310px;
+    margin:0;
+    color:rgba(255,255,255,.62);
+    font-size:11px;
+    line-height:1.8;
+}
+
+.shiv-footer-col h3{
+    margin:0 0 15px;
+    color:#fff;
+    font-size:14px;
+}
+
+.shiv-footer-col a{
+    display:block;
+    width:fit-content;
+    margin-bottom:10px;
+    color:rgba(255,255,255,.67);
+    text-decoration:none;
+    font-size:11px;
+}
+
+.shiv-footer-col a:hover{
+    color:#b7df78;
+}
+
+.shiv-footer-bottom{
+    width:min(1180px,100%);
+    margin:35px auto 0;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.10);
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:rgba(255,255,255,.45);
+    font-size:9px;
+}
+
+/* =========================================================
+   FLOATING / MOBILE BAR
+========================================================= */
+.shiv-floating-whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:25px;
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#25d366;
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+    z-index:9999;
+}
+
+.shiv-mobile-book-bar{
+    display:none;
+}
+
+/* =========================================================
+   ONE MOBILE SECTION
+========================================================= */
+@media(max-width:760px){
+
+    .shiv-hero{
+        min-height:690px;
+        background-position:62% center;
+    }
+
+    .shiv-hero-inner{
+        width:calc(100% - 30px);
+        padding:105px 0 75px;
+    }
+
+    .shiv-kicker{
+        font-size:10px;
+        letter-spacing:1.2px;
+    }
+
+    .shiv-hero h1{
+        font-size:clamp(39px,11vw,56px);
+        line-height:1.08;
+    }
+
+    .shiv-hero-tagline{
+        font-size:20px;
+    }
+
+    .shiv-hero-subtext{
+        font-size:13px;
+        line-height:1.75;
+    }
+
+    .shiv-hero-price{
+        gap:9px;
+    }
+
+    .shiv-price{
+        font-size:22px;
+    }
+
+    .shiv-date-badge{
+        font-size:9px;
+    }
+
+    .shiv-hero-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .shiv-hero-buttons a{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .shiv-info-wrap{
+        margin-top:-35px;
+    }
+
+    .shiv-info-grid{
+        width:calc(100% - 30px);
+        grid-template-columns:1fr 1fr;
+    }
+
+    .shiv-info-item:last-child{
+        grid-column:1/-1;
+    }
+
+    .shiv-section{
+        padding:65px 15px;
+    }
+
+    .shiv-heading{
+        margin-bottom:35px;
+    }
+
+    .shiv-heading h2{
+        font-size:31px;
+    }
+
+    .shiv-overview{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .shiv-overview-image,
+    .shiv-overview-image img{
+        min-height:330px;
+    }
+
+    .shiv-overview-copy h2{
+        font-size:30px;
+    }
+
+    .shiv-highlights{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .shiv-places-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .shiv-place{
+        padding:17px;
+    }
+
+    .shiv-place h3{
+        font-size:13px;
+    }
+
+    .shiv-place p{
+        font-size:9px;
+    }
+
+    .shiv-timeline:before{
+        left:9px;
+    }
+
+    .shiv-timeline-item{
+        grid-template-columns:1fr;
+        gap:8px;
+        padding-left:32px;
+        padding-bottom:20px;
+    }
+
+    .shiv-time{
+        text-align:left;
+        font-size:10px;
+    }
+
+    .shiv-timeline-dot{
+        left:4px;
+        top:2px;
+    }
+
+    .shiv-timeline-content{
+        padding:15px;
+    }
+
+    .shiv-two-col{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .shiv-list-card{
+        padding:23px;
+    }
+
+    .shiv-pickup-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .shiv-booking-cta{
+        padding:65px 15px;
+    }
+
+    .shiv-booking-inner{
+        flex-direction:column;
+        align-items:stretch;
+        gap:25px;
+    }
+
+    .shiv-booking-copy h2{
+        font-size:30px;
+    }
+
+    .shiv-booking-price{
+        text-align:left;
+    }
+
+    .shiv-booking-price a{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .shiv-footer{
+        padding:50px 22px 85px;
+    }
+
+    .shiv-footer-inner{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .shiv-footer-brand{
+        text-align:left;
+    }
+
+    .shiv-footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        margin-top:30px;
+    }
+
+    .shiv-floating-whatsapp{
+        right:15px;
+        bottom:72px;
+    }
+
+    .shiv-mobile-book-bar{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        height:58px;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        z-index:9998;
+        background:#fff;
+        box-shadow:0 -8px 25px rgba(0,0,0,.10);
+    }
+
+    .shiv-mobile-book-bar a{
+        height:58px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        color:#16794d;
+        text-decoration:none;
+        font-size:11px;
+        font-weight:800;
+    }
+
+    .shiv-mobile-book-bar a+a{
+        border-left:1px solid #e3e8e4;
+    }
+
+    .shiv-mobile-book-bar a:last-child{
+        background:#f58200;
+        color:#fff;
+    }
+
+    body{
+        padding-bottom:58px !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="site-header">
+    <div class="header-container">
+
+        <a href="../index.html" class="logo" aria-label="Mauli Tours & Travels Home">
+            <img src="../LOGO.png" alt="Mauli Tours & Travels">
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="../index.html">Home</a>
+            <a href="index.html">Group Tours</a>
+            <a href="../index.html#packages">Packages</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#why-us">Why Us</a>
+            <a href="../index.html#gallery">Gallery</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <a
+            href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20to%20book%20the%20Shivneri%20Special%20Group%20Tour."
+            class="header-book"
+            target="_blank"
+            rel="noopener">
+            Book Now
+        </a>
+
+    </div>
+</header>
+
+
+<main>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="shiv-hero">
+
+    <div class="shiv-hero-inner">
+
+        <div class="shiv-kicker">
+            ✦ SHIVNERI SPECIAL GROUP TOUR
+        </div>
+
+        <h1>
+            Shivneri Special Group Tour
+        </h1>
+
+        <div class="shiv-hero-tagline">
+            पुणेकरांनो, चला शिवनेरीला!
+        </div>
+
+        <p class="shiv-hero-subtext">
+            Experience the birthplace of Chhatrapati Shivaji Maharaj
+            with a special one-day group tour from Pune.
+        </p>
+
+        <div class="shiv-hero-price">
+            <span class="shiv-price">₹1,999/- Per Person</span>
+            <span class="shiv-date-badge">11 OCTOBER 2026 • SUNDAY</span>
+        </div>
+
+        <div class="shiv-hero-buttons">
+            <a href="shivneri-booking.html" class="shiv-primary-btn">
+                Book Your Seat →
+            </a>
+
+            <a href="index.html" class="shiv-secondary-btn">
+                Back to Group Tours
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK INFO
+========================================================= -->
+<section class="shiv-info-wrap">
+
+    <div class="shiv-info-grid">
+
+        <div class="shiv-info-item">
+            <small>DATE</small>
+            <strong>11 October 2026 • Sunday</strong>
+        </div>
+
+        <div class="shiv-info-item">
+            <small>DURATION</small>
+            <strong>1 Day</strong>
+        </div>
+
+        <div class="shiv-info-item">
+            <small>ROUTE</small>
+            <strong>Pune → Shivneri → Pune</strong>
+        </div>
+
+        <div class="shiv-info-item">
+            <small>PRICE</small>
+            <strong>₹1,999 / Person</strong>
+        </div>
+
+        <div class="shiv-info-item">
+            <small>TOUR TYPE</small>
+            <strong>Historical • Heritage • Group Tour</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OVERVIEW
+========================================================= -->
+<section class="shiv-section">
+
+    <div class="shiv-container">
+
+        <div class="shiv-overview">
+
+            <div class="shiv-overview-image">
+                <img
+                    src="../shivneri.jpg"
+                    alt="Shivneri Special Group Tour"
+                    onerror="this.style.display='none';">
+            </div>
+
+            <div class="shiv-overview-copy">
+
+                <span class="shiv-eyebrow">
+                    ✦ THE JOURNEY
+                </span>
+
+                <h2>
+                    Step Into History at Shivneri
+                </h2>
+
+                <p>
+                    Join Mauli Tours & Travels for a specially planned
+                    one-day group journey from Pune to Shivneri.
+                    Explore the historic fort, important heritage sites
+                    and the scenic Sahyadri surroundings.
+                </p>
+
+                <p>
+                    From comfortable transportation and meals to group
+                    coordination, the day is organised so you can focus
+                    on experiencing the history and enjoying the journey.
+                </p>
+
+                <div class="shiv-highlights">
+
+                    <div class="shiv-highlight">
+                        <strong>Historical Experience</strong>
+                        <span>Explore the birthplace and heritage of Chhatrapati Shivaji Maharaj.</span>
+                    </div>
+
+                    <div class="shiv-highlight">
+                        <strong>One-Day Journey</strong>
+                        <span>A planned Pune → Shivneri → Pune group tour.</span>
+                    </div>
+
+                    <div class="shiv-highlight">
+                        <strong>Meals Included</strong>
+                        <span>Breakfast and lunch are included in the tour.</span>
+                    </div>
+
+                    <div class="shiv-highlight">
+                        <strong>Easy Group Travel</strong>
+                        <span>Transportation and tour coordination are planned for you.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PLACES COVERED
+========================================================= -->
+<section class="shiv-section alt">
+
+    <div class="shiv-container">
+
+        <div class="shiv-heading">
+
+            <span class="shiv-eyebrow">
+                ✦ PLACES COVERED
+            </span>
+
+            <h2>
+                Explore Shivneri
+            </h2>
+
+            <p>
+                Discover the key historical and scenic highlights included
+                in this special group tour.
+            </p>
+
+        </div>
+
+
+        <div class="shiv-places-grid">
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">01</span>
+                <h3>Shivneri Fort</h3>
+                <p>Explore the historic fort and its important landmarks.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">02</span>
+                <h3>Chhatrapati Shivaji Maharaj Birthplace</h3>
+                <p>Visit the birthplace of Chhatrapati Shivaji Maharaj.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">03</span>
+                <h3>Jijabai & Bal Shivaji Memorial</h3>
+                <p>Experience this important memorial within the historic site.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">04</span>
+                <h3>Shivai Devi Temple</h3>
+                <p>Visit the historic temple associated with Shivneri.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">05</span>
+                <h3>Badami Talav</h3>
+                <p>See the historic water feature within the fort area.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">06</span>
+                <h3>Seven Fort Gates</h3>
+                <p>Explore the fort gates and defensive heritage of Shivneri.</p>
+            </article>
+
+            <article class="shiv-place">
+                <span class="shiv-place-number">07</span>
+                <h3>Sahyadri Scenic Views</h3>
+                <p>Enjoy the surrounding Sahyadri landscapes and photography.</p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ITINERARY
+========================================================= -->
+<section class="shiv-section">
+
+    <div class="shiv-container">
+
+        <div class="shiv-heading">
+
+            <span class="shiv-eyebrow">
+                ✦ COMPLETE ITINERARY
+            </span>
+
+            <h2>
+                Your Day at a Glance
+            </h2>
+
+            <p>
+                A planned schedule from Pune departure to return.
+            </p>
+
+        </div>
+
+
+        <div class="shiv-timeline">
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">05:30 AM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Pickup from Pune</h3>
+                    <p>Begin the journey from your selected Pune pickup location.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">06:00 AM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Departure from Pune</h3>
+                    <p>Depart for Shivneri and enjoy the morning journey.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">08:30 AM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Breakfast</h3>
+                    <p>Breakfast stop during the journey.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">10:00 AM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Arrival at Shivneri / Junnar</h3>
+                    <p>Arrive in the Shivneri and Junnar region.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">10:15 AM – 01:30 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Shivneri Fort Exploration</h3>
+                    <p>Explore Shivneri Fort, birthplace, memorials, temple, Badami Talav, seven gates and scenic viewpoints.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">01:30 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Lunch</h3>
+                    <p>Lunch stop for the group.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">02:30 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Local Sightseeing & Photography</h3>
+                    <p>Enjoy local sightseeing and photography around Shivneri.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">03:30 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Departure for Pune</h3>
+                    <p>Begin the return journey to Pune.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">06:00 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Refreshment Break</h3>
+                    <p>Short refreshment break during the return journey.</p>
+                </div>
+            </div>
+
+            <div class="shiv-timeline-item">
+                <div class="shiv-time">08:00–09:00 PM</div>
+                <span class="shiv-timeline-dot"></span>
+                <div class="shiv-timeline-content">
+                    <h3>Arrival in Pune</h3>
+                    <p>Complete the Shivneri Special Group Tour in Pune.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INCLUDED / EXCLUDED
+========================================================= -->
+<section class="shiv-section alt">
+
+    <div class="shiv-container">
+
+        <div class="shiv-heading">
+
+            <span class="shiv-eyebrow">
+                ✦ TOUR DETAILS
+            </span>
+
+            <h2>
+                What's Included
+            </h2>
+
+            <p>
+                Know exactly what is covered in your ₹1,999 tour price.
+            </p>
+
+        </div>
+
+
+        <div class="shiv-two-col">
+
+            <div class="shiv-list-card">
+
+                <h3>Included</h3>
+
+                <ul class="shiv-list">
+                    <li>Pune → Shivneri → Pune transportation</li>
+                    <li>Breakfast</li>
+                    <li>Lunch</li>
+                    <li>Shivneri Fort visit</li>
+                    <li>Tour coordinator</li>
+                    <li>Applicable toll & parking charges</li>
+                    <li>Group tour coordination</li>
+                </ul>
+
+            </div>
+
+
+            <div class="shiv-list-card">
+
+                <h3>Excluded</h3>
+
+                <ul class="shiv-list shiv-excluded">
+                    <li>Personal expenses</li>
+                    <li>Shopping</li>
+                    <li>Medical expenses</li>
+                    <li>Optional activities</li>
+                    <li>Any expenses not specifically mentioned</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BOOKING CTA
+========================================================= -->
+<section class="shiv-booking-cta">
+
+    <div class="shiv-booking-inner">
+
+        <div class="shiv-booking-copy">
+
+            <span class="shiv-eyebrow">
+                ✦ READY TO TRAVEL?
+            </span>
+
+            <h2>
+                Puneकरांनो, चला शिवनेरीला!
+            </h2>
+
+            <p>
+                Select your seats and continue to the online booking process. Your pickup
+                location will be selected during booking.
+            </p>
+
+        </div>
+
+
+        <div class="shiv-booking-price">
+
+            <strong>₹1,999/-</strong>
+            <span>PER PERSON</span>
+
+            <a href="shivneri-booking.html">
+                Book Your Seat →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="shiv-footer">
+
+    <div class="shiv-footer-inner">
+
+        <div class="shiv-footer-brand">
+
+            <a href="../index.html">
+                <img src="../LOGO.png" alt="Mauli Tours & Travels Logo">
+            </a>
+
+            <p>
+                Explore • Experience • Enjoy.
+                Comfortable, safe and memorable journeys
+                from Pune and beyond.
+            </p>
+
+        </div>
+
+
+        <div class="shiv-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <a href="../index.html">Home</a>
+            <a href="index.html">Group Tours</a>
+            <a href="../index.html#packages">Packages</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact">Contact</a>
+
+        </div>
+
+
+        <div class="shiv-footer-col">
+
+            <h3>Contact</h3>
+
+            <a href="tel:+919226718177">9226718177</a>
+
+            <a
+                href="https://wa.me/919226718177"
+                target="_blank"
+                rel="noopener">
+                WhatsApp
+            </a>
+
+            <a href="mailto:maulitoursandtravels2150@gmail.com">
+                Email Us
+            </a>
+
+            <a
+                href="https://www.instagram.com/mauli_tours_and_travels_2150/"
+                target="_blank"
+                rel="noopener">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="shiv-footer-bottom">
+
+        <span>
+            © <span id="currentYear"></span>
+            Mauli Tours & Travels. All Rights Reserved.
+        </span>
+
+        <span>
+            Pune, Maharashtra
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+<a
+    href="https://wa.me/919226718177?text=Hello%20Mauli%20Tours%20%26%20Travels%2C%20I%20want%20information%20about%20the%20Shivneri%20Special%20Group%20Tour."
+    class="shiv-floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat on WhatsApp">
+    ✆
+</a>
+
+
+<!-- =========================================================
+     MOBILE BOOK BAR
+========================================================= -->
+<div class="shiv-mobile-book-bar">
+
+    <a href="tel:+919226718177">
+        Call
+    </a>
+
+    <a
+        href="https://wa.me/919226718177"
+        target="_blank"
+        rel="noopener">
+        WhatsApp
+    </a>
+
+    <a href="shivneri-booking.html">
+        Book Now
+    </a>
+
+</div>
+
+
+<script>
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener("click", function () {
+
+        mainNav.classList.toggle("open");
+        menuToggle.classList.toggle("active");
+
+        const expanded =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(!expanded)
+        );
+
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mainNav.classList.remove("open");
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+}
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+</script>
+
+</body>
+</html>
