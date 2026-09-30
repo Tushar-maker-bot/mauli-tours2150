@@ -186,201 +186,136 @@
         }
 
 
-        /* =====================================================
-           GROUP TOUR CARD
-        ====================================================== */
+            /* =========================================================
+       APPROVED TOUR CARD
+       ========================================================= */
 
-        .group-tour-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 28px;
-            max-width: 1180px;
-            margin: 0 auto;
-        }
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
 
+    .tour-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e3ece6;
+      border-radius: 21px;
+      box-shadow: 0 10px 32px rgba(24, 61, 45, .07);
+    }
 
-        .group-tour-card {
-            overflow: hidden;
-            background: #ffffff;
-            border-radius: 22px;
-            border: 1px solid rgba(30, 50, 38, 0.09);
-            box-shadow: 0 18px 50px rgba(25, 45, 32, 0.09);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+    .tour-image {
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background: #dfece5;
+    }
 
+    .tour-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
 
-        .group-tour-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 25px 65px rgba(25, 45, 32, 0.15);
-        }
+    .tour-status {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #138653;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      box-shadow: 0 5px 15px rgba(0,0,0,.13);
+    }
 
+    .tour-content {
+      padding: 21px;
+    }
 
-        .group-tour-image {
-            position: relative;
-            height: 275px;
-            overflow: hidden;
-        }
+    .tour-date {
+      color: #147d50;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
 
+    .tour-content h3 {
+      margin: 6px 0 6px;
+      color: #183d2d;
+      font-size: 22px;
+    }
 
-        .group-tour-image img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+    .tour-content p {
+      margin: 0;
+      color: #728078;
+      font-size: 12px;
+      line-height: 1.7;
+    }
 
+    .tour-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 18px 0;
+    }
 
-        .group-tour-card:hover .group-tour-image img {
-            transform: scale(1.05);
-        }
+    .meta {
+      padding: 10px;
+      border-radius: 11px;
+      background: #f5f9f6;
+      border: 1px solid #e7eee9;
+    }
 
+    .meta small {
+      display: block;
+      color: #7d8982;
+      font-size: 9px;
+      margin-bottom: 3px;
+    }
 
-        .tour-status {
-            position: absolute;
-            top: 18px;
-            left: 18px;
-            z-index: 2;
+    .meta strong {
+      color: #2b4d3c;
+      font-size: 11px;
+    }
 
-            padding: 8px 14px;
+    .tour-actions {
+      display: flex;
+      gap: 9px;
+    }
 
-            border-radius: 50px;
+    .tour-btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px 10px;
+      border-radius: 11px;
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: .25s ease;
+    }
 
-            background: #ffffff;
-            color: #284a31;
+    .details-btn {
+      color: #16794d;
+      background: #eaf6ef;
+    }
 
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1px;
+    .details-btn:hover {
+      background: #dff1e7;
+      transform: translateY(-1px);
+    }
 
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+    .book-btn {
+      color: #fff;
+      background: #118653;
+    }
 
-
-        .tour-status.sold-out {
-            color: #ffffff;
-            background: #8d3f3f;
-        }
-
-
-        .group-tour-content {
-            padding: 27px;
-        }
-
-
-        .group-tour-date {
-            display: inline-block;
-            margin-bottom: 9px;
-
-            color: #6b7f69;
-
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-        }
-
-
-        .group-tour-content h3 {
-            margin: 0 0 11px;
-            color: #1e2d22;
-            font-size: 24px;
-            line-height: 1.25;
-        }
-
-
-        .group-tour-description {
-            margin: 0 0 22px;
-            color: #687068;
-            font-size: 14px;
-            line-height: 1.75;
-        }
-
-
-        .group-tour-meta {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 17px 0;
-            margin-bottom: 21px;
-
-            border-top: 1px solid #e8ece8;
-            border-bottom: 1px solid #e8ece8;
-        }
-
-
-        .group-tour-meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-
-        .group-tour-meta-item span {
-            color: #8a908b;
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-        }
-
-
-        .group-tour-meta-item strong {
-            color: #253528;
-            font-size: 12px;
-        }
-
-
-        .group-tour-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-
-        .group-tour-actions a {
-            flex: 1;
-            min-height: 47px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 10px 14px;
-
-            border-radius: 10px;
-
-            text-decoration: none;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            transition: 0.25s ease;
-        }
-
-
-        .group-view-btn {
-            border: 1px solid #263f2d;
-            color: #263f2d;
-            background: transparent;
-        }
-
-
-        .group-view-btn:hover {
-            background: #263f2d;
-            color: #ffffff;
-        }
-
-
-        .group-book-btn {
-            background: #263f2d;
-            color: #ffffff;
-        }
-
-
-        .group-book-btn:hover {
-            background: #182b1d;
-        }
+    .book-btn:hover {
+      background: #0d7347;
+      transform: translateY(-1px);
+    }
 
 
         /* SOLD OUT */
