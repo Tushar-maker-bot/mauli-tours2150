@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shivneri Special Group Tour – Booking | Mauli Tours & Travels</title>
+    <meta name="description" content="Book your seat for the Shivneri Special Group Tour on 11 October 2026 with Mauli Tours & Travels.">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* =========================
+           BOOKING PAGE
+        ========================== */
+
+        :root {
+            --booking-green: #198754;
+            --booking-dark: #12372a;
+            --booking-light: #f5faf7;
+            --booking-border: #dfe9e3;
+            --booking-text: #24332c;
+            --booking-muted: #6b7771;
+            --booking-white: #ffffff;
+            --booking-danger: #dc3545;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f6f8f7;
+            color: var(--booking-text);
+            font-family: "Poppins", Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .booking-header {
+            background: rgba(255,255,255,0.98);
+            border-bottom: 1px solid #e8ece9;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .booking-header-inner {
+            max-width: 1180px;
+            margin: auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .booking-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .booking-logo img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .booking-logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--booking-dark);
+            line-height: 1.2;
+        }
+
+        .booking-logo-text span {
+            display: block;
+            font-size: 12px;
+            color: var(--booking-green);
+            font-weight: 600;
+        }
+
+        .back-tour-btn {
+            border: 1px solid var(--booking-green);
+            color: var(--booking-green);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .back-tour-btn:hover {
+            background: var(--booking-green);
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .booking-hero {
+            background:
+                linear-gradient(135deg, rgba(10,48,34,0.96), rgba(25,135,84,0.90));
+            color: white;
+            padding: 55px 20px;
+        }
+
+        .booking-hero-inner {
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        .booking-hero small {
+            display: inline-block;
+            background: rgba(255,255,255,0.14);
+            padding: 7px 14px;
+            border-radius: 30px;
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .booking-hero h1 {
+            margin: 0 0 10px;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.15;
+        }
+
+        .booking-hero p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.92;
+        }
+
+        /* =========================
+           TOUR INFO
+        ========================== */
+
+        .tour-info-wrap {
+            max-width: 1180px;
+            margin: -28px auto 30px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tour-info {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.09);
+            padding: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .tour-info-card {
+            padding: 15px;
+            border-radius: 12px;
+            background: var(--booking-light);
+            border: 1px solid #e3eee8;
+        }
+
+        .tour-info-card span {
+            display: block;
+            font-size: 12px;
+            color: var(--booking-muted);
+            margin-bottom: 5px;
+        }
+
+        .tour-info-card strong {
+            font-size: 17px;
+            color: var(--booking-dark);
+        }
+
+        /* =========================
+           MAIN LAYOUT
+        ========================== */
+
+        .booking-container {
+            max-width: 1180px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.8fr);
+            gap: 25px;
+            align-items: start;
+        }
+
+        .booking-card {
+            background: white;
+            border: 1px solid var(--booking-border);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--booking-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 21px;
+            color: var(--booking-dark);
+        }
+
+        .section-heading p {
+            margin: 3px 0 0;
+            font-size: 13px;
+            color: var(--booking-muted);
+        }
+
+        /* =========================
+           SEAT SELECTOR
+        ========================== */
+
+        .seat-selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px;
+            background: var(--booking-light);
+            border: 1px solid #dcebe2;
+            border-radius: 14px;
+        }
+
+        .seat-text strong {
+            display: block;
+            font-size: 17px;
+            color: var(--booking-dark);
+        }
+
+        .seat-text span {
+            font-size: 13px;
+            color: var(--booking-muted);
+        }
+
+        .seat-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .seat-btn {
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 10px;
+            background: var(--booking-green);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .seat-btn:hover {
+            opacity: 0.88;
+        }
+
+        #seatCount {
+            min-width: 38px;
+            text-align: center;
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--booking-dark);
+        }
+
+        /* =========================
+           FORM
+        ========================== */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 17px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: var(--booking-dark);
+        }
+
+        .required {
+            color: var(--booking-danger);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            height: 48px;
+            padding: 0 13px;
+            border: 1px solid #d6e1db;
+            border-radius: 9px;
+            outline: none;
+            background: white;
+            color: var(--booking-text);
+            font-family: inherit;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--booking-green);
+            box-shadow: 0 0 0 3px rgba(25,135,84,0.10);
+        }
+
+        .field-error {
+            color: var(--booking-danger);
+            font-size: 11px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .traveller-card {
+            border: 1px solid var(--booking-border);
+            border-radius: 12px;
+            padding: 17px;
+            margin-bottom: 15px;
+            background: #fcfefd;
+        }
+
+        .traveller-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--booking-dark);
+            margin-bottom: 14px;
+        }
+
+        /* =========================
+           PICKUP
+        ========================== */
+
+        .pickup-note {
+            background: #fff8e8;
+            border: 1px solid #f2dfad;
+            padding: 12px 14px;
+            border-radius: 9px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #725b1c;
+        }
+
+        /* =========================
+           SUMMARY
+        ========================== */
+
+        .summary-card {
+            position: sticky;
+            top: 95px;
+        }
+
+        .summary-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .summary-header h2 {
+            margin: 0;
+            color: var(--booking-dark);
+            font-size: 21px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 11px 0;
+            border-bottom: 1px dashed #dce5df;
+            font-size: 14px;
+        }
+
+        .summary-item span:first-child {
+            color: var(--booking-muted);
+        }
+
+        .summary-item strong {
+            color: var(--booking-dark);
+            text-align: right;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+
+        .total-row span {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .total-row strong {
+            color: var(--booking-green);
+            font-size: 25px;
+        }
+
+        .payment-btn {
+            width: 100%;
+            border: none;
+            background: var(--booking-green);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.25s;
+        }
+
+        .payment-btn:hover {
+            background: #157347;
+            transform: translateY(-1px);
+        }
+
+        .secure-note {
+            text-align: center;
+            color: var(--booking-muted);
+            font-size: 11px;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           TERMS
+        ========================== */
+
+        .terms-box {
+            margin-top: 18px;
+            padding: 13px;
+            border-radius: 9px;
+            background: #f8faf9;
+            border: 1px solid #e5ece8;
+            font-size: 12px;
+            color: var(--booking-muted);
+            line-height: 1.6;
+        }
+
+        .checkbox-row {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            margin-top: 15px;
+            font-size: 12px;
+            color: var(--booking-muted);
+        }
+
+        .checkbox-row input {
+            margin-top: 3px;
+            accent-color: var(--booking-green);
+        }
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================== */
+
+        .success-message {
+            display: none;
+            background: #eaf8f0;
+            border: 1px solid #b8e3ca;
+            color: #155d35;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .booking-footer {
+            background: #10251d;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .booking-footer p {
+            margin: 5px 0;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .booking-footer a {
+            color: #8ee0b1;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                position: static;
+            }
+
+            .tour-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .booking-header-inner {
+                padding: 10px 14px;
+            }
+
+            .booking-logo img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .booking-logo-text {
+                font-size: 15px;
+            }
+
+            .booking-logo-text span {
+                font-size: 10px;
+            }
+
+            .back-tour-btn {
+                padding: 8px 11px;
+                font-size: 12px;
+            }
+
+            .booking-hero {
+                padding: 40px 16px;
+            }
+
+            .booking-hero h1 {
+                font-size: 29px;
+            }
+
+            .tour-info-wrap {
+                padding: 0 14px;
+                margin-top: -20px;
+            }
+
+            .tour-info {
+                padding: 13px;
+            }
+
+            .booking-container {
+                padding: 0 14px;
+                margin-bottom: 35px;
+            }
+
+            .booking-card {
+                padding: 18px;
+                border-radius: 13px;
+            }
+
+            .section-heading h2 {
+                font-size: 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .seat-selector {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .seat-controls {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="booking-header">
+    <div class="booking-header-inner">
+
+        <a href="shivneri.html" class="booking-logo">
+            <img src="../LOGO.png" alt="Mauli Tours & Travels Logo">
+
+            <div class="booking-logo-text">
+                Mauli Tours & Travels
+                <span>Explore • Experience • Enjoy</span>
+            </div>
+        </a>
+
+        <a href="shivneri.html" class="back-tour-btn">
+            ← Back to Tour
+        </a>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="booking-hero">
+
+    <div class="booking-hero-inner">
+
+        <small>🎟️ Group Tour Booking</small>
+
+        <h1>Shivneri Special Group Tour</h1>
+
+        <p>
+            Complete your booking details and reserve your seats for the Shivneri tour.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TOUR INFO
+========================== -->
+
+<div class="tour-info-wrap">
+
+    <div class="tour-info">
+
+        <div class="tour-info-card">
+            <span>📅 Tour Date</span>
+            <strong>11 October 2026, Sunday</strong>
+        </div>
+
+        <div class="tour-info-card">
+            <span>📍 Route</span>
+            <strong>Pune → Shivneri → Pune</strong>
+        </div>
+
+        <div class="tour-info-card">
+            <span>💰 Price</span>
+            <strong>₹1,999 / Person</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN BOOKING AREA
+========================== -->
+
+<main class="booking-container">
+
+    <div>
+
+        <div id="successMessage" class="success-message">
+            <strong>Booking details are ready!</strong><br>
+            Your payment gateway will be connected next. No payment has been processed yet.
+        </div>
+
+
+        <!-- STEP 1 -->
+
+        <section class="booking-card">
+
+            <div class="section-heading">
+
+                <div class="section-number">1</div>
+
+                <div>
+                    <h2>Select Number of Seats</h2>
+                    <p>Choose how many people will travel.</p>
+                </div>
+
+            </div>
+
+
+            <div class="seat-selector">
+
+                <div class="seat-text">
+
+                    <strong>Number of Seats</strong>
+
+                    <span>₹1,999 per person</span>
+
+                </div>
+
+
+                <div class="seat-controls">
+
+                    <button
+                        type="button"
+                        class="seat-btn"
+                        id="minusSeat">
+                        −
+                    </button>
+
+                    <span id="seatCount">1</span>
+
+                    <button
+                        type="button"
+                        class="seat-btn"
+                        id="plusSeat">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 2 -->
+
+        <section class="booking-card">
+
+            <div class="section-heading">
+
+                <div class="section-number">2</div>
+
+                <div>
+                    <h2>Select Pickup Location</h2>
+                    <p>Your pickup location is required for this tour.</p>
+                </div>
+
+            </div>
+
+
+            <div class="pickup-note">
+                📍 Please select the pickup point from where you would like to join the tour.
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="pickupLocation">
+                    Pickup Location <span class="required">*</span>
+                </label>
+
+                <select id="pickupLocation" required>
+
+                    <option value="">Select your pickup location</option>
+
+                    <option>Hadapsar</option>
+                    <option>Swargate</option>
+                    <option>Pune Station</option>
+                    <option>Kothrud</option>
+                    <option>Chandani Chowk</option>
+                    <option>Baner</option>
+                    <option>Hinjawadi</option>
+                    <option>Wakad</option>
+                    <option>Pimpri</option>
+                    <option>Chinchwad</option>
+                    <option>Akurdi</option>
+                    <option>Walhekarwadi</option>
+                    <option>Ravet</option>
+                    <option>Nigdi</option>
+                    <option>Chikhli</option>
+                    <option>Viman Nagar</option>
+                    <option>Vishrantwadi</option>
+                    <option>Khadki</option>
+                    <option>Bopodi</option>
+                    <option>Dapodi</option>
+                    <option>Nashik Phata</option>
+                    <option>Bhosari</option>
+                    <option>Dehu Phata</option>
+                    <option>Moshi</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 3 -->
+
+        <section class="booking-card">
+
+            <div class="section-heading">
+
+                <div class="section-number">3</div>
+
+                <div>
+                    <h2>Contact Details</h2>
+                    <p>Enter the main traveller's contact information.</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter 10-digit mobile number"
+                        maxlength="10"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email address">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 4 -->
+
+        <section class="booking-card">
+
+            <div class="section-heading">
+
+                <div class="section-number">4</div>
+
+                <div>
+                    <h2>Traveller Details</h2>
+                    <p>Enter details for each traveller.</p>
+                </div>
+
+            </div>
+
+
+            <div id="travellerContainer"></div>
+
+        </section>
+
+
+        <!-- TERMS -->
+
+        <section class="booking-card">
+
+            <div class="section-heading">
+
+                <div class="section-number">✓</div>
+
+                <div>
+                    <h2>Confirm Booking</h2>
+                    <p>Check your details before continuing.</p>
+                </div>
+
+            </div>
+
+
+            <div class="terms-box">
+
+                Please make sure that your mobile number, pickup location and traveller
+                details are correct before proceeding to payment.
+
+            </div>
+
+
+            <label class="checkbox-row">
+
+                <input type="checkbox" id="agreeTerms">
+
+                <span>
+                    I confirm that the information provided above is correct and I agree
+                    to proceed with the booking.
+                </span>
+
+            </label>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         BOOKING SUMMARY
+    ========================== -->
+
+    <aside>
+
+        <div class="booking-card summary-card">
+
+            <div class="summary-header">
+
+                <h2>Booking Summary</h2>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Tour</span>
+
+                <strong>Shivneri Special</strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Date</span>
+
+                <strong>11 Oct 2026</strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Route</span>
+
+                <strong>Pune → Shivneri → Pune</strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Pickup</span>
+
+                <strong id="summaryPickup">Not selected</strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Seats</span>
+
+                <strong id="summarySeats">1</strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>Price / Person</span>
+
+                <strong>₹1,999</strong>
+
+            </div>
+
+
+            <div class="total-row">
+
+                <span>Total Amount</span>
+
+                <strong id="totalAmount">₹1,999</strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="payment-btn"
+                id="paymentButton">
+
+                Proceed to Payment →
+
+            </button>
+
+
+            <div class="secure-note">
+
+                🔒 Your details are used only for booking communication.<br>
+                Payment gateway integration will be added next.
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer class="booking-footer">
+
+    <p>
+        <strong>Mauli Tours & Travels</strong>
+    </p>
+
+    <p>
+        Comfortable, Safe & Memorable Tours & Travels.
+    </p>
+
+    <p>
+        📞
+        <a href="tel:+919226718177">
+            9226718177
+        </a>
+        &nbsp; | &nbsp;
+        WhatsApp available
+    </p>
+
+    <p>
+        © 2026 Mauli Tours & Travels. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    const PRICE_PER_PERSON = 1999;
+
+    let seats = 1;
+
+
+    const seatCount = document.getElementById("seatCount");
+    const summarySeats = document.getElementById("summarySeats");
+    const totalAmount = document.getElementById("totalAmount");
+
+    const minusSeat = document.getElementById("minusSeat");
+    const plusSeat = document.getElementById("plusSeat");
+
+    const pickupLocation = document.getElementById("pickupLocation");
+    const summaryPickup = document.getElementById("summaryPickup");
+
+    const travellerContainer =
+        document.getElementById("travellerContainer");
+
+
+    /* =========================
+       UPDATE SUMMARY
+    ========================== */
+
+    function updateSummary() {
+
+        seatCount.textContent = seats;
+
+        summarySeats.textContent = seats;
+
+        totalAmount.textContent =
+            "₹" + (seats * PRICE_PER_PERSON).toLocaleString("en-IN");
+
+    }
+
+
+    /* =========================
+       SEAT PLUS
+    ========================== */
+
+    plusSeat.addEventListener("click", function () {
+
+        if (seats < 20) {
+
+            seats++;
+
+            updateSummary();
+
+            createTravellerFields();
+
+        }
+
+    });
+
+
+    /* =========================
+       SEAT MINUS
+    ========================== */
+
+    minusSeat.addEventListener("click", function () {
+
+        if (seats > 1) {
+
+            seats--;
+
+            updateSummary();
+
+            createTravellerFields();
+
+        }
+
+    });
+
+
+    /* =========================
+       PICKUP
+    ========================== */
+
+    pickupLocation.addEventListener("change", function () {
+
+        if (this.value) {
+
+            summaryPickup.textContent = this.value;
+
+        } else {
+
+            summaryPickup.textContent = "Not selected";
+
+        }
+
+    });
+
+
+    /* =========================
+       CREATE TRAVELLER FIELDS
+    ========================== */
+
+    function createTravellerFields() {
+
+        travellerContainer.innerHTML = "";
+
+
+        for (let i = 1; i <= seats; i++) {
+
+            const travellerCard =
+                document.createElement("div");
+
+            travellerCard.className = "traveller-card";
+
+
+            travellerCard.innerHTML = `
+
+                <div class="traveller-title">
+                    Traveller ${i}
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            class="traveller-name"
+                            placeholder="Enter full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Age <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="number"
+                            class="traveller-age"
+                            placeholder="Enter age"
+                            min="1"
+                            max="100"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Gender <span class="required">*</span>
+                        </label>
+
+                        <select class="traveller-gender" required>
+
+                            <option value="">
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+            `;
+
+
+            travellerContainer.appendChild(travellerCard);
+
+        }
+
+    }
+
+
+    /* =========================
+       VALIDATE FORM
+    ========================== */
+
+    function validateBooking() {
+
+        const pickup =
+            pickupLocation.value.trim();
+
+        const mobile =
+            document.getElementById("mobile").value.trim();
+
+        const terms =
+            document.getElementById("agreeTerms").checked;
+
+
+        if (!pickup) {
+
+            alert("Please select your pickup location.");
+
+            pickupLocation.focus();
+
+            return false;
+
+        }
+
+
+        if (!/^[0-9]{10}$/.test(mobile)) {
+
+            alert("Please enter a valid 10-digit mobile number.");
+
+            document.getElementById("mobile").focus();
+
+            return false;
+
+        }
+
+
+        const travellerNames =
+            document.querySelectorAll(".traveller-name");
+
+        const travellerAges =
+            document.querySelectorAll(".traveller-age");
+
+        const travellerGenders =
+            document.querySelectorAll(".traveller-gender");
+
+
+        for (let i = 0; i < seats; i++) {
+
+            if (!travellerNames[i].value.trim()) {
+
+                alert(
+                    "Please enter the full name for Traveller " +
+                    (i + 1) +
+                    "."
+                );
+
+                travellerNames[i].focus();
+
+                return false;
+
+            }
+
+
+            if (!travellerAges[i].value) {
+
+                alert(
+                    "Please enter the age for Traveller " +
+                    (i + 1) +
+                    "."
+                );
+
+                travellerAges[i].focus();
+
+                return false;
+
+            }
+
+
+            if (!travellerGenders[i].value) {
+
+                alert(
+                    "Please select the gender for Traveller " +
+                    (i + 1) +
+                    "."
+                );
+
+                travellerGenders[i].focus();
+
+                return false;
+
+            }
+
+        }
+
+
+        if (!terms) {
+
+            alert(
+                "Please confirm that your booking information is correct."
+            );
+
+            return false;
+
+        }
+
+
+        return true;
+
+    }
+
+
+    /* =========================
+       PAYMENT BUTTON
+    ========================== */
+
+    document.getElementById("paymentButton")
+        .addEventListener("click", function () {
+
+            if (!validateBooking()) {
+                return;
+            }
+
+
+            const successMessage =
+                document.getElementById("successMessage");
+
+
+            successMessage.style.display = "block";
+
+
+            successMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+
+            /*
+                RAZORPAY WILL BE CONNECTED HERE NEXT.
+
+                DO NOT ADD PAYMENT CODE YET.
+            */
+
+            setTimeout(function () {
+
+                alert(
+                    "Your booking details are valid.\n\n" +
+                    "Total Amount: ₹" +
+                    (seats * PRICE_PER_PERSON).toLocaleString("en-IN") +
+                    "\n\n" +
+                    "Payment gateway will be connected in the next step."
+                );
+
+            }, 300);
+
+        });
+
+
+    /* =========================
+       INITIAL LOAD
+    ========================== */
+
+    createTravellerFields();
+
+    updateSummary();
+
+</script>
+
+</body>
+</html>
