@@ -759,6 +759,28 @@
     }
 
 }
+        /* =====================================================
+   GROUP TOUR BOOK BUTTON — MOBILE FIX
+   Overrides main website .book-btn rule
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .tour-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tour-actions .details-btn,
+    .tour-actions .book-btn {
+        display: flex !important;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
 
     </style>
 
