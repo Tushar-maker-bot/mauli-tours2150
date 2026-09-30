@@ -185,137 +185,141 @@
             line-height: 1.8;
         }
 
+/* =========================================================
+   TOUR CARD GRID
+   ========================================================= */
 
-            /* =========================================================
-       APPROVED TOUR CARD
-       ========================================================= */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
 
-    .tour-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
+/* =========================================================
+   TOUR CARD
+   ========================================================= */
 
-    .tour-card {
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid #e3ece6;
-      border-radius: 21px;
-      box-shadow: 0 10px 32px rgba(24, 61, 45, .07);
-    }
+.tour-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e3ece6;
+  border-radius: 21px;
+  box-shadow: 0 10px 32px rgba(24, 61, 45, .07);
+}
 
-    .tour-image {
-      height: 230px;
-      overflow: hidden;
-      position: relative;
-      background: #dfece5;
-    }
+.tour-image {
+  height: 230px;
+  overflow: hidden;
+  position: relative;
+  background: #dfece5;
+}
 
-    .tour-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
+.tour-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
 
-    .tour-status {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: #138653;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 800;
-      box-shadow: 0 5px 15px rgba(0,0,0,.13);
-    }
+.tour-status {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #138653;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(0,0,0,.13);
+}
 
-    .tour-content {
-      padding: 21px;
-    }
+.tour-content {
+  padding: 21px;
+}
 
-    .tour-date {
-      color: #147d50;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .3px;
-    }
+.tour-date {
+  color: #147d50;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
 
-    .tour-content h3 {
-      margin: 6px 0 6px;
-      color: #183d2d;
-      font-size: 22px;
-    }
+.tour-content h3 {
+  margin: 6px 0 6px;
+  color: #183d2d;
+  font-size: 22px;
+}
 
-    .tour-content p {
-      margin: 0;
-      color: #728078;
-      font-size: 12px;
-      line-height: 1.7;
-    }
+.tour-content p {
+  margin: 0;
+  color: #728078;
+  font-size: 12px;
+  line-height: 1.7;
+}
 
-    .tour-meta {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin: 18px 0;
-    }
+.tour-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 18px 0;
+}
 
-    .meta {
-      padding: 10px;
-      border-radius: 11px;
-      background: #f5f9f6;
-      border: 1px solid #e7eee9;
-    }
+.meta {
+  padding: 10px;
+  border-radius: 11px;
+  background: #f5f9f6;
+  border: 1px solid #e7eee9;
+}
 
-    .meta small {
-      display: block;
-      color: #7d8982;
-      font-size: 9px;
-      margin-bottom: 3px;
-    }
+.meta small {
+  display: block;
+  color: #7d8982;
+  font-size: 9px;
+  margin-bottom: 3px;
+}
 
-    .meta strong {
-      color: #2b4d3c;
-      font-size: 11px;
-    }
+.meta strong {
+  color: #2b4d3c;
+  font-size: 11px;
+}
 
-    .tour-actions {
-      display: flex;
-      gap: 9px;
-    }
+.tour-actions {
+  display: flex;
+  gap: 9px;
+}
 
-    .tour-btn {
-      flex: 1;
-      text-align: center;
-      padding: 12px 10px;
-      border-radius: 11px;
-      font-size: 11px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: .25s ease;
-    }
+.tour-btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .25s ease;
+}
 
-    .details-btn {
-      color: #16794d;
-      background: #eaf6ef;
-    }
+.details-btn {
+  color: #16794d;
+  background: #eaf6ef;
+}
 
-    .details-btn:hover {
-      background: #dff1e7;
-      transform: translateY(-1px);
-    }
+.details-btn:hover {
+  background: #dff1e7;
+  transform: translateY(-1px);
+}
 
-    .book-btn {
-      color: #fff;
-      background: #118653;
-    }
+.book-btn {
+  color: #fff;
+  background: #118653;
+}
 
-    .book-btn:hover {
-      background: #0d7347;
-      transform: translateY(-1px);
-    }
+.book-btn:hover {
+  background: #0d7347;
+  transform: translateY(-1px);
+}
+
 
 
         /* SOLD OUT */
