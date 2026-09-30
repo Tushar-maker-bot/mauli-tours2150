@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Group Tours | Mauli Tours & Travels</title>
+
+    <meta name="description"
+          content="Upcoming group tours from Mauli Tours & Travels. View tour details and book your seat online.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- MAIN WEBSITE CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="../index.html"
+               class="logo"
+               aria-label="Mauli Tours & Travels Home">
+
+                <img src="../LOGO.png"
+                     alt="Mauli Tours & Travels Logo">
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+            <nav class="main-nav" id="mainNav">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="index.html"
+                   class="active">
+                    Group Tours
+                </a>
+
+                <a href="../index.html#packages">
+                    Packages
+                </a>
+
+                <a href="../index.html#services">
+                    Services
+                </a>
+
+                <a href="../index.html#why-us">
+                    Why Us
+                </a>
+
+                <a href="../index.html#gallery">
+                    Gallery
+                </a>
+
+                <a href="../index.html#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- HEADER BOOK BUTTON -->
+            <a href="https://wa.me/919226718177"
+               class="header-book"
+               target="_blank">
+
+                Book Now
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         GROUP TOURS PAGE
+    ====================================================== -->
+
+    <main>
+
+        <!-- HERO WILL BE ADDED IN NEXT STEP -->
+
+
+        <!-- GROUP TOURS WILL BE ADDED IN NEXT STEP -->
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <!-- Footer will be added after main sections -->
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const mainNav =
+            document.getElementById("mainNav");
+
+
+        if (menuToggle && mainNav) {
+
+            menuToggle.addEventListener("click", function () {
+
+                mainNav.classList.toggle("active");
+
+                menuToggle.classList.toggle("active");
+
+                const expanded =
+                    menuToggle.getAttribute("aria-expanded") === "true";
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    !expanded
+                );
+
+            });
+
+
+            mainNav.querySelectorAll("a").forEach(link => {
+
+                link.addEventListener("click", function () {
+
+                    mainNav.classList.remove("active");
+
+                    menuToggle.classList.remove("active");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
