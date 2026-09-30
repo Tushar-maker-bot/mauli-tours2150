@@ -333,6 +333,11 @@
         }
 
 
+        .tour-actions .group-tour-sold {
+            width: 100%;
+        }
+
+
         .sold-out-link {
             width: 100%;
             min-height: 47px;
@@ -350,14 +355,6 @@
 
             font-size: 12px;
             font-weight: 700;
-        }
-
-        .tour-actions .group-tour-sold {
-            width: 100%;
-        }
-
-        .tour-status.sold-out {
-            background: #8d3f3f;
         }
 
 
@@ -632,15 +629,15 @@
 
 
         /* =====================================================
-           MOBILE — SINGLE CONSOLIDATED SECTION
+           MOBILE — GROUP TOURS
         ====================================================== */
 
         @media (max-width: 760px) {
 
-            /* Header / page spacing */
+            /* HERO */
             .group-tours-hero {
-                min-height: 760px;
-                padding: 100px 20px 80px;
+                min-height: 720px;
+                padding: 100px 20px 70px;
                 background-position: 62% center;
             }
 
@@ -666,12 +663,16 @@
 
             .group-hero-buttons {
                 width: 100%;
+                display: flex;
                 flex-direction: column;
                 gap: 10px;
             }
 
             .group-hero-buttons a {
                 width: 100%;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
                 justify-content: center;
                 box-sizing: border-box;
             }
@@ -679,19 +680,23 @@
             .group-trust-row {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-                margin-top: 30px;
+                gap: 8px;
+                margin-top: 28px;
+            }
+
+            .group-trust-item {
+                text-align: center;
             }
 
             .group-trust-item strong {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .group-trust-item span {
                 font-size: 9px;
             }
 
-            /* Group tours */
+            /* GROUP TOURS */
             .group-tours-section {
                 padding: 65px 15px;
             }
@@ -713,6 +718,10 @@
                 padding: 21px;
             }
 
+            .tour-content h3 {
+                font-size: 21px;
+            }
+
             .tour-meta {
                 grid-template-columns: 1fr 1fr;
             }
@@ -723,48 +732,63 @@
                 gap: 10px;
             }
 
-            /* Main stylesheet hides .book-btn on mobile; override it here. */
+            .tour-actions .tour-btn,
             .tour-actions .details-btn,
             .tour-actions .book-btn {
-                display: flex !important;
                 width: 100%;
                 min-height: 48px;
+                display: flex !important;
                 align-items: center;
                 justify-content: center;
                 box-sizing: border-box;
             }
 
-            .group-tour-sold {
+            .tour-actions .group-tour-sold {
                 width: 100%;
             }
 
-            /* Why Group Tours */
+            /* WHY GROUP TOURS */
             .group-why-section {
                 padding: 65px 15px;
             }
 
             .group-why-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 35px;
             }
 
             .group-benefits {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            .group-why-image,
+            .group-why-image {
+                min-height: 360px;
+            }
+
             .group-why-image img {
                 min-height: 360px;
             }
 
-            /* Main Website CTA */
+            .group-why-overlay {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 20px;
+            }
+
+            .group-why-overlay strong {
+                font-size: 18px;
+            }
+
+            /* MAIN WEBSITE CTA */
             .main-site-cta {
                 padding: 65px 15px;
             }
 
             .main-site-cta-inner {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
                 gap: 25px;
             }
 
@@ -773,55 +797,104 @@
                 box-sizing: border-box;
             }
 
-            /* Footer */
+            /* FOOTER */
             .group-footer {
-                padding: 55px 20px 85px;
+                padding: 50px 22px 85px !important;
+                text-align: left !important;
             }
 
             .group-footer-inner {
-                grid-template-columns: 1fr;
-                gap: 30px;
+                width: 100%;
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 38px !important;
+                text-align: left !important;
+            }
+
+            .group-footer-brand {
+                width: 100%;
+                text-align: left !important;
+            }
+
+            .group-footer-brand img {
+                width: 125px !important;
+                max-width: 125px !important;
+                height: auto !important;
+                display: block !important;
+                margin: 0 0 16px 0 !important;
+            }
+
+            .group-footer-brand p {
+                max-width: 310px !important;
+                margin: 0 !important;
+                text-align: left !important;
+                font-size: 12px !important;
+                line-height: 1.7 !important;
+            }
+
+            .group-footer-column {
+                width: 100%;
+                text-align: left !important;
+            }
+
+            .group-footer-column h3 {
+                margin-bottom: 16px !important;
+                text-align: left !important;
+                font-size: 15px !important;
+            }
+
+            .group-footer-column a {
+                width: fit-content;
+                margin-bottom: 12px !important;
+                text-align: left !important;
+                font-size: 13px !important;
             }
 
             .group-footer-bottom {
-                flex-direction: column;
-                gap: 8px;
+                width: 100%;
+                margin-top: 35px !important;
+                padding-top: 18px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 7px !important;
+                text-align: left !important;
             }
 
-            /* Floating WhatsApp */
+            /* FLOATING WHATSAPP */
             .floating-whatsapp {
                 position: fixed !important;
                 right: 15px !important;
-                bottom: 73px !important;
+                bottom: 72px !important;
                 width: 54px !important;
                 height: 54px !important;
-                z-index: 999 !important;
                 display: flex !important;
-                align-items: center;
-                justify-content: center;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 9999 !important;
             }
 
-            /* Mobile bottom bar */
+            /* MOBILE BOOK BAR */
             .mobile-book-bar {
                 position: fixed !important;
                 left: 0 !important;
                 right: 0 !important;
                 bottom: 0 !important;
                 width: 100% !important;
-                height: 58px;
+                height: 58px !important;
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr);
-                z-index: 998 !important;
+                z-index: 9998 !important;
             }
 
             .mobile-book-bar a {
-                height: 58px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-size: 12px;
-                font-weight: 800;
+                height: 58px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                font-size: 12px !important;
+                font-weight: 800 !important;
             }
 
             .mobile-book-bar a + a {
@@ -1183,9 +1256,9 @@
 
             <!--
 
-            <article class="tour-card">
+            <article class="group-tour-card">
 
-                <div class="tour-image">
+                <div class="group-tour-image">
 
                     <img src="../tour-image.jpg"
                          alt="Group Tour">
@@ -1196,48 +1269,48 @@
 
                 </div>
 
-                <div class="tour-content">
+                <div class="group-tour-content">
 
-                    <div class="tour-date">
+                    <span class="group-tour-date">
                         Tour Date • Sunday
-                    </div>
+                    </span>
 
                     <h3>
                         Future Group Tour
                     </h3>
 
-                    <p>
+                    <p class="group-tour-description">
                         Your upcoming group tour description.
                     </p>
 
-                    <div class="tour-meta">
+                    <div class="group-tour-meta">
 
-                        <div class="meta">
-                            <small>Duration</small>
+                        <div class="group-tour-meta-item">
+                            <span>Duration</span>
                             <strong>1 Day</strong>
                         </div>
 
-                        <div class="meta">
-                            <small>Price</small>
+                        <div class="group-tour-meta-item">
+                            <span>Price</span>
                             <strong>₹0 / Person</strong>
                         </div>
 
-                        <div class="meta">
-                            <small>Route</small>
+                        <div class="group-tour-meta-item">
+                            <span>Route</span>
                             <strong>Pune → Destination</strong>
                         </div>
 
                     </div>
 
-                    <div class="tour-actions">
+                    <div class="group-tour-actions">
 
                         <a href="#"
-                           class="tour-btn details-btn">
+                           class="group-view-btn">
                             View Details
                         </a>
 
                         <a href="#"
-                           class="tour-btn book-btn">
+                           class="group-book-btn">
                             Book Your Seat
                         </a>
 
