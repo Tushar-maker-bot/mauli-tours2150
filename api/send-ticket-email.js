@@ -63,8 +63,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
 
           from:
-            "Mauli Tours & Travels <onboarding@resend.dev>",
-
+  "Mauli Tours & Travels <booking@maulitoursandtravels.co.in>",
           to: [
             customerEmail
           ],
