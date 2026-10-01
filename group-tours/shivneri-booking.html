@@ -1008,16 +1008,17 @@
 
                     <label for="email">
 
-                        Email Address
+    Email Address
+    <span class="required">*</span>
 
-                    </label>
+</label>
 
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email address"
-                    >
+<input
+    type="email"
+    id="email"
+    placeholder="Enter your email address"
+    required
+>
 
                 </div>
 
@@ -1707,24 +1708,35 @@
            EMAIL VALIDATION
         ========================== */
 
-        if (
-            email &&
-            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-                .test(email)
-        ) {
+if (!email) {
 
-            alert(
-                "Please enter a valid email address."
-            );
+    alert(
+        "Please enter your email address."
+    );
 
-            document
-                .getElementById("email")
-                .focus();
+    document
+        .getElementById("email")
+        .focus();
 
-            return false;
+    return false;
 
-        }
+}
 
+if (
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+) {
+
+    alert(
+        "Please enter a valid email address."
+    );
+
+    document
+        .getElementById("email")
+        .focus();
+
+    return false;
+
+}
 
         /* =========================
            TRAVELLER VALIDATION
