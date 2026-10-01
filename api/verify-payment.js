@@ -25,7 +25,9 @@ export default async function handler(req, res) {
             !razorpay_signature
         ) {
             return res.status(400).json({
-                error: "Missing payment verification details"
+                success: false,
+                error:
+                    "Missing payment verification details"
             });
         }
 
@@ -37,20 +39,21 @@ export default async function handler(req, res) {
 
         if (!keySecret) {
             return res.status(500).json({
+                success: false,
                 error:
                     "Razorpay secret is not configured"
             });
         }
 
 
-        // Create the signature string
+        // Razorpay signature message
         const body =
             razorpay_order_id +
             "|" +
             razorpay_payment_id;
 
 
-        // Generate HMAC SHA256 signature
+        // Generate expected signature
         const expectedSignature =
             crypto
                 .createHmac(
@@ -61,11 +64,40 @@ export default async function handler(req, res) {
                 .digest("hex");
 
 
-        // Compare signatures
+        // Convert signatures to buffers
+        const expectedBuffer =
+            Buffer.from(
+                expectedSignature,
+                "utf8"
+            );
+
+        const receivedBuffer =
+            Buffer.from(
+                razorpay_signature,
+                "utf8"
+            );
+
+
+        // Check length before timingSafeEqual
+        if (
+            expectedBuffer.length !==
+            receivedBuffer.length
+        ) {
+
+            return res.status(400).json({
+                success: false,
+                error:
+                    "Payment verification failed"
+            });
+
+        }
+
+
+        // Secure signature comparison
         const isValid =
             crypto.timingSafeEqual(
-                Buffer.from(expectedSignature),
-                Buffer.from(razorpay_signature)
+                expectedBuffer,
+                receivedBuffer
             );
 
 
@@ -93,10 +125,7 @@ export default async function handler(req, res) {
                 razorpay_payment_id,
 
             orderId:
-                razorpay_order_id,
-
-            signature:
-                razorpay_signature
+                razorpay_order_id
 
         });
 
