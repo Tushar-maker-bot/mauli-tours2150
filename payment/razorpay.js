@@ -2,6 +2,7 @@ async function startRazorpayPayment({
     amount,
     tourName,
     tourDate,
+    route,
     seats,
     pickupLocation,
     customerName,
@@ -269,7 +270,7 @@ async function startRazorpayPayment({
                                                     tourDate,
 
                                                 route:
-                                                    "Pune → Shivneri → Pune",
+                                                    route || "-",
 
                                                 pickupLocation:
                                                     pickupLocation,
@@ -405,6 +406,9 @@ async function startRazorpayPayment({
 
                                 tourDate:
                                     tourDate,
+
+                                route:
+                                    route || "-",
 
                                 seats:
                                     seats,
