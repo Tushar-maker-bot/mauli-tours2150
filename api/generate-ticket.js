@@ -275,12 +275,14 @@ export default async function handler(req, res) {
       275
     );
 
-    detailRow(
-      doc,
-      "Route",
-      route || "-",
-      300
-    );
+ detailRow(
+  doc,
+  "Route",
+  route
+    ? route.replace(/→/g, "->")
+    : "-",
+  300
+);
 
     detailRow(
       doc,
