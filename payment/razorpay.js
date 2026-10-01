@@ -225,8 +225,161 @@ async function startRazorpayPayment({
                         }
 
 
+                        // =====================================
+                        // 5. PAYMENT VERIFIED + BOOKING SAVED
+                        // =====================================
+
+                        const bookingId =
+                            verifyData.bookingId;
+
+
+                        // =====================================
+                        // 6. GENERATE PDF E-TICKET
+                        // =====================================
+
+                        let ticketGenerated = false;
+
+                        try {
+
+                            const ticketResponse =
+                                await fetch(
+                                    "/api/generate-ticket",
+                                    {
+
+                                        method:
+                                            "POST",
+
+                                        headers: {
+
+                                            "Content-Type":
+                                                "application/json"
+
+                                        },
+
+                                        body:
+                                            JSON.stringify({
+
+                                                bookingId:
+                                                    bookingId,
+
+                                                tourName:
+                                                    tourName,
+
+                                                tourDate:
+                                                    tourDate,
+
+                                                route:
+                                                    "Pune → Shivneri → Pune",
+
+                                                pickupLocation:
+                                                    pickupLocation,
+
+                                                customerName:
+                                                    customerName,
+
+                                                customerPhone:
+                                                    customerPhone,
+
+                                                customerEmail:
+                                                    customerEmail,
+
+                                                seats:
+                                                    seats,
+
+                                                amount:
+                                                    amount,
+
+                                                paymentId:
+                                                    response
+                                                        .razorpay_payment_id,
+
+                                                paymentStatus:
+                                                    "PAID",
+
+                                                travellers:
+                                                    travellers
+
+                                            })
+
+                                    }
+
+                                );
+
+
+                            if (!ticketResponse.ok) {
+
+                                const ticketError =
+                                    await ticketResponse.text();
+
+                                console.error(
+                                    "PDF generation failed:",
+                                    ticketError
+                                );
+
+                            } else {
+
+                                const pdfBlob =
+                                    await ticketResponse.blob();
+
+
+                                const pdfUrl =
+                                    URL.createObjectURL(
+                                        pdfBlob
+                                    );
+
+
+                                const downloadLink =
+                                    document.createElement("a");
+
+
+                                downloadLink.href =
+                                    pdfUrl;
+
+
+                                downloadLink.download =
+                                    `${bookingId}.pdf`;
+
+
+                                document.body.appendChild(
+                                    downloadLink
+                                );
+
+
+                                downloadLink.click();
+
+
+                                downloadLink.remove();
+
+
+                                setTimeout(
+                                    function () {
+
+                                        URL.revokeObjectURL(
+                                            pdfUrl
+                                        );
+
+                                    },
+                                    1000
+                                );
+
+
+                                ticketGenerated = true;
+
+                            }
+
+
+                        } catch (pdfError) {
+
+                            console.error(
+                                "PDF ticket error:",
+                                pdfError
+                            );
+
+                        }
+
+
                         // =========================
-                        // 5. SUCCESS
+                        // 7. SUCCESS
                         // =========================
 
                         if (
@@ -237,7 +390,7 @@ async function startRazorpayPayment({
                             onSuccess({
 
                                 bookingId:
-                                    verifyData.bookingId,
+                                    bookingId,
 
                                 orderId:
                                     response
@@ -272,7 +425,10 @@ async function startRazorpayPayment({
                                     travellers,
 
                                 amount:
-                                    amount
+                                    amount,
+
+                                ticketGenerated:
+                                    ticketGenerated
 
                             });
 
