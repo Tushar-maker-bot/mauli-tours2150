@@ -1891,28 +1891,34 @@
                    START RAZORPAY
                 ========================== */
 
-                await startRazorpayPayment({
+await startRazorpayPayment({
 
-                    amount:
-                        totalAmount,
+    amount:
+        totalAmount,
 
-                    tourName:
-                        TOUR_NAME,
+    tourName:
+        TOUR_NAME,
 
-                    tourDate:
-                        TOUR_DATE,
+    tourDate:
+        TOUR_DATE,
 
-                    seats:
-                        seats,
+    seats:
+        seats,
 
-                    customerName:
-                        travellers[0].name,
+    pickupLocation:
+        pickupLocation.value.trim(),
 
-                    customerEmail:
-                        email,
+    customerName:
+        travellers[0].name,
 
-                    customerPhone:
-                        mobile,
+    customerEmail:
+        email,
+
+    customerPhone:
+        mobile,
+
+    travellers:
+        travellers,
 
 
                     /* =========================
