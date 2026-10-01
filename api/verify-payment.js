@@ -13,7 +13,6 @@ export default async function handler(req, res) {
         });
     }
 
-
     try {
 
         // =========================
@@ -48,18 +47,15 @@ export default async function handler(req, res) {
             !razorpay_payment_id ||
             !razorpay_signature
         ) {
-
             return res.status(400).json({
                 success: false,
-                error:
-                    "Missing payment verification details"
+                error: "Missing payment verification details"
             });
-
         }
 
 
         // =========================
-        // GET RAZORPAY SECRET
+        // RAZORPAY SECRET
         // =========================
 
         const keySecret =
@@ -67,18 +63,15 @@ export default async function handler(req, res) {
 
 
         if (!keySecret) {
-
             return res.status(500).json({
                 success: false,
-                error:
-                    "Razorpay secret is not configured"
+                error: "Razorpay secret is not configured"
             });
-
         }
 
 
         // =========================
-        // CREATE SIGNATURE
+        // CREATE RAZORPAY SIGNATURE
         // =========================
 
         const body =
@@ -118,13 +111,10 @@ export default async function handler(req, res) {
             expectedBuffer.length !==
             receivedBuffer.length
         ) {
-
             return res.status(400).json({
                 success: false,
-                error:
-                    "Payment verification failed"
+                error: "Payment verification failed"
             });
-
         }
 
 
@@ -136,71 +126,45 @@ export default async function handler(req, res) {
 
 
         if (!isValid) {
-
             return res.status(400).json({
                 success: false,
-                error:
-                    "Payment verification failed"
+                error: "Payment verification failed"
             });
-
         }
 
 
         // =========================
-        // CREATE BOOKING ID
+        // FIND TOUR CODE
         // =========================
 
         let tourCode = "TOUR";
 
-        if (
-            typeof tourName === "string"
-        ) {
+        if (typeof tourName === "string") {
 
             const name =
                 tourName.toLowerCase();
 
-            if (
-                name.includes("shivneri")
-            ) {
+            if (name.includes("shivneri")) {
                 tourCode = "SHIV";
             }
-
-            else if (
-                name.includes("raigad")
-            ) {
+            else if (name.includes("raigad")) {
                 tourCode = "RAI";
             }
-
-            else if (
-                name.includes("lonavala")
-            ) {
+            else if (name.includes("lonavala")) {
                 tourCode = "LON";
             }
-
-            else if (
-                name.includes("mahabaleshwar")
-            ) {
+            else if (name.includes("mahabaleshwar")) {
                 tourCode = "MAH";
             }
-
-            else if (
-                name.includes("shirdi")
-            ) {
+            else if (name.includes("shirdi")) {
                 tourCode = "SHI";
             }
-
-            else if (
-                name.includes("matheran")
-            ) {
+            else if (name.includes("matheran")) {
                 tourCode = "MAT";
             }
-
-            else if (
-                name.includes("goa")
-            ) {
+            else if (name.includes("goa")) {
                 tourCode = "GOA";
             }
-
         }
 
 
@@ -208,12 +172,9 @@ export default async function handler(req, res) {
         // GET YEAR + MONTH
         // =========================
 
-        let bookingMonth =
-            "000000";
+        let bookingMonth = "000000";
 
-        if (
-            typeof tourDate === "string"
-        ) {
+        if (typeof tourDate === "string") {
 
             const dateMatch =
                 tourDate.match(
@@ -248,38 +209,238 @@ export default async function handler(req, res) {
 
                 bookingMonth =
                     `${year}${month}`;
-
             }
-
         }
 
 
         // =========================
-        // UNIQUE BOOKING NUMBER
+        // SUPABASE CONFIGURATION
         // =========================
 
-        /*
-         * Razorpay payment ID contains
-         * a unique identifier.
-         *
-         * We use the last 4 characters
-         * to create a unique booking
-         * reference for now.
-         */
+        const supabaseUrl =
+            process.env.SUPABASE_URL;
 
-        const uniquePart =
-            razorpay_payment_id
-                .replace(/[^a-zA-Z0-9]/g, "")
-                .slice(-4)
-                .toUpperCase();
+        const supabaseSecret =
+            process.env.SUPABASE_SECRET_KEY;
+
+
+        if (
+            !supabaseUrl ||
+            !supabaseSecret
+        ) {
+            return res.status(500).json({
+                success: false,
+                error:
+                    "Supabase configuration is missing"
+            });
+        }
+
+
+        // =========================
+        // CHECK IF PAYMENT ALREADY
+        // EXISTS
+        // =========================
+
+        const existingResponse =
+            await fetch(
+                `${supabaseUrl}/rest/v1/bookings` +
+                `?select=booking_id` +
+                `&razorpay_payment_id=eq.${encodeURIComponent(razorpay_payment_id)}` +
+                `&limit=1`,
+                {
+                    method: "GET",
+
+                    headers: {
+                        "apikey":
+                            supabaseSecret,
+
+                        "Authorization":
+                            `Bearer ${supabaseSecret}`
+                    }
+                }
+            );
+
+
+        if (existingResponse.ok) {
+
+            const existingBookings =
+                await existingResponse.json();
+
+            if (
+                Array.isArray(existingBookings) &&
+                existingBookings.length > 0
+            ) {
+
+                return res.status(200).json({
+
+                    success: true,
+
+                    message:
+                        "Payment already verified",
+
+                    bookingId:
+                        existingBookings[0].booking_id,
+
+                    orderId:
+                        razorpay_order_id,
+
+                    paymentId:
+                        razorpay_payment_id,
+
+                    tourName:
+                        tourName || "",
+
+                    tourDate:
+                        tourDate || "",
+
+                    seats:
+                        seats || 0,
+
+                    pickupLocation:
+                        pickupLocation || "",
+
+                    customerName:
+                        customerName || "",
+
+                    customerEmail:
+                        customerEmail || "",
+
+                    customerPhone:
+                        customerPhone || "",
+
+                    travellers:
+                        travellers || [],
+
+                    amount:
+                        amount || 0
+                });
+            }
+        }
+
+
+        // =========================
+        // CREATE BOOKING IN SUPABASE
+        // =========================
+
+        const bookingResponse =
+            await fetch(
+                `${supabaseUrl}/rest/v1/rpc/create_booking`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+
+                        "apikey":
+                            supabaseSecret,
+
+                        "Authorization":
+                            `Bearer ${supabaseSecret}`
+                    },
+
+                    body: JSON.stringify({
+
+                        p_tour_code:
+                            tourCode,
+
+                        p_booking_month:
+                            bookingMonth,
+
+                        p_tour_name:
+                            tourName || "",
+
+                        p_tour_date:
+                            tourDate || "",
+
+                        p_seats:
+                            Number(seats) || 1,
+
+                        p_pickup_location:
+                            pickupLocation || "",
+
+                        p_customer_name:
+                            customerName || "",
+
+                        p_customer_email:
+                            customerEmail || null,
+
+                        p_customer_phone:
+                            customerPhone || "",
+
+                        p_amount:
+                            Number(amount) || 0,
+
+                        p_razorpay_order_id:
+                            razorpay_order_id,
+
+                        p_razorpay_payment_id:
+                            razorpay_payment_id,
+
+                        p_travellers:
+                            Array.isArray(travellers)
+                                ? travellers
+                                : []
+                    })
+                }
+            );
+
+
+        // =========================
+        // CHECK SUPABASE RESPONSE
+        // =========================
+
+        if (!bookingResponse.ok) {
+
+            const errorText =
+                await bookingResponse.text();
+
+            console.error(
+                "Supabase booking error:",
+                errorText
+            );
+
+            return res.status(500).json({
+                success: false,
+                error:
+                    "Payment verified, but booking could not be saved"
+            });
+        }
+
+
+        const bookingData =
+            await bookingResponse.json();
+
+
+        // =========================
+        // GET BOOKING ID
+        // =========================
+
+        if (
+            !Array.isArray(bookingData) ||
+            !bookingData[0] ||
+            !bookingData[0].booking_id
+        ) {
+
+            console.error(
+                "Invalid Supabase booking response:",
+                bookingData
+            );
+
+            return res.status(500).json({
+                success: false,
+                error:
+                    "Booking ID could not be generated"
+            });
+        }
 
 
         const bookingId =
-            `MTAT-${tourCode}-${bookingMonth}-${uniquePart}`;
+            bookingData[0].booking_id;
 
 
         // =========================
-        // PAYMENT VERIFIED
+        // SUCCESS
         // =========================
 
         return res.status(200).json({
@@ -287,10 +448,9 @@ export default async function handler(req, res) {
             success: true,
 
             message:
-                "Payment verified successfully",
+                "Payment verified and booking created successfully",
 
             bookingId:
-
                 bookingId,
 
             orderId:
@@ -298,8 +458,6 @@ export default async function handler(req, res) {
 
             paymentId:
                 razorpay_payment_id,
-
-            // Booking information
 
             tourName:
                 tourName || "",
@@ -327,7 +485,6 @@ export default async function handler(req, res) {
 
             amount:
                 amount || 0
-
         });
 
 
@@ -338,16 +495,10 @@ export default async function handler(req, res) {
             error
         );
 
-
         return res.status(500).json({
-
             success: false,
-
             error:
                 "Internal server error"
-
         });
-
     }
-
 }
