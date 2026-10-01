@@ -11,7 +11,7 @@ async function startRazorpayPayment({
 }) {
     try {
         // 1. Create Razorpay order on server
-        const orderResponse = await fetch("/api/create-order.js", {
+        const orderResponse = await fetch("/api/create-order", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -58,9 +58,7 @@ async function startRazorpayPayment({
             handler: async function (response) {
 
                 // 3. Verify payment on server
-                const verifyResponse = await fetch(
-                    "/api/verify-payment.js",
-                    {
+                const verifyResponse = await fetch("/api/verify-payment", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
