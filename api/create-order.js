@@ -6,7 +6,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { amount, receipt } = req.body;
+    const {
+      amount,
+      receipt,
+      tourName,
+      tourDate,
+      seats
+    } = req.body;
 
     if (!amount) {
       return res.status(400).json({
@@ -27,6 +33,17 @@ export default async function handler(req, res) {
       `${keyId}:${keySecret}`
     ).toString("base64");
 
+    const orderData = {
+      amount: Number(amount),
+      currency: "INR",
+      receipt: receipt || `booking_${Date.now()}`,
+      notes: {
+        tour_name: tourName || "",
+        tour_date: tourDate || "",
+        seats: String(seats || "")
+      }
+    };
+
     const response = await fetch(
       "https://api.razorpay.com/v1/orders",
       {
@@ -35,12 +52,7 @@ export default async function handler(req, res) {
           "Content-Type": "application/json",
           "Authorization": `Basic ${auth}`
         },
-        body: JSON.stringify({
-          amount: Number(amount),
-          currency: "INR",
-          receipt: receipt || `shivneri_${Date.now()}`,
-          payment_capture: 1
-        })
+        body: JSON.stringify(orderData)
       }
     );
 
@@ -48,7 +60,9 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       return res.status(response.status).json({
-        error: data.error?.description || "Unable to create Razorpay order"
+        error:
+          data.error?.description ||
+          "Unable to create Razorpay order"
       });
     }
 
