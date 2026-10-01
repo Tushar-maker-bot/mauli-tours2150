@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Shivneri Special Group Tour – Booking | Mauli Tours & Travels</title>
-    <meta name="description" content="Book your seat for the Shivneri Special Group Tour on 11 October 2026 with Mauli Tours & Travels.">
+
+    <meta
+        name="description"
+        content="Book your seat for the Shivneri Special Group Tour on 11 October 2026 with Mauli Tours & Travels."
+    >
 
     <link rel="stylesheet" href="../style.css">
 
@@ -109,7 +113,11 @@
 
         .booking-hero {
             background:
-                linear-gradient(135deg, rgba(10,48,34,0.96), rgba(25,135,84,0.90));
+                linear-gradient(
+                    135deg,
+                    rgba(10,48,34,0.96),
+                    rgba(25,135,84,0.90)
+                );
             color: white;
             padding: 55px 20px;
         }
@@ -190,7 +198,9 @@
             margin: 0 auto 60px;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.8fr);
+            grid-template-columns:
+                minmax(0, 1.5fr)
+                minmax(300px, 0.8fr);
             gap: 25px;
             align-items: start;
         }
@@ -340,7 +350,9 @@
         .form-group input:focus,
         .form-group select:focus {
             border-color: var(--booking-green);
-            box-shadow: 0 0 0 3px rgba(25,135,84,0.10);
+            box-shadow:
+                0 0 0 3px
+                rgba(25,135,84,0.10);
         }
 
         .field-error {
@@ -455,6 +467,12 @@
         .payment-btn:hover {
             background: #157347;
             transform: translateY(-1px);
+        }
+
+        .payment-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .secure-note {
@@ -634,22 +652,38 @@
 ========================== -->
 
 <header class="booking-header">
+
     <div class="booking-header-inner">
 
         <a href="shivneri.html" class="booking-logo">
-            <img src="../LOGO.png" alt="Mauli Tours & Travels Logo">
+
+            <img
+                src="../LOGO.png"
+                alt="Mauli Tours & Travels Logo"
+            >
 
             <div class="booking-logo-text">
+
                 Mauli Tours & Travels
-                <span>Explore • Experience • Enjoy</span>
+
+                <span>
+                    Explore • Experience • Enjoy
+                </span>
+
             </div>
+
         </a>
 
-        <a href="shivneri.html" class="back-tour-btn">
+
+        <a
+            href="shivneri.html"
+            class="back-tour-btn"
+        >
             ← Back to Tour
         </a>
 
     </div>
+
 </header>
 
 
@@ -661,12 +695,17 @@
 
     <div class="booking-hero-inner">
 
-        <small>🎟️ Group Tour Booking</small>
+        <small>
+            🎟️ Group Tour Booking
+        </small>
 
-        <h1>Shivneri Special Group Tour</h1>
+        <h1>
+            Shivneri Special Group Tour
+        </h1>
 
         <p>
-            Complete your booking details and reserve your seats for the Shivneri tour.
+            Complete your booking details and reserve
+            your seats for the Shivneri tour.
         </p>
 
     </div>
@@ -683,18 +722,41 @@
     <div class="tour-info">
 
         <div class="tour-info-card">
-            <span>📅 Tour Date</span>
-            <strong>11 October 2026, Sunday</strong>
+
+            <span>
+                📅 Tour Date
+            </span>
+
+            <strong>
+                11 October 2026, Sunday
+            </strong>
+
         </div>
 
-        <div class="tour-info-card">
-            <span>📍 Route</span>
-            <strong>Pune → Shivneri → Pune</strong>
-        </div>
 
         <div class="tour-info-card">
-            <span>💰 Price</span>
-            <strong>₹1,999 / Person</strong>
+
+            <span>
+                📍 Route
+            </span>
+
+            <strong>
+                Pune → Shivneri → Pune
+            </strong>
+
+        </div>
+
+
+        <div class="tour-info-card">
+
+            <span>
+                💰 Price
+            </span>
+
+            <strong>
+                ₹1,999 / Person
+            </strong>
+
         </div>
 
     </div>
@@ -710,23 +772,47 @@
 
     <div>
 
-        <div id="successMessage" class="success-message">
-            <strong>Booking details are ready!</strong><br>
-            Your payment gateway will be connected next. No payment has been processed yet.
+        <!-- PAYMENT STATUS -->
+
+        <div
+            id="successMessage"
+            class="success-message"
+        >
+
+            <strong>
+                Payment Status
+            </strong>
+
+            <br>
+
+            Your payment status will appear here
+            after completing payment.
+
         </div>
 
 
-        <!-- STEP 1 -->
+        <!-- =========================
+             STEP 1
+        ========================== -->
 
         <section class="booking-card">
 
             <div class="section-heading">
 
-                <div class="section-number">1</div>
+                <div class="section-number">
+                    1
+                </div>
 
                 <div>
-                    <h2>Select Number of Seats</h2>
-                    <p>Choose how many people will travel.</p>
+
+                    <h2>
+                        Select Number of Seats
+                    </h2>
+
+                    <p>
+                        Choose how many people will travel.
+                    </p>
+
                 </div>
 
             </div>
@@ -736,9 +822,13 @@
 
                 <div class="seat-text">
 
-                    <strong>Number of Seats</strong>
+                    <strong>
+                        Number of Seats
+                    </strong>
 
-                    <span>₹1,999 per person</span>
+                    <span>
+                        ₹1,999 per person
+                    </span>
 
                 </div>
 
@@ -748,16 +838,22 @@
                     <button
                         type="button"
                         class="seat-btn"
-                        id="minusSeat">
+                        id="minusSeat"
+                    >
                         −
                     </button>
 
-                    <span id="seatCount">1</span>
+
+                    <span id="seatCount">
+                        1
+                    </span>
+
 
                     <button
                         type="button"
                         class="seat-btn"
-                        id="plusSeat">
+                        id="plusSeat"
+                    >
                         +
                     </button>
 
@@ -768,36 +864,61 @@
         </section>
 
 
-        <!-- STEP 2 -->
+        <!-- =========================
+             STEP 2
+        ========================== -->
 
         <section class="booking-card">
 
             <div class="section-heading">
 
-                <div class="section-number">2</div>
+                <div class="section-number">
+                    2
+                </div>
 
                 <div>
-                    <h2>Select Pickup Location</h2>
-                    <p>Your pickup location is required for this tour.</p>
+
+                    <h2>
+                        Select Pickup Location
+                    </h2>
+
+                    <p>
+                        Your pickup location is required
+                        for this tour.
+                    </p>
+
                 </div>
 
             </div>
 
 
             <div class="pickup-note">
-                📍 Please select the pickup point from where you would like to join the tour.
+
+                📍 Please select the pickup point
+                from where you would like to join
+                the tour.
+
             </div>
 
 
             <div class="form-group">
 
                 <label for="pickupLocation">
-                    Pickup Location <span class="required">*</span>
+
+                    Pickup Location
+                    <span class="required">*</span>
+
                 </label>
 
-                <select id="pickupLocation" required>
 
-                    <option value="">Select your pickup location</option>
+                <select
+                    id="pickupLocation"
+                    required
+                >
+
+                    <option value="">
+                        Select your pickup location
+                    </option>
 
                     <option>Hadapsar</option>
                     <option>Swargate</option>
@@ -831,17 +952,29 @@
         </section>
 
 
-        <!-- STEP 3 -->
+        <!-- =========================
+             STEP 3
+        ========================== -->
 
         <section class="booking-card">
 
             <div class="section-heading">
 
-                <div class="section-number">3</div>
+                <div class="section-number">
+                    3
+                </div>
 
                 <div>
-                    <h2>Contact Details</h2>
-                    <p>Enter the main traveller's contact information.</p>
+
+                    <h2>
+                        Contact Details
+                    </h2>
+
+                    <p>
+                        Enter the main traveller's
+                        contact information.
+                    </p>
+
                 </div>
 
             </div>
@@ -852,15 +985,21 @@
                 <div class="form-group">
 
                     <label for="mobile">
-                        Mobile Number <span class="required">*</span>
+
+                        Mobile Number
+                        <span class="required">*</span>
+
                     </label>
+
 
                     <input
                         type="tel"
                         id="mobile"
                         placeholder="Enter 10-digit mobile number"
                         maxlength="10"
-                        required>
+                        inputmode="numeric"
+                        required
+                    >
 
                 </div>
 
@@ -868,13 +1007,17 @@
                 <div class="form-group">
 
                     <label for="email">
+
                         Email Address
+
                     </label>
+
 
                     <input
                         type="email"
                         id="email"
-                        placeholder="Enter your email address">
+                        placeholder="Enter your email address"
+                    >
 
                 </div>
 
@@ -883,17 +1026,28 @@
         </section>
 
 
-        <!-- STEP 4 -->
+        <!-- =========================
+             STEP 4
+        ========================== -->
 
         <section class="booking-card">
 
             <div class="section-heading">
 
-                <div class="section-number">4</div>
+                <div class="section-number">
+                    4
+                </div>
 
                 <div>
-                    <h2>Traveller Details</h2>
-                    <p>Enter details for each traveller.</p>
+
+                    <h2>
+                        Traveller Details
+                    </h2>
+
+                    <p>
+                        Enter details for each traveller.
+                    </p>
+
                 </div>
 
             </div>
@@ -904,17 +1058,29 @@
         </section>
 
 
-        <!-- TERMS -->
+        <!-- =========================
+             TERMS
+        ========================== -->
 
         <section class="booking-card">
 
             <div class="section-heading">
 
-                <div class="section-number">✓</div>
+                <div class="section-number">
+                    ✓
+                </div>
 
                 <div>
-                    <h2>Confirm Booking</h2>
-                    <p>Check your details before continuing.</p>
+
+                    <h2>
+                        Confirm Booking
+                    </h2>
+
+                    <p>
+                        Check your details before
+                        continuing.
+                    </p>
+
                 </div>
 
             </div>
@@ -922,19 +1088,27 @@
 
             <div class="terms-box">
 
-                Please make sure that your mobile number, pickup location and traveller
-                details are correct before proceeding to payment.
+                Please make sure that your mobile
+                number, pickup location and traveller
+                details are correct before proceeding
+                to payment.
 
             </div>
 
 
             <label class="checkbox-row">
 
-                <input type="checkbox" id="agreeTerms">
+                <input
+                    type="checkbox"
+                    id="agreeTerms"
+                >
 
                 <span>
-                    I confirm that the information provided above is correct and I agree
-                    to proceed with the booking.
+
+                    I confirm that the information
+                    provided above is correct and I
+                    agree to proceed with the booking.
+
                 </span>
 
             </label>
@@ -954,70 +1128,100 @@
 
             <div class="summary-header">
 
-                <h2>Booking Summary</h2>
+                <h2>
+                    Booking Summary
+                </h2>
 
             </div>
 
 
             <div class="summary-item">
 
-                <span>Tour</span>
+                <span>
+                    Tour
+                </span>
 
-                <strong>Shivneri Special</strong>
-
-            </div>
-
-
-            <div class="summary-item">
-
-                <span>Date</span>
-
-                <strong>11 Oct 2026</strong>
+                <strong>
+                    Shivneri Special
+                </strong>
 
             </div>
 
 
             <div class="summary-item">
 
-                <span>Route</span>
+                <span>
+                    Date
+                </span>
 
-                <strong>Pune → Shivneri → Pune</strong>
-
-            </div>
-
-
-            <div class="summary-item">
-
-                <span>Pickup</span>
-
-                <strong id="summaryPickup">Not selected</strong>
+                <strong>
+                    11 Oct 2026
+                </strong>
 
             </div>
 
 
             <div class="summary-item">
 
-                <span>Seats</span>
+                <span>
+                    Route
+                </span>
 
-                <strong id="summarySeats">1</strong>
+                <strong>
+                    Pune → Shivneri → Pune
+                </strong>
 
             </div>
 
 
             <div class="summary-item">
 
-                <span>Price / Person</span>
+                <span>
+                    Pickup
+                </span>
 
-                <strong>₹1,999</strong>
+                <strong id="summaryPickup">
+                    Not selected
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>
+                    Seats
+                </span>
+
+                <strong id="summarySeats">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+                <span>
+                    Price / Person
+                </span>
+
+                <strong>
+                    ₹1,999
+                </strong>
 
             </div>
 
 
             <div class="total-row">
 
-                <span>Total Amount</span>
+                <span>
+                    Total Amount
+                </span>
 
-                <strong id="totalAmount">₹1,999</strong>
+                <strong id="totalAmount">
+                    ₹1,999
+                </strong>
 
             </div>
 
@@ -1025,7 +1229,8 @@
             <button
                 type="button"
                 class="payment-btn"
-                id="paymentButton">
+                id="paymentButton"
+            >
 
                 Proceed to Payment →
 
@@ -1034,8 +1239,12 @@
 
             <div class="secure-note">
 
-                🔒 Your details are used only for booking communication.<br>
-                Payment gateway integration will be added next.
+                🔒 Your details are used only for
+                booking communication.
+
+                <br>
+
+                Secure payment powered by Razorpay.
 
             </div>
 
@@ -1053,52 +1262,116 @@
 <footer class="booking-footer">
 
     <p>
-        <strong>Mauli Tours & Travels</strong>
+        <strong>
+            Mauli Tours & Travels
+        </strong>
     </p>
 
-    <p>
-        Comfortable, Safe & Memorable Tours & Travels.
-    </p>
 
     <p>
+        Comfortable, Safe & Memorable
+        Tours & Travels.
+    </p>
+
+
+    <p>
+
         📞
+
         <a href="tel:+919226718177">
             9226718177
         </a>
+
         &nbsp; | &nbsp;
+
         WhatsApp available
+
     </p>
 
+
     <p>
-        © 2026 Mauli Tours & Travels. All Rights Reserved.
+        © 2026 Mauli Tours & Travels.
+        All Rights Reserved.
     </p>
 
 </footer>
 
 
 <!-- =========================
-     JAVASCRIPT
+     RAZORPAY CHECKOUT
+========================== -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<!-- =========================
+     COMMON PAYMENT SYSTEM
+========================== -->
+
+<script src="../payment/razorpay.js"></script>
+
+
+<!-- =========================
+     BOOKING JAVASCRIPT
 ========================== -->
 
 <script>
 
+    /* =========================
+       TOUR DETAILS
+    ========================== */
+
     const PRICE_PER_PERSON = 1999;
+
+    const TOUR_NAME =
+        "Shivneri Special Group Tour";
+
+    const TOUR_DATE =
+        "11 October 2026";
+
+    const TOUR_ROUTE =
+        "Pune → Shivneri → Pune";
+
+
+    /* =========================
+       BOOKING VARIABLES
+    ========================== */
 
     let seats = 1;
 
 
-    const seatCount = document.getElementById("seatCount");
-    const summarySeats = document.getElementById("summarySeats");
-    const totalAmount = document.getElementById("totalAmount");
+    /* =========================
+       ELEMENTS
+    ========================== */
 
-    const minusSeat = document.getElementById("minusSeat");
-    const plusSeat = document.getElementById("plusSeat");
+    const seatCount =
+        document.getElementById("seatCount");
 
-    const pickupLocation = document.getElementById("pickupLocation");
-    const summaryPickup = document.getElementById("summaryPickup");
+    const summarySeats =
+        document.getElementById("summarySeats");
+
+    const totalAmountElement =
+        document.getElementById("totalAmount");
+
+    const minusSeat =
+        document.getElementById("minusSeat");
+
+    const plusSeat =
+        document.getElementById("plusSeat");
+
+    const pickupLocation =
+        document.getElementById("pickupLocation");
+
+    const summaryPickup =
+        document.getElementById("summaryPickup");
 
     const travellerContainer =
         document.getElementById("travellerContainer");
+
+    const paymentButton =
+        document.getElementById("paymentButton");
+
+    const successMessage =
+        document.getElementById("successMessage");
 
 
     /* =========================
@@ -1107,12 +1380,17 @@
 
     function updateSummary() {
 
-        seatCount.textContent = seats;
+        seatCount.textContent =
+            seats;
 
-        summarySeats.textContent = seats;
+        summarySeats.textContent =
+            seats;
 
-        totalAmount.textContent =
-            "₹" + (seats * PRICE_PER_PERSON).toLocaleString("en-IN");
+        totalAmountElement.textContent =
+            "₹" +
+            (
+                seats * PRICE_PER_PERSON
+            ).toLocaleString("en-IN");
 
     }
 
@@ -1121,57 +1399,68 @@
        SEAT PLUS
     ========================== */
 
-    plusSeat.addEventListener("click", function () {
+    plusSeat.addEventListener(
+        "click",
+        function () {
 
-        if (seats < 20) {
+            if (seats < 20) {
 
-            seats++;
+                seats++;
 
-            updateSummary();
+                updateSummary();
 
-            createTravellerFields();
+                createTravellerFields();
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =========================
        SEAT MINUS
     ========================== */
 
-    minusSeat.addEventListener("click", function () {
+    minusSeat.addEventListener(
+        "click",
+        function () {
 
-        if (seats > 1) {
+            if (seats > 1) {
 
-            seats--;
+                seats--;
 
-            updateSummary();
+                updateSummary();
 
-            createTravellerFields();
+                createTravellerFields();
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =========================
-       PICKUP
+       PICKUP LOCATION
     ========================== */
 
-    pickupLocation.addEventListener("change", function () {
+    pickupLocation.addEventListener(
+        "change",
+        function () {
 
-        if (this.value) {
+            if (this.value) {
 
-            summaryPickup.textContent = this.value;
+                summaryPickup.textContent =
+                    this.value;
 
-        } else {
+            } else {
 
-            summaryPickup.textContent = "Not selected";
+                summaryPickup.textContent =
+                    "Not selected";
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =========================
@@ -1183,12 +1472,18 @@
         travellerContainer.innerHTML = "";
 
 
-        for (let i = 1; i <= seats; i++) {
+        for (
+            let i = 1;
+            i <= seats;
+            i++
+        ) {
 
             const travellerCard =
                 document.createElement("div");
 
-            travellerCard.className = "traveller-card";
+
+            travellerCard.className =
+                "traveller-card";
 
 
             travellerCard.innerHTML = `
@@ -1202,14 +1497,16 @@
                     <div class="form-group">
 
                         <label>
-                            Full Name <span class="required">*</span>
+                            Full Name
+                            <span class="required">*</span>
                         </label>
 
                         <input
                             type="text"
                             class="traveller-name"
                             placeholder="Enter full name"
-                            required>
+                            required
+                        >
 
                     </div>
 
@@ -1217,7 +1514,8 @@
                     <div class="form-group">
 
                         <label>
-                            Age <span class="required">*</span>
+                            Age
+                            <span class="required">*</span>
                         </label>
 
                         <input
@@ -1226,7 +1524,8 @@
                             placeholder="Enter age"
                             min="1"
                             max="100"
-                            required>
+                            required
+                        >
 
                     </div>
 
@@ -1234,10 +1533,14 @@
                     <div class="form-group">
 
                         <label>
-                            Gender <span class="required">*</span>
+                            Gender
+                            <span class="required">*</span>
                         </label>
 
-                        <select class="traveller-gender" required>
+                        <select
+                            class="traveller-gender"
+                            required
+                        >
 
                             <option value="">
                                 Select gender
@@ -1260,10 +1563,13 @@
                     </div>
 
                 </div>
+
             `;
 
 
-            travellerContainer.appendChild(travellerCard);
+            travellerContainer.appendChild(
+                travellerCard
+            );
 
         }
 
@@ -1271,24 +1577,102 @@
 
 
     /* =========================
-       VALIDATE FORM
+       GET TRAVELLER DETAILS
+    ========================== */
+
+    function getTravellerDetails() {
+
+        const names =
+            document.querySelectorAll(
+                ".traveller-name"
+            );
+
+        const ages =
+            document.querySelectorAll(
+                ".traveller-age"
+            );
+
+        const genders =
+            document.querySelectorAll(
+                ".traveller-gender"
+            );
+
+
+        const travellers = [];
+
+
+        for (
+            let i = 0;
+            i < seats;
+            i++
+        ) {
+
+            travellers.push({
+
+                name:
+                    names[i]
+                        .value
+                        .trim(),
+
+                age:
+                    ages[i]
+                        .value,
+
+                gender:
+                    genders[i]
+                        .value
+
+            });
+
+        }
+
+
+        return travellers;
+
+    }
+
+
+    /* =========================
+       VALIDATE BOOKING
     ========================== */
 
     function validateBooking() {
 
         const pickup =
-            pickupLocation.value.trim();
+            pickupLocation
+                .value
+                .trim();
+
 
         const mobile =
-            document.getElementById("mobile").value.trim();
+            document
+                .getElementById("mobile")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
 
         const terms =
-            document.getElementById("agreeTerms").checked;
+            document
+                .getElementById("agreeTerms")
+                .checked;
 
+
+        /* =========================
+           PICKUP VALIDATION
+        ========================== */
 
         if (!pickup) {
 
-            alert("Please select your pickup location.");
+            alert(
+                "Please select your pickup location."
+            );
 
             pickupLocation.focus();
 
@@ -1297,30 +1681,81 @@
         }
 
 
-        if (!/^[0-9]{10}$/.test(mobile)) {
+        /* =========================
+           MOBILE VALIDATION
+        ========================== */
 
-            alert("Please enter a valid 10-digit mobile number.");
+        if (
+            !/^[0-9]{10}$/.test(mobile)
+        ) {
 
-            document.getElementById("mobile").focus();
+            alert(
+                "Please enter a valid 10-digit mobile number."
+            );
+
+            document
+                .getElementById("mobile")
+                .focus();
 
             return false;
 
         }
 
 
+        /* =========================
+           EMAIL VALIDATION
+        ========================== */
+
+        if (
+            email &&
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                .test(email)
+        ) {
+
+            alert(
+                "Please enter a valid email address."
+            );
+
+            document
+                .getElementById("email")
+                .focus();
+
+            return false;
+
+        }
+
+
+        /* =========================
+           TRAVELLER VALIDATION
+        ========================== */
+
         const travellerNames =
-            document.querySelectorAll(".traveller-name");
+            document.querySelectorAll(
+                ".traveller-name"
+            );
 
         const travellerAges =
-            document.querySelectorAll(".traveller-age");
+            document.querySelectorAll(
+                ".traveller-age"
+            );
 
         const travellerGenders =
-            document.querySelectorAll(".traveller-gender");
+            document.querySelectorAll(
+                ".traveller-gender"
+            );
 
 
-        for (let i = 0; i < seats; i++) {
+        for (
+            let i = 0;
+            i < seats;
+            i++
+        ) {
 
-            if (!travellerNames[i].value.trim()) {
+            if (
+                !travellerNames[i]
+                    .value
+                    .trim()
+            ) {
 
                 alert(
                     "Please enter the full name for Traveller " +
@@ -1335,7 +1770,10 @@
             }
 
 
-            if (!travellerAges[i].value) {
+            if (
+                !travellerAges[i]
+                    .value
+            ) {
 
                 alert(
                     "Please enter the age for Traveller " +
@@ -1350,7 +1788,10 @@
             }
 
 
-            if (!travellerGenders[i].value) {
+            if (
+                !travellerGenders[i]
+                    .value
+            ) {
 
                 alert(
                     "Please select the gender for Traveller " +
@@ -1367,10 +1808,14 @@
         }
 
 
+        /* =========================
+           TERMS VALIDATION
+        ========================== */
+
         if (!terms) {
 
             alert(
-                "Please confirm that your booking information is correct."
+                "Please confirm that the booking information is correct."
             );
 
             return false;
@@ -1387,46 +1832,234 @@
        PAYMENT BUTTON
     ========================== */
 
-    document.getElementById("paymentButton")
-        .addEventListener("click", function () {
+    paymentButton.addEventListener(
+        "click",
+        async function () {
+
+            /* VALIDATE */
 
             if (!validateBooking()) {
+
                 return;
+
             }
 
 
-            const successMessage =
-                document.getElementById("successMessage");
+            /* CUSTOMER DETAILS */
+
+            const mobile =
+                document
+                    .getElementById("mobile")
+                    .value
+                    .trim();
 
 
-            successMessage.style.display = "block";
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
 
 
-            successMessage.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+            /* TRAVELLER DETAILS */
+
+            const travellers =
+                getTravellerDetails();
 
 
-            /*
-                RAZORPAY WILL BE CONNECTED HERE NEXT.
+            /* TOTAL */
 
-                DO NOT ADD PAYMENT CODE YET.
-            */
+            const totalAmount =
+                seats * PRICE_PER_PERSON;
 
-            setTimeout(function () {
 
-                alert(
-                    "Your booking details are valid.\n\n" +
-                    "Total Amount: ₹" +
-                    (seats * PRICE_PER_PERSON).toLocaleString("en-IN") +
-                    "\n\n" +
-                    "Payment gateway will be connected in the next step."
+            /* =========================
+               DISABLE BUTTON
+            ========================== */
+
+            paymentButton.disabled =
+                true;
+
+
+            paymentButton.textContent =
+                "Opening Payment...";
+
+
+            try {
+
+                /* =========================
+                   START RAZORPAY
+                ========================== */
+
+                await startRazorpayPayment({
+
+                    amount:
+                        totalAmount,
+
+                    tourName:
+                        TOUR_NAME,
+
+                    tourDate:
+                        TOUR_DATE,
+
+                    seats:
+                        seats,
+
+                    customerName:
+                        travellers[0].name,
+
+                    customerEmail:
+                        email,
+
+                    customerPhone:
+                        mobile,
+
+
+                    /* =========================
+                       SUCCESS
+                    ========================== */
+
+                    onSuccess:
+                        function (paymentData) {
+
+                            paymentButton.disabled =
+                                true;
+
+
+                            paymentButton.textContent =
+                                "Payment Successful ✓";
+
+
+                            successMessage.innerHTML = `
+
+                                <strong>
+                                    🎉 Payment Successful!
+                                </strong>
+
+                                <br><br>
+
+                                Your payment has been
+                                successfully verified.
+
+                                <br><br>
+
+                                <strong>
+                                    Tour:
+                                </strong>
+
+                                ${TOUR_NAME}
+
+                                <br>
+
+                                <strong>
+                                    Date:
+                                </strong>
+
+                                ${TOUR_DATE}
+
+                                <br>
+
+                                <strong>
+                                    Route:
+                                </strong>
+
+                                ${TOUR_ROUTE}
+
+                                <br>
+
+                                <strong>
+                                    Seats:
+                                </strong>
+
+                                ${seats}
+
+                                <br>
+
+                                <strong>
+                                    Amount:
+                                </strong>
+
+                                ₹${totalAmount.toLocaleString("en-IN")}
+
+                                <br>
+
+                                <strong>
+                                    Payment ID:
+                                </strong>
+
+                                ${paymentData.paymentId}
+
+                            `;
+
+
+                            successMessage.style.display =
+                                "block";
+
+
+                            successMessage.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+
+                            console.log(
+                                "Payment verified:",
+                                paymentData
+                            );
+
+                        },
+
+
+                    /* =========================
+                       FAILURE
+                    ========================== */
+
+                    onFailure:
+                        function (errorMessage) {
+
+                            paymentButton.disabled =
+                                false;
+
+
+                            paymentButton.textContent =
+                                "Proceed to Payment →";
+
+
+                            alert(
+                                errorMessage ||
+                                "Payment was not completed."
+                            );
+
+                        }
+
+                });
+
+
+            } catch (error) {
+
+                console.error(
+                    "Payment error:",
+                    error
                 );
 
-            }, 300);
 
-        });
+                paymentButton.disabled =
+                    false;
+
+
+                paymentButton.textContent =
+                    "Proceed to Payment →";
+
+
+                alert(
+                    error.message ||
+                    "Unable to start payment."
+                );
+
+            }
+
+        }
+    );
 
 
     /* =========================
