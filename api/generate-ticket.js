@@ -28,26 +28,83 @@ export default async function handler(req, res) {
       travellers
     } = req.body || {};
 
-
-    // ==========================================
-    // VALIDATION
-    // ==========================================
-
     if (!bookingId || !tourName || !customerName) {
       return res.status(400).json({
         error: "Required booking information is missing"
       });
     }
 
+    // --------------------------------------------------
+    // FILE PATHS
+    // --------------------------------------------------
 
-    // ==========================================
+    const logoPath = path.join(
+      process.cwd(),
+      "LOGO.png"
+    );
+
+    const regularFontPath = path.join(
+      process.cwd(),
+      "NotoSans-Regular.ttf"
+    );
+
+    const boldFontPath = path.join(
+      process.cwd(),
+      "NotoSans-Bold.ttf"
+    );
+
+    // --------------------------------------------------
+    // CHECK FONT FILES
+    // --------------------------------------------------
+
+    if (!fs.existsSync(regularFontPath)) {
+
+      console.error(
+        "NotoSans-Regular.ttf not found"
+      );
+
+      return res.status(500).json({
+        error:
+          "NotoSans-Regular.ttf is missing from the project root"
+      });
+
+    }
+
+    if (!fs.existsSync(boldFontPath)) {
+
+      console.error(
+        "NotoSans-Bold.ttf not found"
+      );
+
+      return res.status(500).json({
+        error:
+          "NotoSans-Bold.ttf is missing from the project root"
+      });
+
+    }
+
+    // --------------------------------------------------
     // CREATE PDF
-    // ==========================================
+    // --------------------------------------------------
 
     const doc = new PDFDocument({
       size: "A4",
       margin: 40
     });
+
+    // --------------------------------------------------
+    // REGISTER UNICODE FONTS
+    // --------------------------------------------------
+
+    doc.registerFont(
+      "NotoSans",
+      regularFontPath
+    );
+
+    doc.registerFont(
+      "NotoSans-Bold",
+      boldFontPath
+    );
 
     const chunks = [];
 
@@ -55,10 +112,10 @@ export default async function handler(req, res) {
       chunks.push(chunk);
     });
 
-
     doc.on("end", () => {
 
-      const pdfBuffer = Buffer.concat(chunks);
+      const pdfBuffer =
+        Buffer.concat(chunks);
 
       res.setHeader(
         "Content-Type",
@@ -74,10 +131,9 @@ export default async function handler(req, res) {
 
     });
 
-
-    // ==========================================
+    // --------------------------------------------------
     // COLORS
-    // ==========================================
+    // --------------------------------------------------
 
     const green = "#1f8f4d";
     const dark = "#17351f";
@@ -85,15 +141,9 @@ export default async function handler(req, res) {
     const gray = "#666666";
     const lightGray = "#eeeeee";
 
-
-    // ==========================================
+    // --------------------------------------------------
     // LOGO
-    // ==========================================
-
-    const logoPath = path.join(
-      process.cwd(),
-      "LOGO.png"
-    );
+    // --------------------------------------------------
 
     if (fs.existsSync(logoPath)) {
 
@@ -108,15 +158,14 @@ export default async function handler(req, res) {
 
     }
 
-
-    // ==========================================
+    // --------------------------------------------------
     // HEADER
-    // ==========================================
+    // --------------------------------------------------
 
     doc
       .fillColor(green)
       .fontSize(21)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "BOOKING CONFIRMED",
         185,
@@ -127,11 +176,10 @@ export default async function handler(req, res) {
         }
       );
 
-
     doc
       .fillColor(gray)
       .fontSize(10)
-      .font("Helvetica")
+      .font("NotoSans")
       .text(
         "E-TICKET",
         185,
@@ -142,8 +190,10 @@ export default async function handler(req, res) {
         }
       );
 
+    // --------------------------------------------------
+    // HEADER LINE
+    // --------------------------------------------------
 
-    // Header line
     doc
       .moveTo(40, 120)
       .lineTo(555, 120)
@@ -151,10 +201,9 @@ export default async function handler(req, res) {
       .strokeColor(green)
       .stroke();
 
-
-    // ==========================================
+    // --------------------------------------------------
     // BOOKING ID BOX
-    // ==========================================
+    // --------------------------------------------------
 
     doc
       .roundedRect(
@@ -167,33 +216,30 @@ export default async function handler(req, res) {
       .fillColor(lightGreen)
       .fill();
 
-
     doc
       .fillColor(gray)
       .fontSize(9)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "BOOKING ID",
         58,
         148
       );
 
-
     doc
       .fillColor(dark)
       .fontSize(17)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         bookingId,
         58,
         164
       );
 
-
     doc
       .fillColor(green)
       .fontSize(9)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "PAID",
         470,
@@ -204,10 +250,9 @@ export default async function handler(req, res) {
         }
       );
 
-
-    // ==========================================
+    // --------------------------------------------------
     // TOUR DETAILS
-    // ==========================================
+    // --------------------------------------------------
 
     sectionTitle(
       doc,
@@ -215,7 +260,6 @@ export default async function handler(req, res) {
       220,
       green
     );
-
 
     detailRow(
       doc,
@@ -245,10 +289,9 @@ export default async function handler(req, res) {
       325
     );
 
-
-    // ==========================================
+    // --------------------------------------------------
     // CUSTOMER DETAILS
-    // ==========================================
+    // --------------------------------------------------
 
     sectionTitle(
       doc,
@@ -256,7 +299,6 @@ export default async function handler(req, res) {
       365,
       green
     );
-
 
     detailRow(
       doc,
@@ -286,10 +328,9 @@ export default async function handler(req, res) {
       470
     );
 
-
-    // ==========================================
+    // --------------------------------------------------
     // TRAVELLER DETAILS
-    // ==========================================
+    // --------------------------------------------------
 
     sectionTitle(
       doc,
@@ -298,10 +339,8 @@ export default async function handler(req, res) {
       green
     );
 
-
     const tableTop = 530;
 
-    // Table header
     doc
       .rect(
         40,
@@ -312,11 +351,10 @@ export default async function handler(req, res) {
       .fillColor(green)
       .fill();
 
-
     doc
       .fillColor("#ffffff")
       .fontSize(9)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "TRAVELLER",
         50,
@@ -341,9 +379,12 @@ export default async function handler(req, res) {
       tableTop + 8
     );
 
+    let currentY =
+      tableTop + 25;
 
-    let currentY = tableTop + 25;
-
+    // --------------------------------------------------
+    // TRAVELLER ROWS
+    // --------------------------------------------------
 
     if (
       Array.isArray(travellers) &&
@@ -353,7 +394,6 @@ export default async function handler(req, res) {
       travellers.forEach(
         (traveller, index) => {
 
-          // New page if necessary
           if (currentY > 690) {
 
             doc.addPage();
@@ -361,7 +401,6 @@ export default async function handler(req, res) {
             currentY = 50;
 
           }
-
 
           if (index % 2 === 0) {
 
@@ -377,17 +416,15 @@ export default async function handler(req, res) {
 
           }
 
-
           doc
             .fillColor(dark)
             .fontSize(9)
-            .font("Helvetica")
+            .font("NotoSans")
             .text(
               `Traveller ${index + 1}`,
               50,
               currentY + 9
             );
-
 
           doc.text(
             traveller.name || "-",
@@ -398,7 +435,6 @@ export default async function handler(req, res) {
             }
           );
 
-
           doc.text(
             String(
               traveller.age || "-"
@@ -407,13 +443,11 @@ export default async function handler(req, res) {
             currentY + 9
           );
 
-
           doc.text(
             traveller.gender || "-",
             440,
             currentY + 9
           );
-
 
           currentY += 28;
 
@@ -425,7 +459,7 @@ export default async function handler(req, res) {
       doc
         .fillColor(gray)
         .fontSize(9)
-        .font("Helvetica")
+        .font("NotoSans")
         .text(
           "Traveller details not available.",
           50,
@@ -436,10 +470,9 @@ export default async function handler(req, res) {
 
     }
 
-
-    // ==========================================
-    // PAYMENT DETAILS
-    // ==========================================
+    // --------------------------------------------------
+    // PAYMENT DETAILS POSITION
+    // --------------------------------------------------
 
     if (currentY > 680) {
 
@@ -453,6 +486,9 @@ export default async function handler(req, res) {
 
     }
 
+    // --------------------------------------------------
+    // PAYMENT DETAILS
+    // --------------------------------------------------
 
     sectionTitle(
       doc,
@@ -463,18 +499,21 @@ export default async function handler(req, res) {
 
     currentY += 30;
 
+    // ₹ symbol is now supported by Noto Sans
+
+    const formattedAmount =
+      `₹${Number(
+        amount || 0
+      ).toLocaleString("en-IN")}`;
 
     detailRow(
       doc,
       "Amount Paid",
-      `₹${Number(
-        amount || 0
-      ).toLocaleString("en-IN")}`,
+      formattedAmount,
       currentY
     );
 
     currentY += 25;
-
 
     detailRow(
       doc,
@@ -485,7 +524,6 @@ export default async function handler(req, res) {
 
     currentY += 25;
 
-
     detailRow(
       doc,
       "Payment Status",
@@ -493,13 +531,11 @@ export default async function handler(req, res) {
       currentY
     );
 
-
-    // ==========================================
-    // IMPORTANT INFORMATION
-    // ==========================================
-
     currentY += 45;
 
+    // --------------------------------------------------
+    // IMPORTANT INFORMATION
+    // --------------------------------------------------
 
     sectionTitle(
       doc,
@@ -509,7 +545,6 @@ export default async function handler(req, res) {
     );
 
     currentY += 28;
-
 
     const instructions = [
 
@@ -525,7 +560,6 @@ export default async function handler(req, res) {
 
     ];
 
-
     instructions.forEach(
       instruction => {
 
@@ -537,11 +571,10 @@ export default async function handler(req, res) {
 
         }
 
-
         doc
           .fillColor(dark)
           .fontSize(9)
-          .font("Helvetica")
+          .font("NotoSans")
           .text(
             `• ${instruction}`,
             50,
@@ -551,16 +584,14 @@ export default async function handler(req, res) {
             }
           );
 
-
         currentY += 19;
 
       }
     );
 
-
-    // ==========================================
-    // CONTACT FOOTER
-    // ==========================================
+    // --------------------------------------------------
+    // FOOTER POSITION
+    // --------------------------------------------------
 
     if (currentY > 720) {
 
@@ -574,6 +605,9 @@ export default async function handler(req, res) {
 
     }
 
+    // --------------------------------------------------
+    // FOOTER LINE
+    // --------------------------------------------------
 
     doc
       .moveTo(40, currentY)
@@ -582,28 +616,32 @@ export default async function handler(req, res) {
       .strokeColor(lightGray)
       .stroke();
 
-
     currentY += 18;
 
+    // --------------------------------------------------
+    // COMPANY NAME
+    // --------------------------------------------------
 
     doc
       .fillColor(green)
       .fontSize(12)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "MAULI TOURS & TRAVELS",
         40,
         currentY
       );
 
-
     currentY += 19;
 
+    // --------------------------------------------------
+    // CONTACT DETAILS
+    // --------------------------------------------------
 
     doc
       .fillColor(gray)
       .fontSize(8.5)
-      .font("Helvetica")
+      .font("NotoSans")
       .text(
         "Phone: 9226718177",
         40,
@@ -622,15 +660,14 @@ export default async function handler(req, res) {
       currentY + 28
     );
 
-
-    // ==========================================
-    // FINAL MESSAGE
-    // ==========================================
+    // --------------------------------------------------
+    // THANK YOU
+    // --------------------------------------------------
 
     doc
       .fillColor(green)
       .fontSize(9)
-      .font("Helvetica-Bold")
+      .font("NotoSans-Bold")
       .text(
         "Thank you for choosing Mauli Tours & Travels.",
         40,
@@ -641,13 +678,11 @@ export default async function handler(req, res) {
         }
       );
 
-
-    // ==========================================
+    // --------------------------------------------------
     // FINISH PDF
-    // ==========================================
+    // --------------------------------------------------
 
     doc.end();
-
 
   } catch (error) {
 
@@ -655,7 +690,6 @@ export default async function handler(req, res) {
       "PDF generation error:",
       error
     );
-
 
     return res.status(500).json({
       error:
@@ -667,9 +701,9 @@ export default async function handler(req, res) {
 }
 
 
-/* ==========================================
-   SECTION TITLE
-========================================== */
+// ======================================================
+// SECTION TITLE
+// ======================================================
 
 function sectionTitle(
   doc,
@@ -681,13 +715,12 @@ function sectionTitle(
   doc
     .fillColor(color)
     .fontSize(11)
-    .font("Helvetica-Bold")
+    .font("NotoSans-Bold")
     .text(
       title,
       40,
       y
     );
-
 
   doc
     .moveTo(40, y + 17)
@@ -699,9 +732,9 @@ function sectionTitle(
 }
 
 
-/* ==========================================
-   DETAIL ROW
-========================================== */
+// ======================================================
+// DETAIL ROW
+// ======================================================
 
 function detailRow(
   doc,
@@ -713,18 +746,17 @@ function detailRow(
   doc
     .fillColor("#666666")
     .fontSize(9)
-    .font("Helvetica-Bold")
+    .font("NotoSans-Bold")
     .text(
       `${label}:`,
       50,
       y
     );
 
-
   doc
     .fillColor("#17351f")
     .fontSize(9.5)
-    .font("Helvetica")
+    .font("NotoSans")
     .text(
       value,
       165,
