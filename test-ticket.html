@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Ticket Test</title>
+</head>
+
+<body>
+
+  <h2>Mauli Tours & Travels</h2>
+
+  <button onclick="generateTicket()">
+    Generate Test E-Ticket
+  </button>
+
+  <p id="status"></p>
+
+  <script>
+    async function generateTicket() {
+
+      const status = document.getElementById("status");
+
+      status.textContent = "Generating PDF...";
+
+      const response = await fetch("/api/generate-ticket", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+
+          bookingId: "MTAT-SHIV-202610-0001",
+
+          tourName: "Shivneri Special Group Tour",
+
+          tourDate: "11 October 2026",
+
+          route: "Pune → Shivneri → Pune",
+
+          pickupLocation: "Swargate",
+
+          customerName: "Test Customer",
+
+          customerPhone: "9999999999",
+
+          customerEmail: "test@example.com",
+
+          seats: 1,
+
+          amount: 1999,
+
+          paymentId: "pay_TEST123456",
+
+          paymentStatus: "PAID",
+
+          travellers: [
+            {
+              name: "Test Customer",
+              age: 25,
+              gender: "Male"
+            }
+          ]
+
+        })
+      });
+
+      if (!response.ok) {
+
+        const error = await response.text();
+
+        status.textContent =
+          "Error: " + error;
+
+        return;
+      }
+
+      const blob = await response.blob();
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+
+      link.download =
+        "MTAT-SHIV-202610-0001.pdf";
+
+      link.click();
+
+      URL.revokeObjectURL(url);
+
+      status.textContent =
+        "PDF generated successfully!";
+
+    }
+  </script>
+
+</body>
+</html>
