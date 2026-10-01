@@ -319,9 +319,106 @@ async function startRazorpayPayment({
 
                             } else {
 
+                                // =====================================
+                                // GET PDF BLOB
+                                // =====================================
+
                                 const pdfBlob =
                                     await ticketResponse.blob();
 
+
+                                // =====================================
+                                // SEND PDF BY EMAIL
+                                // =====================================
+
+                                if (customerEmail) {
+
+                                    try {
+
+                                        const pdfBase64 =
+                                            await blobToBase64(
+                                                pdfBlob
+                                            );
+
+
+                                        const emailResponse =
+                                            await fetch(
+                                                "/api/send-ticket-email",
+                                                {
+
+                                                    method:
+                                                        "POST",
+
+                                                    headers: {
+
+                                                        "Content-Type":
+                                                            "application/json"
+
+                                                    },
+
+                                                    body:
+                                                        JSON.stringify({
+
+                                                            customerEmail:
+                                                                customerEmail,
+
+                                                            customerName:
+                                                                customerName,
+
+                                                            bookingId:
+                                                                bookingId,
+
+                                                            tourName:
+                                                                tourName,
+
+                                                            tourDate:
+                                                                tourDate,
+
+                                                            pdfBase64:
+                                                                pdfBase64
+
+                                                        })
+
+                                                }
+                                            );
+
+
+                                        const emailData =
+                                            await emailResponse.json();
+
+
+                                        if (!emailResponse.ok) {
+
+                                            console.error(
+                                                "Ticket email failed:",
+                                                emailData
+                                            );
+
+                                        } else {
+
+                                            console.log(
+                                                "Ticket email sent successfully:",
+                                                emailData
+                                            );
+
+                                        }
+
+
+                                    } catch (emailError) {
+
+                                        console.error(
+                                            "Ticket email error:",
+                                            emailError
+                                        );
+
+                                    }
+
+                                }
+
+
+                                // =====================================
+                                // DOWNLOAD PDF
+                                // =====================================
 
                                 const pdfUrl =
                                     URL.createObjectURL(
@@ -557,5 +654,42 @@ async function startRazorpayPayment({
         }
 
     }
+
+}
+
+
+// =====================================
+// CONVERT PDF BLOB TO BASE64
+// =====================================
+
+function blobToBase64(blob) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader =
+            new FileReader();
+
+
+        reader.onloadend =
+            function () {
+
+                const result =
+                    reader.result;
+
+                const base64 =
+                    result.split(",")[1];
+
+                resolve(base64);
+
+            };
+
+
+        reader.onerror =
+            reject;
+
+
+        reader.readAsDataURL(blob);
+
+    });
 
 }
