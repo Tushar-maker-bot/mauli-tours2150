@@ -1864,12 +1864,23 @@ if (
 
             /* VALIDATE */
 
-            if (!validateBooking()) {
+           if (!validateBooking()) {
 
-                return;
+    return;
 
-            }
+}
 
+/* =========================
+   GA4 - PROCEED TO PAYMENT
+========================== */
+
+gtag('event', 'proceed_to_payment', {
+    tour_name: TOUR_NAME,
+    tour_date: '2026-10-11',
+    seats: seats,
+    value: seats * PRICE_PER_PERSON,
+    currency: 'INR'
+});
 
             /* CUSTOMER DETAILS */
 
