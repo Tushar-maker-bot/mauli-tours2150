@@ -1964,8 +1964,21 @@ await startRazorpayPayment({
                        SUCCESS
                     ========================== */
 
-                    onSuccess:
-                        function (paymentData) {
+                    onSuccess: function (paymentData) {
+
+    /* =========================
+       GA4 - BOOKING COMPLETED
+    ========================== */
+
+    gtag('event', 'booking_completed', {
+        tour_name: TOUR_NAME,
+        tour_date: '2026-10-11',
+        seats: seats,
+        value: seats * PRICE_PER_PERSON,
+        currency: 'INR'
+    });
+
+                
 
                             paymentButton.disabled =
                                 true;
